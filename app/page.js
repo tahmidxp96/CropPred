@@ -32,21 +32,23 @@ export default function DigitalTwinDashboard() {
   useEffect(() => {
     setIsMounted(true);
     
+    const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+    
     // Fetch all static JSON files exported by pipeline
     Promise.all([
-      fetch("/data/districts.json").then(r => {
+      fetch(`${basePath}/data/districts.json`).then(r => {
         if (!r.ok) throw new Error("Districts metadata missing.");
         return r.json();
       }),
-      fetch("/data/yield_data.json").then(r => {
+      fetch(`${basePath}/data/yield_data.json`).then(r => {
         if (!r.ok) throw new Error("Yield prediction data missing.");
         return r.json();
       }),
-      fetch("/data/fao_national.json").then(r => {
+      fetch(`${basePath}/data/fao_national.json`).then(r => {
         if (!r.ok) throw new Error("FAO national crosscheck missing.");
         return r.json();
       }),
-      fetch("/data/summary.json").then(r => {
+      fetch(`${basePath}/data/summary.json`).then(r => {
         if (!r.ok) throw new Error("Model summary metadata missing.");
         return r.json();
       })

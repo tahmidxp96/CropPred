@@ -27,15 +27,16 @@ export default function DataExplorer() {
     setError(null);
     setCurrentPage(1);
     
+    const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
     let url = "";
     if (activeDataset === "digital_twin") {
-      url = "/data/yield_data.json";
+      url = `${basePath}/data/yield_data.json`;
     } else if (activeDataset === "bbs_raw") {
-      url = "/data/bbs_raw.json";
+      url = `${basePath}/data/bbs_raw.json`;
     } else if (activeDataset === "nasa_raw") {
-      url = "/data/nasa_raw.json";
+      url = `${basePath}/data/nasa_raw.json`;
     } else {
-      url = "/data/fao_national.json";
+      url = `${basePath}/data/fao_national.json`;
     }
 
     fetch(url)
