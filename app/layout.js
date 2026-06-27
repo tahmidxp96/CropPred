@@ -1,4 +1,5 @@
 import "./globals.css";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata = {
   title: "Bangladesh Crop Yield Digital Twin | ML-Powered Research Platform",
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );
