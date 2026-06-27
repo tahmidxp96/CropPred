@@ -26,7 +26,7 @@ def project_2024_records(features_df, model_pipeline):
     weather_pivot = weather_2024.pivot(
         index=["district"],
         columns="month",
-        values=["temp_c", "temp_max_c", "temp_min_c", "rain_mm_day", "rh_pct", "solar_mj_m2_day", "gwettop"]
+        values=["temp_c", "temp_max_c", "temp_min_c", "rain_mm_day", "rh_pct", "solar_mj_m2_day", "gwettop", "gwetroot"]
     )
     weather_pivot.columns = [f"{var}_{month}" for var, month in weather_pivot.columns]
     weather_pivot = weather_pivot.reset_index()
@@ -59,6 +59,7 @@ def project_2024_records(features_df, model_pipeline):
             max_temps = [w_row[f"temp_max_c_{m}"] for m in months]
             min_temps = [w_row[f"temp_min_c_{m}"] for m in months]
             soil_wets = [w_row[f"gwettop_{m}"] for m in months]
+            soil_roots = [w_row[f"gwetroot_{m}"] for m in months]
             
             # Summarize
             s_temp = np.mean(temps)
@@ -77,6 +78,10 @@ def project_2024_records(features_df, model_pipeline):
             
             # Soil wetness
             s_soil = np.mean(soil_wets)
+            s_soil_root = np.mean(soil_roots)
+            
+            # SWDI
+            s_swdi = s_rain - (1.15 * s_temp * s_solar)
             
             # Flood and drought index
             flood = max(0.0, s_rain - 2200.0) / 100.0 if season in ["Aus", "Aman"] else 0.0
@@ -100,6 +105,8 @@ def project_2024_records(features_df, model_pipeline):
                 "season_gdd": float(gdd_sum),
                 "season_dtr": float(s_dtr),
                 "season_soil_wetness": float(s_soil),
+                "season_soil_wetness_root": float(s_soil_root),
+                "season_swdi": float(s_swdi),
                 "flood_index": float(flood),
                 "drought_index": float(drought)
             })
@@ -110,7 +117,7 @@ def project_2024_records(features_df, model_pipeline):
     features = [
         "division", "season", "area_ha", 
         "season_temp_c", "season_rain_mm", "season_rh_pct", "season_solar_mj_m2",
-        "season_gdd", "season_dtr", "season_soil_wetness",
+        "season_gdd", "season_dtr", "season_soil_wetness", "season_soil_wetness_root", "season_swdi",
         "flood_index", "drought_index"
     ]
     df_2024["pred_yield_mtha"] = model_pipeline.predict(df_2024[features])
@@ -138,7 +145,7 @@ def main():
     features_list = [
         "division", "season", "area_ha", 
         "season_temp_c", "season_rain_mm", "season_rh_pct", "season_solar_mj_m2",
-        "season_gdd", "season_dtr", "season_soil_wetness",
+        "season_gdd", "season_dtr", "season_soil_wetness", "season_soil_wetness_root", "season_swdi",
         "flood_index", "drought_index"
     ]
     features_df["pred_yield_mtha"] = model.predict(features_df[features_list])
@@ -235,7 +242,7 @@ def main():
     encoded_cat_features = list(cat_encoder.get_feature_names_out(["division", "season"]))
     all_features = [
         "area_ha", "season_temp_c", "season_rain_mm", "season_rh_pct", "season_solar_mj_m2",
-        "season_gdd", "season_dtr", "season_soil_wetness",
+        "season_gdd", "season_dtr", "season_soil_wetness", "season_soil_wetness_root", "season_swdi",
         "flood_index", "drought_index"
     ] + encoded_cat_features
     importances = regressor.feature_importances_

@@ -23,6 +23,8 @@ def build_model_pipeline():
         "season_gdd",
         "season_dtr",
         "season_soil_wetness",
+        "season_soil_wetness_root",
+        "season_swdi",
         "flood_index", 
         "drought_index"
     ]
@@ -74,7 +76,7 @@ def main():
     features = [
         "division", "season", "area_ha", 
         "season_temp_c", "season_rain_mm", "season_rh_pct", "season_solar_mj_m2",
-        "season_gdd", "season_dtr", "season_soil_wetness",
+        "season_gdd", "season_dtr", "season_soil_wetness", "season_soil_wetness_root", "season_swdi",
         "flood_index", "drought_index"
     ]
     target = "yield_mtha"

@@ -43,7 +43,7 @@ def fetch_district_weather(district, info, use_api=True):
     if use_api:
         url = "https://power.larc.nasa.gov/api/temporal/monthly/point"
         params = {
-            "parameters": "T2M,T2M_MAX,T2M_MIN,PRECTOTCORR,RH2M,ALLSKY_SNDN,GWETTOP",
+            "parameters": "T2M,T2M_MAX,T2M_MIN,PRECTOTCORR,RH2M,ALLSKY_SNDN,GWETTOP,GWETROOT",
             "community": "AG",
             "longitude": lon,
             "latitude": lat,
@@ -67,6 +67,7 @@ def fetch_district_weather(district, info, use_api=True):
                 rh = parameters.get("RH2M", {})
                 solar = parameters.get("ALLSKY_SNDN", {})
                 gwettop = parameters.get("GWETTOP", {})
+                gwetroot = parameters.get("GWETROOT", {})
                 
                 # Parse monthly keys like "201501", "201502", etc.
                 for key in t2m.keys():
@@ -84,7 +85,8 @@ def fetch_district_weather(district, info, use_api=True):
                             "rain_mm_day": rain.get(key, 0.0),
                             "rh_pct": rh.get(key, 0.0),
                             "solar_mj_m2_day": solar.get(key, 0.0),
-                            "gwettop": gwettop.get(key, 0.5)
+                            "gwettop": gwettop.get(key, 0.5),
+                            "gwetroot": gwetroot.get(key, 0.5)
                         })
                 if records:
                     return pd.DataFrame(records)
@@ -99,6 +101,7 @@ def fetch_district_weather(district, info, use_api=True):
     reg = get_regional_multiplier(division)
     
     np.random.seed(hash(district) % 10000) # Local seed per district
+    prev_soil_wet_root = 0.45
     
     for year in range(2015, 2025):
         # 2017 had high monsoon rainfall, 2020 had cyclone, 2022 had Sylhet rainfall spike
@@ -131,6 +134,11 @@ def fetch_district_weather(district, info, use_api=True):
             soil_wet = 0.15 + 0.6 * (h / 100.0) + 0.15 * min(1.0, r / 5.0) + np.random.normal(0, 0.03)
             soil_wet = min(1.0, max(0.05, soil_wet))
             
+            # Simulate gwetroot (root zone wetness) as a percolation-lagged dampening of surface moisture
+            soil_wet_root = 0.65 * prev_soil_wet_root + 0.35 * soil_wet + np.random.normal(0, 0.01)
+            soil_wet_root = min(1.0, max(0.05, soil_wet_root))
+            prev_soil_wet_root = soil_wet_root
+            
             records.append({
                 "district": district,
                 "year": year,
@@ -141,7 +149,8 @@ def fetch_district_weather(district, info, use_api=True):
                 "rain_mm_day": float(np.round(r, 2)),
                 "rh_pct": float(np.round(h, 2)),
                 "solar_mj_m2_day": float(np.round(s, 2)),
-                "gwettop": float(np.round(soil_wet, 3))
+                "gwettop": float(np.round(soil_wet, 3)),
+                "gwetroot": float(np.round(soil_wet_root, 3))
             })
             
     return pd.DataFrame(records)

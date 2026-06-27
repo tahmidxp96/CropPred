@@ -16,6 +16,8 @@ def engineer_seasonal_features(df):
     seasonal_gdd = []
     seasonal_dtr = []
     seasonal_soil_wetness = []
+    seasonal_soil_wetness_root = []
+    seasonal_swdi = []
     
     # Iterate through each row in the dataset
     for idx, row in df.iterrows():
@@ -41,16 +43,20 @@ def engineer_seasonal_features(df):
         max_temps = [row[f"temp_max_c_{m}"] for m in months]
         min_temps = [row[f"temp_min_c_{m}"] for m in months]
         soil_wets = [row[f"gwettop_{m}"] for m in months]
+        soil_roots = [row[f"gwetroot_{m}"] for m in months]
         
         # Calculate summaries (means and sums)
-        seasonal_temp.append(np.mean(temps))
-        # Total rainfall is estimated by summing mean daily rainfall * 30 days per month
-        seasonal_rain.append(np.sum(rains) * 30.0) 
-        seasonal_rh.append(np.mean(rhs))
-        seasonal_solar.append(np.mean(solars))
+        s_temp = np.mean(temps)
+        s_rain = np.sum(rains) * 30.0
+        s_rh = np.mean(rhs)
+        s_solar = np.mean(solars)
+        
+        seasonal_temp.append(s_temp)
+        seasonal_rain.append(s_rain) 
+        seasonal_rh.append(s_rh)
+        seasonal_solar.append(s_solar)
         
         # Growing Degree Days (GDD) accumulated over the season months
-        # Approximated daily average as (max + min) / 2.0. Base temperature for rice is 10°C.
         gdd_sum = 0.0
         for t_max, t_min in zip(max_temps, min_temps):
             t_avg = (t_max + t_min) / 2.0
@@ -63,6 +69,11 @@ def engineer_seasonal_features(df):
         
         # Soil Wetness
         seasonal_soil_wetness.append(np.mean(soil_wets))
+        seasonal_soil_wetness_root.append(np.mean(soil_roots))
+        
+        # Seasonal Water Deficit Index (SWDI) representing precipitation minus evaporation proxy
+        swdi_val = s_rain - (1.15 * s_temp * s_solar)
+        seasonal_swdi.append(swdi_val)
         
     df["season_temp_c"] = seasonal_temp
     df["season_rain_mm"] = seasonal_rain
@@ -71,6 +82,8 @@ def engineer_seasonal_features(df):
     df["season_gdd"] = seasonal_gdd
     df["season_dtr"] = seasonal_dtr
     df["season_soil_wetness"] = seasonal_soil_wetness
+    df["season_soil_wetness_root"] = seasonal_soil_wetness_root
+    df["season_swdi"] = seasonal_swdi
     
     # Add anomaly indices
     # 1. Flood index: High rainfall during Aman/Aus season (> 2500 mm total rainfall)
@@ -94,7 +107,7 @@ def engineer_seasonal_features(df):
         "district", "division", "year", "season", 
         "area_ha", "production_mt", "yield_mtha",
         "season_temp_c", "season_rain_mm", "season_rh_pct", "season_solar_mj_m2",
-        "season_gdd", "season_dtr", "season_soil_wetness",
+        "season_gdd", "season_dtr", "season_soil_wetness", "season_soil_wetness_root", "season_swdi",
         "flood_index", "drought_index"
     ]
     
