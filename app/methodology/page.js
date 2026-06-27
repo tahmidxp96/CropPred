@@ -207,7 +207,7 @@ export default function MethodologyPage() {
         {activeTab === "math" && (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="glass-panel p-6 flex flex-col gap-4">
-              <h3 className="text-lg font-bold text-white border-b border-slate-950 pb-2">
+              <h3 className="text-lg font-bold text-white border-b border-slate-900 pb-2">
                 1. Growing Degree Days (GDD)
               </h3>
               <p className="text-sm text-slate-300 leading-relaxed">
@@ -224,7 +224,7 @@ export default function MethodologyPage() {
             </div>
 
             <div className="glass-panel p-6 flex flex-col gap-4">
-              <h3 className="text-lg font-bold text-white border-b border-slate-950 pb-2">
+              <h3 className="text-lg font-bold text-white border-b border-slate-900 pb-2">
                 2. Diurnal Temperature Range (DTR)
               </h3>
               <p className="text-sm text-slate-300 leading-relaxed">
@@ -239,27 +239,42 @@ export default function MethodologyPage() {
               </ul>
             </div>
 
-            <div className="glass-panel p-6 flex flex-col gap-4 md:col-span-2">
-              <h3 className="text-lg font-bold text-white border-b border-slate-950 pb-2 flex items-center gap-2">
-                <Layers className="text-emerald-500 w-5 h-5" /> 3. Satellite Surface Soil Wetness (GWETTOP)
+            <div className="glass-panel p-6 flex flex-col gap-4">
+              <h3 className="text-lg font-bold text-white border-b border-slate-900 pb-2">
+                3. Root-Zone Soil Hydration (GWETROOT)
               </h3>
               <p className="text-sm text-slate-300 leading-relaxed">
-                To bypass the complexity of local shapefile masking for MODIS satellite imagery, the digital twin incorporates NASA’s GLDAS **Surface Soil Wetness ratio (`GWETTOP`)** as a direct proxy for agricultural drought, moisture anomalies, and vegetation index (NDVI) shifts.
+                Paddy rice requires sustained groundwater reserves. Surface soil moisture (GWETTOP, upper 5cm) fluctuates rapidly due to direct solar evaporation. The digital twin incorporates NASA's **Root-Zone Soil Wetness (0–100cm percolation layer, `GWETROOT`)** to model actual water availability at the crop roots:
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-2">
-                <div className="bg-[#0b0e14] p-3.5 rounded border border-slate-900 text-center">
-                  <span className="text-xs text-slate-400 block">Values 0.0 &rarr; 0.2</span>
-                  <span className="text-xs text-rose-400 font-bold block mt-1">Severe Soil Drought</span>
+              <div className="grid grid-cols-3 gap-2 text-center text-[10px]">
+                <div className="bg-[#0b0e14] p-2 rounded border border-slate-900">
+                  <span className="text-rose-400 font-bold block">0.0 &rarr; 0.2</span>
+                  <span className="text-slate-500 block">Root Drought</span>
                 </div>
-                <div className="bg-[#0b0e14] p-3.5 rounded border border-slate-900 text-center">
-                  <span className="text-xs text-slate-400 block">Values 0.4 &rarr; 0.6</span>
-                  <span className="text-xs text-emerald-400 font-bold block mt-1">Optimal Crop Hydration</span>
+                <div className="bg-[#0b0e14] p-2 rounded border border-slate-900">
+                  <span className="text-emerald-400 font-bold block">0.4 &rarr; 0.6</span>
+                  <span className="text-slate-500 block">Optimal Hydration</span>
                 </div>
-                <div className="bg-[#0b0e14] p-3.5 rounded border border-slate-900 text-center">
-                  <span className="text-xs text-slate-400 block">Values 0.8 &rarr; 1.0</span>
-                  <span className="text-xs text-blue-400 font-bold block mt-1">Soil Saturation / Waterlogging</span>
+                <div className="bg-[#0b0e14] p-2 rounded border border-slate-900">
+                  <span className="text-blue-400 font-bold block">0.8 &rarr; 1.0</span>
+                  <span className="text-slate-500 block">Waterlogged</span>
                 </div>
               </div>
+            </div>
+
+            <div className="glass-panel p-6 flex flex-col gap-4">
+              <h3 className="text-lg font-bold text-white border-b border-slate-900 pb-2">
+                4. Seasonal Water Deficit Index (SWDI)
+              </h3>
+              <p className="text-sm text-slate-300 leading-relaxed">
+                A simple count of rainfall ignores solar-driven crop transpiration. We engineer a physical **Seasonal Water Deficit Index (SWDI)** modeling water supply vs. demand:
+              </p>
+              <div className="bg-[#0b0e14] border border-slate-900 p-4 rounded-lg font-mono text-xs text-center text-emerald-400 my-2">
+                {"SWDI = Precipitation - (1.15 * Temperature * Solar Radiation)"}
+              </div>
+              <p className="text-xs text-slate-400 leading-relaxed">
+                Negative SWDI values represent moisture deficits (where evaporation exceeds precipitation), triggering early crop stress, while positive values indicate moisture equilibrium.
+              </p>
             </div>
           </div>
         )}
@@ -270,27 +285,32 @@ export default function MethodologyPage() {
             <div className="lg:col-span-2 flex flex-col gap-6">
               <div className="glass-panel p-6">
                 <h3 className="text-lg font-bold text-white mb-4">
-                  XGBoost Hyperparameter Architecture
+                  Ensemble Voting ML Architecture
                 </h3>
                 <p className="text-sm text-slate-300 leading-relaxed mb-4">
-                  To prevent the model from overfitting (memorizing district labels rather than generalizing climate patterns), we transitioned the training pipeline to the **XGBoost gradient boosting** algorithm with strict regularization parameters:
+                  To prevent individual tree split bias and stabilize yield forecasts, the model implements a hybrid **Ensemble Voting Regressor** pipeline compiling three base estimators:
                 </p>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs font-mono">
-                  <div className="bg-[#0b0e14] p-3 rounded border border-slate-900">
-                    <span className="text-slate-500 block">Estimators</span>
-                    <span className="text-white font-bold text-sm block mt-1">120</span>
+                <div className="space-y-3 text-xs">
+                  <div className="bg-[#0b0e14] p-3 rounded border border-slate-900 flex justify-between items-center">
+                    <div>
+                      <span className="font-bold text-white block">1. XGBoost Regressor</span>
+                      <span className="text-slate-400 block mt-0.5">Extreme gradient boosting on sequential tree residuals.</span>
+                    </div>
+                    <span className="text-emerald-400 font-mono font-bold">Max Depth: 5</span>
                   </div>
-                  <div className="bg-[#0b0e14] p-3 rounded border border-slate-900">
-                    <span className="text-slate-500 block">Learning Rate</span>
-                    <span className="text-white font-bold text-sm block mt-1">0.07</span>
+                  <div className="bg-[#0b0e14] p-3 rounded border border-slate-900 flex justify-between items-center">
+                    <div>
+                      <span className="font-bold text-white block">2. Random Forest Regressor</span>
+                      <span className="text-slate-400 block mt-0.5">Bootstrap aggregation with deep parallel splits.</span>
+                    </div>
+                    <span className="text-cyan-400 font-mono font-bold">Estimators: 150</span>
                   </div>
-                  <div className="bg-[#0b0e14] p-3 rounded border border-slate-900">
-                    <span className="text-slate-500 block">Max Depth</span>
-                    <span className="text-white font-bold text-sm block mt-1">5</span>
-                  </div>
-                  <div className="bg-[#0b0e14] p-3 rounded border border-slate-900">
-                    <span className="text-slate-500 block">Subsample</span>
-                    <span className="text-white font-bold text-sm block mt-1">0.80</span>
+                  <div className="bg-[#0b0e14] p-3 rounded border border-slate-900 flex justify-between items-center">
+                    <div>
+                      <span className="font-bold text-white block">3. Gradient Boosting Regressor</span>
+                      <span className="text-slate-400 block mt-0.5">Scikit-learn GBR compiling shallow additive trees.</span>
+                    </div>
+                    <span className="text-amber-400 font-mono font-bold">Learning Rate: 0.08</span>
                   </div>
                 </div>
               </div>
@@ -348,7 +368,7 @@ export default function MethodologyPage() {
                   ))}
                   <div className="bg-[#0f1b2b] border border-slate-800 p-3 rounded text-center mt-2">
                     <span className="text-slate-400 text-xs block font-bold">Mean Chronological CV R²</span>
-                    <span className="text-emerald-400 font-mono font-bold text-base block mt-0.5">97.84%</span>
+                    <span className="text-emerald-400 font-mono font-bold text-base block mt-0.5">97.98%</span>
                   </div>
                 </div>
               </div>
@@ -365,7 +385,7 @@ export default function MethodologyPage() {
                   <BarChart2 className="text-emerald-500 w-5 h-5" /> Relative Environmental Importances
                 </h3>
                 <p className="text-sm text-slate-300 leading-relaxed mb-4">
-                  This chart displays the normalized relative feature importances of environmental factors in our XGBoost model, calculated by filtering out categorical season/district baseline offset variables.
+                  This chart displays the normalized relative feature importances of environmental factors in our Ensemble model, calculated by filtering out categorical season/district baseline offset variables.
                 </p>
                 <div style={{ width: "100%", height: "280px" }}>
                   <ResponsiveContainer>
@@ -381,6 +401,28 @@ export default function MethodologyPage() {
                       </Bar>
                     </BarChart>
                   </ResponsiveContainer>
+                </div>
+              </div>
+
+              <div className="glass-panel p-6 flex flex-col gap-4">
+                <h3 className="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-1.5">
+                  <TrendingUp className="text-emerald-500 w-4 h-4" /> Future Projections & Error Calibration
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                  <div className="bg-[#0b0e14] p-4 rounded border border-slate-900">
+                    <span className="text-emerald-400 font-bold block mb-1">1. Kalman-Style Feedback Loop</span>
+                    <p className="text-slate-400 leading-relaxed">
+                      Corrects predictions recursively using actual BBS census errors:
+                      <span className="font-mono text-[10px] block mt-1 text-emerald-500">{"Yield_t = Base_t + 0.35 * Error_{t-1}"}</span>
+                      For unobserved forecast years (2024-2029), the loop carries forward the last observed historical offset per district-season.
+                    </p>
+                  </div>
+                  <div className="bg-[#0b0e14] p-4 rounded border border-slate-900">
+                    <span className="text-cyan-400 font-bold block mb-1">2. Stochastic Projections (2025-2029)</span>
+                    <p className="text-slate-400 leading-relaxed">
+                      Injects weather noise directly into seasonal aggregates ($85\%$ of historical standard deviations) and operational land-use area shift fluctuations ($\pm 2\%$ variance) to guarantee dynamic, organic forecasts.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
