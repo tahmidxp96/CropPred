@@ -185,7 +185,7 @@ export default function DigitalTwinDashboard() {
   
   // Calculate yield deviation
   const deviation = selectedRecord && historicalAvg
-    ? ((selectedRecord.yield_mtha - historicalAvg) / historicalAvg) * 100
+    ? ((selectedRecord.pred_yield_mtha - historicalAvg) / historicalAvg) * 100
     : 0;
 
   // Prepare feature importance data for Chart (relative to meteorological & agronomic factors)

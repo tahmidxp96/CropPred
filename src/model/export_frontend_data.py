@@ -99,6 +99,10 @@ def project_future_records(features_df, model_pipeline, start_year=2024, end_yea
                     "drought_index": float(drought)
                 })
         df_2024 = pd.DataFrame(records_2024)
+        # Inject minor operational land shift noise (±2%)
+        np.random.seed(42)
+        area_noise_2024 = np.random.uniform(-0.02, 0.02, size=len(df_2024))
+        df_2024["area_ha"] = (df_2024["area_ha"] * (1.0 + area_noise_2024)).round(1)
         
     # 2. Project 2025-2029 using Climatological Medians + Stochastic Seasonal Noise
     from src.utils.coordinates import DISTRICT_COORDINATES
@@ -121,7 +125,10 @@ def project_future_records(features_df, model_pipeline, start_year=2024, end_yea
         df_yr = seasonal_medians.copy()
         df_yr["year"] = yr
         df_yr["division"] = df_yr["district"].map(lambda d: DISTRICT_COORDINATES.get(d, {}).get("division", "Unknown"))
+        # Project area_ha with minor operational land shift noise (±2%)
         df_yr["area_ha"] = df_yr.apply(lambda r: area_rolling_median.get((r["district"], r["season"]), 10000.0), axis=1)
+        area_noise = np.random.uniform(-0.02, 0.02, size=len(df_yr))
+        df_yr["area_ha"] = (df_yr["area_ha"] * (1.0 + area_noise)).round(1)
         
         # Add seasonal noise
         for col in numeric_cols:
