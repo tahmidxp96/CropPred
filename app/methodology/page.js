@@ -428,7 +428,7 @@ export default function MethodologyPage() {
                   Decoupled Static Serverless Architecture
                 </h3>
                 <p className="text-sm text-slate-300 leading-relaxed mb-4">
-                  To achieve maximum speed and bypass Vercel serverless functions CPU timeout constraints, the digital twin decouples machine learning training from the frontend web server:
+                  To achieve maximum speed and bypass cloud serverless execution overhead and timeouts, the digital twin decouples machine learning training from the frontend web server:
                 </p>
                 <div className="bg-[#0b0e14] border border-slate-900 p-4 rounded-xl font-mono text-[11px] text-slate-300 space-y-2 mb-4">
                   <div className="flex items-center gap-2">
@@ -447,7 +447,7 @@ export default function MethodologyPage() {
                   <div className="flex items-center gap-2 text-slate-500">
                     <div className="w-4 border-t border-dashed border-slate-700" />
                     <span>&rarr;</span>
-                    <span>Uploads static JSON arrays directly to Vercel Global Edge CDN.</span>
+                    <span>Uploads static JSON arrays directly to GitHub Pages CDN.</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="text-emerald-400">3. Edge CDN Serving:</span>
@@ -490,7 +490,7 @@ export default function MethodologyPage() {
       {/* Footer */}
       <footer className="border-t border-slate-900 bg-[#06080c] py-6 mt-12 text-center text-xs text-slate-500">
         <p>© 2026 Bangladesh Crop Yield Digital Twin Research. Built for Graduate Research Portfolio in AI/Agriculture.</p>
-        <p className="mt-1">Pipeline: Python | Front-end: Next.js | Serverless: Vercel</p>
+        <p className="mt-1">Pipeline: Python | Front-end: Next.js | Hosting: GitHub Pages</p>
       </footer>
     </div>
   );

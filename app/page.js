@@ -233,7 +233,7 @@ export default function DigitalTwinDashboard() {
               </span>
             </div>
             <p className="text-xs sm:text-sm text-slate-400 mt-0.5">
-              Local Machine Learning Pipeline + Static Vercel Deployment
+              Local Machine Learning Pipeline + GitHub Pages Deployment
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-3">
@@ -683,19 +683,19 @@ export default function DigitalTwinDashboard() {
             </div>
             <div className="flex flex-col gap-4">
               <p>
-                To make this digital twin production-ready and deployment-efficient for serverless environments (like Vercel), we decouple the heavy data computations:
+                To make this digital twin production-ready and deployment-efficient for static environments (like GitHub Pages), we decouple the heavy data computations:
               </p>
               <div className="bg-[#090d16] border border-slate-800 p-4 rounded-lg font-mono text-xs flex flex-col gap-3 text-emerald-400">
                 <div>
                   <span className="text-slate-400">1. Physical Twin (Local PC):</span>
-                  <div className="pl-3 text-slate-200 mt-1">Python Pipeline &rarr; fetch, process, and train Random Forest ML models.</div>
+                  <div className="pl-3 text-slate-200 mt-1">Python Pipeline &rarr; fetch, process, and train XGBoost ML models.</div>
                 </div>
                 <div>
                   <span className="text-slate-400">2. Synchronization (Build step):</span>
                   <div className="pl-3 text-slate-200 mt-1">Precompute predictions &amp; climate statistics &rarr; lightweight static JSON exports.</div>
                 </div>
                 <div>
-                  <span className="text-slate-400">3. Virtual Twin (Vercel):</span>
+                  <span className="text-slate-400">3. Virtual Twin (GitHub Pages):</span>
                   <div className="pl-3 text-slate-200 mt-1">Serve static Next.js UI &rarr; zero live inference latency, maximum reliability.</div>
                 </div>
               </div>
@@ -771,7 +771,7 @@ export default function DigitalTwinDashboard() {
             <div className="flex flex-col gap-2">
               <h4 className="font-semibold text-white flex items-center gap-1.5"><AlertTriangle className="text-amber-500 w-4 h-4" /> Static Data Decoupling</h4>
               <p className="text-xs leading-relaxed text-slate-400">
-                This digital twin does not execute live machine learning inference inside the client's browser or inside Vercel request boundaries. To keep server latency and hosting cost to a minimum, all outputs are statically compiled during local pipeline execution.
+                This digital twin does not execute live machine learning inference inside the client's browser or inside server-side request boundaries. To keep server latency and hosting cost to a minimum, all outputs are statically compiled during local pipeline execution.
               </p>
             </div>
           </div>
@@ -781,7 +781,7 @@ export default function DigitalTwinDashboard() {
       {/* Footer */}
       <footer className="border-t border-slate-900 bg-[#06080c] py-6 mt-12 text-center text-xs text-slate-500">
         <p>© 2026 Bangladesh Crop Yield Digital Twin Research. Built for Graduate Research Portfolio in AI/Agriculture.</p>
-        <p className="mt-1">Pipeline: Python | Front-end: Next.js | Serverless: Vercel</p>
+        <p className="mt-1">Pipeline: Python | Front-end: Next.js | Hosting: GitHub Pages</p>
       </footer>
     </div>
   );
