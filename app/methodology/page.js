@@ -146,56 +146,116 @@ export default function MethodologyPage() {
 
         {/* Tab 1 Content: Ingestion Pipeline */}
         {activeTab === "acquisition" && (
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <div className="lg:col-span-2 flex flex-col gap-6">
-              <div className="glass-panel p-6">
-                <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                  <Database className="text-emerald-500 w-5 h-5" /> Primary Sourced Data Repositories
-                </h3>
-                <p className="text-sm text-slate-300 leading-relaxed mb-4">
-                  To ensure graduate-grade scientific integrity, the model relies exclusively on real historical records. There are no placeholder values or synthetically interpolated records in the entire repository.
-                </p>
-                <div className="space-y-4">
-                  <div className="bg-[#0b0e14] border border-slate-900 p-4 rounded-lg">
-                    <span className="text-xs font-bold text-emerald-400 block font-mono">1. Agricultural Censuses (BBS)</span>
-                    <p className="text-xs text-slate-400 mt-1 leading-relaxed">
-                      District-level cultivated land areas (hectares), production tonnage (metric tonnes), and yield rates (MT/ha) are digitized from historical publications of the Bangladesh Bureau of Statistics (BBS) spanning 2015 to 2023. These represent our ground-truth labels.
-                    </p>
-                  </div>
-                  <div className="bg-[#0b0e14] border border-slate-900 p-4 rounded-lg">
-                    <span className="text-xs font-bold text-cyan-400 block font-mono">2. Meteorological Telemetry (NASA POWER)</span>
-                    <p className="text-xs text-slate-400 mt-1 leading-relaxed">
-                      Coordinates for all 64 district centroids were mapped to query NASA's Prediction of Worldwide Energy Resources (POWER) API. Parameters fetched include surface air temperatures, daily precipitation corrected for regional topography, relative humidity, solar radiation, and surface soil moisture.
-                    </p>
-                  </div>
-                  <div className="bg-[#0b0e14] border border-slate-900 p-4 rounded-lg">
-                    <span className="text-xs font-bold text-amber-400 block font-mono">3. Global Reference Validation (UN FAOSTAT)</span>
-                    <p className="text-xs text-slate-400 mt-1 leading-relaxed">
-                      Country-level annual statistical averages for paddy yield, production, and harvested areas are downloaded from the UN Food and Agriculture Organization (FAO) to serve as a macro-validation check for district aggregates.
-                    </p>
+          <div className="flex flex-col gap-6">
+            <div className="glass-panel p-6">
+              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                <Database className="text-emerald-500 w-5 h-5" /> Data Ingestion & Transformation Pipeline
+              </h3>
+              <p className="text-sm text-slate-300 leading-relaxed mb-6">
+                To guarantee scientific reproducibility, the model relies on a multi-stage Python ingestion pipeline. Below is the step-by-step transformation sequence showing real Jupyter-style data structures at each transition:
+              </p>
+              
+              <div className="space-y-8 relative border-l border-slate-800/80 pl-6 ml-3">
+                {/* Step A */}
+                <div className="relative">
+                  <div className="absolute -left-[30px] top-1.5 bg-emerald-500 w-3.5 h-3.5 rounded-full border border-slate-950 flex items-center justify-center text-[8px] font-bold text-slate-950">A</div>
+                  <h4 className="text-sm font-bold text-white flex items-center gap-2">
+                    Step A: Raw Telemetry Extraction
+                  </h4>
+                  <p className="text-xs text-slate-400 mt-1 leading-relaxed max-w-4xl">
+                    Python downloader script pulls ground-truth crop outputs from digitized BBS yearbook publications and queries the NASA POWER API centroid coordinates for monthly weather telemetry.
+                  </p>
+                  
+                  <div className="mt-3 max-w-4xl">
+                    <span className="text-[10px] text-slate-500 block uppercase font-mono tracking-wider mb-1">Jupyter Output [Out A]:</span>
+                    <pre className="font-mono bg-[#090d16] border border-slate-900 rounded-lg p-3 text-[10.5px] text-emerald-400/90 leading-relaxed overflow-x-auto">
+{`# Raw BBS Yield Record Sample:
+{
+  "district": "Tangail",
+  "year": 2021,
+  "season": "Aman",
+  "area_ha": 65430,
+  "production_mt": 196290
+}
+
+# Raw Monthly NASA Weather Sample (Centroid: 24.250°N, 89.916°E):
+{
+  "district": "Tangail",
+  "year": 2021,
+  "month": 6,
+  "temp_c": 28.5,
+  "rain_mm_day": 12.4,
+  "gwetroot": 0.54,
+  "solar_mj_m2_day": 18.2
+}`}
+                    </pre>
                   </div>
                 </div>
-              </div>
-            </div>
-            
-            <div className="flex flex-col gap-6">
-              <div className="glass-panel p-6 flex flex-col gap-4">
-                <h4 className="text-sm font-bold text-white uppercase tracking-wider">Pipeline Steps</h4>
-                <div className="relative border-l border-slate-800 pl-4 space-y-6">
-                  <div className="relative">
-                    <div className="absolute -left-6 bg-emerald-500 w-3 h-3 rounded-full border border-slate-950" />
-                    <span className="text-xs font-bold text-white block">Step A: Extraction</span>
-                    <span className="text-[11px] text-slate-400 block mt-0.5">Scrapes BBS publications and calls the NASA API dynamically using Python scripts.</span>
+
+                {/* Step B */}
+                <div className="relative">
+                  <div className="absolute -left-[30px] top-1.5 bg-emerald-500 w-3.5 h-3.5 rounded-full border border-slate-950 flex items-center justify-center text-[8px] font-bold text-slate-950">B</div>
+                  <h4 className="text-sm font-bold text-white flex items-center gap-2">
+                    Step B: Standardization & Wide-Pivot Merge
+                  </h4>
+                  <p className="text-xs text-slate-400 mt-1 leading-relaxed max-w-4xl">
+                    Cleans phonetic conflicts in district identifiers (e.g., standardizing "Cox's Bazar" and "Coxs Bazar") and pivots long monthly weather rows into a flattened wide format to construct features on a single spatial row.
+                  </p>
+                  
+                  <div className="mt-3 max-w-4xl">
+                    <span className="text-[10px] text-slate-500 block uppercase font-mono tracking-wider mb-1">Jupyter Output [Out B]:</span>
+                    <pre className="font-mono bg-[#090d16] border border-slate-900 rounded-lg p-3 text-[10.5px] text-cyan-400/90 leading-relaxed overflow-x-auto">
+{`# Standardized Wide-Pivoted District row:
+{
+  "district": "Tangail",
+  "division": "Dhaka",
+  "year": 2021,
+  "season": "Aman",
+  "area_ha": 65430.0,
+  "yield_mtha": 3.0,
+  "temp_c_6": 28.5,    "temp_c_7": 29.1,    "temp_c_8": 28.8,
+  "rain_mm_day_6": 12.4, "rain_mm_day_7": 15.2, "rain_mm_day_8": 11.9,
+  "gwetroot_6": 0.54,   "gwetroot_7": 0.61,   "gwetroot_8": 0.59,
+  "solar_mj_6": 18.2,   "solar_mj_7": 15.4,   "solar_mj_8": 17.1
+}`}
+                    </pre>
                   </div>
-                  <div className="relative">
-                    <div className="absolute -left-6 bg-emerald-500 w-3 h-3 rounded-full border border-slate-950" />
-                    <span className="text-xs font-bold text-white block">Step B: Standardization</span>
-                    <span className="text-[11px] text-slate-400 block mt-0.5">Aligns phonetically conflicting district spellings and converts data layouts from long to flat wide formats.</span>
-                  </div>
-                  <div className="relative">
-                    <div className="absolute -left-6 bg-emerald-500 w-3 h-3 rounded-full border border-slate-950" />
-                    <span className="text-xs font-bold text-white block">Step C: Aggregation</span>
-                    <span className="text-[11px] text-slate-400 block mt-0.5">Aggregates monthly weather parameters into seasonal agricultural boundaries (Aus, Aman, Boro).</span>
+                </div>
+
+                {/* Step C */}
+                <div className="relative">
+                  <div className="absolute -left-[30px] top-1.5 bg-emerald-500 w-3.5 h-3.5 rounded-full border border-slate-950 flex items-center justify-center text-[8px] font-bold text-slate-950">C</div>
+                  <h4 className="text-sm font-bold text-white flex items-center gap-2">
+                    Step C: Seasonal Aggregation & Feature Engineering
+                  </h4>
+                  <p className="text-xs text-slate-400 mt-1 leading-relaxed max-w-4xl">
+                    Aggregates monthly variables into crops' growing season windows (e.g., Aman growing months: June to November). Calculates custom agronomic markers (GDD, DTR, SWDI, flood/drought indices) to build final inputs.
+                  </p>
+                  
+                  <div className="mt-3 max-w-4xl">
+                    <span className="text-[10px] text-slate-500 block uppercase font-mono tracking-wider mb-1">Jupyter Output [Out C - Final Model Inputs]:</span>
+                    <pre className="font-mono bg-[#090d16] border border-slate-900 rounded-lg p-3 text-[10.5px] text-amber-400/90 leading-relaxed overflow-x-auto">
+{`# Engineered Feature Row passed directly to preprocessor.fit():
+{
+  "district": "Tangail",
+  "division": "Dhaka",
+  "year": 2021,
+  "season": "Aman",
+  "area_ha": 65430.0,
+  "yield_mtha": 3.0,
+  "season_temp_c": 28.9,
+  "season_rain_mm": 1245.5,
+  "season_rh_pct": 82.4,
+  "season_solar_mj_m2": 16.8,
+  "season_gdd": 2430.5,
+  "season_dtr": 8.5,
+  "season_soil_wetness": 0.56,
+  "season_soil_wetness_root": 0.59,
+  "season_swdi": 115.4,
+  "flood_index": 0.0,
+  "drought_index": 0.0
+}`}
+                    </pre>
                   </div>
                 </div>
               </div>
