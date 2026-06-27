@@ -1,0 +1,41 @@
+{
+  "model_type": "XGBoost Regressor Pipeline",
+  "n_estimators": 120,
+  "train_years": [
+    2015,
+    2021
+  ],
+  "test_years": [
+    2022,
+    2023
+  ],
+  "metrics": {
+    "overall_rmse": 0.095,
+    "overall_mae": 0.068
+  },
+  "feature_importances": {
+    "area_ha": 0.005029365420341492,
+    "season_temp_c": 0.00033999234437942505,
+    "season_rain_mm": 0.01416051760315895,
+    "season_rh_pct": 0.020843109115958214,
+    "season_solar_mj_m2": 0.0006021411390975118,
+    "season_gdd": 0.00019624363631010056,
+    "season_dtr": 0.000181077717570588,
+    "season_soil_wetness": 0.00702298991382122,
+    "flood_index": 0.0003350111946929246,
+    "drought_index": 0.0,
+    "division_Barishal": 0.0001003927827696316,
+    "division_Chattogram": 0.001306935679167509,
+    "division_Dhaka": 0.0003935940039809793,
+    "division_Khulna": 0.00013498841144610196,
+    "division_Mymensingh": 0.00021556648425757885,
+    "division_Rajshahi": 0.00021083552564959973,
+    "division_Rangpur": 0.0002635052369441837,
+    "division_Sylhet": 0.0001839324104366824,
+    "division_Unknown": 0.00012531275569926947,
+    "season_Aman": 0.022842464968562126,
+    "season_Aus": 0.00048000228707678616,
+    "season_Boro": 0.9250320196151733
+  },
+  "run_date": "2026-06-27"
+}
