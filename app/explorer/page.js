@@ -7,51 +7,6 @@ import {
   Download, ChevronLeft, ChevronRight, RefreshCw, Cpu
 } from "lucide-react";
 
-const ALTERNATIVE_SOURCES_CATALOG = [
-  {
-    source: "BRRI (Bangladesh Rice Research Institute)",
-    parameters: "HYV Paddy yields, variety release traits, genetic yield gap benchmarks, stress boundaries",
-    coverage: "National / Zonal experimental stations (Historical to 2024)",
-    role: "Yield variance baseline references; validation of regional potential ceilings",
-    link: "http://www.brri.gov.bd/"
-  },
-  {
-    source: "DAE (Department of Agricultural Extension)",
-    parameters: "Weekly crop target achievements, sowing schedules, natural disaster damage assessments",
-    coverage: "Upazila and District aggregates (Active / Weekly reports)",
-    role: "Real-time crop progress and localized extreme weather flood/drought damages",
-    link: "http://www.dae.gov.bd/"
-  },
-  {
-    source: "SRDI (Soil Resource Development Institute)",
-    parameters: "Soil chemistry profiles, pH levels, NPK deficiency ratios, coastal soil salinity levels",
-    coverage: "Upazila land suitability registries (Annual monitoring maps)",
-    role: "Soil health degradation constraints; salinity stress inputs for coastal districts",
-    link: "http://srdi.gov.bd/"
-  },
-  {
-    source: "BARC (Bangladesh Agricultural Research Council)",
-    parameters: "Agro-Ecological Zones (AEZ) GIS maps, soil texture maps, irrigation suitability indexes",
-    coverage: "30 Agro-Ecological Zones sub-units",
-    role: "Topographical AEZ clustering to control spatial soil/weather interactions",
-    link: "http://www.barc.gov.bd/"
-  },
-  {
-    source: "IRRI Dataverse (International Rice Research Institute)",
-    parameters: "Subnational socioeconomic household panels, seed selection, farming practice surveys",
-    coverage: "Divisional/District farm representative cohorts",
-    role: "Farm-level socioeconomic controls (mechanization, fertilizer load, seed type)",
-    link: "https://dataverse.harvard.edu/dataverse/irri"
-  },
-  {
-    source: "Humanitarian Data Exchange (HDX)",
-    parameters: "MODIS NDVI vegetation indices, flood footprint shapes, market price indices",
-    coverage: "Subnational geographic points (2015 to active)",
-    role: "Satellite proxy validation for crop biomass and crop stress impact zones",
-    link: "https://data.humdata.org/"
-  }
-];
-
 export default function DataExplorer() {
   const [activeDataset, setActiveDataset] = useState("digital_twin");
   const [data, setData] = useState([]);
@@ -71,12 +26,6 @@ export default function DataExplorer() {
     setLoading(true);
     setError(null);
     setCurrentPage(1);
-    
-    if (activeDataset === "alternative_sources") {
-      setData(ALTERNATIVE_SOURCES_CATALOG);
-      setLoading(false);
-      return;
-    }
     
     const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
     let url = "";
@@ -109,14 +58,12 @@ export default function DataExplorer() {
   // Client-side filtering
   const getFilteredData = () => {
     return data.filter(row => {
-      // 1. Search Query filter (matches district/division/element/source/parameters)
+      // 1. Search Query filter (matches district/division/element)
       const q = searchQuery.toLowerCase().trim();
       const matchSearch = q === "" 
         || (row.district && row.district.toLowerCase().includes(q))
         || (row.division && row.division.toLowerCase().includes(q))
-        || (row.element && row.element.toLowerCase().includes(q))
-        || (row.source && row.source.toLowerCase().includes(q))
-        || (row.parameters && row.parameters.toLowerCase().includes(q));
+        || (row.element && row.element.toLowerCase().includes(q));
 
       // 2. Season filter
       const matchSeason = filterSeason === "All" 
@@ -175,20 +122,12 @@ export default function DataExplorer() {
         { key: "rh_pct", label: "Humidity (%)", align: "right", num: true },
         { key: "solar_mj_m2_day", label: "Solar (MJ/m²/day)", align: "right", num: true }
       ];
-    } else if (activeDataset === "fao_national") {
+    } else { // fao_national
       return [
         { key: "year", label: "Year", align: "center" },
         { key: "element", label: "Parameter", align: "left" },
         { key: "value", label: "Value", align: "right", num: true },
         { key: "unit", label: "Unit", align: "center" }
-      ];
-    } else { // alternative_sources
-      return [
-        { key: "source", label: "Source Registry / Database", align: "left" },
-        { key: "parameters", label: "Parameters & Key Indicators", align: "left" },
-        { key: "coverage", label: "Spatial & Temporal Coverage", align: "left" },
-        { key: "role", label: "Role in Yield Twin Optimization", align: "left" },
-        { key: "link", label: "Access Portal", align: "center" }
       ];
     }
   };
@@ -246,17 +185,11 @@ export default function DataExplorer() {
           source: "NASA Langley Research Center POWER API Climatology",
           desc: "Monthly environmental observations extracted for all 64 district coordinates, including surface temperatures, daily precipitation, relative humidity, and solar irradiance. Used to construct seasonal features (2015-2024)."
         };
-      case "fao_national":
+      default:
         return {
           title: "National FAOSTAT Reference Metrics",
           source: "United Nations FAOSTAT Country Yield Registry",
           desc: "Macro country-level paddy rice statistics for Bangladesh used to cross-reference and validate localized model behavior and trend aggregates."
-        };
-      default: // alternative_sources
-        return {
-          title: "Alternative Sourced Repositories & Databases",
-          source: "BRRI, DAE, SRDI, BARC, IRRI Dataverse, & HDX Open Portals",
-          desc: "A comprehensive registry catalog profiling alternative public databases available for agricultural modeling. Features include crop variety statistics, soil salinity indexing, AEZ suitability boundaries, and farm-level household panels."
         };
     }
   };
@@ -300,8 +233,7 @@ export default function DataExplorer() {
             { id: "digital_twin", label: "Merged Twin Matrix (Processed)" },
             { id: "bbs_raw", label: "Raw BBS Yields (Census)" },
             { id: "nasa_raw", label: "Raw NASA Climate (Observations)" },
-            { id: "fao_national", label: "Raw FAOSTAT National (Reference)" },
-            { id: "alternative_sources", label: "Alternative Repositories Catalog (External)" }
+            { id: "fao_national", label: "Raw FAOSTAT National (Reference)" }
           ].map(btn => (
             <button
               key={btn.id}
@@ -344,7 +276,7 @@ export default function DataExplorer() {
             </span>
             <input
               type="text"
-              placeholder={activeDataset === "alternative_sources" ? "Search by database name or parameters..." : "Search by district name or division..."}
+              placeholder="Search by district name or division..."
               value={searchQuery}
               onChange={(e) => { setSearchQuery(e.target.value); setCurrentPage(1); }}
               className="w-full bg-[#0d1420]/60 border border-slate-800 rounded-lg pl-10 pr-4 py-2 text-sm text-slate-200 focus:outline-none focus:border-emerald-500 transition-colors"
@@ -353,8 +285,8 @@ export default function DataExplorer() {
 
           {/* Quick Filters */}
           <div className="flex flex-wrap items-center gap-3">
-            {/* Season Filter (Aus, Aman, Boro - skip for FAO and Alternative) */}
-            {activeDataset !== "fao_national" && activeDataset !== "alternative_sources" && (
+            {/* Season Filter (Aus, Aman, Boro - skip for FAO) */}
+            {activeDataset !== "fao_national" && (
               <div className="flex items-center gap-2">
                 <span className="text-xs text-slate-400 flex items-center gap-1"><Filter className="w-3.5 h-3.5" /> Season:</span>
                 <select
@@ -371,21 +303,19 @@ export default function DataExplorer() {
             )}
 
             {/* Year Filter */}
-            {activeDataset !== "alternative_sources" && (
-              <div className="flex items-center gap-2">
-                <span className="text-xs text-slate-400 flex items-center gap-1"><Calendar className="w-3.5 h-3.5" /> Year:</span>
-                <select
-                  value={filterYear}
-                  onChange={(e) => { setFilterYear(e.target.value); setCurrentPage(1); }}
-                  className="bg-[#0d1420]/80 border border-slate-800 rounded px-2.5 py-1.5 text-xs text-slate-200 focus:outline-none focus:border-emerald-500"
-                >
-                  <option value="All">All Years</option>
-                  {[2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024].map(yr => (
-                    <option key={yr} value={yr.toString()}>{yr}</option>
-                  ))}
-                </select>
-              </div>
-            )}
+            <div className="flex items-center gap-2">
+              <span className="text-xs text-slate-400 flex items-center gap-1"><Calendar className="w-3.5 h-3.5" /> Year:</span>
+              <select
+                value={filterYear}
+                onChange={(e) => { setFilterYear(e.target.value); setCurrentPage(1); }}
+                className="bg-[#0d1420]/80 border border-slate-800 rounded px-2.5 py-1.5 text-xs text-slate-200 focus:outline-none focus:border-emerald-500"
+              >
+                <option value="All">All Years</option>
+                {[2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024].map(yr => (
+                  <option key={yr} value={yr.toString()}>{yr}</option>
+                ))}
+              </select>
+            </div>
 
             {/* Page Size Selector */}
             <div className="flex items-center gap-2">
@@ -457,20 +387,6 @@ export default function DataExplorer() {
                             } else {
                               val = val.toFixed(2);
                             }
-                          }
-                          
-                          // Clickable access links
-                          if (col.key === "link" && typeof val === "string") {
-                            val = (
-                              <a 
-                                href={val} 
-                                target="_blank" 
-                                rel="noopener noreferrer" 
-                                className="text-emerald-400 hover:text-emerald-300 underline font-semibold transition-colors font-sans"
-                              >
-                                View Portal
-                              </a>
-                            );
                           }
                           
                           // Empty observations (e.g. 2024 BBS yield)

@@ -157,34 +157,22 @@ export default function MethodologyPage() {
                   To ensure graduate-grade scientific integrity, the model relies exclusively on real historical records. There are no placeholder values or synthetically interpolated records in the entire repository.
                 </p>
                 <div className="space-y-4">
-                  <div className="bg-[#0b0e14] border border-slate-900/60 p-4 rounded-lg">
-                    <span className="text-xs font-bold text-emerald-400 block font-mono">1. Ground-Truth Yields (BBS Census)</span>
+                  <div className="bg-[#0b0e14] border border-slate-900 p-4 rounded-lg">
+                    <span className="text-xs font-bold text-emerald-400 block font-mono">1. Agricultural Censuses (BBS)</span>
                     <p className="text-xs text-slate-400 mt-1 leading-relaxed">
-                      District-level cultivated land areas, crop production, and yields are digitized from the historical publications of the Bangladesh Bureau of Statistics (BBS) spanning 2015 to 2023. These represent our ground-truth labels.
+                      District-level cultivated land areas (hectares), production tonnage (metric tonnes), and yield rates (MT/ha) are digitized from historical publications of the Bangladesh Bureau of Statistics (BBS) spanning 2015 to 2023. These represent our ground-truth labels.
                     </p>
                   </div>
-                  <div className="bg-[#0b0e14] border border-slate-900/60 p-4 rounded-lg">
-                    <span className="text-xs font-bold text-cyan-400 block font-mono">2. Satellite Meteorology & Hydrology (NASA POWER)</span>
+                  <div className="bg-[#0b0e14] border border-slate-900 p-4 rounded-lg">
+                    <span className="text-xs font-bold text-cyan-400 block font-mono">2. Meteorological Telemetry (NASA POWER)</span>
                     <p className="text-xs text-slate-400 mt-1 leading-relaxed">
-                      Coordinates for all 64 district centroids were queried to extract monthly air temperatures, precipitation, relative humidity, solar radiation, surface soil wetness (`GWETTOP`), and root-zone soil wetness (`GWETROOT`).
+                      Coordinates for all 64 district centroids were mapped to query NASA's Prediction of Worldwide Energy Resources (POWER) API. Parameters fetched include surface air temperatures, daily precipitation corrected for regional topography, relative humidity, solar radiation, and surface soil moisture.
                     </p>
                   </div>
-                  <div className="bg-[#0b0e14] border border-slate-900/60 p-4 rounded-lg">
-                    <span className="text-xs font-bold text-amber-400 block font-mono">3. National Variety & extension Registries (BRRI & DAE)</span>
+                  <div className="bg-[#0b0e14] border border-slate-900 p-4 rounded-lg">
+                    <span className="text-xs font-bold text-amber-400 block font-mono">3. Global Reference Validation (UN FAOSTAT)</span>
                     <p className="text-xs text-slate-400 mt-1 leading-relaxed">
-                      Yield benchmarks for high-yielding varieties (HYV) and stress mapping logs are sourced from the Bangladesh Rice Research Institute (BRRI), while regional target guides and crop damage records are retrieved from the Department of Agricultural Extension (DAE).
-                    </p>
-                  </div>
-                  <div className="bg-[#0b0e14] border border-slate-900/60 p-4 rounded-lg">
-                    <span className="text-xs font-bold text-rose-400 block font-mono">4. Soil Suitability & Salinity Mapping (SRDI & BARC)</span>
-                    <p className="text-xs text-slate-400 mt-1 leading-relaxed">
-                      Soil chemical indexes (pH, NPK levels) and coastal salinity monitoring metrics are sourced from the Soil Resource Development Institute (SRDI) and aligned with the 30 Agro-Ecological Zones (AEZ) topographies from the Bangladesh Agricultural Research Council (BARC).
-                    </p>
-                  </div>
-                  <div className="bg-[#0b0e14] border border-slate-900/60 p-4 rounded-lg">
-                    <span className="text-xs font-bold text-purple-400 block font-mono">5. International Open Data Registries (FAOSTAT, IRRI Dataverse, HDX)</span>
-                    <p className="text-xs text-slate-400 mt-1 leading-relaxed">
-                      Annual chemical input indexes are pulled from UN FAOSTAT, while subnational NDVI vegetation grids and socioeconomic farm surveys are aggregated from the Humanitarian Data Exchange (HDX) and IRRI Dataverse repositories.
+                      Country-level annual statistical averages for paddy yield, production, and harvested areas are downloaded from the UN Food and Agriculture Organization (FAO) to serve as a macro-validation check for district aggregates.
                     </p>
                   </div>
                 </div>

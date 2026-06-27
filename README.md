@@ -118,7 +118,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to interact 
 
 ## 🔄 How to Push New Updates in the Future
 
-Once you make changes to the local files (e.g. updating the data pipeline, editing Next.js components, or running a new training loop), run the following commands to commit and push them to GitHub. This will automatically trigger a GitHub Actions build and deploy:
+Once you make changes to the local files (e.g. updating the data pipeline, editing Next.js components, or running a new training loop), run the following commands to commit and push them to GitHub. This will automatically trigger a Vercel rebuild:
 
 ```bash
 # 1. Stage all changes
@@ -131,17 +131,12 @@ git commit -m "feat: updated data pipeline for 2025 crops"
 git push
 ```
 
-GitHub Actions listens for pushes to the `main` branch and will rebuild and deploy the website to GitHub Pages automatically in under a minute!
+Vercel listens for pushes to the `main` branch and will redeploy the website automatically in under a minute!
 
 ---
 
 ## 📚 Data Source Citations
 
 1.  **BBS**: Agricultural crop yield census metrics digitized from the annual publications of the *Bangladesh Bureau of Statistics (Ministry of Planning)*.
-2.  **NASA POWER**: Spatial meteorological temperature, precipitation, humidity, solar radiation, surface soil wetness (`GWETTOP`), and root-zone soil wetness (`GWETROOT`) courtesy of NASA's *Prediction of Worldwide Energy Resources* project.
-3.  **FAOSTAT**: National validation crop metrics and chemical input indicators compiled by the *Food and Agriculture Organization (FAO) of the United Nations*.
-4.  **BRRI (Bangladesh Rice Research Institute)**: Local variety-specific rice yields, genetic yield gaps, and stress-tolerance mapping records.
-5.  **DAE (Department of Agricultural Extension)**: Weekly crop sowing schedules, regional target guides, and localized disaster crop-loss assessments.
-6.  **SRDI (Soil Resource Development Institute)**: Subnational soil chemistry indicators (NPK, pH profiles) and coastal soil salinity index mapping.
-7.  **BARC (Bangladesh Agricultural Research Council)**: Agro-Ecological Zones (AEZ) topographies and soil suitability indexes.
-8.  **IRRI Dataverse & HDX**: Socioeconomic farm-level household panels and subnational NDVI vegetation index datasets.
+2.  **NASA POWER**: Spatial meteorological solar, wind, temperature, humidity, and GLDAS surface soil wetness parameters courtesy of NASA's *Prediction of Worldwide Energy Resources* project.
+3.  **FAOSTAT**: National validation crop metrics compiled by the *Food and Agriculture Organization (FAO) of the United Nations*.
