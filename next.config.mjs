@@ -1,12 +1,9 @@
 /** @type {import('next').NextConfig} */
-const isGithubActions = process.env.GITHUB_ACTIONS === 'true';
-const basePath = isGithubActions ? '/CropPred' : '';
-
 const nextConfig = {
   output: 'export',
-  basePath: basePath,
+  basePath: '/CropPred',
   env: {
-    NEXT_PUBLIC_BASE_PATH: basePath,
+    NEXT_PUBLIC_BASE_PATH: '/CropPred',
   },
   allowedDevOrigins: ["192.168.10.96", "localhost:3000"],
 };
