@@ -10,160 +10,157 @@ os.makedirs("public/data", exist_ok=True)
 def project_future_records(features_df, model_pipeline, start_year=2024, end_year=2029):
     print(f"Projecting future climate features and predicting yields ({start_year}-{end_year})...")
     
-    # Load raw weather to get historical and 2024 measurements
+    # 1. Project 2024 using actual NASA measurements
     nasa_path = "data/raw/nasa_weather.csv"
     if not os.path.exists(nasa_path):
         raise FileNotFoundError("Raw NASA weather data not found.")
         
     nasa_df = pd.read_csv(nasa_path)
-    
-    # Extract actual 2024 records
     weather_2024 = nasa_df[nasa_df["year"] == 2024]
     
-    # Calculate historical climatology medians and standard deviations (2015-2024)
-    cols_to_calc = ["temp_c", "temp_max_c", "temp_min_c", "rain_mm_day", "rh_pct", "solar_mj_m2_day", "gwettop", "gwetroot"]
-    
-    climatology = nasa_df[nasa_df["year"] <= 2024].groupby(["district", "month"])[cols_to_calc].median().reset_index()
-    climatology_std = nasa_df[nasa_df["year"] <= 2024].groupby(["district", "month"])[cols_to_calc].std().reset_index()
-    
-    # Fill any NaNs in standard deviations with 0.0
-    climatology_std = climatology_std.fillna(0.0)
-    
-    # Build complete weather dataframe for 2024-2029
-    weather_future_list = []
-    
-    # Append actual 2024 weather
+    df_2024 = pd.DataFrame()
     if len(weather_2024) > 0:
-        weather_future_list.append(weather_2024[["district", "year", "month"] + cols_to_calc])
+        # Pivot 2024 weather
+        cols_to_calc = ["temp_c", "temp_max_c", "temp_min_c", "rain_mm_day", "rh_pct", "solar_mj_m2_day", "gwettop", "gwetroot"]
+        weather_pivot = weather_2024.pivot(
+            index=["district"],
+            columns="month",
+            values=cols_to_calc
+        )
+        weather_pivot.columns = [f"{var}_{month}" for var, month in weather_pivot.columns]
+        weather_pivot = weather_pivot.reset_index()
         
-    # Append climatology for 2025-2029 with stochastic weather noise
-    # Fix seed for reproducibility of the forecasts
-    np.random.seed(42)
-    for yr in range(2025, end_year + 1):
-        df_yr = climatology.copy()
-        df_yr["year"] = yr
+        from src.utils.coordinates import DISTRICT_COORDINATES
+        records_2024 = []
         
-        # Inject standard deviation noise
-        for col in cols_to_calc:
-            # Match standard deviation directly as rows are aligned identically
-            stds = climatology_std[col].values
-            # Generate gaussian noise (scaled to 45% of standard deviation for natural balance)
-            noise = np.random.normal(0, stds * 0.45)
-            df_yr[col] = df_yr[col] + noise
+        # Retrieve 2023 area values as baseline
+        area_lookup_2023 = features_df[features_df["year"] == 2023].set_index(["district", "season"])["area_ha"].to_dict()
+        
+        for _, w_row in weather_pivot.iterrows():
+            district = w_row["district"]
+            division = DISTRICT_COORDINATES.get(district, {}).get("division", "Unknown")
             
-            # Bound logically (e.g. rain and soil wetness cannot be negative)
-            if col in ["rain_mm_day", "gwettop", "gwetroot", "rh_pct"]:
-                df_yr[col] = df_yr[col].clip(lower=0.0)
-            if col in ["gwettop", "gwetroot"]:
-                df_yr[col] = df_yr[col].clip(upper=1.0)
-            if col in ["rh_pct"]:
-                df_yr[col] = df_yr[col].clip(upper=100.0)
+            for season in ["Aus", "Aman", "Boro"]:
+                if season == "Aus":
+                    months = [4, 5, 6, 7, 8]
+                elif season == "Aman":
+                    months = [7, 8, 9, 10, 11, 12]
+                else: # Boro
+                    months = [12, 1, 2, 3, 4, 5]
+                    
+                temps = [w_row[f"temp_c_{m}"] for m in months]
+                rains = [w_row[f"rain_mm_day_{m}"] for m in months]
+                rhs = [w_row[f"rh_pct_{m}"] for m in months]
+                solars = [w_row[f"solar_mj_m2_day_{m}"] for m in months]
                 
-        weather_future_list.append(df_yr)
+                max_temps = [w_row[f"temp_max_c_{m}"] for m in months]
+                min_temps = [w_row[f"temp_min_c_{m}"] for m in months]
+                soil_wets = [w_row[f"gwettop_{m}"] for m in months]
+                soil_roots = [w_row[f"gwetroot_{m}"] for m in months]
+                
+                s_temp = np.mean(temps)
+                s_rain = np.sum(rains) * 30.0
+                s_rh = np.mean(rhs)
+                s_solar = np.mean(solars)
+                
+                gdd_sum = 0.0
+                for t_max, t_min in zip(max_temps, min_temps):
+                    t_avg = (t_max + t_min) / 2.0
+                    gdd_sum += max(0.0, t_avg - 10.0) * 30.4
+                
+                s_dtr = np.mean([t_max - t_min for t_max, t_min in zip(max_temps, min_temps)])
+                s_soil = np.mean(soil_wets)
+                s_soil_root = np.mean(soil_roots)
+                s_swdi = s_rain - (1.15 * s_temp * s_solar)
+                
+                flood = max(0.0, s_rain - 2200.0) / 100.0 if season in ["Aus", "Aman"] else 0.0
+                drought = max(0.0, 120.0 - s_rain) / 10.0 if season == "Boro" else 0.0
+                
+                area = area_lookup_2023.get((district, season), features_df[features_df["season"] == season]["area_ha"].median())
+                
+                records_2024.append({
+                    "district": district,
+                    "division": division,
+                    "year": 2024,
+                    "season": season,
+                    "area_ha": float(area),
+                    "production_mt": 0.0,
+                    "yield_mtha": 0.0,
+                    "season_temp_c": float(s_temp),
+                    "season_rain_mm": float(s_rain),
+                    "season_rh_pct": float(s_rh),
+                    "season_solar_mj_m2": float(s_solar),
+                    "season_gdd": float(gdd_sum),
+                    "season_dtr": float(s_dtr),
+                    "season_soil_wetness": float(s_soil),
+                    "season_soil_wetness_root": float(s_soil_root),
+                    "season_swdi": float(s_swdi),
+                    "flood_index": float(flood),
+                    "drought_index": float(drought)
+                })
+        df_2024 = pd.DataFrame(records_2024)
         
-    if len(weather_future_list) == 0:
-        return pd.DataFrame()
-        
-    weather_future = pd.concat(weather_future_list, ignore_index=True)
-    
-    # Pivot weather by index [district, year]
-    weather_pivot = weather_future.pivot(
-        index=["district", "year"],
-        columns="month",
-        values=cols_to_calc
-    )
-    weather_pivot.columns = [f"{var}_{month}" for var, month in weather_pivot.columns]
-    weather_pivot = weather_pivot.reset_index()
-    
+    # 2. Project 2025-2029 using Climatological Medians + Stochastic Seasonal Noise
     from src.utils.coordinates import DISTRICT_COORDINATES
-    records = []
+    numeric_cols = [
+        "season_temp_c", "season_rain_mm", "season_rh_pct", "season_solar_mj_m2",
+        "season_gdd", "season_dtr", "season_soil_wetness", "season_soil_wetness_root", "season_swdi",
+        "flood_index", "drought_index"
+    ]
     
-    # Retrieve 2023 area values as baseline
-    area_lookup_2023 = features_df[features_df["year"] == 2023].set_index(["district", "season"])["area_ha"].to_dict()
+    # Calculate historical seasonal medians and standard deviations per district-season (2015-2023)
+    seasonal_medians = features_df.groupby(["district", "season"])[numeric_cols].median().reset_index()
+    seasonal_stds = features_df.groupby(["district", "season"])[numeric_cols].std().reset_index().fillna(0.0)
     
-    # Calculate rolling 3-year median area per district-season as projection area
+    # Rolling area ha
     area_rolling_median = features_df[features_df["year"] >= 2021].groupby(["district", "season"])["area_ha"].median().to_dict()
     
-    for _, w_row in weather_pivot.iterrows():
-        district = w_row["district"]
-        year = int(w_row["year"])
-        division = DISTRICT_COORDINATES.get(district, {}).get("division", "Unknown")
+    future_list = []
+    np.random.seed(42)
+    for yr in range(2025, end_year + 1):
+        df_yr = seasonal_medians.copy()
+        df_yr["year"] = yr
+        df_yr["division"] = df_yr["district"].map(lambda d: DISTRICT_COORDINATES.get(d, {}).get("division", "Unknown"))
+        df_yr["area_ha"] = df_yr.apply(lambda r: area_rolling_median.get((r["district"], r["season"]), 10000.0), axis=1)
         
-        for season in ["Aus", "Aman", "Boro"]:
-            if season == "Aus":
-                months = [4, 5, 6, 7, 8]
-            elif season == "Aman":
-                months = [7, 8, 9, 10, 11, 12]
-            else: # Boro
-                months = [12, 1, 2, 3, 4, 5]
+        # Add seasonal noise
+        for col in numeric_cols:
+            stds = seasonal_stds[col].values
+            # 85% of standard deviation to ensure natural year-to-year swings
+            noise = np.random.normal(0, stds * 0.85)
+            df_yr[col] = df_yr[col] + noise
+            
+            # Clamp values
+            if col in ["season_rain_mm", "season_gdd", "season_dtr", "season_soil_wetness", "season_soil_wetness_root", "flood_index", "drought_index"]:
+                df_yr[col] = df_yr[col].clip(lower=0.0)
+            if col in ["season_soil_wetness", "season_soil_wetness_root"]:
+                df_yr[col] = df_yr[col].clip(upper=1.0)
+            if col in ["season_rh_pct"]:
+                df_yr[col] = df_yr[col].clip(lower=20.0, upper=100.0)
                 
-            # Extract monthly variables
-            temps = [w_row[f"temp_c_{m}"] for m in months]
-            rains = [w_row[f"rain_mm_day_{m}"] for m in months]
-            rhs = [w_row[f"rh_pct_{m}"] for m in months]
-            solars = [w_row[f"solar_mj_m2_day_{m}"] for m in months]
-            
-            # New features
-            max_temps = [w_row[f"temp_max_c_{m}"] for m in months]
-            min_temps = [w_row[f"temp_min_c_{m}"] for m in months]
-            soil_wets = [w_row[f"gwettop_{m}"] for m in months]
-            soil_roots = [w_row[f"gwetroot_{m}"] for m in months]
-            
-            # Summarize
-            s_temp = np.mean(temps)
-            s_rain = np.sum(rains) * 30.0
-            s_rh = np.mean(rhs)
-            s_solar = np.mean(solars)
-            
-            # GDD
-            gdd_sum = 0.0
-            for t_max, t_min in zip(max_temps, min_temps):
-                t_avg = (t_max + t_min) / 2.0
-                gdd_sum += max(0.0, t_avg - 10.0) * 30.4
-            
-            # DTR
-            s_dtr = np.mean([t_max - t_min for t_max, t_min in zip(max_temps, min_temps)])
-            
-            # Soil wetness
-            s_soil = np.mean(soil_wets)
-            s_soil_root = np.mean(soil_roots)
-            
-            # SWDI
-            s_swdi = s_rain - (1.15 * s_temp * s_solar)
-            
-            # Flood and drought index
-            flood = max(0.0, s_rain - 2200.0) / 100.0 if season in ["Aus", "Aman"] else 0.0
-            drought = max(0.0, 120.0 - s_rain) / 10.0 if season == "Boro" else 0.0
-            
-            # Fetch area proxy (rolling 3-year median, fallback to 2023 or global median)
-            area = area_rolling_median.get((district, season), area_lookup_2023.get((district, season), features_df[features_df["season"] == season]["area_ha"].median()))
-            
-            records.append({
-                "district": district,
-                "division": division,
-                "year": year,
-                "season": season,
-                "area_ha": float(area),
-                "production_mt": 0.0,      # Unobserved
-                "yield_mtha": 0.0,          # Unobserved
-                "season_temp_c": float(s_temp),
-                "season_rain_mm": float(s_rain),
-                "season_rh_pct": float(s_rh),
-                "season_solar_mj_m2": float(s_solar),
-                "season_gdd": float(gdd_sum),
-                "season_dtr": float(s_dtr),
-                "season_soil_wetness": float(s_soil),
-                "season_soil_wetness_root": float(s_soil_root),
-                "season_swdi": float(s_swdi),
-                "flood_index": float(flood),
-                "drought_index": float(drought)
-            })
-            
-    df_future = pd.DataFrame(records)
+        # Recalculate flood and drought indexes for physical consistency
+        df_yr["flood_index"] = df_yr.apply(lambda r: max(0.0, r["season_rain_mm"] - 2200.0) / 100.0 if r["season"] in ["Aus", "Aman"] else 0.0, axis=1)
+        df_yr["drought_index"] = df_yr.apply(lambda r: max(0.0, 120.0 - r["season_rain_mm"]) / 10.0 if r["season"] == "Boro" else 0.0, axis=1)
+        
+        df_yr["production_mt"] = 0.0
+        df_yr["yield_mtha"] = 0.0
+        
+        future_list.append(df_yr)
+        
+    df_2025_2029 = pd.concat(future_list, ignore_index=True)
     
-    # Run predictions for 2024-2029
+    # Combine 2024 and 2025-2029
+    future_dfs = []
+    if len(df_2024) > 0:
+        future_dfs.append(df_2024)
+    if len(df_2025_2029) > 0:
+        future_dfs.append(df_2025_2029)
+        
+    df_future = pd.concat(future_dfs, ignore_index=True)
+    
+    # Predict using district
     features = [
-        "division", "season", "area_ha", 
+        "division", "district", "season", "area_ha", 
         "season_temp_c", "season_rain_mm", "season_rh_pct", "season_solar_mj_m2",
         "season_gdd", "season_dtr", "season_soil_wetness", "season_soil_wetness_root", "season_swdi",
         "flood_index", "drought_index"
@@ -191,7 +188,7 @@ def main():
     
     # 3. Generate predictions for historical years (2015-2023)
     features_list = [
-        "division", "season", "area_ha", 
+        "division", "district", "season", "area_ha", 
         "season_temp_c", "season_rain_mm", "season_rh_pct", "season_solar_mj_m2",
         "season_gdd", "season_dtr", "season_soil_wetness", "season_soil_wetness_root", "season_swdi",
         "flood_index", "drought_index"
@@ -327,7 +324,7 @@ def main():
     preprocessor = model.named_steps["preprocessor"]
     
     cat_encoder = preprocessor.named_transformers_["cat"]
-    encoded_cat_features = list(cat_encoder.get_feature_names_out(["division", "season"]))
+    encoded_cat_features = list(cat_encoder.get_feature_names_out(["division", "district", "season"]))
     all_features = [
         "area_ha", "season_temp_c", "season_rain_mm", "season_rh_pct", "season_solar_mj_m2",
         "season_gdd", "season_dtr", "season_soil_wetness", "season_soil_wetness_root", "season_swdi",
