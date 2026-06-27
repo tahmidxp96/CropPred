@@ -7,26 +7,46 @@ import joblib
 # Ensure output directory exists
 os.makedirs("public/data", exist_ok=True)
 
-def project_2024_records(features_df, model_pipeline):
-    print("Projecting 2024 climate features and predicting yields...")
+def project_future_records(features_df, model_pipeline, start_year=2024, end_year=2029):
+    print(f"Projecting future climate features and predicting yields ({start_year}-{end_year})...")
     
-    # Load raw weather to get 2024 measurements
+    # Load raw weather to get historical and 2024 measurements
     nasa_path = "data/raw/nasa_weather.csv"
     if not os.path.exists(nasa_path):
         raise FileNotFoundError("Raw NASA weather data not found.")
         
     nasa_df = pd.read_csv(nasa_path)
+    
+    # Extract actual 2024 records
     weather_2024 = nasa_df[nasa_df["year"] == 2024]
     
-    if len(weather_2024) == 0:
-        print("Warning: No 2024 weather data found in raw files. Skipping 2024 forecasting.")
+    # Calculate historical climatology medians (2015-2024)
+    cols_to_median = ["temp_c", "temp_max_c", "temp_min_c", "rain_mm_day", "rh_pct", "solar_mj_m2_day", "gwettop", "gwetroot"]
+    climatology = nasa_df[nasa_df["year"] <= 2024].groupby(["district", "month"])[cols_to_median].median().reset_index()
+    
+    # Build complete weather dataframe for 2024-2029
+    weather_future_list = []
+    
+    # Append actual 2024 weather
+    if len(weather_2024) > 0:
+        weather_future_list.append(weather_2024[["district", "year", "month"] + cols_to_median])
+        
+    # Append climatology for 2025-2029
+    for yr in range(2025, end_year + 1):
+        df_yr = climatology.copy()
+        df_yr["year"] = yr
+        weather_future_list.append(df_yr)
+        
+    if len(weather_future_list) == 0:
         return pd.DataFrame()
         
-    # Pivot 2024 weather
-    weather_pivot = weather_2024.pivot(
-        index=["district"],
+    weather_future = pd.concat(weather_future_list, ignore_index=True)
+    
+    # Pivot weather by index [district, year]
+    weather_pivot = weather_future.pivot(
+        index=["district", "year"],
         columns="month",
-        values=["temp_c", "temp_max_c", "temp_min_c", "rain_mm_day", "rh_pct", "solar_mj_m2_day", "gwettop", "gwetroot"]
+        values=cols_to_median
     )
     weather_pivot.columns = [f"{var}_{month}" for var, month in weather_pivot.columns]
     weather_pivot = weather_pivot.reset_index()
@@ -34,11 +54,15 @@ def project_2024_records(features_df, model_pipeline):
     from src.utils.coordinates import DISTRICT_COORDINATES
     records = []
     
-    # Retrieve 2023 area values as baseline proxy for 2024
-    area_lookup = features_df[features_df["year"] == 2023].set_index(["district", "season"])["area_ha"].to_dict()
+    # Retrieve 2023 area values as baseline
+    area_lookup_2023 = features_df[features_df["year"] == 2023].set_index(["district", "season"])["area_ha"].to_dict()
+    
+    # Calculate rolling 3-year median area per district-season as projection area
+    area_rolling_median = features_df[features_df["year"] >= 2021].groupby(["district", "season"])["area_ha"].median().to_dict()
     
     for _, w_row in weather_pivot.iterrows():
         district = w_row["district"]
+        year = int(w_row["year"])
         division = DISTRICT_COORDINATES.get(district, {}).get("division", "Unknown")
         
         for season in ["Aus", "Aman", "Boro"]:
@@ -87,13 +111,13 @@ def project_2024_records(features_df, model_pipeline):
             flood = max(0.0, s_rain - 2200.0) / 100.0 if season in ["Aus", "Aman"] else 0.0
             drought = max(0.0, 120.0 - s_rain) / 10.0 if season == "Boro" else 0.0
             
-            # Fetch area proxy (fallback to historical median if 2023 is missing)
-            area = area_lookup.get((district, season), features_df[features_df["season"] == season]["area_ha"].median())
+            # Fetch area proxy (rolling 3-year median, fallback to 2023 or global median)
+            area = area_rolling_median.get((district, season), area_lookup_2023.get((district, season), features_df[features_df["season"] == season]["area_ha"].median()))
             
             records.append({
                 "district": district,
                 "division": division,
-                "year": 2024,
+                "year": year,
                 "season": season,
                 "area_ha": float(area),
                 "production_mt": 0.0,      # Unobserved
@@ -111,20 +135,20 @@ def project_2024_records(features_df, model_pipeline):
                 "drought_index": float(drought)
             })
             
-    df_2024 = pd.DataFrame(records)
+    df_future = pd.DataFrame(records)
     
-    # Run predictions for 2024
+    # Run predictions for 2024-2029
     features = [
         "division", "season", "area_ha", 
         "season_temp_c", "season_rain_mm", "season_rh_pct", "season_solar_mj_m2",
         "season_gdd", "season_dtr", "season_soil_wetness", "season_soil_wetness_root", "season_swdi",
         "flood_index", "drought_index"
     ]
-    df_2024["pred_yield_mtha"] = model_pipeline.predict(df_2024[features])
-    df_2024["pred_yield_mtha"] = df_2024["pred_yield_mtha"].round(2)
-    df_2024["production_mt"] = (df_2024["area_ha"] * df_2024["pred_yield_mtha"]).round(2)
+    df_future["pred_yield_mtha"] = model_pipeline.predict(df_future[features])
+    df_future["pred_yield_mtha"] = df_future["pred_yield_mtha"].round(2)
+    df_future["production_mt"] = (df_future["area_ha"] * df_future["pred_yield_mtha"]).round(2)
     
-    return df_2024
+    return df_future
 
 def main():
     print("Exporting static frontend JSON data artifacts...")
@@ -151,16 +175,56 @@ def main():
     features_df["pred_yield_mtha"] = model.predict(features_df[features_list])
     features_df["pred_yield_mtha"] = features_df["pred_yield_mtha"].round(2)
     
-    # 4. Project 2024 predictions
-    df_2024 = project_2024_records(features_df, model)
+    # 4. Project 2024-2029 predictions
+    df_future = project_future_records(features_df, model)
     
     # Combine historical and projection records
-    if len(df_2024) > 0:
-        combined_df = pd.concat([features_df, df_2024], ignore_index=True)
+    if len(df_future) > 0:
+        combined_df = pd.concat([features_df, df_future], ignore_index=True)
     else:
         combined_df = features_df.copy()
         
-    # Sort for consistent dashboard display
+    # Sort for consistent error correction grouping
+    combined_df = combined_df.sort_values(by=["district", "season", "year"]).reset_index(drop=True)
+    
+    # 4b. Apply Recursive Kalman-style Feedback Loop (Error Correction)
+    corrected_yields = []
+    
+    # Group by district and season to trace errors chronologically
+    for (district, season), group in combined_df.groupby(["district", "season"]):
+        last_observed_error = 0.0
+        
+        # Iterate through group
+        for idx, row in group.iterrows():
+            year = int(row["year"])
+            pred = float(row["pred_yield_mtha"])
+            actual = float(row["yield_mtha"])
+            
+            if year <= 2023:
+                # Historical years: We observe the ground truth actual yield from BBS
+                # Corrected prediction:
+                corrected_pred = pred + 0.35 * last_observed_error
+                
+                # Record the new error from this corrected prediction
+                # Clamp error at [-0.6, 0.6] to prevent extreme weather anomalies from skewing
+                last_observed_error = actual - corrected_pred
+                last_observed_error = np.clip(last_observed_error, -0.6, 0.6)
+            else:
+                # Forecast years (2024-2029): BBS actual yield is unobserved
+                # Corrected prediction carries forward the last observed historical error:
+                corrected_pred = pred + 0.35 * last_observed_error
+                
+            corrected_yields.append({
+                "index": idx,
+                "corrected_pred_yield": np.round(max(0.1, corrected_pred), 2)
+            })
+            
+    corrected_df = pd.DataFrame(corrected_yields).set_index("index")
+    combined_df["pred_yield_mtha"] = combined_df.index.map(corrected_df["corrected_pred_yield"])
+    # Recalculate production based on corrected yield
+    combined_df["production_mt"] = (combined_df["area_ha"] * combined_df["pred_yield_mtha"]).round(2)
+    
+    # Re-sort for consistent dashboard display
     combined_df = combined_df.sort_values(by=["district", "season", "year"])
     
     # 5. Export District Geolocation metadata

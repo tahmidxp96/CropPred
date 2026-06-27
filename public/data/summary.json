@@ -10,8 +10,8 @@
     2023
   ],
   "metrics": {
-    "overall_rmse": 0.091,
-    "overall_mae": 0.068
+    "overall_rmse": 0.096,
+    "overall_mae": 0.072
   },
   "feature_importances": {
     "area_ha": 0.06063824360332495,

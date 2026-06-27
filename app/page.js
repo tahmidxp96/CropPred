@@ -309,7 +309,7 @@ export default function DigitalTwinDashboard() {
                     <Calendar className="w-3.5 h-3.5 text-amber-500" /> Operational Year
                   </label>
                   <div className="grid grid-cols-5 gap-1.5">
-                    {[2015, 2017, 2019, 2021, 2023, 2024].map(yr => (
+                    {[2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029].map(yr => (
                       <button
                         key={yr}
                         onClick={() => setSelectedYear(yr)}
@@ -325,7 +325,12 @@ export default function DigitalTwinDashboard() {
                   </div>
                   {selectedYear === 2024 && (
                     <p className="text-[10px] text-amber-400 mt-2 bg-amber-500/5 border border-amber-500/10 p-2 rounded">
-                      ⚠️ Year 2024 operates in **Forecasting Mode**. The system utilizes NASA climate measurements with predicted crop yields before BBS release.
+                      ⚠️ Year 2024 operates in **Estimation Mode**. The system utilizes actual 2024 satellite weather datasets with recursive feedback corrections.
+                    </p>
+                  )}
+                  {selectedYear >= 2025 && (
+                    <p className="text-[10px] text-cyan-400 mt-2 bg-cyan-500/5 border border-cyan-500/10 p-2 rounded">
+                      🔮 Years 2025–2029 operate in **Climatological Forecast Mode**. Predictions run on 10-year historical climate medians with recursive feedback corrections.
                     </p>
                   )}
                 </div>
@@ -483,7 +488,7 @@ export default function DigitalTwinDashboard() {
                     <div>
                       <span className="text-[10px] uppercase tracking-wider text-slate-400 font-semibold block">BBS Observed Yield</span>
                       <span className="text-3xl font-extrabold text-white mt-1 block">
-                        {selectedRecord.year === 2024 ? (
+                        {selectedRecord.year >= 2024 ? (
                           <span className="text-amber-500 text-lg font-semibold italic">Unobserved</span>
                         ) : (
                           <>
@@ -614,7 +619,7 @@ export default function DigitalTwinDashboard() {
                       <Line 
                         name="BBS Observed" 
                         type="monotone" 
-                        dataKey={(r) => r.year === 2024 ? null : r.yield_mtha} 
+                        dataKey={(r) => r.year >= 2024 ? null : r.yield_mtha} 
                         stroke="#f1f5f9" 
                         strokeWidth={2.5}
                         dot={{ r: 4 }} 
@@ -677,7 +682,7 @@ export default function DigitalTwinDashboard() {
                   <strong className="text-emerald-400">Real Environmental Telemetry:</strong> Physical inputs (temperature, rain, humidity, solar radiation) are pulled directly from NASA satellite sensors.
                 </li>
                 <li>
-                  <strong className="text-emerald-400">Forward Simulation (2024):</strong> We query real 2024 satellite weather datasets to simulate crop outputs before government statistical offices (BBS) publish their final censuses.
+                  <strong className="text-emerald-400">Forward Simulation & Forecasts (2024-2029):</strong> We utilize 2024 satellite telemetry and 10-year climatological medians with recursive Kalman-style feedback corrections to predict near-term future crop yields.
                 </li>
               </ul>
             </div>
