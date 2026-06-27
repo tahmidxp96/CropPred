@@ -1,6 +1,6 @@
 {
-  "model_type": "XGBoost Regressor Pipeline",
-  "n_estimators": 120,
+  "model_type": "Ensemble Voting Regressor Pipeline",
+  "n_estimators": 3,
   "train_years": [
     2015,
     2021
@@ -10,34 +10,34 @@
     2023
   ],
   "metrics": {
-    "overall_rmse": 0.09,
-    "overall_mae": 0.067
+    "overall_rmse": 0.091,
+    "overall_mae": 0.068
   },
   "feature_importances": {
-    "area_ha": 0.003964829724282026,
-    "season_temp_c": 0.000470292434329167,
-    "season_rain_mm": 0.03119209222495556,
-    "season_rh_pct": 0.002026783535256982,
-    "season_solar_mj_m2": 0.0002841587411239743,
-    "season_gdd": 0.00016131105076055974,
-    "season_dtr": 0.00015577477461192757,
-    "season_soil_wetness": 0.0012342387344688177,
-    "season_soil_wetness_root": 0.00016423562192358077,
-    "season_swdi": 0.021202998235821724,
-    "flood_index": 0.000245127099333331,
+    "area_ha": 0.06063824360332495,
+    "season_temp_c": 0.002122508333174766,
+    "season_rain_mm": 0.3930193019736274,
+    "season_rh_pct": 0.05298999524492507,
+    "season_solar_mj_m2": 0.0017601586876402498,
+    "season_gdd": 0.0004327254347961964,
+    "season_dtr": 0.00046336963959687014,
+    "season_soil_wetness": 0.008765000064794914,
+    "season_soil_wetness_root": 0.0005401637437333624,
+    "season_swdi": 0.10910312358292655,
+    "flood_index": 0.0002515429860660689,
     "drought_index": 0.0,
-    "division_Barishal": 0.00011938867100980133,
-    "division_Chattogram": 0.0010086519178003073,
-    "division_Dhaka": 0.0003297204675618559,
-    "division_Khulna": 0.00016871436673682183,
-    "division_Mymensingh": 0.0004328315844759345,
-    "division_Rajshahi": 0.0001461375068174675,
-    "division_Rangpur": 0.00022530015849042684,
-    "division_Sylhet": 0.00016956830222625285,
-    "division_Unknown": 9.82605415629223e-05,
-    "season_Aman": 0.0698975995182991,
-    "season_Aus": 0.03035031072795391,
-    "season_Boro": 0.8359516859054565
+    "division_Barishal": 6.158982670991729e-05,
+    "division_Chattogram": 0.000847386062622916,
+    "division_Dhaka": 0.0003806586156953656,
+    "division_Khulna": 6.774598631832406e-05,
+    "division_Mymensingh": 0.0001600721845383249,
+    "division_Rajshahi": 8.098516568867465e-05,
+    "division_Rangpur": 0.0001921908889565575,
+    "division_Sylhet": 8.891593965904653e-05,
+    "division_Unknown": 3.399439646388538e-05,
+    "season_Aman": 0.023332442076045106,
+    "season_Aus": 0.010402404244911073,
+    "season_Boro": 0.3342654852662042
   },
   "run_date": "2026-06-27"
 }

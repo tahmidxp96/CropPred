@@ -22,10 +22,10 @@ export default function MethodologyPage() {
 
   // Chronological CV Folds (Evaluated during pipeline execution)
   const cvFoldsData = [
-    { year: "Fold 1 (2018)", r2: 98.21, rmse: 0.1220, mae: 0.0888 },
-    { year: "Fold 2 (2019)", r2: 97.62, rmse: 0.1432, mae: 0.1018 },
-    { year: "Fold 3 (2020)", r2: 98.16, rmse: 0.1202, mae: 0.0882 },
-    { year: "Fold 4 (2021)", r2: 97.38, rmse: 0.1514, mae: 0.1111 },
+    { year: "Fold 1 (2018)", r2: 98.29, rmse: 0.1193, mae: 0.0884 },
+    { year: "Fold 2 (2019)", r2: 97.29, rmse: 0.1529, mae: 0.1082 },
+    { year: "Fold 3 (2020)", r2: 98.32, rmse: 0.1147, mae: 0.0848 },
+    { year: "Fold 4 (2021)", r2: 97.45, rmse: 0.1497, mae: 0.1098 },
   ];
 
   // XGBoost Training Loss Convergence Curve (RMSE)
@@ -37,23 +37,22 @@ export default function MethodologyPage() {
     { iteration: 40, train_rmse: 0.23, test_rmse: 0.33 },
     { iteration: 60, train_rmse: 0.12, test_rmse: 0.21 },
     { iteration: 80, train_rmse: 0.08, test_rmse: 0.17 },
-    { iteration: 100, train_rmse: 0.07, test_rmse: 0.156 },
-    { iteration: 120, train_rmse: 0.0673, test_rmse: 0.1447 },
+    { iteration: 100, train_rmse: 0.0720, test_rmse: 0.1480 },
+    { iteration: 120, train_rmse: 0.0705, test_rmse: 0.1406 },
   ];
 
   // Normalized meteorological & agronomic feature importances
   const envFeatureImportance = [
-    { name: "Total Rainfall", val: 51.0 },
-    { name: "Water Deficit (SWDI)", val: 34.7 },
-    { name: "Land Area", val: 6.5 },
-    { name: "Avg Humidity", val: 3.3 },
-    { name: "Soil Wetness (Surf)", val: 2.0 },
-    { name: "Avg Temp", val: 0.8 },
-    { name: "Solar Rad", val: 0.5 },
-    { name: "Flood Index", val: 0.4 },
-    { name: "Soil Wetness (Root)", val: 0.3 },
-    { name: "GDD Heat", val: 0.3 },
-    { name: "DTR Diurnal", val: 0.3 }
+    { name: "Total Rainfall", val: 62.4 },
+    { name: "Water Deficit (SWDI)", val: 17.3 },
+    { name: "Land Area", val: 9.6 },
+    { name: "Avg Humidity", val: 8.4 },
+    { name: "Soil Wetness (Surf)", val: 1.4 },
+    { name: "Avg Temp", val: 0.3 },
+    { name: "Solar Rad", val: 0.3 },
+    { name: "Soil Wetness (Root)", val: 0.1 },
+    { name: "DTR Diurnal", val: 0.1 },
+    { name: "GDD Heat", val: 0.1 }
   ];
 
   if (!isMounted) return null;
@@ -105,8 +104,8 @@ export default function MethodologyPage() {
             </div>
             <div>
               <span className="text-[10px] text-slate-500 block uppercase tracking-wider font-mono">Target Performance</span>
-              <span className="text-lg font-bold text-white font-mono block">97.64% Test R²</span>
-              <span className="text-xs text-slate-400">RMSE 0.145 MT/ha</span>
+              <span className="text-lg font-bold text-white font-mono block">97.77% Test R²</span>
+              <span className="text-xs text-slate-400">RMSE 0.141 MT/ha</span>
             </div>
           </div>
         </section>
@@ -392,7 +391,7 @@ export default function MethodologyPage() {
                 <div className="bg-[#0b0e14] p-4 rounded border border-slate-900 flex justify-between items-center">
                   <div>
                     <span className="text-[10px] text-slate-500 block uppercase font-mono">Test R² Score</span>
-                    <span className="text-xl font-bold text-emerald-400 font-mono mt-0.5 block">97.64%</span>
+                    <span className="text-xl font-bold text-emerald-400 font-mono mt-0.5 block">97.77%</span>
                   </div>
                   <CheckCircle className="text-emerald-500 w-8 h-8 opacity-85" />
                 </div>
@@ -402,12 +401,12 @@ export default function MethodologyPage() {
                   <div className="grid grid-cols-2 gap-4 mt-2 text-center">
                     <div className="border-r border-slate-900 pr-2">
                       <span className="text-xs text-slate-400 block">RMSE</span>
-                      <span className="text-white font-bold font-mono text-sm block mt-0.5">0.1447</span>
+                      <span className="text-white font-bold font-mono text-sm block mt-0.5">0.1406</span>
                       <span className="text-[9px] text-slate-500 block">MT/ha</span>
                     </div>
                     <div>
                       <span className="text-xs text-slate-400 block">MAE</span>
-                      <span className="text-white font-bold font-mono text-sm block mt-0.5">0.1124</span>
+                      <span className="text-white font-bold font-mono text-sm block mt-0.5">0.1103</span>
                       <span className="text-[9px] text-slate-500 block">MT/ha</span>
                     </div>
                   </div>
@@ -415,7 +414,7 @@ export default function MethodologyPage() {
 
                 <div className="text-xs text-slate-400 leading-relaxed">
                   <span className="font-semibold text-slate-300 block mb-1">Interpretation:</span>
-                  An RMSE of 0.14 MT/ha on test years (2022-2023) demonstrates that predictions deviate by less than 145 kg per hectare from actual yields, demonstrating robust precision across all regions.
+                  An RMSE of 0.14 MT/ha on test years (2022-2023) demonstrates that predictions deviate by less than 141 kg per hectare from actual yields, demonstrating robust precision across all regions.
                 </div>
               </div>
             </div>

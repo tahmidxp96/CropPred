@@ -245,7 +245,12 @@ def main():
         "season_gdd", "season_dtr", "season_soil_wetness", "season_soil_wetness_root", "season_swdi",
         "flood_index", "drought_index"
     ] + encoded_cat_features
-    importances = regressor.feature_importances_
+    # Average the feature importances of the fitted sub-estimators
+    importances_list = []
+    for est in regressor.estimators_:
+        if hasattr(est, "feature_importances_"):
+            importances_list.append(est.feature_importances_)
+    importances = np.mean(importances_list, axis=0)
     
     importance_dict = {feat: float(imp) for feat, imp in zip(all_features, importances)}
     
@@ -255,8 +260,8 @@ def main():
     global_mae = float(np.mean(np.abs(hist_only["yield_mtha"] - hist_only["pred_yield_mtha"])))
     
     summary = {
-        "model_type": "XGBoost Regressor Pipeline",
-        "n_estimators": int(regressor.get_params()["n_estimators"]),
+        "model_type": "Ensemble Voting Regressor Pipeline",
+        "n_estimators": len(regressor.estimators),
         "train_years": [2015, 2021],
         "test_years": [2022, 2023],
         "metrics": {

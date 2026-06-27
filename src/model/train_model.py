@@ -37,17 +37,42 @@ def build_model_pipeline():
         ]
     )
     
-    # Model pipeline using XGBRegressor
+    # Model pipeline using VotingRegressor
+    from sklearn.ensemble import VotingRegressor, RandomForestRegressor, GradientBoostingRegressor
+    
+    xgb = XGBRegressor(
+        n_estimators=120, 
+        learning_rate=0.07, 
+        max_depth=5, 
+        subsample=0.8,
+        colsample_bytree=0.8,
+        random_state=42, 
+        n_jobs=-1
+    )
+    
+    rf = RandomForestRegressor(
+        n_estimators=150,
+        max_depth=10,
+        random_state=42,
+        n_jobs=-1
+    )
+    
+    gbr = GradientBoostingRegressor(
+        n_estimators=100,
+        learning_rate=0.08,
+        max_depth=4,
+        random_state=42
+    )
+    
     pipeline = Pipeline(
         steps=[
             ("preprocessor", preprocessor),
-            ("regressor", XGBRegressor(
-                n_estimators=120, 
-                learning_rate=0.07, 
-                max_depth=5, 
-                subsample=0.8,
-                colsample_bytree=0.8,
-                random_state=42, 
+            ("regressor", VotingRegressor(
+                estimators=[
+                    ('xgb', xgb),
+                    ('rf', rf),
+                    ('gbr', gbr)
+                ],
                 n_jobs=-1
             ))
         ]
@@ -127,7 +152,7 @@ def main():
     print(f"Train R²:   {train_r2:.4f}         | Test R²:   {test_r2:.4f}")
     print("------------------------\n")
     
-    # Feature Importances from XGBoost
+    # Feature Importances from Ensemble Voting
     regressor = pipeline.named_steps["regressor"]
     preprocessor = pipeline.named_steps["preprocessor"]
     
@@ -136,7 +161,13 @@ def main():
     encoded_cat_features = list(cat_encoder.get_feature_names_out(cat_cols))
     
     all_features = num_cols + encoded_cat_features
-    importances = regressor.feature_importances_
+    
+    # Average the feature importances of the fitted sub-estimators
+    importances_list = []
+    for est in regressor.estimators_:
+        if hasattr(est, "feature_importances_"):
+            importances_list.append(est.feature_importances_)
+    importances = np.mean(importances_list, axis=0)
     
     importance_df = pd.DataFrame({
         "Feature": all_features,
