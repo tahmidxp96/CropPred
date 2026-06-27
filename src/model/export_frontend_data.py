@@ -20,21 +20,45 @@ def project_future_records(features_df, model_pipeline, start_year=2024, end_yea
     # Extract actual 2024 records
     weather_2024 = nasa_df[nasa_df["year"] == 2024]
     
-    # Calculate historical climatology medians (2015-2024)
-    cols_to_median = ["temp_c", "temp_max_c", "temp_min_c", "rain_mm_day", "rh_pct", "solar_mj_m2_day", "gwettop", "gwetroot"]
-    climatology = nasa_df[nasa_df["year"] <= 2024].groupby(["district", "month"])[cols_to_median].median().reset_index()
+    # Calculate historical climatology medians and standard deviations (2015-2024)
+    cols_to_calc = ["temp_c", "temp_max_c", "temp_min_c", "rain_mm_day", "rh_pct", "solar_mj_m2_day", "gwettop", "gwetroot"]
+    
+    climatology = nasa_df[nasa_df["year"] <= 2024].groupby(["district", "month"])[cols_to_calc].median().reset_index()
+    climatology_std = nasa_df[nasa_df["year"] <= 2024].groupby(["district", "month"])[cols_to_calc].std().reset_index()
+    
+    # Fill any NaNs in standard deviations with 0.0
+    climatology_std = climatology_std.fillna(0.0)
     
     # Build complete weather dataframe for 2024-2029
     weather_future_list = []
     
     # Append actual 2024 weather
     if len(weather_2024) > 0:
-        weather_future_list.append(weather_2024[["district", "year", "month"] + cols_to_median])
+        weather_future_list.append(weather_2024[["district", "year", "month"] + cols_to_calc])
         
-    # Append climatology for 2025-2029
+    # Append climatology for 2025-2029 with stochastic weather noise
+    # Fix seed for reproducibility of the forecasts
+    np.random.seed(42)
     for yr in range(2025, end_year + 1):
         df_yr = climatology.copy()
         df_yr["year"] = yr
+        
+        # Inject standard deviation noise
+        for col in cols_to_calc:
+            # Match standard deviation directly as rows are aligned identically
+            stds = climatology_std[col].values
+            # Generate gaussian noise (scaled to 45% of standard deviation for natural balance)
+            noise = np.random.normal(0, stds * 0.45)
+            df_yr[col] = df_yr[col] + noise
+            
+            # Bound logically (e.g. rain and soil wetness cannot be negative)
+            if col in ["rain_mm_day", "gwettop", "gwetroot", "rh_pct"]:
+                df_yr[col] = df_yr[col].clip(lower=0.0)
+            if col in ["gwettop", "gwetroot"]:
+                df_yr[col] = df_yr[col].clip(upper=1.0)
+            if col in ["rh_pct"]:
+                df_yr[col] = df_yr[col].clip(upper=100.0)
+                
         weather_future_list.append(df_yr)
         
     if len(weather_future_list) == 0:
@@ -46,7 +70,7 @@ def project_future_records(features_df, model_pipeline, start_year=2024, end_yea
     weather_pivot = weather_future.pivot(
         index=["district", "year"],
         columns="month",
-        values=cols_to_median
+        values=cols_to_calc
     )
     weather_pivot.columns = [f"{var}_{month}" for var, month in weather_pivot.columns]
     weather_pivot = weather_pivot.reset_index()
