@@ -165,7 +165,7 @@ export default function PerformanceHub() {
               <BarChart2 className="text-cyan-500 w-4 h-4" /> 2. Error Residuals Distribution
             </h3>
             <p className="text-xs text-slate-400 leading-relaxed mb-4">
-              Histogram of error differences (\(y_i - \hat{y}_i\)). A symmetric Gaussian bell shape centered near 0 indicates stable homoscedasticity and absence of model bias.
+              Histogram of error differences (y - ŷ). A symmetric Gaussian bell shape centered near 0 indicates stable homoscedasticity and absence of model bias.
             </p>
             <div style={{ width: "100%", height: "300px" }}>
               <ResponsiveContainer>
