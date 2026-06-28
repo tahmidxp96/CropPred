@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { 
   ArrowLeft, Search, Filter, Calendar, Database, 
-  Download, ChevronLeft, ChevronRight, RefreshCw, Cpu
+  Download, ChevronLeft, ChevronRight, RefreshCw, Cpu, Activity
 } from "lucide-react";
 
 export default function DataExplorer() {
@@ -266,9 +266,17 @@ export default function DataExplorer() {
             </div>
           </div>
           
-          <span className="bg-emerald-500/10 text-emerald-400 text-xs px-2 py-0.5 rounded border border-emerald-500/20 font-mono hidden sm:inline-block">
-            Decoupled Warehouse
-          </span>
+          <div className="flex items-center gap-3">
+            <Link href="/performance" className="bg-[#0f1b2b] border border-slate-800 hover:border-slate-700 text-slate-200 font-bold text-xs px-3 py-1.5 rounded-lg transition-all flex items-center gap-1 hover:-translate-y-0.5 shadow-md">
+              <Activity className="w-3.5 h-3.5 text-emerald-400" /> Performance
+            </Link>
+            <Link href="/methodology" className="bg-[#0f1b2b] border border-slate-800 hover:border-slate-700 text-slate-200 font-bold text-xs px-3 py-1.5 rounded-lg transition-all flex items-center gap-1 hover:-translate-y-0.5 shadow-md">
+              <Cpu className="w-3.5 h-3.5 text-emerald-400" /> Methodology
+            </Link>
+            <span className="bg-emerald-500/10 text-emerald-400 text-xs px-2.5 py-1.5 rounded border border-emerald-500/20 font-mono hidden sm:inline-block">
+              Decoupled Warehouse
+            </span>
+          </div>
         </div>
       </header>
 

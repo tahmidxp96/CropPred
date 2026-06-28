@@ -75,6 +75,9 @@ export default function MethodologyPage() {
             <Link href="/" className="bg-[#0f1b2b] border border-slate-800 hover:border-slate-700 text-slate-200 font-bold text-xs px-3.5 py-1.5 rounded-lg transition-all shadow-md">
               Dashboard
             </Link>
+            <Link href="/performance" className="bg-[#0f1b2b] border border-slate-800 hover:border-slate-700 text-slate-200 font-bold text-xs px-3.5 py-1.5 rounded-lg transition-all shadow-md flex items-center gap-1">
+              <Activity className="w-3.5 h-3.5 text-emerald-400" /> Performance
+            </Link>
             <Link href="/explorer" className="bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold text-xs px-3.5 py-1.5 rounded-lg transition-all shadow-lg shadow-emerald-500/10">
               Data Warehouse
             </Link>

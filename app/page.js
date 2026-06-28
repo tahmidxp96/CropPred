@@ -237,6 +237,9 @@ export default function DigitalTwinDashboard() {
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-3">
+            <Link href="/performance" className="bg-[#0f1b2b] border border-slate-800 hover:border-slate-700 text-slate-200 font-bold text-xs px-3.5 py-1.5 rounded-lg transition-all flex items-center gap-1.5 hover:-translate-y-0.5 shadow-md">
+              <Activity className="w-3.5 h-3.5 text-emerald-400" /> Performance Hub
+            </Link>
             <Link href="/methodology" className="bg-[#0f1b2b] border border-slate-800 hover:border-slate-700 text-slate-200 font-bold text-xs px-3.5 py-1.5 rounded-lg transition-all flex items-center gap-1.5 hover:-translate-y-0.5 shadow-md">
               <Cpu className="w-3.5 h-3.5 text-emerald-400" /> Methodology
             </Link>
@@ -244,7 +247,7 @@ export default function DigitalTwinDashboard() {
               <Database className="w-3.5 h-3.5" /> Explore Data Warehouse
             </Link>
             <div className="text-xs bg-slate-800/60 border border-slate-700/50 px-3 py-1.5 rounded text-slate-300 font-mono">
-              Test R²: <span className="text-emerald-400 font-bold">97.88%</span>
+              Test R²: <span className="text-emerald-400 font-bold">98.23%</span>
             </div>
             <div className="text-xs bg-slate-800/60 border border-slate-700/50 px-3 py-1.5 rounded text-slate-300 font-mono">
               Model: <span className="text-cyan-400">Ensemble Voting</span>
