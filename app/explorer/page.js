@@ -43,7 +43,7 @@ export default function DataExplorer() {
       url = `${basePath}/data/fao_national.json`;
     }
 
-    fetch(url)
+    fetch(`${url}?t=${Date.now()}`)
       .then(res => {
         if (!res.ok) throw new Error(`Failed to load dataset: ${activeDataset}`);
         return res.json();
