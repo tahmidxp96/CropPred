@@ -400,31 +400,49 @@ def main():
         
     # 6d. Export 1995-2014 Excel Raw Rows for explorer
     hist_explorer_records = []
-    file_1 = "data/raw/crop(1995-2004).xlsx"
+    file_1 = "data/raw/crop_1995_2004.csv"
     if os.path.exists(file_1):
-        df1 = pd.read_excel(file_1)
+        df1 = pd.read_csv(file_1)
         for _, row in df1.iterrows():
+            area_raw = row["Area(acres)"]
+            prod_raw = row["Production(tons)"]
+            area_val = float(area_raw) if (pd.notna(area_raw) and str(area_raw).strip() != "") else None
+            prod_val = float(prod_raw) if (pd.notna(prod_raw) and str(prod_raw).strip() != "") else None
+            
+            yield_val = 0.0
+            if area_val is not None and prod_val is not None and area_val > 0:
+                yield_val = float(np.round((prod_val * 1.01605) / (area_val * 0.404686), 2))
+                
             hist_explorer_records.append({
                 "district": str(row["District"]),
                 "division": str(row["Division"]),
                 "year": int(row["Year"]),
                 "season": str(row["Crop Type"]),
-                "area_acres": float(row["Area(acres)"]),
-                "production_tons": float(row["Production(tons)"]),
-                "yield_mtha": float(np.round((float(row["Production(tons)"]) * 1.01605) / (float(row["Area(acres)"]) * 0.404686), 2)) if float(row["Area(acres)"]) > 0 else 0.0
+                "area_acres": area_val,
+                "production_tons": prod_val,
+                "yield_mtha": yield_val
             })
-    file_2 = "data/raw/crop_production_dataset_10years2005-2014.xlsx"
+    file_2 = "data/raw/crop_2005_2014.csv"
     if os.path.exists(file_2):
-        df2 = pd.read_excel(file_2)
+        df2 = pd.read_csv(file_2)
         for _, row in df2.iterrows():
+            area_raw = row["Area(acres)"]
+            prod_raw = row["Production(tons)"]
+            area_val = float(area_raw) if (pd.notna(area_raw) and str(area_raw).strip() != "") else None
+            prod_val = float(prod_raw) if (pd.notna(prod_raw) and str(prod_raw).strip() != "") else None
+            
+            yield_val = 0.0
+            if area_val is not None and prod_val is not None and area_val > 0:
+                yield_val = float(np.round((prod_val * 1.01605) / (area_val * 0.404686), 2))
+                
             hist_explorer_records.append({
                 "district": str(row["District"]),
                 "division": str(row["Division"]),
                 "year": int(row["Year"]),
                 "season": str(row["Crop Type"]),
-                "area_acres": float(row["Area(acres)"]),
-                "production_tons": float(row["Production(tons)"]),
-                "yield_mtha": float(np.round((float(row["Production(tons)"]) * 1.01605) / (float(row["Area(acres)"]) * 0.404686), 2)) if float(row["Area(acres)"]) > 0 else 0.0
+                "area_acres": area_val,
+                "production_tons": prod_val,
+                "yield_mtha": yield_val
             })
     with open("public/data/historical_crop_raw.json", "w") as f:
         json.dump(hist_explorer_records, f, indent=2)

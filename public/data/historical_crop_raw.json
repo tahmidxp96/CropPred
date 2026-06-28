@@ -1255,8 +1255,8 @@
     "division": "North region",
     "year": 2007,
     "season": "Aus Rice",
-    "area_acres": NaN,
-    "production_tons": NaN,
+    "area_acres": null,
+    "production_tons": null,
     "yield_mtha": 0.0
   },
   {

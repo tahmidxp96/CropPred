@@ -46,10 +46,10 @@ def main():
     
     records = []
     
-    # 1. Parse crop(1995-2004).xlsx
-    file_1 = "data/raw/crop(1995-2004).xlsx"
+    # 1. Parse crop_1995_2004.csv
+    file_1 = "data/raw/crop_1995_2004.csv"
     if os.path.exists(file_1):
-        df1 = pd.read_excel(file_1)
+        df1 = pd.read_csv(file_1)
         for _, row in df1.iterrows():
             dist = normalize_district_name(row["District"])
             season = normalize_season(row["Crop Type"])
@@ -69,12 +69,12 @@ def main():
                     "year": year,
                     "yield_mtha": yield_rate
                 })
-        print(f"Loaded {len(df1)} rows from crop(1995-2004).xlsx")
+        print(f"Loaded {len(df1)} rows from crop_1995_2004.csv")
         
-    # 2. Parse crop_production_dataset_10years2005-2014.xlsx
-    file_2 = "data/raw/crop_production_dataset_10years2005-2014.xlsx"
+    # 2. Parse crop_2005_2014.csv
+    file_2 = "data/raw/crop_2005_2014.csv"
     if os.path.exists(file_2):
-        df2 = pd.read_excel(file_2)
+        df2 = pd.read_csv(file_2)
         for _, row in df2.iterrows():
             dist = normalize_district_name(row["District"])
             season = normalize_season(row["Crop Type"])
@@ -93,7 +93,7 @@ def main():
                     "year": year,
                     "yield_mtha": yield_rate
                 })
-        print(f"Loaded {len(df2)} rows from crop_production_dataset_10years2005-2014.xlsx")
+        print(f"Loaded {len(df2)} rows from crop_2005_2014.csv")
         
     if not records:
         print("No historical records compiled.")
