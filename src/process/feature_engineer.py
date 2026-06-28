@@ -96,15 +96,15 @@ def engineer_seasonal_features(df):
     df["season_earth_skin_temp"] = seasonal_skin_temp
     
     # Add anomaly indices
-    # 1. Flood index: High rainfall during Aman/Aus season (> 2500 mm total rainfall)
+    # 1. Flood index: Surface soil moisture exceeding saturation threshold (> 0.82) during Aman/Aus season
     df["flood_index"] = df.apply(
-        lambda r: max(0.0, r["season_rain_mm"] - 2200.0) / 100.0 if r["season"] in ["Aman", "Aus"] else 0.0, 
+        lambda r: max(0.0, (r["season_soil_wetness"] - 0.82) * 50.0) if r["season"] in ["Aman", "Aus"] else 0.0, 
         axis=1
     )
     
-    # 2. Drought index: Low rainfall during Boro winter season (< 100 mm total rainfall)
+    # 2. Drought index: Root zone soil moisture dropping below stress threshold (< 0.50) during Boro season
     df["drought_index"] = df.apply(
-        lambda r: max(0.0, 120.0 - r["season_rain_mm"]) / 10.0 if r["season"] == "Boro" else 0.0,
+        lambda r: max(0.0, (0.50 - r["season_soil_wetness_root"]) * 50.0) if r["season"] == "Boro" else 0.0,
         axis=1
     )
     

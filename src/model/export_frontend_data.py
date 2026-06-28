@@ -77,8 +77,8 @@ def project_future_records(features_df, model_pipeline, div_model, historical_lo
                 s_wind = np.mean(winds)
                 s_skin = np.mean(skins)
                 
-                flood = max(0.0, s_rain - 2200.0) / 100.0 if season in ["Aus", "Aman"] else 0.0
-                drought = max(0.0, 120.0 - s_rain) / 10.0 if season == "Boro" else 0.0
+                flood = max(0.0, (s_soil - 0.82) * 50.0) if season in ["Aus", "Aman"] else 0.0
+                drought = max(0.0, (0.50 - s_soil_root) * 50.0) if season == "Boro" else 0.0
                 
                 area = area_lookup_2023.get((district, season), features_df[features_df["season"] == season]["area_ha"].median())
                 
@@ -153,9 +153,8 @@ def project_future_records(features_df, model_pipeline, div_model, historical_lo
             if col in ["season_wind_speed"]:
                 df_yr[col] = df_yr[col].clip(lower=0.1)
                 
-        # Recalculate flood and drought indexes for physical consistency
-        df_yr["flood_index"] = df_yr.apply(lambda r: max(0.0, r["season_rain_mm"] - 2200.0) / 100.0 if r["season"] in ["Aus", "Aman"] else 0.0, axis=1)
-        df_yr["drought_index"] = df_yr.apply(lambda r: max(0.0, 120.0 - r["season_rain_mm"]) / 10.0 if r["season"] == "Boro" else 0.0, axis=1)
+        df_yr["flood_index"] = df_yr.apply(lambda r: max(0.0, (r["season_soil_wetness"] - 0.82) * 50.0) if r["season"] in ["Aus", "Aman"] else 0.0, axis=1)
+        df_yr["drought_index"] = df_yr.apply(lambda r: max(0.0, (0.50 - r["season_soil_wetness_root"]) * 50.0) if r["season"] == "Boro" else 0.0, axis=1)
         
         df_yr["production_mt"] = 0.0
         df_yr["yield_mtha"] = 0.0
