@@ -10,6 +10,14 @@ os.makedirs("public/data", exist_ok=True)
 def project_future_records(features_df, model_pipeline, div_model, historical_lookup, start_year=2024, end_year=2029):
     print(f"Projecting future climate features and predicting yields ({start_year}-{end_year})...")
     
+    # Load ONI lookup dictionary
+    oni_path = "data/raw/noaa_oni.csv"
+    if os.path.exists(oni_path):
+        oni_df = pd.read_csv(oni_path)
+        oni_dict = {(int(r["year"]), int(r["month"])): float(r["oni_anomaly"]) for _, r in oni_df.iterrows()}
+    else:
+        oni_dict = {}
+        
     # 1. Project 2024 using actual NASA measurements
     nasa_path = "data/raw/nasa_weather.csv"
     if not os.path.exists(nasa_path):
@@ -21,7 +29,7 @@ def project_future_records(features_df, model_pipeline, div_model, historical_lo
     df_2024 = pd.DataFrame()
     if len(weather_2024) > 0:
         # Pivot 2024 weather
-        cols_to_calc = ["temp_c", "temp_max_c", "temp_min_c", "rain_mm_day", "rh_pct", "solar_mj_m2_day", "gwettop", "gwetroot", "wind_speed", "earth_skin_temp"]
+        cols_to_calc = ["temp_c", "temp_max_c", "temp_min_c", "rain_mm_day", "rh_pct", "solar_mj_m2_day", "gwettop", "gwetroot", "wind_speed", "earth_skin_temp", "evland"]
         weather_pivot = weather_2024.pivot(
             index=["district"],
             columns="month",
@@ -59,6 +67,7 @@ def project_future_records(features_df, model_pipeline, div_model, historical_lo
                 soil_roots = [w_row[f"gwetroot_{m}"] for m in months]
                 winds = [w_row[f"wind_speed_{m}"] for m in months]
                 skins = [w_row[f"earth_skin_temp_{m}"] for m in months]
+                evs = [w_row[f"evland_{m}"] for m in months]
                 
                 s_temp = np.mean(temps)
                 s_rain = np.sum(rains) * 30.0
@@ -79,6 +88,19 @@ def project_future_records(features_df, model_pipeline, div_model, historical_lo
                 
                 flood = max(0.0, (s_soil - 0.82) * 50.0) if season in ["Aus", "Aman"] else 0.0
                 drought = max(0.0, (0.50 - s_soil_root) * 50.0) if season == "Boro" else 0.0
+                
+                # Settle ET/PET and ONI parameters
+                s_et = np.sum(evs) * 30.4
+                pet_sum = 0.0
+                for t_mean, t_max, t_min, solar_rad in zip(temps, max_temps, min_temps, solars):
+                    pet_val = 0.0023 * (t_mean + 17.8) * np.sqrt(max(0.1, t_max - t_min)) * solar_rad
+                    pet_sum += pet_val * 30.4
+                    
+                oni_vals = []
+                for m in months:
+                    y_lookup = 2024 - 1 if (m == 12 and season == "Boro") else 2024
+                    oni_vals.append(oni_dict.get((y_lookup, m), 0.0))
+                s_oni = np.mean(oni_vals)
                 
                 area = area_lookup_2023.get((district, season), features_df[features_df["season"] == season]["area_ha"].median())
                 
@@ -102,7 +124,10 @@ def project_future_records(features_df, model_pipeline, div_model, historical_lo
                     "flood_index": float(flood),
                     "drought_index": float(drought),
                     "season_wind_speed": float(s_wind),
-                    "season_earth_skin_temp": float(s_skin)
+                    "season_earth_skin_temp": float(s_skin),
+                    "season_et": float(s_et),
+                    "season_pet": float(pet_sum),
+                    "season_oni": float(s_oni)
                 })
         df_2024 = pd.DataFrame(records_2024)
         # Inject minor operational land shift noise (±2%)
@@ -115,7 +140,8 @@ def project_future_records(features_df, model_pipeline, div_model, historical_lo
     numeric_cols = [
         "season_temp_c", "season_rain_mm", "season_rh_pct", "season_solar_mj_m2",
         "season_gdd", "season_dtr", "season_soil_wetness", "season_soil_wetness_root", "season_swdi",
-        "flood_index", "drought_index", "season_wind_speed", "season_earth_skin_temp"
+        "flood_index", "drought_index", "season_wind_speed", "season_earth_skin_temp",
+        "season_et", "season_pet", "season_oni"
     ]
     
     # Calculate historical seasonal medians and standard deviations per district-season (2015-2023)
@@ -144,7 +170,7 @@ def project_future_records(features_df, model_pipeline, div_model, historical_lo
             df_yr[col] = df_yr[col] + noise
             
             # Clamp values
-            if col in ["season_rain_mm", "season_gdd", "season_dtr", "season_soil_wetness", "season_soil_wetness_root", "flood_index", "drought_index"]:
+            if col in ["season_rain_mm", "season_gdd", "season_dtr", "season_soil_wetness", "season_soil_wetness_root", "flood_index", "drought_index", "season_et", "season_pet"]:
                 df_yr[col] = df_yr[col].clip(lower=0.0)
             if col in ["season_soil_wetness", "season_soil_wetness_root"]:
                 df_yr[col] = df_yr[col].clip(upper=1.0)
@@ -152,6 +178,8 @@ def project_future_records(features_df, model_pipeline, div_model, historical_lo
                 df_yr[col] = df_yr[col].clip(lower=20.0, upper=100.0)
             if col in ["season_wind_speed"]:
                 df_yr[col] = df_yr[col].clip(lower=0.1)
+            if col == "season_oni":
+                df_yr[col] = df_yr[col].clip(lower=-3.0, upper=3.0)
                 
         df_yr["flood_index"] = df_yr.apply(lambda r: max(0.0, (r["season_soil_wetness"] - 0.82) * 50.0) if r["season"] in ["Aus", "Aman"] else 0.0, axis=1)
         df_yr["drought_index"] = df_yr.apply(lambda r: max(0.0, (0.50 - r["season_soil_wetness_root"]) * 50.0) if r["season"] == "Boro" else 0.0, axis=1)
@@ -214,7 +242,8 @@ def project_future_records(features_df, model_pipeline, div_model, historical_lo
         "season_temp_c", "season_rain_mm", "season_rh_pct", "season_solar_mj_m2",
         "season_gdd", "season_dtr", "season_soil_wetness", "season_soil_wetness_root", "season_swdi",
         "flood_index", "drought_index",
-        "season_wind_speed", "season_earth_skin_temp", "division_yield_prior", "historical_baseline_yield"
+        "season_wind_speed", "season_earth_skin_temp", "season_et", "season_pet", "season_oni",
+        "division_yield_prior", "historical_baseline_yield"
     ]
     df_future["pred_yield_mtha"] = model_pipeline.predict(df_future[features])
     df_future["pred_yield_mtha"] = df_future["pred_yield_mtha"].round(2)
@@ -292,7 +321,8 @@ def main():
         "season_temp_c", "season_rain_mm", "season_rh_pct", "season_solar_mj_m2",
         "season_gdd", "season_dtr", "season_soil_wetness", "season_soil_wetness_root", "season_swdi",
         "flood_index", "drought_index",
-        "season_wind_speed", "season_earth_skin_temp", "division_yield_prior", "historical_baseline_yield"
+        "season_wind_speed", "season_earth_skin_temp", "season_et", "season_pet", "season_oni",
+        "division_yield_prior", "historical_baseline_yield"
     ]
     features_df["pred_yield_mtha"] = model.predict(features_df[features_list])
     features_df["pred_yield_mtha"] = features_df["pred_yield_mtha"].round(2)
@@ -492,6 +522,9 @@ def main():
             "drought": float(np.round(row["drought_index"], 2)),
             "wind_speed": float(np.round(row["season_wind_speed"], 2)),
             "earth_skin_temp": float(np.round(row["season_earth_skin_temp"], 1)),
+            "et": float(np.round(row["season_et"], 1)) if "season_et" in row else 0.0,
+            "pet": float(np.round(row["season_pet"], 1)) if "season_pet" in row else 0.0,
+            "oni": float(np.round(row["season_oni"], 2)) if "season_oni" in row else 0.0,
             "division_prior": float(np.round(row["division_yield_prior"], 2)),
             "historical_baseline": float(np.round(row["historical_baseline_yield"], 2))
         })
@@ -509,6 +542,7 @@ def main():
         "area_ha", "season_temp_c", "season_rain_mm", "season_rh_pct", "season_solar_mj_m2",
         "season_gdd", "season_dtr", "season_soil_wetness", "season_soil_wetness_root", "season_swdi",
         "flood_index", "drought_index", "season_wind_speed", "season_earth_skin_temp",
+        "season_et", "season_pet", "season_oni",
         "division_yield_prior", "historical_baseline_yield"
     ] + encoded_cat_features
     # Average the feature importances of the fitted sub-estimators

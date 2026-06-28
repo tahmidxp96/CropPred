@@ -3,7 +3,7 @@
 [![Deploy static content to Pages](https://github.com/tahmidxp96/CropPred/actions/workflows/deploy.yml/badge.svg)](https://github.com/tahmidxp96/CropPred/actions/workflows/deploy.yml)
 [![Live Site](https://img.shields.io/badge/Live%20Dashboard-View%20App-emerald?style=flat-square)](https://tahmidxp96.github.io/CropPred/)
 
-An academic-grade, research-oriented Spatial Digital Twin built to model, predict, and visualize district-level rice yields (*Aus*, *Aman*, and *Boro* seasons) across Bangladesh. The platform integrates real-world subnational agricultural census records, multi-sensor NASA satellite climatology, and an Ensemble Machine Learning pipeline to project yields up to **2029** with recursive error-calibration loops.
+An academic-grade, research-oriented Spatial Digital Twin built to model, predict, and visualize district-level rice yields (*Aus*, *Aman*, and *Boro* seasons) across Bangladesh. The platform integrates real-world subnational agricultural census records, multi-sensor NASA satellite climatology, NOAA oceanic teleconnection indices, and an Ensemble Machine Learning pipeline to project yields up to **2029** with recursive error-calibration loops.
 
 ---
 
@@ -32,9 +32,9 @@ To prevent tree-split biases and reduce prediction variances, the model is train
 *   **Gradient Boosting Regressor**: Regularizes predictions using shallow additive estimators.
 
 Including `district` directly as a categorical feature allows the model to capture local soil profiles, baseline irrigation grids, and regional variety changes.
-*   **Mean Chronological Cross-Validation $R^2$**: **$97.75\%$**
-*   **Final Test set $R^2$ (Years 2022–2023)**: **$98.23\%$**
-*   **Test RMSE**: **$0.1253$ MT/ha** (predictions deviate by less than $\pm 125$ kg per hectare on average).
+*   **Mean Chronological Cross-Validation $R^2$**: **$97.31\%$**
+*   **Final Test set $R^2$ (Years 2022–2023)**: **$95.22\%$**
+*   **Test RMSE**: **$0.2057$ MT/ha** (predictions deviate by less than $\pm 206$ kg per hectare on average).
 
 ### 2. Custom Agronomic Features
 The model incorporates physical, satellite-derived indicators rather than simple monthly averages:
@@ -45,6 +45,14 @@ The model incorporates physical, satellite-derived indicators rather than simple
 *   **Root-Zone Soil Hydration (`GWETROOT`)**: Derived from NASA's GLDAS 0–100cm percolation telemetry, representing the underground water reservoir at the crop roots (far more stable than rapid surface wetness `GWETTOP`).
 *   **Seasonal Water Deficit Index (SWDI)**: Models regional precipitation supply against evapotranspiration demand.
     $$\text{SWDI} = \text{Precipitation} - (1.15 \times \text{Temperature} \times \text{Solar Radiation})$$
+*   **Monsoon Flood Index**: Quantifies excess surface soil saturation during Aus/Aman monsoon seasons.
+    $$\text{Flood} = \max\left(0,\; (\text{GWETTOP} - 0.82) \times 50\right)$$
+*   **Dry-Season Drought Index**: Captures root-zone water stress during Boro dry season.
+    $$\text{Drought} = \max\left(0,\; (0.50 - \text{GWETROOT}) \times 50\right)$$
+*   **Actual Evapotranspiration (ET)**: Accumulated seasonal land surface evaporation (`EVLAND`) from NASA MERRA-2 reanalysis, measuring actual water loss (mm/season).
+*   **Potential Evapotranspiration (PET)**: Estimated via the Hargreaves–Samani equation using temperature extremes and downward solar irradiance:
+    $$\text{PET} = 0.0023 \times (T_{\text{mean}} + 17.8) \times \sqrt{T_{\max} - T_{\min}} \times R_a$$
+*   **Oceanic Niño Index (ONI)**: Seasonal mean ENSO anomaly (°C) from NOAA CPC's Niño 3.4 SST time series, capturing teleconnection impacts on Bangladesh's monsoon variability.
 
 ### 3. Kalman-Style Recursive Feedback Loop
 To correct for systematic drift (such as localized soil degradation or salinity updates), predictions are recursively calibrated using historical prediction errors:
@@ -72,7 +80,7 @@ CropPred/
 │   ├── layout.js                     # HTML headers & SEO optimizations
 │   └── page.js                       # Interactive Twin Dashboard UI
 ├── data/
-│   ├── raw/                          # Raw inputs: BBS yearbook, NASA POWER, FAOSTAT
+│   ├── raw/                          # Raw inputs: BBS yearbook, NASA POWER, FAOSTAT, NOAA ONI
 │   └── processed/                    # Standardized wide feature matrix
 ├── model/
 │   └── crop_yield_model.joblib       # Trained Scikit-Learn/Ensemble Pipeline
@@ -88,13 +96,14 @@ CropPred/
 │   ├── fetch/
 │   │   ├── fetch_bbs.py              # Download historical BBS crop sheets
 │   │   ├── fetch_fao.py              # Pull FAOSTAT reference records
-│   │   └── fetch_nasa.py             # Query NASA POWER climate telemetry
+│   │   ├── fetch_nasa.py             # Query NASA POWER climate telemetry (incl. EVLAND)
+│   │   └── fetch_oni.py              # Download NOAA CPC Oceanic Niño Index time series
 │   ├── model/
 │   │   ├── train_model.py            # Train Ensemble Regressor with rolling CV
 │   │   └── export_frontend_data.py   # Compile predictions into static JSON
 │   ├── process/
 │   │   ├── merge_process.py          # Spelling standardization & wide format pivot
-│   │   └── feature_engineer.py       # Compute GDD, DTR, GWETROOT, and SWDI
+│   │   └── feature_engineer.py       # Compute GDD, DTR, GWETROOT, SWDI, ET, PET, ONI, Flood/Drought
 │   ├── tests/
 │   │   └── validate_metrics.py       # Pipeline validation suite
 │   └── utils/
@@ -121,15 +130,16 @@ pip install -r requirements.txt
 
 To run the pipeline, train the Ensemble models, and compile the frontend JSON payloads:
 ```bash
-# 1. Fetch raw datasets (BBS, NASA POWER, FAOSTAT)
+# 1. Fetch raw datasets (BBS, NASA POWER, FAOSTAT, NOAA ONI)
 python3 src/fetch/fetch_bbs.py
 python3 src/fetch/fetch_nasa.py
 python3 src/fetch/fetch_fao.py
+python3 src/fetch/fetch_oni.py
 
 # 2. Pivot monthly telemetry and merge on district-season boundaries
 python3 src/process/merge_process.py
 
-# 3. Engineer seasonal agronomic indices (GDD, DTR, SWDI, GWETROOT)
+# 3. Engineer seasonal agronomic indices (GDD, DTR, SWDI, GWETROOT, ET, PET, ONI)
 python3 src/process/feature_engineer.py
 
 # 4. Train the Ensemble Regressor models and export pipeline weights
@@ -172,5 +182,10 @@ The live site is hosted on GitHub Pages. To support near-instantaneous live page
 1.  **BBS**: Subnational agricultural crop yields digitized from the *Bangladesh Bureau of Statistics (Ministry of Planning)* yearbooks (2015–2023).
 2.  **BBS Historical Excel Registries**: Raw subnational crop records parsed from official Excel sheets (1995–2014) to compute long-term crop productivity baselines.
 3.  **NASA POWER**: Climatological temperature, wind, humidity, solar radiation, and GLDAS soil hydration telemetry courtesy of NASA's *Prediction of Worldwide Energy Resources* project.
-4.  **Division-Level Agroclimatic Dataset**: Compiled annual average crop yields and climatic indicators (2000–2024) used to pre-train division-level GBR prior models.
-5.  **FAOSTAT**: National validation statistics compiled by the *Food and Agriculture Organization (FAO) of the United Nations*.
+    - Variables: `T2M`, `T2M_MAX`, `T2M_MIN`, `PRECTOTCORR`, `RH2M`, `ALLSKY_SFC_SW_DWN`, `GWETTOP`, `GWETROOT`, `TS`, **`EVLAND`** (MERRA-2 surface evaporation).
+    - Endpoint: `https://power.larc.nasa.gov/api/temporal/monthly/point`
+4.  **NOAA CPC Oceanic Niño Index (ONI)**: Sea Surface Temperature (SST) anomalies from the Niño 3.4 region, published by the *NOAA Climate Prediction Center*. Used to capture El Niño/La Niña teleconnection impacts on Bangladesh's monsoon rainfall.
+    - Source: [NOAA CPC ONI Data](https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt)
+    - Reference: Huang, B., et al. (2017). *Extended Reconstructed Sea Surface Temperature, Version 5 (ERSSTv5)*. Journal of Climate, 30(20), 8179–8205.
+5.  **Division-Level Agroclimatic Dataset**: Compiled annual average crop yields and climatic indicators (2000–2024) used to pre-train division-level GBR prior models.
+6.  **FAOSTAT**: National validation statistics compiled by the *Food and Agriculture Organization (FAO) of the United Nations*.

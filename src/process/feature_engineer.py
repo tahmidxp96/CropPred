@@ -8,6 +8,14 @@ os.makedirs("data/processed", exist_ok=True)
 def engineer_seasonal_features(df):
     print("Engineering seasonal weather features...")
     
+    # Load Oceanic Niño Index (ONI) database
+    oni_path = "data/raw/noaa_oni.csv"
+    if os.path.exists(oni_path):
+        oni_df = pd.read_csv(oni_path)
+        oni_dict = {(int(r["year"]), int(r["month"])): float(r["oni_anomaly"]) for _, r in oni_df.iterrows()}
+    else:
+        oni_dict = {}
+        
     # Initialize lists to collect feature values
     seasonal_temp = []
     seasonal_rain = []
@@ -20,6 +28,9 @@ def engineer_seasonal_features(df):
     seasonal_swdi = []
     seasonal_wind = []
     seasonal_skin_temp = []
+    seasonal_et = []
+    seasonal_pet = []
+    seasonal_oni = []
     
     # Iterate through each row in the dataset
     for idx, row in df.iterrows():
@@ -48,6 +59,7 @@ def engineer_seasonal_features(df):
         soil_roots = [row[f"gwetroot_{m}"] for m in months]
         winds = [row[f"wind_speed_{m}"] for m in months]
         skins = [row[f"earth_skin_temp_{m}"] for m in months]
+        evs = [row[f"evland_{m}"] for m in months]
         
         # Calculate summaries (means and sums)
         s_temp = np.mean(temps)
@@ -70,6 +82,24 @@ def engineer_seasonal_features(df):
         # Diurnal Temperature Range (DTR)
         dtr_vals = [t_max - t_min for t_max, t_min in zip(max_temps, min_temps)]
         seasonal_dtr.append(np.mean(dtr_vals))
+        
+        # Calculate actual evapotranspiration (ET) in mm
+        s_et = np.sum(evs) * 30.4
+        seasonal_et.append(s_et)
+        
+        # Calculate potential evapotranspiration (PET) via Hargreaves-Samani equation
+        pet_sum = 0.0
+        for t_mean, t_max, t_min, solar_rad in zip(temps, max_temps, min_temps, solars):
+            pet_val = 0.0023 * (t_mean + 17.8) * np.sqrt(max(0.1, t_max - t_min)) * solar_rad
+            pet_sum += pet_val * 30.4
+        seasonal_pet.append(pet_sum)
+        
+        # Calculate mean Oceanic Niño Index (ONI) anomaly
+        oni_vals = []
+        for m in months:
+            y_lookup = row["year"] - 1 if (m == 12 and season == "Boro") else row["year"]
+            oni_vals.append(oni_dict.get((y_lookup, m), 0.0))
+        seasonal_oni.append(np.mean(oni_vals))
         
         # Soil Wetness
         seasonal_soil_wetness.append(np.mean(soil_wets))
@@ -94,6 +124,9 @@ def engineer_seasonal_features(df):
     df["season_swdi"] = seasonal_swdi
     df["season_wind_speed"] = seasonal_wind
     df["season_earth_skin_temp"] = seasonal_skin_temp
+    df["season_et"] = seasonal_et
+    df["season_pet"] = seasonal_pet
+    df["season_oni"] = seasonal_oni
     
     # Add anomaly indices
     # 1. Flood index: Surface soil moisture exceeding saturation threshold (> 0.82) during Aman/Aus season
@@ -118,7 +151,8 @@ def engineer_seasonal_features(df):
         "area_ha", "production_mt", "yield_mtha",
         "season_temp_c", "season_rain_mm", "season_rh_pct", "season_solar_mj_m2",
         "season_gdd", "season_dtr", "season_soil_wetness", "season_soil_wetness_root", "season_swdi",
-        "flood_index", "drought_index", "season_wind_speed", "season_earth_skin_temp"
+        "flood_index", "drought_index", "season_wind_speed", "season_earth_skin_temp",
+        "season_et", "season_pet", "season_oni"
     ]
     
     # Drop raw monthly columns

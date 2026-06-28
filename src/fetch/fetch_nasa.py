@@ -43,7 +43,7 @@ def fetch_district_weather(district, info, use_api=True):
     if use_api:
         url = "https://power.larc.nasa.gov/api/temporal/monthly/point"
         params = {
-            "parameters": "T2M,T2M_MAX,T2M_MIN,PRECTOTCORR,RH2M,ALLSKY_SNDN,GWETTOP,GWETROOT,WS2M,TS",
+            "parameters": "T2M,T2M_MAX,T2M_MIN,PRECTOTCORR,RH2M,ALLSKY_SNDN,GWETTOP,GWETROOT,WS2M,TS,EVLAND",
             "community": "AG",
             "longitude": lon,
             "latitude": lat,
@@ -70,6 +70,7 @@ def fetch_district_weather(district, info, use_api=True):
                 gwetroot = parameters.get("GWETROOT", {})
                 wind = parameters.get("WS2M", {})
                 skin_temp = parameters.get("TS", {})
+                evland = parameters.get("EVLAND", {})
                 
                 # Parse monthly keys like "201501", "201502", etc.
                 for key in t2m.keys():
@@ -90,7 +91,8 @@ def fetch_district_weather(district, info, use_api=True):
                             "gwettop": gwettop.get(key, 0.5),
                             "gwetroot": gwetroot.get(key, 0.5),
                             "wind_speed": wind.get(key, 1.2),
-                            "earth_skin_temp": skin_temp.get(key, t2m.get(key, 0.0))
+                            "earth_skin_temp": skin_temp.get(key, t2m.get(key, 0.0)),
+                            "evland": evland.get(key, 0.0)
                         })
                 if records:
                     return pd.DataFrame(records)
@@ -152,6 +154,10 @@ def fetch_district_weather(district, info, use_api=True):
             skin_diff = 2.0 * (1.0 - soil_wet) + np.random.normal(0, 0.3)
             e_skin_temp = t + skin_diff
             
+            # Simulate evland (evaporation land, mm/day)
+            ev = 0.4 * s * (t + 10.0) / 100.0 + np.random.normal(0, 0.2)
+            ev = min(7.5, max(0.1, ev))
+            
             records.append({
                 "district": district,
                 "year": year,
@@ -165,7 +171,8 @@ def fetch_district_weather(district, info, use_api=True):
                 "gwettop": float(np.round(soil_wet, 3)),
                 "gwetroot": float(np.round(soil_wet_root, 3)),
                 "wind_speed": float(np.round(w_speed, 2)),
-                "earth_skin_temp": float(np.round(e_skin_temp, 2))
+                "earth_skin_temp": float(np.round(e_skin_temp, 2)),
+                "evland": float(np.round(ev, 2))
             })
             
     return pd.DataFrame(records)

@@ -22,10 +22,10 @@ export default function MethodologyPage() {
 
   // Chronological CV Folds (Evaluated during pipeline execution)
   const cvFoldsData = [
-    { year: "Fold 1 (2018)", r2: 96.96, rmse: 0.1591, mae: 0.1142 },
-    { year: "Fold 2 (2019)", r2: 98.25, rmse: 0.1227, mae: 0.0834 },
-    { year: "Fold 3 (2020)", r2: 98.10, rmse: 0.1221, mae: 0.0827 },
-    { year: "Fold 4 (2021)", r2: 97.67, rmse: 0.1428, mae: 0.0991 },
+    { year: "Fold 1 (2018)", r2: 95.08, rmse: 0.2023, mae: 0.1384 },
+    { year: "Fold 2 (2019)", r2: 97.60, rmse: 0.1439, mae: 0.0967 },
+    { year: "Fold 3 (2020)", r2: 98.87, rmse: 0.0940, mae: 0.0654 },
+    { year: "Fold 4 (2021)", r2: 97.68, rmse: 0.1425, mae: 0.0989 },
   ];
 
   // XGBoost Training Loss Convergence Curve (RMSE)
@@ -37,22 +37,22 @@ export default function MethodologyPage() {
     { iteration: 40, train_rmse: 0.23, test_rmse: 0.33 },
     { iteration: 60, train_rmse: 0.12, test_rmse: 0.21 },
     { iteration: 80, train_rmse: 0.08, test_rmse: 0.17 },
-    { iteration: 100, train_rmse: 0.0735, test_rmse: 0.1420 },
-    { iteration: 120, train_rmse: 0.0651, test_rmse: 0.1253 },
+    { iteration: 100, train_rmse: 0.0550, test_rmse: 0.2200 },
+    { iteration: 120, train_rmse: 0.0480, test_rmse: 0.2057 },
   ];
 
   // Normalized meteorological & agronomic feature importances
   const envFeatureImportance = [
-    { name: "Boro Season Marker", val: 38.3 },
-    { name: "Hist baseline (1995-2014)", val: 23.5 },
-    { name: "Relative Humidity (RH)", val: 16.9 },
-    { name: "Total Rainfall", val: 9.8 },
-    { name: "Land Area", val: 5.9 },
-    { name: "Water Deficit (SWDI)", val: 3.4 },
-    { name: "Soil Wetness (Surf)", val: 0.9 },
-    { name: "Earth Skin Temp", val: 0.3 },
-    { name: "Stacked Division Prior", val: 0.1 },
-    { name: "Other indicators", val: 0.9 }
+    { name: "Hist baseline (1995-2014)", val: 41.0 },
+    { name: "Boro Season Marker", val: 16.5 },
+    { name: "Soil Wetness (Surf)", val: 8.9 },
+    { name: "Total Rainfall", val: 6.9 },
+    { name: "Relative Humidity (RH)", val: 6.5 },
+    { name: "Water Deficit (SWDI)", val: 6.2 },
+    { name: "Land Area", val: 6.2 },
+    { name: "Aman Season Marker", val: 5.5 },
+    { name: "NOAA ONI Anomaly", val: 0.6 },
+    { name: "Other indicators", val: 1.7 }
   ];
 
   if (!isMounted) return null;
@@ -107,8 +107,8 @@ export default function MethodologyPage() {
             </div>
             <div>
               <span className="text-[10px] text-slate-500 block uppercase tracking-wider font-mono">Target Performance</span>
-              <span className="text-lg font-bold text-white font-mono block">98.23% Test R²</span>
-              <span className="text-xs text-slate-400">RMSE 0.125 MT/ha</span>
+              <span className="text-lg font-bold text-white font-mono block">95.22% Test R²</span>
+              <span className="text-xs text-slate-400">RMSE 0.206 MT/ha</span>
             </div>
           </div>
         </section>
@@ -166,7 +166,7 @@ export default function MethodologyPage() {
                     Step A: Raw Telemetry Extraction
                   </h4>
                   <p className="text-xs text-slate-400 mt-1 leading-relaxed max-w-4xl">
-                    Python downloader script pulls ground-truth crop outputs from digitized BBS yearbook publications and queries the NASA POWER API centroid coordinates for monthly weather telemetry.
+                    Python downloader script pulls ground-truth crop outputs from digitized BBS yearbook publications, queries the NASA POWER API for monthly meteorological variables (including Surface Evaporation `EVLAND`), and retrieves the Oceanic Niño Index (ONI) anomaly time series from the NOAA Climate Prediction Center.
                   </p>
                   
                   <div className="mt-3 max-w-4xl">
@@ -189,7 +189,8 @@ export default function MethodologyPage() {
   "temp_c": 28.5,
   "rain_mm_day": 12.4,
   "gwetroot": 0.54,
-  "solar_mj_m2_day": 18.2
+  "solar_mj_m2_day": 18.2,
+  "evland": 4.15
 }`}
                     </pre>
                   </div>
@@ -256,7 +257,10 @@ export default function MethodologyPage() {
   "season_soil_wetness_root": 0.59,
   "season_swdi": 115.4,
   "flood_index": 0.0,
-  "drought_index": 0.0
+  "drought_index": 0.0,
+  "season_et": 630.8,
+  "season_pet": 810.4,
+  "season_oni": -0.35
 }`}
                     </pre>
                   </div>
@@ -530,12 +534,12 @@ export default function MethodologyPage() {
                   <div className="grid grid-cols-2 gap-4 mt-2 text-center">
                     <div className="border-r border-slate-900 pr-2">
                       <span className="text-xs text-slate-400 block">RMSE</span>
-                      <span className="text-white font-bold font-mono text-sm block mt-0.5">0.1253</span>
+                      <span className="text-white font-bold font-mono text-sm block mt-0.5">0.2057</span>
                       <span className="text-[9px] text-slate-500 block">MT/ha</span>
                     </div>
                     <div>
                       <span className="text-xs text-slate-400 block">MAE</span>
-                      <span className="text-white font-bold font-mono text-sm block mt-0.5">0.0865</span>
+                      <span className="text-white font-bold font-mono text-sm block mt-0.5">0.1408</span>
                       <span className="text-[9px] text-slate-500 block">MT/ha</span>
                     </div>
                   </div>
@@ -543,7 +547,7 @@ export default function MethodologyPage() {
 
                 <div className="text-xs text-slate-400 leading-relaxed">
                   <span className="font-semibold text-slate-300 block mb-1">Interpretation:</span>
-                  An RMSE of 0.125 MT/ha on test years (2022-2023) demonstrates that predictions deviate by less than 125 kg per hectare from actual yields, demonstrating robust precision across all regions.
+                  An RMSE of 0.206 MT/ha on test years (2022-2023) demonstrates that predictions deviate by less than 206 kg per hectare from actual yields, demonstrating robust precision across all regions.
                 </div>
               </div>
             </div>
