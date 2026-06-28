@@ -1,4 +1,5 @@
 import os
+import json
 import pandas as pd
 import numpy as np
 import joblib
@@ -26,7 +27,11 @@ def build_model_pipeline():
         "season_soil_wetness_root",
         "season_swdi",
         "flood_index", 
-        "drought_index"
+        "drought_index",
+        "season_wind_speed",
+        "season_earth_skin_temp",
+        "division_yield_prior",
+        "historical_baseline_yield"
     ]
     
     # Preprocessing pipeline
@@ -81,13 +86,76 @@ def build_model_pipeline():
     return pipeline, numeric_features, categorical_features
 
 def main():
-    print("Training XGBoost Crop Yield Prediction Model...")
+    print("Training Ensemble Crop Yield Prediction Model...")
     
+    # 1. Train Division-Level Prior Model
+    division_path = "data/raw/Bangladesh Agroclimatic Crop Yield (2000-2024).csv"
+    if not os.path.exists(division_path):
+        raise FileNotFoundError(f"{division_path} not found.")
+    
+    div_df = pd.read_csv(division_path)
+    div_features = [
+        "year", "Max temp", "Min temp", "Max Wind Speed", "Min wind speed",
+        "Precipitation Corrected Sum", "All Sky Surface Total PAR",
+        "Root Zone Soil Wetness", "Surface Soil Wetness", "Humidity", "Earth Skin Temp"
+    ]
+    div_target = "Crop yield"
+    
+    from sklearn.ensemble import GradientBoostingRegressor
+    div_model = GradientBoostingRegressor(n_estimators=100, random_state=42)
+    div_model.fit(div_df[div_features], div_df[div_target])
+    
+    joblib.dump(div_model, "model/division_yield_model.joblib")
+    print("Division prior model successfully trained and saved to model/division_yield_model.joblib")
+    
+    # 2. Load District-Level Engineered Features
     input_path = "data/processed/features_engineered.csv"
     if not os.path.exists(input_path):
         raise FileNotFoundError(f"{input_path} not found. Run feature_engineer.py first.")
         
     df = pd.read_csv(input_path)
+    
+    # 3. Inject Stacked Division Prior Feature
+    div_preds = []
+    for _, row in df.iterrows():
+        feats = [
+            row["year"],
+            row["season_temp_c"] + (row["season_dtr"] / 2.0), # Max temp
+            row["season_temp_c"] - (row["season_dtr"] / 2.0), # Min temp
+            row["season_wind_speed"] * 1.2, # Max wind proxy
+            row["season_wind_speed"] * 0.1, # Min wind proxy
+            row["season_rain_mm"], # Precipitation
+            row["season_solar_mj_m2"], # PAR
+            row["season_soil_wetness_root"], # Root Soil Wetness
+            row["season_soil_wetness"], # Surface Soil Wetness
+            row["season_rh_pct"], # Humidity
+            row["season_earth_skin_temp"] # Skin Temp
+        ]
+        div_preds.append(div_model.predict([feats])[0])
+    df["division_yield_prior"] = div_preds
+    
+    # 4. Inject Historical Baseline Yield Profile
+    baseline_path = "data/processed/historical_baseline_yields.json"
+    historical_lookup = {}
+    if os.path.exists(baseline_path):
+        with open(baseline_path, "r") as f:
+            historical_lookup = json.load(f)
+            
+    baseline_vals = []
+    for _, row in df.iterrows():
+        key = f"{row['district']}_{row['season']}"
+        if key in historical_lookup:
+            baseline_vals.append(historical_lookup[key])
+        else:
+            # Fallback: division average baseline for that season
+            div_keys = [k for k in historical_lookup.keys() if k.endswith(f"_{row['season']}")]
+            div_vals = [historical_lookup[k] for k in div_keys]
+            if div_vals:
+                baseline_vals.append(np.mean(div_vals))
+            else:
+                season_fallback = {"Aus": 2.05, "Aman": 2.55, "Boro": 4.10}
+                baseline_vals.append(season_fallback.get(row["season"], 2.5))
+    df["historical_baseline_yield"] = baseline_vals
     
     # Split chronologically to prevent temporal leakage (standard in research)
     # Train: 2015 - 2021, Test: 2022 - 2023
@@ -102,7 +170,8 @@ def main():
         "division", "district", "season", "area_ha", 
         "season_temp_c", "season_rain_mm", "season_rh_pct", "season_solar_mj_m2",
         "season_gdd", "season_dtr", "season_soil_wetness", "season_soil_wetness_root", "season_swdi",
-        "flood_index", "drought_index"
+        "flood_index", "drought_index",
+        "season_wind_speed", "season_earth_skin_temp", "division_yield_prior", "historical_baseline_yield"
     ]
     target = "yield_mtha"
     

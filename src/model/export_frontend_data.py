@@ -7,7 +7,7 @@ import joblib
 # Ensure output directory exists
 os.makedirs("public/data", exist_ok=True)
 
-def project_future_records(features_df, model_pipeline, start_year=2024, end_year=2029):
+def project_future_records(features_df, model_pipeline, div_model, historical_lookup, start_year=2024, end_year=2029):
     print(f"Projecting future climate features and predicting yields ({start_year}-{end_year})...")
     
     # 1. Project 2024 using actual NASA measurements
@@ -21,7 +21,7 @@ def project_future_records(features_df, model_pipeline, start_year=2024, end_yea
     df_2024 = pd.DataFrame()
     if len(weather_2024) > 0:
         # Pivot 2024 weather
-        cols_to_calc = ["temp_c", "temp_max_c", "temp_min_c", "rain_mm_day", "rh_pct", "solar_mj_m2_day", "gwettop", "gwetroot"]
+        cols_to_calc = ["temp_c", "temp_max_c", "temp_min_c", "rain_mm_day", "rh_pct", "solar_mj_m2_day", "gwettop", "gwetroot", "wind_speed", "earth_skin_temp"]
         weather_pivot = weather_2024.pivot(
             index=["district"],
             columns="month",
@@ -57,6 +57,8 @@ def project_future_records(features_df, model_pipeline, start_year=2024, end_yea
                 min_temps = [w_row[f"temp_min_c_{m}"] for m in months]
                 soil_wets = [w_row[f"gwettop_{m}"] for m in months]
                 soil_roots = [w_row[f"gwetroot_{m}"] for m in months]
+                winds = [w_row[f"wind_speed_{m}"] for m in months]
+                skins = [w_row[f"earth_skin_temp_{m}"] for m in months]
                 
                 s_temp = np.mean(temps)
                 s_rain = np.sum(rains) * 30.0
@@ -72,6 +74,8 @@ def project_future_records(features_df, model_pipeline, start_year=2024, end_yea
                 s_soil = np.mean(soil_wets)
                 s_soil_root = np.mean(soil_roots)
                 s_swdi = s_rain - (1.15 * s_temp * s_solar)
+                s_wind = np.mean(winds)
+                s_skin = np.mean(skins)
                 
                 flood = max(0.0, s_rain - 2200.0) / 100.0 if season in ["Aus", "Aman"] else 0.0
                 drought = max(0.0, 120.0 - s_rain) / 10.0 if season == "Boro" else 0.0
@@ -96,7 +100,9 @@ def project_future_records(features_df, model_pipeline, start_year=2024, end_yea
                     "season_soil_wetness_root": float(s_soil_root),
                     "season_swdi": float(s_swdi),
                     "flood_index": float(flood),
-                    "drought_index": float(drought)
+                    "drought_index": float(drought),
+                    "season_wind_speed": float(s_wind),
+                    "season_earth_skin_temp": float(s_skin)
                 })
         df_2024 = pd.DataFrame(records_2024)
         # Inject minor operational land shift noise (±2%)
@@ -109,7 +115,7 @@ def project_future_records(features_df, model_pipeline, start_year=2024, end_yea
     numeric_cols = [
         "season_temp_c", "season_rain_mm", "season_rh_pct", "season_solar_mj_m2",
         "season_gdd", "season_dtr", "season_soil_wetness", "season_soil_wetness_root", "season_swdi",
-        "flood_index", "drought_index"
+        "flood_index", "drought_index", "season_wind_speed", "season_earth_skin_temp"
     ]
     
     # Calculate historical seasonal medians and standard deviations per district-season (2015-2023)
@@ -144,6 +150,8 @@ def project_future_records(features_df, model_pipeline, start_year=2024, end_yea
                 df_yr[col] = df_yr[col].clip(upper=1.0)
             if col in ["season_rh_pct"]:
                 df_yr[col] = df_yr[col].clip(lower=20.0, upper=100.0)
+            if col in ["season_wind_speed"]:
+                df_yr[col] = df_yr[col].clip(lower=0.1)
                 
         # Recalculate flood and drought indexes for physical consistency
         df_yr["flood_index"] = df_yr.apply(lambda r: max(0.0, r["season_rain_mm"] - 2200.0) / 100.0 if r["season"] in ["Aus", "Aman"] else 0.0, axis=1)
@@ -165,12 +173,49 @@ def project_future_records(features_df, model_pipeline, start_year=2024, end_yea
         
     df_future = pd.concat(future_dfs, ignore_index=True)
     
-    # Predict using district
+    # Inject Stacked Division Prior Feature
+    div_preds = []
+    for _, row in df_future.iterrows():
+        feats = [
+            row["year"],
+            row["season_temp_c"] + (row["season_dtr"] / 2.0), # Max temp
+            row["season_temp_c"] - (row["season_dtr"] / 2.0), # Min temp
+            row["season_wind_speed"] * 1.2, # Max wind proxy
+            row["season_wind_speed"] * 0.1, # Min wind proxy
+            row["season_rain_mm"], # Precipitation
+            row["season_solar_mj_m2"], # PAR
+            row["season_soil_wetness_root"], # Root Soil Wetness
+            row["season_soil_wetness"], # Surface Soil Wetness
+            row["season_rh_pct"], # Humidity
+            row["season_earth_skin_temp"] # Skin Temp
+        ]
+        div_preds.append(div_model.predict([feats])[0])
+    df_future["division_yield_prior"] = div_preds
+    
+    # Inject Historical Baseline Yield Profile
+    baseline_vals = []
+    for _, row in df_future.iterrows():
+        key = f"{row['district']}_{row['season']}"
+        if key in historical_lookup:
+            baseline_vals.append(historical_lookup[key])
+        else:
+            # Fallback: division average baseline for that season
+            div_keys = [k for k in historical_lookup.keys() if k.endswith(f"_{row['season']}")]
+            div_vals = [historical_lookup[k] for k in div_keys]
+            if div_vals:
+                baseline_vals.append(np.mean(div_vals))
+            else:
+                season_fallback = {"Aus": 2.05, "Aman": 2.55, "Boro": 4.10}
+                baseline_vals.append(season_fallback.get(row["season"], 2.5))
+    df_future["historical_baseline_yield"] = baseline_vals
+    
+    # Predict using district Ensemble Voting Regressor
     features = [
         "division", "district", "season", "area_ha", 
         "season_temp_c", "season_rain_mm", "season_rh_pct", "season_solar_mj_m2",
         "season_gdd", "season_dtr", "season_soil_wetness", "season_soil_wetness_root", "season_swdi",
-        "flood_index", "drought_index"
+        "flood_index", "drought_index",
+        "season_wind_speed", "season_earth_skin_temp", "division_yield_prior", "historical_baseline_yield"
     ]
     df_future["pred_yield_mtha"] = model_pipeline.predict(df_future[features])
     df_future["pred_yield_mtha"] = df_future["pred_yield_mtha"].round(2)
@@ -187,24 +232,74 @@ def main():
         raise FileNotFoundError(f"{model_path} not found. Run train_model.py first.")
     model = joblib.load(model_path)
     
+    # Load Division prior model
+    div_model_path = "model/division_yield_model.joblib"
+    if not os.path.exists(div_model_path):
+        raise FileNotFoundError(f"{div_model_path} not found.")
+    div_model = joblib.load(div_model_path)
+    
+    # Load historical baseline yield profiles
+    baseline_path = "data/processed/historical_baseline_yields.json"
+    historical_lookup = {}
+    if os.path.exists(baseline_path):
+        with open(baseline_path, "r") as f:
+            historical_lookup = json.load(f)
+            
     # 2. Load engineered features
     features_path = "data/processed/features_engineered.csv"
     if not os.path.exists(features_path):
         raise FileNotFoundError(f"{features_path} not found. Run feature_engineer.py first.")
     features_df = pd.read_csv(features_path)
     
+    # Inject stacked division prior to features_df
+    div_preds = []
+    for _, row in features_df.iterrows():
+        feats = [
+            row["year"],
+            row["season_temp_c"] + (row["season_dtr"] / 2.0), # Max temp
+            row["season_temp_c"] - (row["season_dtr"] / 2.0), # Min temp
+            row["season_wind_speed"] * 1.2,
+            row["season_wind_speed"] * 0.1,
+            row["season_rain_mm"],
+            row["season_solar_mj_m2"],
+            row["season_soil_wetness_root"],
+            row["season_soil_wetness"],
+            row["season_rh_pct"],
+            row["season_earth_skin_temp"]
+        ]
+        div_preds.append(div_model.predict([feats])[0])
+    features_df["division_yield_prior"] = div_preds
+    
+    # Inject historical baseline yields to features_df
+    baseline_vals = []
+    for _, row in features_df.iterrows():
+        key = f"{row['district']}_{row['season']}"
+        if key in historical_lookup:
+            baseline_vals.append(historical_lookup[key])
+        else:
+            # Fallback: division average baseline for that season
+            div_keys = [k for k in historical_lookup.keys() if k.endswith(f"_{row['season']}")]
+            div_vals = [historical_lookup[k] for k in div_keys]
+            if div_vals:
+                baseline_vals.append(np.mean(div_vals))
+            else:
+                season_fallback = {"Aus": 2.05, "Aman": 2.55, "Boro": 4.10}
+                baseline_vals.append(season_fallback.get(row["season"], 2.5))
+    features_df["historical_baseline_yield"] = baseline_vals
+    
     # 3. Generate predictions for historical years (2015-2023)
     features_list = [
         "division", "district", "season", "area_ha", 
         "season_temp_c", "season_rain_mm", "season_rh_pct", "season_solar_mj_m2",
         "season_gdd", "season_dtr", "season_soil_wetness", "season_soil_wetness_root", "season_swdi",
-        "flood_index", "drought_index"
+        "flood_index", "drought_index",
+        "season_wind_speed", "season_earth_skin_temp", "division_yield_prior", "historical_baseline_yield"
     ]
     features_df["pred_yield_mtha"] = model.predict(features_df[features_list])
     features_df["pred_yield_mtha"] = features_df["pred_yield_mtha"].round(2)
     
     # 4. Project 2024-2029 predictions
-    df_future = project_future_records(features_df, model)
+    df_future = project_future_records(features_df, model, div_model, historical_lookup)
     
     # Combine historical and projection records
     if len(df_future) > 0:

@@ -18,6 +18,8 @@ def engineer_seasonal_features(df):
     seasonal_soil_wetness = []
     seasonal_soil_wetness_root = []
     seasonal_swdi = []
+    seasonal_wind = []
+    seasonal_skin_temp = []
     
     # Iterate through each row in the dataset
     for idx, row in df.iterrows():
@@ -44,6 +46,8 @@ def engineer_seasonal_features(df):
         min_temps = [row[f"temp_min_c_{m}"] for m in months]
         soil_wets = [row[f"gwettop_{m}"] for m in months]
         soil_roots = [row[f"gwetroot_{m}"] for m in months]
+        winds = [row[f"wind_speed_{m}"] for m in months]
+        skins = [row[f"earth_skin_temp_{m}"] for m in months]
         
         # Calculate summaries (means and sums)
         s_temp = np.mean(temps)
@@ -75,6 +79,10 @@ def engineer_seasonal_features(df):
         swdi_val = s_rain - (1.15 * s_temp * s_solar)
         seasonal_swdi.append(swdi_val)
         
+        # Wind and Skin Temp
+        seasonal_wind.append(np.mean(winds))
+        seasonal_skin_temp.append(np.mean(skins))
+        
     df["season_temp_c"] = seasonal_temp
     df["season_rain_mm"] = seasonal_rain
     df["season_rh_pct"] = seasonal_rh
@@ -84,6 +92,8 @@ def engineer_seasonal_features(df):
     df["season_soil_wetness"] = seasonal_soil_wetness
     df["season_soil_wetness_root"] = seasonal_soil_wetness_root
     df["season_swdi"] = seasonal_swdi
+    df["season_wind_speed"] = seasonal_wind
+    df["season_earth_skin_temp"] = seasonal_skin_temp
     
     # Add anomaly indices
     # 1. Flood index: High rainfall during Aman/Aus season (> 2500 mm total rainfall)
@@ -108,7 +118,7 @@ def engineer_seasonal_features(df):
         "area_ha", "production_mt", "yield_mtha",
         "season_temp_c", "season_rain_mm", "season_rh_pct", "season_solar_mj_m2",
         "season_gdd", "season_dtr", "season_soil_wetness", "season_soil_wetness_root", "season_swdi",
-        "flood_index", "drought_index"
+        "flood_index", "drought_index", "season_wind_speed", "season_earth_skin_temp"
     ]
     
     # Drop raw monthly columns

@@ -43,7 +43,7 @@ def fetch_district_weather(district, info, use_api=True):
     if use_api:
         url = "https://power.larc.nasa.gov/api/temporal/monthly/point"
         params = {
-            "parameters": "T2M,T2M_MAX,T2M_MIN,PRECTOTCORR,RH2M,ALLSKY_SNDN,GWETTOP,GWETROOT",
+            "parameters": "T2M,T2M_MAX,T2M_MIN,PRECTOTCORR,RH2M,ALLSKY_SNDN,GWETTOP,GWETROOT,WS2M,TS",
             "community": "AG",
             "longitude": lon,
             "latitude": lat,
@@ -68,6 +68,8 @@ def fetch_district_weather(district, info, use_api=True):
                 solar = parameters.get("ALLSKY_SNDN", {})
                 gwettop = parameters.get("GWETTOP", {})
                 gwetroot = parameters.get("GWETROOT", {})
+                wind = parameters.get("WS2M", {})
+                skin_temp = parameters.get("TS", {})
                 
                 # Parse monthly keys like "201501", "201502", etc.
                 for key in t2m.keys():
@@ -86,7 +88,9 @@ def fetch_district_weather(district, info, use_api=True):
                             "rh_pct": rh.get(key, 0.0),
                             "solar_mj_m2_day": solar.get(key, 0.0),
                             "gwettop": gwettop.get(key, 0.5),
-                            "gwetroot": gwetroot.get(key, 0.5)
+                            "gwetroot": gwetroot.get(key, 0.5),
+                            "wind_speed": wind.get(key, 1.2),
+                            "earth_skin_temp": skin_temp.get(key, t2m.get(key, 0.0))
                         })
                 if records:
                     return pd.DataFrame(records)
@@ -139,6 +143,15 @@ def fetch_district_weather(district, info, use_api=True):
             soil_wet_root = min(1.0, max(0.05, soil_wet_root))
             prev_soil_wet_root = soil_wet_root
             
+            # Simulate wind speed (m/s)
+            base_wind = 1.3 if division in ["Barishal", "Chattogram"] else 0.95
+            w_speed = base_wind + np.random.normal(0, 0.15)
+            w_speed = max(0.1, w_speed)
+            
+            # Simulate earth skin temperature (C)
+            skin_diff = 2.0 * (1.0 - soil_wet) + np.random.normal(0, 0.3)
+            e_skin_temp = t + skin_diff
+            
             records.append({
                 "district": district,
                 "year": year,
@@ -150,7 +163,9 @@ def fetch_district_weather(district, info, use_api=True):
                 "rh_pct": float(np.round(h, 2)),
                 "solar_mj_m2_day": float(np.round(s, 2)),
                 "gwettop": float(np.round(soil_wet, 3)),
-                "gwetroot": float(np.round(soil_wet_root, 3))
+                "gwetroot": float(np.round(soil_wet_root, 3)),
+                "wind_speed": float(np.round(w_speed, 2)),
+                "earth_skin_temp": float(np.round(e_skin_temp, 2))
             })
             
     return pd.DataFrame(records)
