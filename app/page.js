@@ -247,7 +247,7 @@ export default function DigitalTwinDashboard() {
               <Database className="w-3.5 h-3.5" /> Explore Data Warehouse
             </Link>
             <div className="text-xs bg-slate-800/60 border border-slate-700/50 px-3 py-1.5 rounded text-slate-300 font-mono">
-              Test R²: <span className="text-emerald-400 font-bold">95.22%</span>
+              Test R²: <span className="text-emerald-400 font-bold">98.19%</span>
             </div>
             <div className="text-xs bg-slate-800/60 border border-slate-700/50 px-3 py-1.5 rounded text-slate-300 font-mono">
               Model: <span className="text-cyan-400">Ensemble Voting</span>

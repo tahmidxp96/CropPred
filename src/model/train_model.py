@@ -30,9 +30,6 @@ def build_model_pipeline():
         "drought_index",
         "season_wind_speed",
         "season_earth_skin_temp",
-        "season_et",
-        "season_pet",
-        "season_oni",
         "division_yield_prior",
         "historical_baseline_yield"
     ]

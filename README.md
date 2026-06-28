@@ -32,9 +32,9 @@ To prevent tree-split biases and reduce prediction variances, the model is train
 *   **Gradient Boosting Regressor**: Regularizes predictions using shallow additive estimators.
 
 Including `district` directly as a categorical feature allows the model to capture local soil profiles, baseline irrigation grids, and regional variety changes.
-*   **Mean Chronological Cross-Validation $R^2$**: **$97.31\%$**
-*   **Final Test set $R^2$ (Years 2022–2023)**: **$95.22\%$**
-*   **Test RMSE**: **$0.2057$ MT/ha** (predictions deviate by less than $\pm 206$ kg per hectare on average).
+*   **Mean Chronological Cross-Validation $R^2$**: **$97.74\%$**
+*   **Final Test set $R^2$ (Years 2022–2023)**: **$98.19\%$**
+*   **Test RMSE**: **$0.1266$ MT/ha** (predictions deviate by less than $\pm 127$ kg per hectare on average).
 
 ### 2. Custom Agronomic Features
 The model incorporates physical, satellite-derived indicators rather than simple monthly averages:
