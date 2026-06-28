@@ -8,7 +8,7 @@ import {
 } from "recharts";
 import { 
   Activity, MapPin, Calendar, CloudRain, Sun, Thermometer, Droplets, 
-  AlertTriangle, ShieldCheck, Database, Info, Layers, RefreshCw, Cpu
+  AlertTriangle, ShieldCheck, Database, Info, Layers, RefreshCw, Cpu, Wind
 } from "lucide-react";
 
 export default function DigitalTwinDashboard() {
@@ -473,16 +473,29 @@ export default function DigitalTwinDashboard() {
                         <span className="text-sm font-medium text-slate-400">MT/ha</span>
                       </span>
                     </div>
-                    <div className="mt-3 flex items-center gap-2 pt-2 border-t border-slate-900">
-                      {deviation >= 0 ? (
-                        <span className="text-xs text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded font-mono font-semibold">
-                          +{deviation.toFixed(1)}% vs hist avg
-                        </span>
-                      ) : (
-                        <span className="text-xs text-rose-400 bg-rose-500/10 px-2 py-0.5 rounded font-mono font-semibold">
-                          {deviation.toFixed(1)}% vs hist avg
-                        </span>
-                      )}
+                    <div className="mt-3 pt-2 border-t border-slate-900">
+                      <div className="flex justify-between items-center">
+                        <span className="text-[10px] text-slate-400 uppercase font-semibold">Deviation</span>
+                        {deviation >= 0 ? (
+                          <span className="text-[11px] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded font-mono font-semibold">
+                            +{deviation.toFixed(1)}% vs hist avg
+                          </span>
+                        ) : (
+                          <span className="text-[11px] text-rose-400 bg-rose-500/10 px-2 py-0.5 rounded font-mono font-semibold">
+                            {deviation.toFixed(1)}% vs hist avg
+                          </span>
+                        )}
+                      </div>
+                      <div className="mt-2 flex flex-col gap-1.5 text-[10px] text-slate-400 font-mono border-t border-slate-900/60 pt-2">
+                        <div className="flex justify-between">
+                          <span>Hist Baseline:</span>
+                          <span className="text-slate-300 font-bold">{selectedRecord.historical_baseline.toFixed(2)} MT/ha</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span>Division Prior:</span>
+                          <span className="text-slate-300 font-bold">{selectedRecord.division_prior.toFixed(2)} MT/ha</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
@@ -525,7 +538,7 @@ export default function DigitalTwinDashboard() {
                 </div>
 
                 {/* Secondary Weather Metric Grid */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 bg-[#090d16]/40 p-4 rounded-xl border border-slate-900">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 bg-[#090d16]/40 p-4 rounded-xl border border-slate-900">
                   <div className="flex items-center gap-3">
                     <div className="bg-amber-500/10 text-amber-400 p-2 rounded-lg">
                       <Thermometer className="w-5 h-5" />
@@ -537,12 +550,32 @@ export default function DigitalTwinDashboard() {
                   </div>
 
                   <div className="flex items-center gap-3">
+                    <div className="bg-rose-500/10 text-rose-400 p-2 rounded-lg">
+                      <Thermometer className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="text-[10px] uppercase text-slate-400 block font-semibold">Skin Temp</span>
+                      <span className="text-sm font-bold text-slate-200">{selectedRecord.earth_skin_temp}°C</span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-3">
                     <div className="bg-cyan-500/10 text-cyan-400 p-2 rounded-lg">
                       <CloudRain className="w-5 h-5" />
                     </div>
                     <div>
                       <span className="text-[10px] uppercase text-slate-400 block font-semibold">Rainfall</span>
                       <span className="text-sm font-bold text-slate-200">{selectedRecord.rain_mm.toFixed(0)} mm</span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-3">
+                    <div className="bg-emerald-500/10 text-emerald-400 p-2 rounded-lg">
+                      <Wind className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="text-[10px] uppercase text-slate-400 block font-semibold">Wind Speed</span>
+                      <span className="text-sm font-bold text-slate-200">{selectedRecord.wind_speed.toFixed(1)} m/s</span>
                     </div>
                   </div>
 
