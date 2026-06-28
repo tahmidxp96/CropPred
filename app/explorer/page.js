@@ -99,9 +99,13 @@ export default function DataExplorer() {
         { key: "temp_c", label: "Temp (°C)", align: "right", num: true },
         { key: "rain_mm", label: "Rain (mm)", align: "right", num: true },
         { key: "rh_pct", label: "RH (%)", align: "right", num: true },
-        { key: "solar_mj", label: "Solar (MJ)", align: "right", num: true },
+        { key: "solar_mj", label: "Solar/PAR (MJ)", align: "right", num: true },
         { key: "flood", label: "Flood Idx", align: "right", num: true },
-        { key: "drought", label: "Drought Idx", align: "right", num: true }
+        { key: "drought", label: "Drought Idx", align: "right", num: true },
+        { key: "wind_speed", label: "Wind (m/s)", align: "right", num: true },
+        { key: "earth_skin_temp", label: "Skin Temp (°C)", align: "right", num: true },
+        { key: "division_prior", label: "Div Prior", align: "right", num: true },
+        { key: "historical_baseline", label: "Hist Baseline", align: "right", num: true }
       ];
     } else if (activeDataset === "bbs_raw") {
       return [
@@ -120,7 +124,9 @@ export default function DataExplorer() {
         { key: "temp_c", label: "Temp (°C)", align: "right", num: true },
         { key: "rain_mm_day", label: "Rain (mm/day)", align: "right", num: true },
         { key: "rh_pct", label: "Humidity (%)", align: "right", num: true },
-        { key: "solar_mj_m2_day", label: "Solar (MJ/m²/day)", align: "right", num: true }
+        { key: "solar_mj_m2_day", label: "Solar/PAR (MJ/m²/d)", align: "right", num: true },
+        { key: "wind_speed", label: "Wind Speed (m/s)", align: "right", num: true },
+        { key: "earth_skin_temp", label: "Skin Temp (°C)", align: "right", num: true }
       ];
     } else { // fao_national
       return [

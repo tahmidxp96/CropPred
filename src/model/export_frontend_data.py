@@ -415,7 +415,11 @@ def main():
             "rh_pct": float(np.round(row["season_rh_pct"], 1)),
             "solar_mj": float(np.round(row["season_solar_mj_m2"], 1)),
             "flood": float(np.round(row["flood_index"], 2)),
-            "drought": float(np.round(row["drought_index"], 2))
+            "drought": float(np.round(row["drought_index"], 2)),
+            "wind_speed": float(np.round(row["season_wind_speed"], 2)),
+            "earth_skin_temp": float(np.round(row["season_earth_skin_temp"], 1)),
+            "division_prior": float(np.round(row["division_yield_prior"], 2)),
+            "historical_baseline": float(np.round(row["historical_baseline_yield"], 2))
         })
     with open("public/data/yield_data.json", "w") as f:
         json.dump(yield_records, f, indent=2)
@@ -430,7 +434,8 @@ def main():
     all_features = [
         "area_ha", "season_temp_c", "season_rain_mm", "season_rh_pct", "season_solar_mj_m2",
         "season_gdd", "season_dtr", "season_soil_wetness", "season_soil_wetness_root", "season_swdi",
-        "flood_index", "drought_index"
+        "flood_index", "drought_index", "season_wind_speed", "season_earth_skin_temp",
+        "division_yield_prior", "historical_baseline_yield"
     ] + encoded_cat_features
     # Average the feature importances of the fitted sub-estimators
     importances_list = []

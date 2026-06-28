@@ -22,10 +22,10 @@ export default function MethodologyPage() {
 
   // Chronological CV Folds (Evaluated during pipeline execution)
   const cvFoldsData = [
-    { year: "Fold 1 (2018)", r2: 98.42, rmse: 0.1147, mae: 0.0840 },
-    { year: "Fold 2 (2019)", r2: 97.46, rmse: 0.1481, mae: 0.1050 },
-    { year: "Fold 3 (2020)", r2: 98.44, rmse: 0.1106, mae: 0.0810 },
-    { year: "Fold 4 (2021)", r2: 97.59, rmse: 0.1454, mae: 0.1030 },
+    { year: "Fold 1 (2018)", r2: 96.96, rmse: 0.1591, mae: 0.1142 },
+    { year: "Fold 2 (2019)", r2: 98.25, rmse: 0.1227, mae: 0.0834 },
+    { year: "Fold 3 (2020)", r2: 98.10, rmse: 0.1221, mae: 0.0827 },
+    { year: "Fold 4 (2021)", r2: 97.67, rmse: 0.1428, mae: 0.0991 },
   ];
 
   // XGBoost Training Loss Convergence Curve (RMSE)
@@ -38,21 +38,21 @@ export default function MethodologyPage() {
     { iteration: 60, train_rmse: 0.12, test_rmse: 0.21 },
     { iteration: 80, train_rmse: 0.08, test_rmse: 0.17 },
     { iteration: 100, train_rmse: 0.0735, test_rmse: 0.1420 },
-    { iteration: 120, train_rmse: 0.0722, test_rmse: 0.1370 },
+    { iteration: 120, train_rmse: 0.0651, test_rmse: 0.1253 },
   ];
 
   // Normalized meteorological & agronomic feature importances
   const envFeatureImportance = [
-    { name: "Total Rainfall", val: 62.8 },
-    { name: "Water Deficit (SWDI)", val: 16.4 },
-    { name: "Land Area", val: 9.6 },
-    { name: "Avg Humidity", val: 9.1 },
-    { name: "Soil Wetness (Surf)", val: 1.3 },
-    { name: "Avg Temp", val: 0.4 },
-    { name: "Solar Rad", val: 0.3 },
-    { name: "Soil Wetness (Root)", val: 0.1 },
-    { name: "GDD Heat", val: 0.1 },
-    { name: "DTR Diurnal", val: 0.1 }
+    { name: "Boro Season Marker", val: 38.3 },
+    { name: "Hist baseline (1995-2014)", val: 23.5 },
+    { name: "Relative Humidity (RH)", val: 16.9 },
+    { name: "Total Rainfall", val: 9.8 },
+    { name: "Land Area", val: 5.9 },
+    { name: "Water Deficit (SWDI)", val: 3.4 },
+    { name: "Soil Wetness (Surf)", val: 0.9 },
+    { name: "Earth Skin Temp", val: 0.3 },
+    { name: "Stacked Division Prior", val: 0.1 },
+    { name: "Other indicators", val: 0.9 }
   ];
 
   if (!isMounted) return null;
@@ -104,8 +104,8 @@ export default function MethodologyPage() {
             </div>
             <div>
               <span className="text-[10px] text-slate-500 block uppercase tracking-wider font-mono">Target Performance</span>
-              <span className="text-lg font-bold text-white font-mono block">97.88% Test R²</span>
-              <span className="text-xs text-slate-400">RMSE 0.137 MT/ha</span>
+              <span className="text-lg font-bold text-white font-mono block">98.23% Test R²</span>
+              <span className="text-xs text-slate-400">RMSE 0.125 MT/ha</span>
             </div>
           </div>
         </section>
@@ -336,6 +336,30 @@ export default function MethodologyPage() {
                 Negative SWDI values represent moisture deficits (where evaporation exceeds precipitation), triggering early crop stress, while positive values indicate moisture equilibrium.
               </p>
             </div>
+
+            <div className="glass-panel p-6 flex flex-col gap-4">
+              <h3 className="text-lg font-bold text-white border-b border-slate-900 pb-2">
+                5. Stacked Division-Level Spatial Prior
+              </h3>
+              <p className="text-sm text-slate-300 leading-relaxed">
+                Since weather patterns are highly regional, we train a **Macro-Level Division Regressor** on 25 years of division-level weather statistics (2000–2024).
+              </p>
+              <p className="text-xs text-slate-400 leading-relaxed">
+                The predicted yield from this division-level model is passed as a stacked prior feature `division_yield_prior` to the district-level model. This anchors local predictions to regional weather constraints, preventing overfitting to micro-anomalies.
+              </p>
+            </div>
+
+            <div className="glass-panel p-6 flex flex-col gap-4">
+              <h3 className="text-lg font-bold text-white border-b border-slate-900 pb-2">
+                6. Historical District Yield Baselines (1995–2014)
+              </h3>
+              <p className="text-sm text-slate-300 leading-relaxed">
+                To incorporate long-term agricultural performance histories without causing sample imbalances, we parse district-level records from 1995 to 2014.
+              </p>
+              <p className="text-xs text-slate-400 leading-relaxed">
+                Instead of merging the sparse tables directly, we compile these files into a static **district-season yield baseline profile lookup**, which serves as an anchor feature representing long-term local productivity.
+              </p>
+            </div>
           </div>
         )}
 
@@ -428,7 +452,7 @@ export default function MethodologyPage() {
                   ))}
                   <div className="bg-[#0f1b2b] border border-slate-800 p-3 rounded text-center mt-2">
                     <span className="text-slate-400 text-xs block font-bold">Mean Chronological CV R²</span>
-                    <span className="text-emerald-400 font-mono font-bold text-base block mt-0.5">97.98%</span>
+                    <span className="text-emerald-400 font-mono font-bold text-base block mt-0.5">97.75%</span>
                   </div>
                 </div>
               </div>
@@ -493,7 +517,7 @@ export default function MethodologyPage() {
                 <div className="bg-[#0b0e14] p-4 rounded border border-slate-900 flex justify-between items-center">
                   <div>
                     <span className="text-[10px] text-slate-500 block uppercase font-mono">Test R² Score</span>
-                    <span className="text-xl font-bold text-emerald-400 font-mono mt-0.5 block">97.88%</span>
+                    <span className="text-xl font-bold text-emerald-400 font-mono mt-0.5 block">98.23%</span>
                   </div>
                   <CheckCircle className="text-emerald-500 w-8 h-8 opacity-85" />
                 </div>
@@ -503,12 +527,12 @@ export default function MethodologyPage() {
                   <div className="grid grid-cols-2 gap-4 mt-2 text-center">
                     <div className="border-r border-slate-900 pr-2">
                       <span className="text-xs text-slate-400 block">RMSE</span>
-                      <span className="text-white font-bold font-mono text-sm block mt-0.5">0.1370</span>
+                      <span className="text-white font-bold font-mono text-sm block mt-0.5">0.1253</span>
                       <span className="text-[9px] text-slate-500 block">MT/ha</span>
                     </div>
                     <div>
                       <span className="text-xs text-slate-400 block">MAE</span>
-                      <span className="text-white font-bold font-mono text-sm block mt-0.5">0.1076</span>
+                      <span className="text-white font-bold font-mono text-sm block mt-0.5">0.0865</span>
                       <span className="text-[9px] text-slate-500 block">MT/ha</span>
                     </div>
                   </div>
@@ -516,7 +540,7 @@ export default function MethodologyPage() {
 
                 <div className="text-xs text-slate-400 leading-relaxed">
                   <span className="font-semibold text-slate-300 block mb-1">Interpretation:</span>
-                  An RMSE of 0.137 MT/ha on test years (2022-2023) demonstrates that predictions deviate by less than 137 kg per hectare from actual yields, demonstrating robust precision across all regions.
+                  An RMSE of 0.125 MT/ha on test years (2022-2023) demonstrates that predictions deviate by less than 125 kg per hectare from actual yields, demonstrating robust precision across all regions.
                 </div>
               </div>
             </div>
