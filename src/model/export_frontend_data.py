@@ -397,6 +397,63 @@ def main():
         with open("public/data/nasa_raw.json", "w") as f:
             json.dump(nasa_raw_records, f, indent=2)
         print(f"Exported nasa_raw.json ({len(nasa_raw_records)} records)")
+        
+    # 6d. Export 1995-2014 Excel Raw Rows for explorer
+    hist_explorer_records = []
+    file_1 = "data/raw/crop(1995-2004).xlsx"
+    if os.path.exists(file_1):
+        df1 = pd.read_excel(file_1)
+        for _, row in df1.iterrows():
+            hist_explorer_records.append({
+                "district": str(row["District"]),
+                "division": str(row["Division"]),
+                "year": int(row["Year"]),
+                "season": str(row["Crop Type"]),
+                "area_acres": float(row["Area(acres)"]),
+                "production_tons": float(row["Production(tons)"]),
+                "yield_mtha": float(np.round((float(row["Production(tons)"]) * 1.01605) / (float(row["Area(acres)"]) * 0.404686), 2)) if float(row["Area(acres)"]) > 0 else 0.0
+            })
+    file_2 = "data/raw/crop_production_dataset_10years2005-2014.xlsx"
+    if os.path.exists(file_2):
+        df2 = pd.read_excel(file_2)
+        for _, row in df2.iterrows():
+            hist_explorer_records.append({
+                "district": str(row["District"]),
+                "division": str(row["Division"]),
+                "year": int(row["Year"]),
+                "season": str(row["Crop Type"]),
+                "area_acres": float(row["Area(acres)"]),
+                "production_tons": float(row["Production(tons)"]),
+                "yield_mtha": float(np.round((float(row["Production(tons)"]) * 1.01605) / (float(row["Area(acres)"]) * 0.404686), 2)) if float(row["Area(acres)"]) > 0 else 0.0
+            })
+    with open("public/data/historical_crop_raw.json", "w") as f:
+        json.dump(hist_explorer_records, f, indent=2)
+    print(f"Exported historical_crop_raw.json ({len(hist_explorer_records)} records)")
+    
+    # 6e. Export Raw Division Agroclimatic Data
+    division_path = "data/raw/Bangladesh Agroclimatic Crop Yield (2000-2024).csv"
+    if os.path.exists(division_path):
+        div_df = pd.read_csv(division_path)
+        div_records = []
+        for _, row in div_df.iterrows():
+            div_records.append({
+                "division": row["Division"],
+                "year": int(row["year"]),
+                "yield_mtha": float(np.round(row["Crop yield"], 2)),
+                "temp_max": float(np.round(row["Max temp"], 1)),
+                "temp_min": float(np.round(row["Min temp"], 1)),
+                "wind_speed_max": float(np.round(row["Max Wind Speed"], 2)),
+                "wind_speed_min": float(np.round(row["Min wind speed"], 2)),
+                "rain_sum": float(np.round(row["Precipitation Corrected Sum"], 1)),
+                "par": float(np.round(row["All Sky Surface Total PAR"], 1)),
+                "soil_wetness_root": float(np.round(row["Root Zone Soil Wetness"], 2)),
+                "soil_wetness_surf": float(np.round(row["Surface Soil Wetness"], 2)),
+                "humidity": float(np.round(row["Humidity"], 1)),
+                "skin_temp": float(np.round(row["Earth Skin Temp"], 1))
+            })
+        with open("public/data/division_agroclimatic_raw.json", "w") as f:
+            json.dump(div_records, f, indent=2)
+        print(f"Exported division_agroclimatic_raw.json ({len(div_records)} records)")
     
     # 7. Export Yield Data records (compacted structure to reduce payload size)
     # List of dicts: district, division, year, season, area_ha, yield_mtha, pred_yield_mtha, temp, rain, rh, solar, flood, drought

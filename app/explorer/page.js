@@ -35,6 +35,10 @@ export default function DataExplorer() {
       url = `${basePath}/data/bbs_raw.json`;
     } else if (activeDataset === "nasa_raw") {
       url = `${basePath}/data/nasa_raw.json`;
+    } else if (activeDataset === "historical_crop") {
+      url = `${basePath}/data/historical_crop_raw.json`;
+    } else if (activeDataset === "division_agroclimatic") {
+      url = `${basePath}/data/division_agroclimatic_raw.json`;
     } else {
       url = `${basePath}/data/fao_national.json`;
     }
@@ -128,6 +132,32 @@ export default function DataExplorer() {
         { key: "wind_speed", label: "Wind Speed (m/s)", align: "right", num: true },
         { key: "earth_skin_temp", label: "Skin Temp (°C)", align: "right", num: true }
       ];
+    } else if (activeDataset === "historical_crop") {
+      return [
+        { key: "district", label: "District", align: "left" },
+        { key: "division", label: "Division", align: "left" },
+        { key: "year", label: "Year", align: "center" },
+        { key: "season", label: "Crop/Season", align: "center" },
+        { key: "area_acres", label: "Area (Acres)", align: "right", num: true },
+        { key: "production_tons", label: "Prod (Tons)", align: "right", num: true },
+        { key: "yield_mtha", label: "Calc Yield (MT/ha)", align: "right", num: true }
+      ];
+    } else if (activeDataset === "division_agroclimatic") {
+      return [
+        { key: "division", label: "Division", align: "left" },
+        { key: "year", label: "Year", align: "center" },
+        { key: "yield_mtha", label: "Crop Yield (MT/ha)", align: "right", num: true },
+        { key: "temp_max", label: "Max Temp (°C)", align: "right", num: true },
+        { key: "temp_min", label: "Min Temp (°C)", align: "right", num: true },
+        { key: "wind_speed_max", label: "Max Wind (m/s)", align: "right", num: true },
+        { key: "wind_speed_min", label: "Min Wind (m/s)", align: "right", num: true },
+        { key: "rain_sum", label: "Rain Corrected (mm)", align: "right", num: true },
+        { key: "par", label: "PAR (MJ)", align: "right", num: true },
+        { key: "soil_wetness_root", label: "Root Moisture", align: "right", num: true },
+        { key: "soil_wetness_surf", label: "Surface Moisture", align: "right", num: true },
+        { key: "humidity", label: "Humidity (%)", align: "right", num: true },
+        { key: "skin_temp", label: "Skin Temp (°C)", align: "right", num: true }
+      ];
     } else { // fao_national
       return [
         { key: "year", label: "Year", align: "center" },
@@ -191,6 +221,18 @@ export default function DataExplorer() {
           source: "NASA Langley Research Center POWER API Climatology",
           desc: "Monthly environmental observations extracted for all 64 district coordinates, including surface temperatures, daily precipitation, relative humidity, and solar irradiance. Used to construct seasonal features (2015-2024)."
         };
+      case "historical_crop":
+        return {
+          title: "BBS Historical Crop Registries (1995-2014)",
+          source: "Bangladesh Bureau of Statistics Official Records (Excel format)",
+          desc: "Raw historical district-level crop statistics parsed from official records spanning 1995 to 2014. Used for long-term historical yield baseline calibration."
+        };
+      case "division_agroclimatic":
+        return {
+          title: "Raw Division-Level Agroclimatic Dataset (2000-2024)",
+          source: "BBS Crop Data + NASA POWER Climatology Integration",
+          desc: "Comprehensive 25-year division-level dataset containing annual average yields aligned with solar PAR, wind speed extremes, surface soil moisture, and land temperatures."
+        };
       default:
         return {
           title: "National FAOSTAT Reference Metrics",
@@ -239,6 +281,8 @@ export default function DataExplorer() {
             { id: "digital_twin", label: "Merged Twin Matrix (Processed)" },
             { id: "bbs_raw", label: "Raw BBS Yields (Census)" },
             { id: "nasa_raw", label: "Raw NASA Climate (Observations)" },
+            { id: "historical_crop", label: "Raw Historical Excel Crops (1995-2014)" },
+            { id: "division_agroclimatic", label: "Raw Division Agroclimatic (2000-2024)" },
             { id: "fao_national", label: "Raw FAOSTAT National (Reference)" }
           ].map(btn => (
             <button
@@ -317,7 +361,7 @@ export default function DataExplorer() {
                 className="bg-[#0d1420]/80 border border-slate-800 rounded px-2.5 py-1.5 text-xs text-slate-200 focus:outline-none focus:border-emerald-500"
               >
                 <option value="All">All Years</option>
-                {[2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024].map(yr => (
+                {[...new Set(data.map(row => row.year).filter(Boolean))].sort((a, b) => b - a).map(yr => (
                   <option key={yr} value={yr.toString()}>{yr}</option>
                 ))}
               </select>

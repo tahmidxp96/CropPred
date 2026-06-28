@@ -1,0 +1,5177 @@
+[
+  {
+    "district": "Khulna",
+    "division": "Khulna",
+    "year": 1995,
+    "season": "Aus",
+    "area_acres": 27580.0,
+    "production_tons": 22200.0,
+    "yield_mtha": 2.02
+  },
+  {
+    "district": "Jessor",
+    "division": "Khulna",
+    "year": 1995,
+    "season": "Aus",
+    "area_acres": 50610.0,
+    "production_tons": 45130.0,
+    "yield_mtha": 2.24
+  },
+  {
+    "district": "Kushtia",
+    "division": "Khulna",
+    "year": 1995,
+    "season": "Aus",
+    "area_acres": 19110.0,
+    "production_tons": 18100.0,
+    "yield_mtha": 2.38
+  },
+  {
+    "district": "Chittagong",
+    "division": "Chittagong",
+    "year": 1995,
+    "season": "Aus",
+    "area_acres": 44780.0,
+    "production_tons": 38580.0,
+    "yield_mtha": 2.16
+  },
+  {
+    "district": "Comilla",
+    "division": "Chittagong",
+    "year": 1995,
+    "season": "Aus",
+    "area_acres": 127280.0,
+    "production_tons": 94540.0,
+    "yield_mtha": 1.86
+  },
+  {
+    "district": "Rangamati",
+    "division": "Chittagong",
+    "year": 1995,
+    "season": "Aus",
+    "area_acres": 3970.0,
+    "production_tons": 3580.0,
+    "yield_mtha": 2.26
+  },
+  {
+    "district": "Noakhali",
+    "division": "Chittagong",
+    "year": 1995,
+    "season": "Aus",
+    "area_acres": 108820.0,
+    "production_tons": 72950.0,
+    "yield_mtha": 1.68
+  },
+  {
+    "district": "Dinajpur",
+    "division": "North region",
+    "year": 1995,
+    "season": "Aus",
+    "area_acres": 53900.0,
+    "production_tons": 31270.0,
+    "yield_mtha": 1.46
+  },
+  {
+    "district": "Rangpur",
+    "division": "North region",
+    "year": 1995,
+    "season": "Aus",
+    "area_acres": 60480.0,
+    "production_tons": 32010.0,
+    "yield_mtha": 1.33
+  },
+  {
+    "district": "Rajshahi",
+    "division": "North region",
+    "year": 1995,
+    "season": "Aus",
+    "area_acres": 89660.0,
+    "production_tons": 72560.0,
+    "yield_mtha": 2.03
+  },
+  {
+    "district": "Bogra",
+    "division": "North region",
+    "year": 1995,
+    "season": "Aus",
+    "area_acres": 29800.0,
+    "production_tons": 20700.0,
+    "yield_mtha": 1.74
+  },
+  {
+    "district": "Khulna",
+    "division": "Khulna",
+    "year": 1996,
+    "season": "Aus",
+    "area_acres": 57310.0,
+    "production_tons": 36250.0,
+    "yield_mtha": 1.59
+  },
+  {
+    "district": "Jessor",
+    "division": "Khulna",
+    "year": 1996,
+    "season": "Aus",
+    "area_acres": 200840.0,
+    "production_tons": 110800.0,
+    "yield_mtha": 1.39
+  },
+  {
+    "district": "Kushtia",
+    "division": "Khulna",
+    "year": 1996,
+    "season": "Aus",
+    "area_acres": 182680.0,
+    "production_tons": 98690.0,
+    "yield_mtha": 1.36
+  },
+  {
+    "district": "Chittagong",
+    "division": "Chittagong",
+    "year": 1996,
+    "season": "Aus",
+    "area_acres": 88910.0,
+    "production_tons": 58230.0,
+    "yield_mtha": 1.64
+  },
+  {
+    "district": "Comilla",
+    "division": "Chittagong",
+    "year": 1996,
+    "season": "Aus",
+    "area_acres": 30821.0,
+    "production_tons": 162080.0,
+    "yield_mtha": 13.2
+  },
+  {
+    "district": "Rangamati",
+    "division": "Chittagong",
+    "year": 1996,
+    "season": "Aus",
+    "area_acres": 11210.0,
+    "production_tons": 7290.0,
+    "yield_mtha": 1.63
+  },
+  {
+    "district": "Noakhali",
+    "division": "Chittagong",
+    "year": 1996,
+    "season": "Aus",
+    "area_acres": 241090.0,
+    "production_tons": 117480.0,
+    "yield_mtha": 1.22
+  },
+  {
+    "district": "Dinajpur",
+    "division": "North region",
+    "year": 1996,
+    "season": "Aus",
+    "area_acres": 95090.0,
+    "production_tons": 43290.0,
+    "yield_mtha": 1.14
+  },
+  {
+    "district": "Rangpur",
+    "division": "North region",
+    "year": 1996,
+    "season": "Aus",
+    "area_acres": 165250.0,
+    "production_tons": 65250.0,
+    "yield_mtha": 0.99
+  },
+  {
+    "district": "Rajshahi",
+    "division": "North region",
+    "year": 1996,
+    "season": "Aus",
+    "area_acres": 227220.0,
+    "production_tons": 129970.0,
+    "yield_mtha": 1.44
+  },
+  {
+    "district": "Bogra",
+    "division": "North region",
+    "year": 1996,
+    "season": "Aus",
+    "area_acres": 33970.0,
+    "production_tons": 22110.0,
+    "yield_mtha": 1.63
+  },
+  {
+    "district": "Khulna",
+    "division": "Khulna",
+    "year": 1997,
+    "season": "Aus",
+    "area_acres": 29550.0,
+    "production_tons": 21210.0,
+    "yield_mtha": 1.8
+  },
+  {
+    "district": "Jessor",
+    "division": "Khulna",
+    "year": 1997,
+    "season": "Aus",
+    "area_acres": 165240.0,
+    "production_tons": 114240.0,
+    "yield_mtha": 1.74
+  },
+  {
+    "district": "Kushtia",
+    "division": "Khulna",
+    "year": 1997,
+    "season": "Aus",
+    "area_acres": 178890.0,
+    "production_tons": 97250.0,
+    "yield_mtha": 1.36
+  },
+  {
+    "district": "Chittagong",
+    "division": "Chittagong",
+    "year": 1997,
+    "season": "Aus",
+    "area_acres": 126820.0,
+    "production_tons": 108360.0,
+    "yield_mtha": 2.15
+  },
+  {
+    "district": "Comilla",
+    "division": "Chittagong",
+    "year": 1997,
+    "season": "Aus",
+    "area_acres": 229040.0,
+    "production_tons": 165300.0,
+    "yield_mtha": 1.81
+  },
+  {
+    "district": "Rangamati",
+    "division": "Chittagong",
+    "year": 1997,
+    "season": "Aus",
+    "area_acres": 20450.0,
+    "production_tons": 12040.0,
+    "yield_mtha": 1.48
+  },
+  {
+    "district": "Noakhali",
+    "division": "Chittagong",
+    "year": 1997,
+    "season": "Aus",
+    "area_acres": 213550.0,
+    "production_tons": 123190.0,
+    "yield_mtha": 1.45
+  },
+  {
+    "district": "Dinajpur",
+    "division": "North region",
+    "year": 1997,
+    "season": "Aus",
+    "area_acres": 27130.0,
+    "production_tons": 23780.0,
+    "yield_mtha": 2.2
+  },
+  {
+    "district": "Rangpur",
+    "division": "North region",
+    "year": 1997,
+    "season": "Aus",
+    "area_acres": 20450.0,
+    "production_tons": 12040.0,
+    "yield_mtha": 1.48
+  },
+  {
+    "district": "Rajshahi",
+    "division": "North region",
+    "year": 1997,
+    "season": "Aus",
+    "area_acres": 185920.0,
+    "production_tons": 125120.0,
+    "yield_mtha": 1.69
+  },
+  {
+    "district": "Bogra",
+    "division": "North region",
+    "year": 1997,
+    "season": "Aus",
+    "area_acres": 17890.0,
+    "production_tons": 12060.0,
+    "yield_mtha": 1.69
+  },
+  {
+    "district": "Khulna",
+    "division": "Khulna",
+    "year": 1998,
+    "season": "Aus",
+    "area_acres": 46960.0,
+    "production_tons": 32120.0,
+    "yield_mtha": 1.72
+  },
+  {
+    "district": "Jessor",
+    "division": "Khulna",
+    "year": 1998,
+    "season": "Aus",
+    "area_acres": 247250.0,
+    "production_tons": 143410.0,
+    "yield_mtha": 1.46
+  },
+  {
+    "district": "Kushtia",
+    "division": "Khulna",
+    "year": 1998,
+    "season": "Aus",
+    "area_acres": 183420.0,
+    "production_tons": 105650.0,
+    "yield_mtha": 1.45
+  },
+  {
+    "district": "Chittagong",
+    "division": "Chittagong",
+    "year": 1998,
+    "season": "Aus",
+    "area_acres": 112700.0,
+    "production_tons": 77210.0,
+    "yield_mtha": 1.72
+  },
+  {
+    "district": "Comilla",
+    "division": "Chittagong",
+    "year": 1998,
+    "season": "Aus",
+    "area_acres": 241660.0,
+    "production_tons": 119600.0,
+    "yield_mtha": 1.24
+  },
+  {
+    "district": "Rangamati",
+    "division": "Chittagong",
+    "year": 1998,
+    "season": "Aus",
+    "area_acres": 10740.0,
+    "production_tons": 6650.0,
+    "yield_mtha": 1.55
+  },
+  {
+    "district": "Noakhali",
+    "division": "Chittagong",
+    "year": 1998,
+    "season": "Aus",
+    "area_acres": 195890.0,
+    "production_tons": 82860.0,
+    "yield_mtha": 1.06
+  },
+  {
+    "district": "Dinajpur",
+    "division": "North region",
+    "year": 1998,
+    "season": "Aus",
+    "area_acres": 83890.0,
+    "production_tons": 39620.0,
+    "yield_mtha": 1.19
+  },
+  {
+    "district": "Rangpur",
+    "division": "North region",
+    "year": 1998,
+    "season": "Aus",
+    "area_acres": 127930.0,
+    "production_tons": 55250.0,
+    "yield_mtha": 1.08
+  },
+  {
+    "district": "Rajshahi",
+    "division": "North region",
+    "year": 1998,
+    "season": "Aus",
+    "area_acres": 177290.0,
+    "production_tons": 97920.0,
+    "yield_mtha": 1.39
+  },
+  {
+    "district": "Bogra",
+    "division": "North region",
+    "year": 1998,
+    "season": "Aus",
+    "area_acres": 26640.0,
+    "production_tons": 16870.0,
+    "yield_mtha": 1.59
+  },
+  {
+    "district": "Khulna",
+    "division": "Khulna",
+    "year": 1999,
+    "season": "Aus",
+    "area_acres": 52020.0,
+    "production_tons": 32700.0,
+    "yield_mtha": 1.58
+  },
+  {
+    "district": "Jessor",
+    "division": "Khulna",
+    "year": 1999,
+    "season": "Aus",
+    "area_acres": 247890.0,
+    "production_tons": 134770.0,
+    "yield_mtha": 1.36
+  },
+  {
+    "district": "Kushtia",
+    "division": "Khulna",
+    "year": 1999,
+    "season": "Aus",
+    "area_acres": 177530.0,
+    "production_tons": 110540.0,
+    "yield_mtha": 1.56
+  },
+  {
+    "district": "Chittagong",
+    "division": "Chittagong",
+    "year": 1999,
+    "season": "Aus",
+    "area_acres": 106060.0,
+    "production_tons": 80160.0,
+    "yield_mtha": 1.9
+  },
+  {
+    "district": "Comilla",
+    "division": "Chittagong",
+    "year": 1999,
+    "season": "Aus",
+    "area_acres": 218400.0,
+    "production_tons": 117650.0,
+    "yield_mtha": 1.35
+  },
+  {
+    "district": "Rangamati",
+    "division": "Chittagong",
+    "year": 1999,
+    "season": "Aus",
+    "area_acres": 11370.0,
+    "production_tons": 7320.0,
+    "yield_mtha": 1.62
+  },
+  {
+    "district": "Noakhali",
+    "division": "Chittagong",
+    "year": 1999,
+    "season": "Aus",
+    "area_acres": 221980.0,
+    "production_tons": 125550.0,
+    "yield_mtha": 1.42
+  },
+  {
+    "district": "Dinajpur",
+    "division": "North region",
+    "year": 1999,
+    "season": "Aus",
+    "area_acres": 72270.0,
+    "production_tons": 34120.0,
+    "yield_mtha": 1.19
+  },
+  {
+    "district": "Rangpur",
+    "division": "North region",
+    "year": 1999,
+    "season": "Aus",
+    "area_acres": 46500.0,
+    "production_tons": 21440.0,
+    "yield_mtha": 1.16
+  },
+  {
+    "district": "Rajshahi",
+    "division": "North region",
+    "year": 1999,
+    "season": "Aus",
+    "area_acres": 174110.0,
+    "production_tons": 104380.0,
+    "yield_mtha": 1.51
+  },
+  {
+    "district": "Bogra",
+    "division": "North region",
+    "year": 1999,
+    "season": "Aus",
+    "area_acres": 26370.0,
+    "production_tons": 17560.0,
+    "yield_mtha": 1.67
+  },
+  {
+    "district": "Khulna",
+    "division": "Khulna",
+    "year": 2000,
+    "season": "Aus",
+    "area_acres": 31390.0,
+    "production_tons": 20670.0,
+    "yield_mtha": 1.65
+  },
+  {
+    "district": "Jessor",
+    "division": "Khulna",
+    "year": 2000,
+    "season": "Aus",
+    "area_acres": 220870.0,
+    "production_tons": 152920.0,
+    "yield_mtha": 1.74
+  },
+  {
+    "district": "Kushtia",
+    "division": "Khulna",
+    "year": 2000,
+    "season": "Aus",
+    "area_acres": 173320.0,
+    "production_tons": 106020.0,
+    "yield_mtha": 1.54
+  },
+  {
+    "district": "Chittagong",
+    "division": "Chittagong",
+    "year": 2000,
+    "season": "Aus",
+    "area_acres": 106640.0,
+    "production_tons": 86960.0,
+    "yield_mtha": 2.05
+  },
+  {
+    "district": "Comilla",
+    "division": "Chittagong",
+    "year": 2000,
+    "season": "Aus",
+    "area_acres": 266460.0,
+    "production_tons": 197330.0,
+    "yield_mtha": 1.86
+  },
+  {
+    "district": "Rangamati",
+    "division": "Chittagong",
+    "year": 2000,
+    "season": "Aus",
+    "area_acres": 11430.0,
+    "production_tons": 7360.0,
+    "yield_mtha": 1.62
+  },
+  {
+    "district": "Noakhali",
+    "division": "Chittagong",
+    "year": 2000,
+    "season": "Aus",
+    "area_acres": 219240.0,
+    "production_tons": 122050.0,
+    "yield_mtha": 1.4
+  },
+  {
+    "district": "Dinajpur",
+    "division": "North region",
+    "year": 2000,
+    "season": "Aus",
+    "area_acres": 42040.0,
+    "production_tons": 30840.0,
+    "yield_mtha": 1.84
+  },
+  {
+    "district": "Rangpur",
+    "division": "North region",
+    "year": 2000,
+    "season": "Aus",
+    "area_acres": 31700.0,
+    "production_tons": 13690.0,
+    "yield_mtha": 1.08
+  },
+  {
+    "district": "Rajshahi",
+    "division": "North region",
+    "year": 2000,
+    "season": "Aus",
+    "area_acres": 161010.0,
+    "production_tons": 99141.0,
+    "yield_mtha": 1.55
+  },
+  {
+    "district": "Bogra",
+    "division": "North region",
+    "year": 2000,
+    "season": "Aus",
+    "area_acres": 19730.0,
+    "production_tons": 13450.0,
+    "yield_mtha": 1.71
+  },
+  {
+    "district": "Khulna",
+    "division": "Khulna",
+    "year": 2001,
+    "season": "Aus",
+    "area_acres": 32080.0,
+    "production_tons": 22490.0,
+    "yield_mtha": 1.76
+  },
+  {
+    "district": "Jessor",
+    "division": "Khulna",
+    "year": 2001,
+    "season": "Aus",
+    "area_acres": 170780.0,
+    "production_tons": 115200.0,
+    "yield_mtha": 1.69
+  },
+  {
+    "district": "Kushtia",
+    "division": "Khulna",
+    "year": 2001,
+    "season": "Aus",
+    "area_acres": 152690.0,
+    "production_tons": 95370.0,
+    "yield_mtha": 1.57
+  },
+  {
+    "district": "Chittagong",
+    "division": "Chittagong",
+    "year": 2001,
+    "season": "Aus",
+    "area_acres": 113580.0,
+    "production_tons": 90730.0,
+    "yield_mtha": 2.01
+  },
+  {
+    "district": "Comilla",
+    "division": "Chittagong",
+    "year": 2001,
+    "season": "Aus",
+    "area_acres": 271060.0,
+    "production_tons": 199690.0,
+    "yield_mtha": 1.85
+  },
+  {
+    "district": "Rangamati",
+    "division": "Chittagong",
+    "year": 2001,
+    "season": "Aus",
+    "area_acres": 11110.0,
+    "production_tons": 6680.0,
+    "yield_mtha": 1.51
+  },
+  {
+    "district": "Noakhali",
+    "division": "Chittagong",
+    "year": 2001,
+    "season": "Aus",
+    "area_acres": 218990.0,
+    "production_tons": 129980.0,
+    "yield_mtha": 1.49
+  },
+  {
+    "district": "Dinajpur",
+    "division": "North region",
+    "year": 2001,
+    "season": "Aus",
+    "area_acres": 28770.0,
+    "production_tons": 15510.0,
+    "yield_mtha": 1.35
+  },
+  {
+    "district": "Rangpur",
+    "division": "North region",
+    "year": 2001,
+    "season": "Aus",
+    "area_acres": 24790.0,
+    "production_tons": 9980.0,
+    "yield_mtha": 1.01
+  },
+  {
+    "district": "Rajshahi",
+    "division": "North region",
+    "year": 2001,
+    "season": "Aus",
+    "area_acres": 144650.0,
+    "production_tons": 91240.0,
+    "yield_mtha": 1.58
+  },
+  {
+    "district": "Bogra",
+    "division": "North region",
+    "year": 2001,
+    "season": "Aus",
+    "area_acres": 18060.0,
+    "production_tons": 12120.0,
+    "yield_mtha": 1.68
+  },
+  {
+    "district": "Khulna",
+    "division": "Khulna",
+    "year": 2002,
+    "season": "Aus",
+    "area_acres": 29720.0,
+    "production_tons": 20940.0,
+    "yield_mtha": 1.77
+  },
+  {
+    "district": "Jessor",
+    "division": "Khulna",
+    "year": 2002,
+    "season": "Aus",
+    "area_acres": 173240.0,
+    "production_tons": 127630.0,
+    "yield_mtha": 1.85
+  },
+  {
+    "district": "Kushtia",
+    "division": "Khulna",
+    "year": 2002,
+    "season": "Aus",
+    "area_acres": 142430.0,
+    "production_tons": 86110.0,
+    "yield_mtha": 1.52
+  },
+  {
+    "district": "Chittagong",
+    "division": "Chittagong",
+    "year": 2002,
+    "season": "Aus",
+    "area_acres": 118190.0,
+    "production_tons": 99430.0,
+    "yield_mtha": 2.11
+  },
+  {
+    "district": "Comilla",
+    "division": "Chittagong",
+    "year": 2002,
+    "season": "Aus",
+    "area_acres": 248920.0,
+    "production_tons": 182030.0,
+    "yield_mtha": 1.84
+  },
+  {
+    "district": "Rangamati",
+    "division": "Chittagong",
+    "year": 2002,
+    "season": "Aus",
+    "area_acres": 12680.0,
+    "production_tons": 7190.0,
+    "yield_mtha": 1.42
+  },
+  {
+    "district": "Noakhali",
+    "division": "Chittagong",
+    "year": 2002,
+    "season": "Aus",
+    "area_acres": 224800.0,
+    "production_tons": 133980.0,
+    "yield_mtha": 1.5
+  },
+  {
+    "district": "Dinajpur",
+    "division": "North region",
+    "year": 2002,
+    "season": "Aus",
+    "area_acres": 31960.0,
+    "production_tons": 26680.0,
+    "yield_mtha": 2.1
+  },
+  {
+    "district": "Rangpur",
+    "division": "North region",
+    "year": 2002,
+    "season": "Aus",
+    "area_acres": 27330.0,
+    "production_tons": 17780.0,
+    "yield_mtha": 1.63
+  },
+  {
+    "district": "Rajshahi",
+    "division": "North region",
+    "year": 2002,
+    "season": "Aus",
+    "area_acres": 184020.0,
+    "production_tons": 118070.0,
+    "yield_mtha": 1.61
+  },
+  {
+    "district": "Bogra",
+    "division": "North region",
+    "year": 2002,
+    "season": "Aus",
+    "area_acres": 17940.0,
+    "production_tons": 12740.0,
+    "yield_mtha": 1.78
+  },
+  {
+    "district": "Khulna",
+    "division": "Khulna",
+    "year": 2003,
+    "season": "Aus",
+    "area_acres": 29550.0,
+    "production_tons": 21210.0,
+    "yield_mtha": 1.8
+  },
+  {
+    "district": "Jessor",
+    "division": "Khulna",
+    "year": 2003,
+    "season": "Aus",
+    "area_acres": 165240.0,
+    "production_tons": 114240.0,
+    "yield_mtha": 1.74
+  },
+  {
+    "district": "Kushtia",
+    "division": "Khulna",
+    "year": 2003,
+    "season": "Aus",
+    "area_acres": 130630.0,
+    "production_tons": 74560.0,
+    "yield_mtha": 1.43
+  },
+  {
+    "district": "Chittagong",
+    "division": "Chittagong",
+    "year": 2003,
+    "season": "Aus",
+    "area_acres": 126820.0,
+    "production_tons": 108360.0,
+    "yield_mtha": 2.15
+  },
+  {
+    "district": "Comilla",
+    "division": "Chittagong",
+    "year": 2003,
+    "season": "Aus",
+    "area_acres": 229040.0,
+    "production_tons": 165300.0,
+    "yield_mtha": 1.81
+  },
+  {
+    "district": "Rangamati",
+    "division": "Chittagong",
+    "year": 2003,
+    "season": "Aus",
+    "area_acres": 11850.0,
+    "production_tons": 7860.0,
+    "yield_mtha": 1.67
+  },
+  {
+    "district": "Noakhali",
+    "division": "Chittagong",
+    "year": 2003,
+    "season": "Aus",
+    "area_acres": 213550.0,
+    "production_tons": 123190.0,
+    "yield_mtha": 1.45
+  },
+  {
+    "district": "Dinajpur",
+    "division": "North region",
+    "year": 2003,
+    "season": "Aus",
+    "area_acres": 27130.0,
+    "production_tons": 23780.0,
+    "yield_mtha": 2.2
+  },
+  {
+    "district": "Rangpur",
+    "division": "North region",
+    "year": 2003,
+    "season": "Aus",
+    "area_acres": 20450.0,
+    "production_tons": 12040.0,
+    "yield_mtha": 1.48
+  },
+  {
+    "district": "Rajshahi",
+    "division": "North region",
+    "year": 2003,
+    "season": "Aus",
+    "area_acres": 185920.0,
+    "production_tons": 125120.0,
+    "yield_mtha": 1.69
+  },
+  {
+    "district": "Bogra",
+    "division": "North region",
+    "year": 2003,
+    "season": "Aus",
+    "area_acres": 17890.0,
+    "production_tons": 12060.0,
+    "yield_mtha": 1.69
+  },
+  {
+    "district": "Khulna",
+    "division": "Khulna",
+    "year": 2004,
+    "season": "Aus",
+    "area_acres": 32830.0,
+    "production_tons": 23280.0,
+    "yield_mtha": 1.78
+  },
+  {
+    "district": "Jessor",
+    "division": "Khulna",
+    "year": 2004,
+    "season": "Aus",
+    "area_acres": 140540.0,
+    "production_tons": 113280.0,
+    "yield_mtha": 2.02
+  },
+  {
+    "district": "Kushtia",
+    "division": "Khulna",
+    "year": 2004,
+    "season": "Aus",
+    "area_acres": 90310.0,
+    "production_tons": 63580.0,
+    "yield_mtha": 1.77
+  },
+  {
+    "district": "Chittagong",
+    "division": "Chittagong",
+    "year": 2004,
+    "season": "Aus",
+    "area_acres": 112250.0,
+    "production_tons": 100830.0,
+    "yield_mtha": 2.26
+  },
+  {
+    "district": "Comilla",
+    "division": "Chittagong",
+    "year": 2004,
+    "season": "Aus",
+    "area_acres": 207260.0,
+    "production_tons": 140460.0,
+    "yield_mtha": 1.7
+  },
+  {
+    "district": "Rangamati",
+    "division": "Chittagong",
+    "year": 2004,
+    "season": "Aus",
+    "area_acres": 14260.0,
+    "production_tons": 7810.0,
+    "yield_mtha": 1.38
+  },
+  {
+    "district": "Noakhali",
+    "division": "Chittagong",
+    "year": 2004,
+    "season": "Aus",
+    "area_acres": 208050.0,
+    "production_tons": 119320.0,
+    "yield_mtha": 1.44
+  },
+  {
+    "district": "Dinajpur",
+    "division": "North region",
+    "year": 2004,
+    "season": "Aus",
+    "area_acres": 24980.0,
+    "production_tons": 19480.0,
+    "yield_mtha": 1.96
+  },
+  {
+    "district": "Rangpur",
+    "division": "North region",
+    "year": 2004,
+    "season": "Aus",
+    "area_acres": 8560.0,
+    "production_tons": 4080.0,
+    "yield_mtha": 1.2
+  },
+  {
+    "district": "Rajshahi",
+    "division": "North region",
+    "year": 2004,
+    "season": "Aus",
+    "area_acres": 172210.0,
+    "production_tons": 127490.0,
+    "yield_mtha": 1.86
+  },
+  {
+    "district": "Bogra",
+    "division": "North region",
+    "year": 2004,
+    "season": "Aus",
+    "area_acres": 17120.0,
+    "production_tons": 11850.0,
+    "yield_mtha": 1.74
+  },
+  {
+    "district": "Khulna",
+    "division": "Khulna",
+    "year": 2006,
+    "season": "Aus Rice",
+    "area_acres": 10750.0,
+    "production_tons": 5557.0,
+    "yield_mtha": 1.3
+  },
+  {
+    "district": "Jessor",
+    "division": "Khulna",
+    "year": 2006,
+    "season": "Aus Rice",
+    "area_acres": 72520.0,
+    "production_tons": 75625.0,
+    "yield_mtha": 2.62
+  },
+  {
+    "district": "Satkhira",
+    "division": "Khulna",
+    "year": 2006,
+    "season": "Aus Rice",
+    "area_acres": 3720.0,
+    "production_tons": 3606.0,
+    "yield_mtha": 2.43
+  },
+  {
+    "district": "Chuadanga",
+    "division": "Khulna",
+    "year": 2006,
+    "season": "Aus Rice",
+    "area_acres": 20660.0,
+    "production_tons": 15796.0,
+    "yield_mtha": 1.92
+  },
+  {
+    "district": "Chittagong",
+    "division": "Chittagong",
+    "year": 2006,
+    "season": "Aus Rice",
+    "area_acres": 91835.0,
+    "production_tons": 86859.0,
+    "yield_mtha": 2.37
+  },
+  {
+    "district": "Cox's Bazar",
+    "division": "Chittagong",
+    "year": 2006,
+    "season": "Aus Rice",
+    "area_acres": 1725.0,
+    "production_tons": 1897.0,
+    "yield_mtha": 2.76
+  },
+  {
+    "district": "Chandpur",
+    "division": "Chittagong",
+    "year": 2006,
+    "season": "Aus Rice",
+    "area_acres": 37490.0,
+    "production_tons": 24838.0,
+    "yield_mtha": 1.66
+  },
+  {
+    "district": "Feni",
+    "division": "Chittagong",
+    "year": 2006,
+    "season": "Aus Rice",
+    "area_acres": 34435.0,
+    "production_tons": 25262.0,
+    "yield_mtha": 1.84
+  },
+  {
+    "district": "Comilla",
+    "division": "Chittagong",
+    "year": 2006,
+    "season": "Aus Rice",
+    "area_acres": 116225.0,
+    "production_tons": 90069.0,
+    "yield_mtha": 1.95
+  },
+  {
+    "district": "Rangamati",
+    "division": "Chittagong",
+    "year": 2006,
+    "season": "Aus Rice",
+    "area_acres": 12790.0,
+    "production_tons": 7989.0,
+    "yield_mtha": 1.57
+  },
+  {
+    "district": "Noakhali",
+    "division": "Chittagong",
+    "year": 2006,
+    "season": "Aus Rice",
+    "area_acres": 82155.0,
+    "production_tons": 56648.0,
+    "yield_mtha": 1.73
+  },
+  {
+    "district": "Khagrachhari",
+    "division": "Chittagong",
+    "year": 2006,
+    "season": "Aus Rice",
+    "area_acres": 6585.0,
+    "production_tons": 5111.0,
+    "yield_mtha": 1.95
+  },
+  {
+    "district": "Dinajpur",
+    "division": "North region",
+    "year": 2006,
+    "season": "Aus Rice",
+    "area_acres": 19260.0,
+    "production_tons": 14343.0,
+    "yield_mtha": 1.87
+  },
+  {
+    "district": "Rangpur",
+    "division": "North region",
+    "year": 2006,
+    "season": "Aus Rice",
+    "area_acres": 0.0,
+    "production_tons": 0.0,
+    "yield_mtha": 0.0
+  },
+  {
+    "district": "Rajshahi",
+    "division": "North region",
+    "year": 2006,
+    "season": "Aus Rice",
+    "area_acres": 76925.0,
+    "production_tons": 67169.0,
+    "yield_mtha": 2.19
+  },
+  {
+    "district": "Bogura",
+    "division": "North region",
+    "year": 2006,
+    "season": "Aus Rice",
+    "area_acres": 20940.0,
+    "production_tons": 15891.0,
+    "yield_mtha": 1.91
+  },
+  {
+    "district": "Khulna",
+    "division": "Khulna",
+    "year": 2007,
+    "season": "Aus Rice",
+    "area_acres": 13695.0,
+    "production_tons": 8060.0,
+    "yield_mtha": 1.48
+  },
+  {
+    "district": "Jessor",
+    "division": "Khulna",
+    "year": 2007,
+    "season": "Aus Rice",
+    "area_acres": 86660.0,
+    "production_tons": 80571.0,
+    "yield_mtha": 2.33
+  },
+  {
+    "district": "Satkhira",
+    "division": "Khulna",
+    "year": 2007,
+    "season": "Aus Rice",
+    "area_acres": 3175.0,
+    "production_tons": 2955.0,
+    "yield_mtha": 2.34
+  },
+  {
+    "district": "Chuadanga",
+    "division": "Khulna",
+    "year": 2007,
+    "season": "Aus Rice",
+    "area_acres": 27555.0,
+    "production_tons": 19851.0,
+    "yield_mtha": 1.81
+  },
+  {
+    "district": "Chittagong",
+    "division": "Chittagong",
+    "year": 2007,
+    "season": "Aus Rice",
+    "area_acres": 99600.0,
+    "production_tons": 93523.0,
+    "yield_mtha": 2.36
+  },
+  {
+    "district": "Cox's Bazar",
+    "division": "Chittagong",
+    "year": 2007,
+    "season": "Aus Rice",
+    "area_acres": 1765.0,
+    "production_tons": 1837.0,
+    "yield_mtha": 2.61
+  },
+  {
+    "district": "Chandpur",
+    "division": "Chittagong",
+    "year": 2007,
+    "season": "Aus Rice",
+    "area_acres": 23450.0,
+    "production_tons": 15610.0,
+    "yield_mtha": 1.67
+  },
+  {
+    "district": "Feni",
+    "division": "Chittagong",
+    "year": 2007,
+    "season": "Aus Rice",
+    "area_acres": 32765.0,
+    "production_tons": 18206.0,
+    "yield_mtha": 1.4
+  },
+  {
+    "district": "Comilla",
+    "division": "Chittagong",
+    "year": 2007,
+    "season": "Aus Rice",
+    "area_acres": 77375.0,
+    "production_tons": 50677.0,
+    "yield_mtha": 1.64
+  },
+  {
+    "district": "Rangamati",
+    "division": "Chittagong",
+    "year": 2007,
+    "season": "Aus Rice",
+    "area_acres": 15435.0,
+    "production_tons": 8723.0,
+    "yield_mtha": 1.42
+  },
+  {
+    "district": "Noakhali",
+    "division": "Chittagong",
+    "year": 2007,
+    "season": "Aus Rice",
+    "area_acres": 98060.0,
+    "production_tons": 47722.0,
+    "yield_mtha": 1.22
+  },
+  {
+    "district": "Khagrachhari",
+    "division": "Chittagong",
+    "year": 2007,
+    "season": "Aus Rice",
+    "area_acres": 6545.0,
+    "production_tons": 5791.0,
+    "yield_mtha": 2.22
+  },
+  {
+    "district": "Dinajpur",
+    "division": "North region",
+    "year": 2007,
+    "season": "Aus Rice",
+    "area_acres": 25145.0,
+    "production_tons": 17608.0,
+    "yield_mtha": 1.76
+  },
+  {
+    "district": "Rangpur",
+    "division": "North region",
+    "year": 2007,
+    "season": "Aus Rice",
+    "area_acres": NaN,
+    "production_tons": NaN,
+    "yield_mtha": 0.0
+  },
+  {
+    "district": "Rajshahi",
+    "division": "North region",
+    "year": 2007,
+    "season": "Aus Rice",
+    "area_acres": 105520.0,
+    "production_tons": 84331.0,
+    "yield_mtha": 2.01
+  },
+  {
+    "district": "Bogura",
+    "division": "North region",
+    "year": 2007,
+    "season": "Aus Rice",
+    "area_acres": 52555.0,
+    "production_tons": 44430.0,
+    "yield_mtha": 2.12
+  },
+  {
+    "district": "Khulna",
+    "division": "Khulna",
+    "year": 2008,
+    "season": "Aus Rice",
+    "area_acres": 18980.0,
+    "production_tons": 11594.0,
+    "yield_mtha": 1.53
+  },
+  {
+    "district": "Jessor",
+    "division": "Khulna",
+    "year": 2008,
+    "season": "Aus Rice",
+    "area_acres": 99345.0,
+    "production_tons": 93031.0,
+    "yield_mtha": 2.35
+  },
+  {
+    "district": "Satkhira",
+    "division": "Khulna",
+    "year": 2008,
+    "season": "Aus Rice",
+    "area_acres": 6080.0,
+    "production_tons": 4559.0,
+    "yield_mtha": 1.88
+  },
+  {
+    "district": "Chuadanga",
+    "division": "Khulna",
+    "year": 2008,
+    "season": "Aus Rice",
+    "area_acres": 33950.0,
+    "production_tons": 27860.0,
+    "yield_mtha": 2.06
+  },
+  {
+    "district": "Chittagong",
+    "division": "Chittagong",
+    "year": 2008,
+    "season": "Aus Rice",
+    "area_acres": 103450.0,
+    "production_tons": 102177.0,
+    "yield_mtha": 2.48
+  },
+  {
+    "district": "Cox's Bazar",
+    "division": "Chittagong",
+    "year": 2008,
+    "season": "Aus Rice",
+    "area_acres": 1785.0,
+    "production_tons": 1871.0,
+    "yield_mtha": 2.63
+  },
+  {
+    "district": "Chandpur",
+    "division": "Chittagong",
+    "year": 2008,
+    "season": "Aus Rice",
+    "area_acres": 31390.0,
+    "production_tons": 23942.0,
+    "yield_mtha": 1.91
+  },
+  {
+    "district": "Feni",
+    "division": "Chittagong",
+    "year": 2008,
+    "season": "Aus Rice",
+    "area_acres": 34055.0,
+    "production_tons": 24654.0,
+    "yield_mtha": 1.82
+  },
+  {
+    "district": "Comilla",
+    "division": "Chittagong",
+    "year": 2008,
+    "season": "Aus Rice",
+    "area_acres": 124460.0,
+    "production_tons": 99278.0,
+    "yield_mtha": 2.0
+  },
+  {
+    "district": "Rangamati",
+    "division": "Chittagong",
+    "year": 2008,
+    "season": "Aus Rice",
+    "area_acres": 16345.0,
+    "production_tons": 9965.0,
+    "yield_mtha": 1.53
+  },
+  {
+    "district": "Noakhali",
+    "division": "Chittagong",
+    "year": 2008,
+    "season": "Aus Rice",
+    "area_acres": 100010.0,
+    "production_tons": 50873.0,
+    "yield_mtha": 1.28
+  },
+  {
+    "district": "Khagrachhari",
+    "division": "Chittagong",
+    "year": 2008,
+    "season": "Aus Rice",
+    "area_acres": 6440.0,
+    "production_tons": 4864.0,
+    "yield_mtha": 1.9
+  },
+  {
+    "district": "Dinajpur",
+    "division": "North region",
+    "year": 2008,
+    "season": "Aus Rice",
+    "area_acres": 22755.0,
+    "production_tons": 22245.0,
+    "yield_mtha": 2.45
+  },
+  {
+    "district": "Rangpur",
+    "division": "North region",
+    "year": 2008,
+    "season": "Aus Rice",
+    "area_acres": 0.0,
+    "production_tons": 0.0,
+    "yield_mtha": 0.0
+  },
+  {
+    "district": "Rajshahi",
+    "division": "North region",
+    "year": 2008,
+    "season": "Aus Rice",
+    "area_acres": 123455.0,
+    "production_tons": 115356.0,
+    "yield_mtha": 2.35
+  },
+  {
+    "district": "Bogura",
+    "division": "North region",
+    "year": 2008,
+    "season": "Aus Rice",
+    "area_acres": 71915.0,
+    "production_tons": 60130.0,
+    "yield_mtha": 2.1
+  },
+  {
+    "district": "Khulna",
+    "division": "Khulna",
+    "year": 2009,
+    "season": "Aus Rice",
+    "area_acres": 14517.0,
+    "production_tons": 8320.0,
+    "yield_mtha": 1.44
+  },
+  {
+    "district": "Jessor",
+    "division": "Khulna",
+    "year": 2009,
+    "season": "Aus Rice",
+    "area_acres": 80943.0,
+    "production_tons": 71742.0,
+    "yield_mtha": 2.23
+  },
+  {
+    "district": "Satkhira",
+    "division": "Khulna",
+    "year": 2009,
+    "season": "Aus Rice",
+    "area_acres": 8467.0,
+    "production_tons": 7425.0,
+    "yield_mtha": 2.2
+  },
+  {
+    "district": "Chuadanga",
+    "division": "Khulna",
+    "year": 2009,
+    "season": "Aus Rice",
+    "area_acres": 25372.0,
+    "production_tons": 19735.0,
+    "yield_mtha": 1.95
+  },
+  {
+    "district": "Chittagong",
+    "division": "Chittagong",
+    "year": 2009,
+    "season": "Aus Rice",
+    "area_acres": 104473.0,
+    "production_tons": 102418.0,
+    "yield_mtha": 2.46
+  },
+  {
+    "district": "Cox's Bazar",
+    "division": "Chittagong",
+    "year": 2009,
+    "season": "Aus Rice",
+    "area_acres": 1632.0,
+    "production_tons": 2209.0,
+    "yield_mtha": 3.4
+  },
+  {
+    "district": "Chandpur",
+    "division": "Chittagong",
+    "year": 2009,
+    "season": "Aus Rice",
+    "area_acres": 29625.0,
+    "production_tons": 21373.0,
+    "yield_mtha": 1.81
+  },
+  {
+    "district": "Feni",
+    "division": "Chittagong",
+    "year": 2009,
+    "season": "Aus Rice",
+    "area_acres": 29975.0,
+    "production_tons": 24875.0,
+    "yield_mtha": 2.08
+  },
+  {
+    "district": "Comilla",
+    "division": "Chittagong",
+    "year": 2009,
+    "season": "Aus Rice",
+    "area_acres": 160828.0,
+    "production_tons": 137086.0,
+    "yield_mtha": 2.14
+  },
+  {
+    "district": "Rangamati",
+    "division": "Chittagong",
+    "year": 2009,
+    "season": "Aus Rice",
+    "area_acres": 15118.0,
+    "production_tons": 9203.0,
+    "yield_mtha": 1.53
+  },
+  {
+    "district": "Noakhali",
+    "division": "Chittagong",
+    "year": 2009,
+    "season": "Aus Rice",
+    "area_acres": 110616.0,
+    "production_tons": 67155.0,
+    "yield_mtha": 1.52
+  },
+  {
+    "district": "Khagrachhari",
+    "division": "Chittagong",
+    "year": 2009,
+    "season": "Aus Rice",
+    "area_acres": 5891.0,
+    "production_tons": 4382.0,
+    "yield_mtha": 1.87
+  },
+  {
+    "district": "Dinajpur",
+    "division": "North region",
+    "year": 2009,
+    "season": "Aus Rice",
+    "area_acres": 9578.0,
+    "production_tons": 7826.0,
+    "yield_mtha": 2.05
+  },
+  {
+    "district": "Rangpur",
+    "division": "North region",
+    "year": 2009,
+    "season": "Aus Rice",
+    "area_acres": 0.0,
+    "production_tons": 0.0,
+    "yield_mtha": 0.0
+  },
+  {
+    "district": "Rajshahi",
+    "division": "North region",
+    "year": 2009,
+    "season": "Aus Rice",
+    "area_acres": 76695.0,
+    "production_tons": 63960.0,
+    "yield_mtha": 2.09
+  },
+  {
+    "district": "Bogura",
+    "division": "North region",
+    "year": 2009,
+    "season": "Aus Rice",
+    "area_acres": 40894.0,
+    "production_tons": 27889.0,
+    "yield_mtha": 1.71
+  },
+  {
+    "district": "Khulna",
+    "division": "Khulna",
+    "year": 2010,
+    "season": "Aus Rice",
+    "area_acres": 13986.0,
+    "production_tons": 8569.0,
+    "yield_mtha": 1.54
+  },
+  {
+    "district": "Jessor",
+    "division": "Khulna",
+    "year": 2010,
+    "season": "Aus Rice",
+    "area_acres": 110794.0,
+    "production_tons": 106195.0,
+    "yield_mtha": 2.41
+  },
+  {
+    "district": "Satkhira",
+    "division": "Khulna",
+    "year": 2010,
+    "season": "Aus Rice",
+    "area_acres": 21273.0,
+    "production_tons": 20849.0,
+    "yield_mtha": 2.46
+  },
+  {
+    "district": "Chuadanga",
+    "division": "Khulna",
+    "year": 2010,
+    "season": "Aus Rice",
+    "area_acres": 28466.0,
+    "production_tons": 23164.0,
+    "yield_mtha": 2.04
+  },
+  {
+    "district": "Chittagong",
+    "division": "Chittagong",
+    "year": 2010,
+    "season": "Aus Rice",
+    "area_acres": 108306.0,
+    "production_tons": 102349.0,
+    "yield_mtha": 2.37
+  },
+  {
+    "district": "Cox's Bazar",
+    "division": "Chittagong",
+    "year": 2010,
+    "season": "Aus Rice",
+    "area_acres": 12494.0,
+    "production_tons": 13572.0,
+    "yield_mtha": 2.73
+  },
+  {
+    "district": "Chandpur",
+    "division": "Chittagong",
+    "year": 2010,
+    "season": "Aus Rice",
+    "area_acres": 29093.0,
+    "production_tons": 22558.0,
+    "yield_mtha": 1.95
+  },
+  {
+    "district": "Feni",
+    "division": "Chittagong",
+    "year": 2010,
+    "season": "Aus Rice",
+    "area_acres": 29604.0,
+    "production_tons": 22156.0,
+    "yield_mtha": 1.88
+  },
+  {
+    "district": "Comilla",
+    "division": "Chittagong",
+    "year": 2010,
+    "season": "Aus Rice",
+    "area_acres": 161742.0,
+    "production_tons": 141448.0,
+    "yield_mtha": 2.2
+  },
+  {
+    "district": "Rangamati",
+    "division": "Chittagong",
+    "year": 2010,
+    "season": "Aus Rice",
+    "area_acres": 14254.0,
+    "production_tons": 9280.0,
+    "yield_mtha": 1.63
+  },
+  {
+    "district": "Noakhali",
+    "division": "Chittagong",
+    "year": 2010,
+    "season": "Aus Rice",
+    "area_acres": 146057.0,
+    "production_tons": 91366.0,
+    "yield_mtha": 1.57
+  },
+  {
+    "district": "Khagrachhari",
+    "division": "Chittagong",
+    "year": 2010,
+    "season": "Aus Rice",
+    "area_acres": 6072.0,
+    "production_tons": 4763.0,
+    "yield_mtha": 1.97
+  },
+  {
+    "district": "Dinajpur",
+    "division": "North region",
+    "year": 2010,
+    "season": "Aus Rice",
+    "area_acres": 10705.0,
+    "production_tons": 8603.0,
+    "yield_mtha": 2.02
+  },
+  {
+    "district": "Rangpur",
+    "division": "North region",
+    "year": 2010,
+    "season": "Aus Rice",
+    "area_acres": 0.0,
+    "production_tons": 0.0,
+    "yield_mtha": 0.0
+  },
+  {
+    "district": "Rajshahi",
+    "division": "North region",
+    "year": 2010,
+    "season": "Aus Rice",
+    "area_acres": 97528.0,
+    "production_tons": 85089.0,
+    "yield_mtha": 2.19
+  },
+  {
+    "district": "Bogura",
+    "division": "North region",
+    "year": 2010,
+    "season": "Aus Rice",
+    "area_acres": 54746.0,
+    "production_tons": 43404.0,
+    "yield_mtha": 1.99
+  },
+  {
+    "district": "Khulna",
+    "division": "Khulna",
+    "year": 2011,
+    "season": "Aus Rice",
+    "area_acres": 17965.0,
+    "production_tons": 10584.0,
+    "yield_mtha": 1.48
+  },
+  {
+    "district": "Jessor",
+    "division": "Khulna",
+    "year": 2011,
+    "season": "Aus Rice",
+    "area_acres": 107093.0,
+    "production_tons": 106649.0,
+    "yield_mtha": 2.5
+  },
+  {
+    "district": "Satkhira",
+    "division": "Khulna",
+    "year": 2011,
+    "season": "Aus Rice",
+    "area_acres": 22237.0,
+    "production_tons": 23451.0,
+    "yield_mtha": 2.65
+  },
+  {
+    "district": "Chuadanga",
+    "division": "Khulna",
+    "year": 2011,
+    "season": "Aus Rice",
+    "area_acres": 35404.0,
+    "production_tons": 37880.0,
+    "yield_mtha": 2.69
+  },
+  {
+    "district": "Chittagong",
+    "division": "Chittagong",
+    "year": 2011,
+    "season": "Aus Rice",
+    "area_acres": 111671.0,
+    "production_tons": 108080.0,
+    "yield_mtha": 2.43
+  },
+  {
+    "district": "Cox's Bazar",
+    "division": "Chittagong",
+    "year": 2011,
+    "season": "Aus Rice",
+    "area_acres": 7804.0,
+    "production_tons": 8779.0,
+    "yield_mtha": 2.82
+  },
+  {
+    "district": "Chandpur",
+    "division": "Chittagong",
+    "year": 2011,
+    "season": "Aus Rice",
+    "area_acres": 24538.0,
+    "production_tons": 24282.0,
+    "yield_mtha": 2.48
+  },
+  {
+    "district": "Feni",
+    "division": "Chittagong",
+    "year": 2011,
+    "season": "Aus Rice",
+    "area_acres": 30420.0,
+    "production_tons": 29897.0,
+    "yield_mtha": 2.47
+  },
+  {
+    "district": "Comilla",
+    "division": "Chittagong",
+    "year": 2011,
+    "season": "Aus Rice",
+    "area_acres": 172231.0,
+    "production_tons": 157418.0,
+    "yield_mtha": 2.29
+  },
+  {
+    "district": "Rangamati",
+    "division": "Chittagong",
+    "year": 2011,
+    "season": "Aus Rice",
+    "area_acres": 15515.0,
+    "production_tons": 9890.0,
+    "yield_mtha": 1.6
+  },
+  {
+    "district": "Noakhali",
+    "division": "Chittagong",
+    "year": 2011,
+    "season": "Aus Rice",
+    "area_acres": 145880.0,
+    "production_tons": 96321.0,
+    "yield_mtha": 1.66
+  },
+  {
+    "district": "Khagrachhari",
+    "division": "Chittagong",
+    "year": 2011,
+    "season": "Aus Rice",
+    "area_acres": 5961.0,
+    "production_tons": 5182.0,
+    "yield_mtha": 2.18
+  },
+  {
+    "district": "Dinajpur",
+    "division": "North region",
+    "year": 2011,
+    "season": "Aus Rice",
+    "area_acres": 14314.0,
+    "production_tons": 15678.0,
+    "yield_mtha": 2.75
+  },
+  {
+    "district": "Rangpur",
+    "division": "North region",
+    "year": 2011,
+    "season": "Aus Rice",
+    "area_acres": 1250.0,
+    "production_tons": 1004.0,
+    "yield_mtha": 2.02
+  },
+  {
+    "district": "Rajshahi",
+    "division": "North region",
+    "year": 2011,
+    "season": "Aus Rice",
+    "area_acres": 107702.0,
+    "production_tons": 106330.0,
+    "yield_mtha": 2.48
+  },
+  {
+    "district": "Bogura",
+    "division": "North region",
+    "year": 2011,
+    "season": "Aus Rice",
+    "area_acres": 63314.0,
+    "production_tons": 53248.0,
+    "yield_mtha": 2.11
+  },
+  {
+    "district": "Khulna",
+    "division": "Khulna",
+    "year": 2012,
+    "season": "Aus Rice",
+    "area_acres": 20883.0,
+    "production_tons": 19150.0,
+    "yield_mtha": 2.3
+  },
+  {
+    "district": "Jessor",
+    "division": "Khulna",
+    "year": 2012,
+    "season": "Aus Rice",
+    "area_acres": 150043.0,
+    "production_tons": 111964.0,
+    "yield_mtha": 1.87
+  },
+  {
+    "district": "Satkhira",
+    "division": "Khulna",
+    "year": 2012,
+    "season": "Aus Rice",
+    "area_acres": 11817.0,
+    "production_tons": 6733.0,
+    "yield_mtha": 1.43
+  },
+  {
+    "district": "Chuadanga",
+    "division": "Khulna",
+    "year": 2012,
+    "season": "Aus Rice",
+    "area_acres": 20271.0,
+    "production_tons": 20089.0,
+    "yield_mtha": 2.49
+  },
+  {
+    "district": "Chittagong",
+    "division": "Chittagong",
+    "year": 2012,
+    "season": "Aus Rice",
+    "area_acres": 108712.0,
+    "production_tons": 107343.0,
+    "yield_mtha": 2.48
+  },
+  {
+    "district": "Cox's Bazar",
+    "division": "Chittagong",
+    "year": 2012,
+    "season": "Aus Rice",
+    "area_acres": 5676.0,
+    "production_tons": 5690.0,
+    "yield_mtha": 2.52
+  },
+  {
+    "district": "Chandpur",
+    "division": "Chittagong",
+    "year": 2012,
+    "season": "Aus Rice",
+    "area_acres": 24725.0,
+    "production_tons": 22360.0,
+    "yield_mtha": 2.27
+  },
+  {
+    "district": "Feni",
+    "division": "Chittagong",
+    "year": 2012,
+    "season": "Aus Rice",
+    "area_acres": 30734.0,
+    "production_tons": 27255.0,
+    "yield_mtha": 2.23
+  },
+  {
+    "district": "Comilla",
+    "division": "Chittagong",
+    "year": 2012,
+    "season": "Aus Rice",
+    "area_acres": 166611.0,
+    "production_tons": 161670.0,
+    "yield_mtha": 2.44
+  },
+  {
+    "district": "Rangamati",
+    "division": "Chittagong",
+    "year": 2012,
+    "season": "Aus Rice",
+    "area_acres": 16131.0,
+    "production_tons": 9899.0,
+    "yield_mtha": 1.54
+  },
+  {
+    "district": "Noakhali",
+    "division": "Chittagong",
+    "year": 2012,
+    "season": "Aus Rice",
+    "area_acres": 141596.0,
+    "production_tons": 94064.0,
+    "yield_mtha": 1.67
+  },
+  {
+    "district": "Khagrachhari",
+    "division": "Chittagong",
+    "year": 2012,
+    "season": "Aus Rice",
+    "area_acres": 6243.0,
+    "production_tons": 4943.0,
+    "yield_mtha": 1.99
+  },
+  {
+    "district": "Dinajpur",
+    "division": "North region",
+    "year": 2012,
+    "season": "Aus Rice",
+    "area_acres": 54201.0,
+    "production_tons": 30776.0,
+    "yield_mtha": 1.43
+  },
+  {
+    "district": "Rangpur",
+    "division": "North region",
+    "year": 2012,
+    "season": "Aus Rice",
+    "area_acres": 1200.0,
+    "production_tons": 1068.0,
+    "yield_mtha": 2.23
+  },
+  {
+    "district": "Rajshahi",
+    "division": "North region",
+    "year": 2012,
+    "season": "Aus Rice",
+    "area_acres": 117019.0,
+    "production_tons": 102336.0,
+    "yield_mtha": 2.2
+  },
+  {
+    "district": "Bogura",
+    "division": "North region",
+    "year": 2012,
+    "season": "Aus Rice",
+    "area_acres": 57296.0,
+    "production_tons": 50923.0,
+    "yield_mtha": 2.23
+  },
+  {
+    "district": "Khulna",
+    "division": "Khulna",
+    "year": 2013,
+    "season": "Aus Rice",
+    "area_acres": 19414.0,
+    "production_tons": 17413.0,
+    "yield_mtha": 2.25
+  },
+  {
+    "district": "Jessor",
+    "division": "Khulna",
+    "year": 2013,
+    "season": "Aus Rice",
+    "area_acres": 149043.0,
+    "production_tons": 105251.0,
+    "yield_mtha": 1.77
+  },
+  {
+    "district": "Satkhira",
+    "division": "Khulna",
+    "year": 2013,
+    "season": "Aus Rice",
+    "area_acres": 9763.0,
+    "production_tons": 5621.0,
+    "yield_mtha": 1.45
+  },
+  {
+    "district": "Chuadanga",
+    "division": "Khulna",
+    "year": 2013,
+    "season": "Aus Rice",
+    "area_acres": 20873.0,
+    "production_tons": 22977.0,
+    "yield_mtha": 2.76
+  },
+  {
+    "district": "Chittagong",
+    "division": "Chittagong",
+    "year": 2013,
+    "season": "Aus Rice",
+    "area_acres": 109163.0,
+    "production_tons": 110758.0,
+    "yield_mtha": 2.55
+  },
+  {
+    "district": "Cox's Bazar",
+    "division": "Chittagong",
+    "year": 2013,
+    "season": "Aus Rice",
+    "area_acres": 5347.0,
+    "production_tons": 4747.0,
+    "yield_mtha": 2.23
+  },
+  {
+    "district": "Chandpur",
+    "division": "Chittagong",
+    "year": 2013,
+    "season": "Aus Rice",
+    "area_acres": 25344.0,
+    "production_tons": 22552.0,
+    "yield_mtha": 2.23
+  },
+  {
+    "district": "Feni",
+    "division": "Chittagong",
+    "year": 2013,
+    "season": "Aus Rice",
+    "area_acres": 33181.0,
+    "production_tons": 27035.0,
+    "yield_mtha": 2.05
+  },
+  {
+    "district": "Comilla",
+    "division": "Chittagong",
+    "year": 2013,
+    "season": "Aus Rice",
+    "area_acres": 172392.0,
+    "production_tons": 189004.0,
+    "yield_mtha": 2.75
+  },
+  {
+    "district": "Rangamati",
+    "division": "Chittagong",
+    "year": 2013,
+    "season": "Aus Rice",
+    "area_acres": 14036.0,
+    "production_tons": 9968.0,
+    "yield_mtha": 1.78
+  },
+  {
+    "district": "Noakhali",
+    "division": "Chittagong",
+    "year": 2013,
+    "season": "Aus Rice",
+    "area_acres": 142964.0,
+    "production_tons": 93622.0,
+    "yield_mtha": 1.64
+  },
+  {
+    "district": "Khagrachhari",
+    "division": "Chittagong",
+    "year": 2013,
+    "season": "Aus Rice",
+    "area_acres": 6114.0,
+    "production_tons": 4570.0,
+    "yield_mtha": 1.88
+  },
+  {
+    "district": "Dinajpur",
+    "division": "North region",
+    "year": 2013,
+    "season": "Aus Rice",
+    "area_acres": 57176.0,
+    "production_tons": 37392.0,
+    "yield_mtha": 1.64
+  },
+  {
+    "district": "Rangpur",
+    "division": "North region",
+    "year": 2013,
+    "season": "Aus Rice",
+    "area_acres": 0.0,
+    "production_tons": 0.0,
+    "yield_mtha": 0.0
+  },
+  {
+    "district": "Rajshahi",
+    "division": "North region",
+    "year": 2013,
+    "season": "Aus Rice",
+    "area_acres": 117246.0,
+    "production_tons": 103380.0,
+    "yield_mtha": 2.21
+  },
+  {
+    "district": "Bogura",
+    "division": "North region",
+    "year": 2013,
+    "season": "Aus Rice",
+    "area_acres": 57296.0,
+    "production_tons": 56120.0,
+    "yield_mtha": 2.46
+  },
+  {
+    "district": "Khulna",
+    "division": "Khulna",
+    "year": 2014,
+    "season": "Aus Rice",
+    "area_acres": 8392.0,
+    "production_tons": 4525.0,
+    "yield_mtha": 1.35
+  },
+  {
+    "district": "Jessor",
+    "division": "Khulna",
+    "year": 2014,
+    "season": "Aus Rice",
+    "area_acres": 84690.0,
+    "production_tons": 96397.0,
+    "yield_mtha": 2.86
+  },
+  {
+    "district": "Satkhira",
+    "division": "Khulna",
+    "year": 2014,
+    "season": "Aus Rice",
+    "area_acres": 20051.0,
+    "production_tons": 20133.0,
+    "yield_mtha": 2.52
+  },
+  {
+    "district": "Chuadanga",
+    "division": "Khulna",
+    "year": 2014,
+    "season": "Aus Rice",
+    "area_acres": 63034.0,
+    "production_tons": 70287.0,
+    "yield_mtha": 2.8
+  },
+  {
+    "district": "Chittagong",
+    "division": "Chittagong",
+    "year": 2014,
+    "season": "Aus Rice",
+    "area_acres": 108575.0,
+    "production_tons": 108026.0,
+    "yield_mtha": 2.5
+  },
+  {
+    "district": "Cox's Bazar",
+    "division": "Chittagong",
+    "year": 2014,
+    "season": "Aus Rice",
+    "area_acres": 4405.0,
+    "production_tons": 4110.0,
+    "yield_mtha": 2.34
+  },
+  {
+    "district": "Chandpur",
+    "division": "Chittagong",
+    "year": 2014,
+    "season": "Aus Rice",
+    "area_acres": 29308.0,
+    "production_tons": 25969.0,
+    "yield_mtha": 2.22
+  },
+  {
+    "district": "Feni",
+    "division": "Chittagong",
+    "year": 2014,
+    "season": "Aus Rice",
+    "area_acres": 29269.0,
+    "production_tons": 26338.0,
+    "yield_mtha": 2.26
+  },
+  {
+    "district": "Comilla",
+    "division": "Chittagong",
+    "year": 2014,
+    "season": "Aus Rice",
+    "area_acres": 169961.0,
+    "production_tons": 172306.0,
+    "yield_mtha": 2.55
+  },
+  {
+    "district": "Rangamati",
+    "division": "Chittagong",
+    "year": 2014,
+    "season": "Aus Rice",
+    "area_acres": 17241.0,
+    "production_tons": 11414.0,
+    "yield_mtha": 1.66
+  },
+  {
+    "district": "Noakhali",
+    "division": "Chittagong",
+    "year": 2014,
+    "season": "Aus Rice",
+    "area_acres": 132752.0,
+    "production_tons": 93409.0,
+    "yield_mtha": 1.77
+  },
+  {
+    "district": "Khagrachhari",
+    "division": "Chittagong",
+    "year": 2014,
+    "season": "Aus Rice",
+    "area_acres": 6406.0,
+    "production_tons": 4687.0,
+    "yield_mtha": 1.84
+  },
+  {
+    "district": "Dinajpur",
+    "division": "North region",
+    "year": 2014,
+    "season": "Aus Rice",
+    "area_acres": 12067.0,
+    "production_tons": 11216.0,
+    "yield_mtha": 2.33
+  },
+  {
+    "district": "Rangpur",
+    "division": "North region",
+    "year": 2014,
+    "season": "Aus Rice",
+    "area_acres": 3275.0,
+    "production_tons": 3438.0,
+    "yield_mtha": 2.64
+  },
+  {
+    "district": "Rajshahi",
+    "division": "North region",
+    "year": 2014,
+    "season": "Aus Rice",
+    "area_acres": 96094.0,
+    "production_tons": 111467.0,
+    "yield_mtha": 2.91
+  },
+  {
+    "district": "Bogura",
+    "division": "North region",
+    "year": 2014,
+    "season": "Aus Rice",
+    "area_acres": 56081.0,
+    "production_tons": 52125.0,
+    "yield_mtha": 2.33
+  },
+  {
+    "district": "Khulna",
+    "division": "Khulna",
+    "year": 2006,
+    "season": "Aman Rice",
+    "area_acres": 274505.0,
+    "production_tons": 220009.0,
+    "yield_mtha": 2.01
+  },
+  {
+    "district": "Jessor",
+    "division": "Khulna",
+    "year": 2006,
+    "season": "Aman Rice",
+    "area_acres": 330570.0,
+    "production_tons": 332764.0,
+    "yield_mtha": 2.53
+  },
+  {
+    "district": "Satkhira",
+    "division": "Khulna",
+    "year": 2006,
+    "season": "Aman Rice",
+    "area_acres": 245990.0,
+    "production_tons": 257794.0,
+    "yield_mtha": 2.63
+  },
+  {
+    "district": "Chuadanga",
+    "division": "Khulna",
+    "year": 2006,
+    "season": "Aman Rice",
+    "area_acres": 89290.0,
+    "production_tons": 76724.0,
+    "yield_mtha": 2.16
+  },
+  {
+    "district": "Chittagong",
+    "division": "Chittagong",
+    "year": 2006,
+    "season": "Aman Rice",
+    "area_acres": 459145.0,
+    "production_tons": 456501.0,
+    "yield_mtha": 2.5
+  },
+  {
+    "district": "Cox's Bazar",
+    "division": "Chittagong",
+    "year": 2006,
+    "season": "Aman Rice",
+    "area_acres": 174520.0,
+    "production_tons": 188959.0,
+    "yield_mtha": 2.72
+  },
+  {
+    "district": "Chandpur",
+    "division": "Chittagong",
+    "year": 2006,
+    "season": "Aman Rice",
+    "area_acres": 117990.0,
+    "production_tons": 77183.0,
+    "yield_mtha": 1.64
+  },
+  {
+    "district": "Feni",
+    "division": "Chittagong",
+    "year": 2006,
+    "season": "Aman Rice",
+    "area_acres": 144220.0,
+    "production_tons": 145924.0,
+    "yield_mtha": 2.54
+  },
+  {
+    "district": "Comilla",
+    "division": "Chittagong",
+    "year": 2006,
+    "season": "Aman Rice",
+    "area_acres": 361495.0,
+    "production_tons": 276646.0,
+    "yield_mtha": 1.92
+  },
+  {
+    "district": "Rangamati",
+    "division": "Chittagong",
+    "year": 2006,
+    "season": "Aman Rice",
+    "area_acres": 22705.0,
+    "production_tons": 22788.0,
+    "yield_mtha": 2.52
+  },
+  {
+    "district": "Noakhali",
+    "division": "Chittagong",
+    "year": 2006,
+    "season": "Aman Rice",
+    "area_acres": 278360.0,
+    "production_tons": 188034.0,
+    "yield_mtha": 1.7
+  },
+  {
+    "district": "Khagrachhari",
+    "division": "Chittagong",
+    "year": 2006,
+    "season": "Aman Rice",
+    "area_acres": 58020.0,
+    "production_tons": 58698.0,
+    "yield_mtha": 2.54
+  },
+  {
+    "district": "Dinajpur",
+    "division": "North region",
+    "year": 2006,
+    "season": "Aman Rice",
+    "area_acres": 568075.0,
+    "production_tons": 469396.0,
+    "yield_mtha": 2.07
+  },
+  {
+    "district": "Rangpur",
+    "division": "North region",
+    "year": 2006,
+    "season": "Aman Rice",
+    "area_acres": 349160.0,
+    "production_tons": 330083.0,
+    "yield_mtha": 2.37
+  },
+  {
+    "district": "Rajshahi",
+    "division": "North region",
+    "year": 2006,
+    "season": "Aman Rice",
+    "area_acres": 169020.0,
+    "production_tons": 147656.0,
+    "yield_mtha": 2.19
+  },
+  {
+    "district": "Bogura",
+    "division": "North region",
+    "year": 2006,
+    "season": "Aman Rice",
+    "area_acres": 421930.0,
+    "production_tons": 372447.0,
+    "yield_mtha": 2.22
+  },
+  {
+    "district": "Khulna",
+    "division": "Khulna",
+    "year": 2007,
+    "season": "Aman Rice",
+    "area_acres": 267735.0,
+    "production_tons": 192869.0,
+    "yield_mtha": 1.81
+  },
+  {
+    "district": "Jessor",
+    "division": "Khulna",
+    "year": 2007,
+    "season": "Aman Rice",
+    "area_acres": 339730.0,
+    "production_tons": 354555.0,
+    "yield_mtha": 2.62
+  },
+  {
+    "district": "Satkhira",
+    "division": "Khulna",
+    "year": 2007,
+    "season": "Aman Rice",
+    "area_acres": 243320.0,
+    "production_tons": 227075.0,
+    "yield_mtha": 2.34
+  },
+  {
+    "district": "Chuadanga",
+    "division": "Khulna",
+    "year": 2007,
+    "season": "Aman Rice",
+    "area_acres": 87165.0,
+    "production_tons": 86416.0,
+    "yield_mtha": 2.49
+  },
+  {
+    "district": "Chittagong",
+    "division": "Chittagong",
+    "year": 2007,
+    "season": "Aman Rice",
+    "area_acres": 450770.0,
+    "production_tons": 440316.0,
+    "yield_mtha": 2.45
+  },
+  {
+    "district": "Cox's Bazar",
+    "division": "Chittagong",
+    "year": 2007,
+    "season": "Aman Rice",
+    "area_acres": 161305.0,
+    "production_tons": 174746.0,
+    "yield_mtha": 2.72
+  },
+  {
+    "district": "Chandpur",
+    "division": "Chittagong",
+    "year": 2007,
+    "season": "Aman Rice",
+    "area_acres": 84070.0,
+    "production_tons": 42389.0,
+    "yield_mtha": 1.27
+  },
+  {
+    "district": "Feni",
+    "division": "Chittagong",
+    "year": 2007,
+    "season": "Aman Rice",
+    "area_acres": 107910.0,
+    "production_tons": 104925.0,
+    "yield_mtha": 2.44
+  },
+  {
+    "district": "Comilla",
+    "division": "Chittagong",
+    "year": 2007,
+    "season": "Aman Rice",
+    "area_acres": 366095.0,
+    "production_tons": 279798.0,
+    "yield_mtha": 1.92
+  },
+  {
+    "district": "Rangamati",
+    "division": "Chittagong",
+    "year": 2007,
+    "season": "Aman Rice",
+    "area_acres": 18030.0,
+    "production_tons": 16982.0,
+    "yield_mtha": 2.36
+  },
+  {
+    "district": "Noakhali",
+    "division": "Chittagong",
+    "year": 2007,
+    "season": "Aman Rice",
+    "area_acres": 248240.0,
+    "production_tons": 125346.0,
+    "yield_mtha": 1.27
+  },
+  {
+    "district": "Khagrachhari",
+    "division": "Chittagong",
+    "year": 2007,
+    "season": "Aman Rice",
+    "area_acres": 71655.0,
+    "production_tons": 61395.0,
+    "yield_mtha": 2.15
+  },
+  {
+    "district": "Dinajpur",
+    "division": "North region",
+    "year": 2007,
+    "season": "Aman Rice",
+    "area_acres": 569720.0,
+    "production_tons": 553907.0,
+    "yield_mtha": 2.44
+  },
+  {
+    "district": "Rangpur",
+    "division": "North region",
+    "year": 2007,
+    "season": "Aman Rice",
+    "area_acres": 333875.0,
+    "production_tons": 265742.0,
+    "yield_mtha": 2.0
+  },
+  {
+    "district": "Rajshahi",
+    "division": "North region",
+    "year": 2007,
+    "season": "Aman Rice",
+    "area_acres": 170430.0,
+    "production_tons": 177145.0,
+    "yield_mtha": 2.61
+  },
+  {
+    "district": "Bogura",
+    "division": "North region",
+    "year": 2007,
+    "season": "Aman Rice",
+    "area_acres": 411435.0,
+    "production_tons": 365945.0,
+    "yield_mtha": 2.23
+  },
+  {
+    "district": "Khulna",
+    "division": "Khulna",
+    "year": 2008,
+    "season": "Aman Rice",
+    "area_acres": 264390.0,
+    "production_tons": 212203.0,
+    "yield_mtha": 2.02
+  },
+  {
+    "district": "Jessor",
+    "division": "Khulna",
+    "year": 2008,
+    "season": "Aman Rice",
+    "area_acres": 349635.0,
+    "production_tons": 346735.0,
+    "yield_mtha": 2.49
+  },
+  {
+    "district": "Satkhira",
+    "division": "Khulna",
+    "year": 2008,
+    "season": "Aman Rice",
+    "area_acres": 272105.0,
+    "production_tons": 287569.0,
+    "yield_mtha": 2.65
+  },
+  {
+    "district": "Chuadanga",
+    "division": "Khulna",
+    "year": 2008,
+    "season": "Aman Rice",
+    "area_acres": 97585.0,
+    "production_tons": 94440.0,
+    "yield_mtha": 2.43
+  },
+  {
+    "district": "Chittagong",
+    "division": "Chittagong",
+    "year": 2008,
+    "season": "Aman Rice",
+    "area_acres": 474045.0,
+    "production_tons": 469112.0,
+    "yield_mtha": 2.48
+  },
+  {
+    "district": "Cox's Bazar",
+    "division": "Chittagong",
+    "year": 2008,
+    "season": "Aman Rice",
+    "area_acres": 176510.0,
+    "production_tons": 212418.0,
+    "yield_mtha": 3.02
+  },
+  {
+    "district": "Chandpur",
+    "division": "Chittagong",
+    "year": 2008,
+    "season": "Aman Rice",
+    "area_acres": 118510.0,
+    "production_tons": 79282.0,
+    "yield_mtha": 1.68
+  },
+  {
+    "district": "Feni",
+    "division": "Chittagong",
+    "year": 2008,
+    "season": "Aman Rice",
+    "area_acres": 127440.0,
+    "production_tons": 125732.0,
+    "yield_mtha": 2.48
+  },
+  {
+    "district": "Comilla",
+    "division": "Chittagong",
+    "year": 2008,
+    "season": "Aman Rice",
+    "area_acres": 382070.0,
+    "production_tons": 327417.0,
+    "yield_mtha": 2.15
+  },
+  {
+    "district": "Rangamati",
+    "division": "Chittagong",
+    "year": 2008,
+    "season": "Aman Rice",
+    "area_acres": 24075.0,
+    "production_tons": 22333.0,
+    "yield_mtha": 2.33
+  },
+  {
+    "district": "Noakhali",
+    "division": "Chittagong",
+    "year": 2008,
+    "season": "Aman Rice",
+    "area_acres": 279060.0,
+    "production_tons": 193174.0,
+    "yield_mtha": 1.74
+  },
+  {
+    "district": "Khagrachhari",
+    "division": "Chittagong",
+    "year": 2008,
+    "season": "Aman Rice",
+    "area_acres": 72520.0,
+    "production_tons": 75935.0,
+    "yield_mtha": 2.63
+  },
+  {
+    "district": "Dinajpur",
+    "division": "North region",
+    "year": 2008,
+    "season": "Aman Rice",
+    "area_acres": 604585.0,
+    "production_tons": 602007.0,
+    "yield_mtha": 2.5
+  },
+  {
+    "district": "Rangpur",
+    "division": "North region",
+    "year": 2008,
+    "season": "Aman Rice",
+    "area_acres": 348050.0,
+    "production_tons": 320885.0,
+    "yield_mtha": 2.31
+  },
+  {
+    "district": "Rajshahi",
+    "division": "North region",
+    "year": 2008,
+    "season": "Aman Rice",
+    "area_acres": 171015.0,
+    "production_tons": 179016.0,
+    "yield_mtha": 2.63
+  },
+  {
+    "district": "Bogura",
+    "division": "North region",
+    "year": 2008,
+    "season": "Aman Rice",
+    "area_acres": 443735.0,
+    "production_tons": 386283.0,
+    "yield_mtha": 2.19
+  },
+  {
+    "district": "Khulna",
+    "division": "Khulna",
+    "year": 2009,
+    "season": "Aman Rice",
+    "area_acres": 217912.0,
+    "production_tons": 215848.0,
+    "yield_mtha": 2.49
+  },
+  {
+    "district": "Jessor",
+    "division": "Khulna",
+    "year": 2009,
+    "season": "Aman Rice",
+    "area_acres": 341226.0,
+    "production_tons": 313555.0,
+    "yield_mtha": 2.31
+  },
+  {
+    "district": "Satkhira",
+    "division": "Khulna",
+    "year": 2009,
+    "season": "Aman Rice",
+    "area_acres": 207649.0,
+    "production_tons": 193309.0,
+    "yield_mtha": 2.34
+  },
+  {
+    "district": "Chuadanga",
+    "division": "Khulna",
+    "year": 2009,
+    "season": "Aman Rice",
+    "area_acres": 113537.0,
+    "production_tons": 104373.0,
+    "yield_mtha": 2.31
+  },
+  {
+    "district": "Chittagong",
+    "division": "Chittagong",
+    "year": 2009,
+    "season": "Aman Rice",
+    "area_acres": 469442.0,
+    "production_tons": 489931.0,
+    "yield_mtha": 2.62
+  },
+  {
+    "district": "Cox's Bazar",
+    "division": "Chittagong",
+    "year": 2009,
+    "season": "Aman Rice",
+    "area_acres": 181152.0,
+    "production_tons": 224699.0,
+    "yield_mtha": 3.11
+  },
+  {
+    "district": "Chandpur",
+    "division": "Chittagong",
+    "year": 2009,
+    "season": "Aman Rice",
+    "area_acres": 129394.0,
+    "production_tons": 99443.0,
+    "yield_mtha": 1.93
+  },
+  {
+    "district": "Feni",
+    "division": "Chittagong",
+    "year": 2009,
+    "season": "Aman Rice",
+    "area_acres": 141039.0,
+    "production_tons": 147174.0,
+    "yield_mtha": 2.62
+  },
+  {
+    "district": "Comilla",
+    "division": "Chittagong",
+    "year": 2009,
+    "season": "Aman Rice",
+    "area_acres": 368455.0,
+    "production_tons": 341627.0,
+    "yield_mtha": 2.33
+  },
+  {
+    "district": "Rangamati",
+    "division": "Chittagong",
+    "year": 2009,
+    "season": "Aman Rice",
+    "area_acres": 23922.0,
+    "production_tons": 25537.0,
+    "yield_mtha": 2.68
+  },
+  {
+    "district": "Noakhali",
+    "division": "Chittagong",
+    "year": 2009,
+    "season": "Aman Rice",
+    "area_acres": 288961.0,
+    "production_tons": 216300.0,
+    "yield_mtha": 1.88
+  },
+  {
+    "district": "Khagrachhari",
+    "division": "Chittagong",
+    "year": 2009,
+    "season": "Aman Rice",
+    "area_acres": 77761.0,
+    "production_tons": 87202.0,
+    "yield_mtha": 2.82
+  },
+  {
+    "district": "Dinajpur",
+    "division": "North region",
+    "year": 2009,
+    "season": "Aman Rice",
+    "area_acres": 607395.0,
+    "production_tons": 581075.0,
+    "yield_mtha": 2.4
+  },
+  {
+    "district": "Rangpur",
+    "division": "North region",
+    "year": 2009,
+    "season": "Aman Rice",
+    "area_acres": 357770.0,
+    "production_tons": 346055.0,
+    "yield_mtha": 2.43
+  },
+  {
+    "district": "Rajshahi",
+    "division": "North region",
+    "year": 2009,
+    "season": "Aman Rice",
+    "area_acres": 187090.0,
+    "production_tons": 193581.0,
+    "yield_mtha": 2.6
+  },
+  {
+    "district": "Bogura",
+    "division": "North region",
+    "year": 2009,
+    "season": "Aman Rice",
+    "area_acres": 441965.0,
+    "production_tons": 366445.0,
+    "yield_mtha": 2.08
+  },
+  {
+    "district": "Khulna",
+    "division": "Khulna",
+    "year": 2010,
+    "season": "Aman Rice",
+    "area_acres": 200321.0,
+    "production_tons": 176017.0,
+    "yield_mtha": 2.21
+  },
+  {
+    "district": "Jessor",
+    "division": "Khulna",
+    "year": 2010,
+    "season": "Aman Rice",
+    "area_acres": 375560.0,
+    "production_tons": 332402.0,
+    "yield_mtha": 2.22
+  },
+  {
+    "district": "Satkhira",
+    "division": "Khulna",
+    "year": 2010,
+    "season": "Aman Rice",
+    "area_acres": 251482.0,
+    "production_tons": 286059.0,
+    "yield_mtha": 2.86
+  },
+  {
+    "district": "Chuadanga",
+    "division": "Khulna",
+    "year": 2010,
+    "season": "Aman Rice",
+    "area_acres": 109103.0,
+    "production_tons": 96142.0,
+    "yield_mtha": 2.21
+  },
+  {
+    "district": "Chittagong",
+    "division": "Chittagong",
+    "year": 2010,
+    "season": "Aman Rice",
+    "area_acres": 458472.0,
+    "production_tons": 478656.0,
+    "yield_mtha": 2.62
+  },
+  {
+    "district": "Cox's Bazar",
+    "division": "Chittagong",
+    "year": 2010,
+    "season": "Aman Rice",
+    "area_acres": 184632.0,
+    "production_tons": 207762.0,
+    "yield_mtha": 2.83
+  },
+  {
+    "district": "Chandpur",
+    "division": "Chittagong",
+    "year": 2010,
+    "season": "Aman Rice",
+    "area_acres": 129839.0,
+    "production_tons": 82066.0,
+    "yield_mtha": 1.59
+  },
+  {
+    "district": "Feni",
+    "division": "Chittagong",
+    "year": 2010,
+    "season": "Aman Rice",
+    "area_acres": 162124.0,
+    "production_tons": 191320.0,
+    "yield_mtha": 2.96
+  },
+  {
+    "district": "Comilla",
+    "division": "Chittagong",
+    "year": 2010,
+    "season": "Aman Rice",
+    "area_acres": 361548.0,
+    "production_tons": 349487.0,
+    "yield_mtha": 2.43
+  },
+  {
+    "district": "Rangamati",
+    "division": "Chittagong",
+    "year": 2010,
+    "season": "Aman Rice",
+    "area_acres": 23578.0,
+    "production_tons": 24352.0,
+    "yield_mtha": 2.59
+  },
+  {
+    "district": "Noakhali",
+    "division": "Chittagong",
+    "year": 2010,
+    "season": "Aman Rice",
+    "area_acres": 291268.0,
+    "production_tons": 211545.0,
+    "yield_mtha": 1.82
+  },
+  {
+    "district": "Khagrachhari",
+    "division": "Chittagong",
+    "year": 2010,
+    "season": "Aman Rice",
+    "area_acres": 75644.0,
+    "production_tons": 88001.0,
+    "yield_mtha": 2.92
+  },
+  {
+    "district": "Dinajpur",
+    "division": "North region",
+    "year": 2010,
+    "season": "Aman Rice",
+    "area_acres": 604853.0,
+    "production_tons": 637965.0,
+    "yield_mtha": 2.65
+  },
+  {
+    "district": "Rangpur",
+    "division": "North region",
+    "year": 2010,
+    "season": "Aman Rice",
+    "area_acres": 343825.0,
+    "production_tons": 368115.0,
+    "yield_mtha": 2.69
+  },
+  {
+    "district": "Rajshahi",
+    "division": "North region",
+    "year": 2010,
+    "season": "Aman Rice",
+    "area_acres": 181820.0,
+    "production_tons": 201370.0,
+    "yield_mtha": 2.78
+  },
+  {
+    "district": "Bogura",
+    "division": "North region",
+    "year": 2010,
+    "season": "Aman Rice",
+    "area_acres": 453517.0,
+    "production_tons": 396788.0,
+    "yield_mtha": 2.2
+  },
+  {
+    "district": "Khulna",
+    "division": "Khulna",
+    "year": 2011,
+    "season": "Aman Rice",
+    "area_acres": 206177.0,
+    "production_tons": 181186.0,
+    "yield_mtha": 2.21
+  },
+  {
+    "district": "Jessor",
+    "division": "Khulna",
+    "year": 2011,
+    "season": "Aman Rice",
+    "area_acres": 336037.0,
+    "production_tons": 353267.0,
+    "yield_mtha": 2.64
+  },
+  {
+    "district": "Satkhira",
+    "division": "Khulna",
+    "year": 2011,
+    "season": "Aman Rice",
+    "area_acres": 207797.0,
+    "production_tons": 219388.0,
+    "yield_mtha": 2.65
+  },
+  {
+    "district": "Chuadanga",
+    "division": "Khulna",
+    "year": 2011,
+    "season": "Aman Rice",
+    "area_acres": 107381.0,
+    "production_tons": 122987.0,
+    "yield_mtha": 2.88
+  },
+  {
+    "district": "Chittagong",
+    "division": "Chittagong",
+    "year": 2011,
+    "season": "Aman Rice",
+    "area_acres": 455458.0,
+    "production_tons": 467750.0,
+    "yield_mtha": 2.58
+  },
+  {
+    "district": "Cox's Bazar",
+    "division": "Chittagong",
+    "year": 2011,
+    "season": "Aman Rice",
+    "area_acres": 182297.0,
+    "production_tons": 213334.0,
+    "yield_mtha": 2.94
+  },
+  {
+    "district": "Chandpur",
+    "division": "Chittagong",
+    "year": 2011,
+    "season": "Aman Rice",
+    "area_acres": 108525.0,
+    "production_tons": 77592.0,
+    "yield_mtha": 1.8
+  },
+  {
+    "district": "Feni",
+    "division": "Chittagong",
+    "year": 2011,
+    "season": "Aman Rice",
+    "area_acres": 162522.0,
+    "production_tons": 188358.0,
+    "yield_mtha": 2.91
+  },
+  {
+    "district": "Comilla",
+    "division": "Chittagong",
+    "year": 2011,
+    "season": "Aman Rice",
+    "area_acres": 352781.0,
+    "production_tons": 342915.0,
+    "yield_mtha": 2.44
+  },
+  {
+    "district": "Rangamati",
+    "division": "Chittagong",
+    "year": 2011,
+    "season": "Aman Rice",
+    "area_acres": 24155.0,
+    "production_tons": 25746.0,
+    "yield_mtha": 2.68
+  },
+  {
+    "district": "Noakhali",
+    "division": "Chittagong",
+    "year": 2011,
+    "season": "Aman Rice",
+    "area_acres": 293415.0,
+    "production_tons": 220437.0,
+    "yield_mtha": 1.89
+  },
+  {
+    "district": "Khagrachhari",
+    "division": "Chittagong",
+    "year": 2011,
+    "season": "Aman Rice",
+    "area_acres": 76231.0,
+    "production_tons": 89607.0,
+    "yield_mtha": 2.95
+  },
+  {
+    "district": "Dinajpur",
+    "division": "North region",
+    "year": 2011,
+    "season": "Aman Rice",
+    "area_acres": 610853.0,
+    "production_tons": 606407.0,
+    "yield_mtha": 2.49
+  },
+  {
+    "district": "Rangpur",
+    "division": "North region",
+    "year": 2011,
+    "season": "Aman Rice",
+    "area_acres": 358971.0,
+    "production_tons": 388317.0,
+    "yield_mtha": 2.72
+  },
+  {
+    "district": "Rajshahi",
+    "division": "North region",
+    "year": 2011,
+    "season": "Aman Rice",
+    "area_acres": 180053.0,
+    "production_tons": 185350.0,
+    "yield_mtha": 2.58
+  },
+  {
+    "district": "Bogura",
+    "division": "North region",
+    "year": 2011,
+    "season": "Aman Rice",
+    "area_acres": 453143.0,
+    "production_tons": 428279.0,
+    "yield_mtha": 2.37
+  },
+  {
+    "district": "Khulna",
+    "division": "Khulna",
+    "year": 2012,
+    "season": "Aman Rice",
+    "area_acres": 228120.0,
+    "production_tons": 208540.0,
+    "yield_mtha": 2.3
+  },
+  {
+    "district": "Jessor",
+    "division": "Khulna",
+    "year": 2012,
+    "season": "Aman Rice",
+    "area_acres": 327742.0,
+    "production_tons": 317470.0,
+    "yield_mtha": 2.43
+  },
+  {
+    "district": "Satkhira",
+    "division": "Khulna",
+    "year": 2012,
+    "season": "Aman Rice",
+    "area_acres": 230873.0,
+    "production_tons": 250523.0,
+    "yield_mtha": 2.72
+  },
+  {
+    "district": "Chuadanga",
+    "division": "Khulna",
+    "year": 2012,
+    "season": "Aman Rice",
+    "area_acres": 107457.0,
+    "production_tons": 119763.0,
+    "yield_mtha": 2.8
+  },
+  {
+    "district": "Chittagong",
+    "division": "Chittagong",
+    "year": 2012,
+    "season": "Aman Rice",
+    "area_acres": 444559.0,
+    "production_tons": 474409.0,
+    "yield_mtha": 2.68
+  },
+  {
+    "district": "Cox's Bazar",
+    "division": "Chittagong",
+    "year": 2012,
+    "season": "Aman Rice",
+    "area_acres": 181104.0,
+    "production_tons": 221200.0,
+    "yield_mtha": 3.07
+  },
+  {
+    "district": "Chandpur",
+    "division": "Chittagong",
+    "year": 2012,
+    "season": "Aman Rice",
+    "area_acres": 116604.0,
+    "production_tons": 90938.0,
+    "yield_mtha": 1.96
+  },
+  {
+    "district": "Feni",
+    "division": "Chittagong",
+    "year": 2012,
+    "season": "Aman Rice",
+    "area_acres": 159379.0,
+    "production_tons": 182253.0,
+    "yield_mtha": 2.87
+  },
+  {
+    "district": "Comilla",
+    "division": "Chittagong",
+    "year": 2012,
+    "season": "Aman Rice",
+    "area_acres": 355550.0,
+    "production_tons": 338564.0,
+    "yield_mtha": 2.39
+  },
+  {
+    "district": "Rangamati",
+    "division": "Chittagong",
+    "year": 2012,
+    "season": "Aman Rice",
+    "area_acres": 24009.0,
+    "production_tons": 24566.0,
+    "yield_mtha": 2.57
+  },
+  {
+    "district": "Noakhali",
+    "division": "Chittagong",
+    "year": 2012,
+    "season": "Aman Rice",
+    "area_acres": 307792.0,
+    "production_tons": 234188.0,
+    "yield_mtha": 1.91
+  },
+  {
+    "district": "Khagrachhari",
+    "division": "Chittagong",
+    "year": 2012,
+    "season": "Aman Rice",
+    "area_acres": 76139.0,
+    "production_tons": 91560.0,
+    "yield_mtha": 3.02
+  },
+  {
+    "district": "Dinajpur",
+    "division": "North region",
+    "year": 2012,
+    "season": "Aman Rice",
+    "area_acres": 607702.0,
+    "production_tons": 631882.0,
+    "yield_mtha": 2.61
+  },
+  {
+    "district": "Rangpur",
+    "division": "North region",
+    "year": 2012,
+    "season": "Aman Rice",
+    "area_acres": 385735.0,
+    "production_tons": 408861.0,
+    "yield_mtha": 2.66
+  },
+  {
+    "district": "Rajshahi",
+    "division": "North region",
+    "year": 2012,
+    "season": "Aman Rice",
+    "area_acres": 171087.0,
+    "production_tons": 196898.0,
+    "yield_mtha": 2.89
+  },
+  {
+    "district": "Bogura",
+    "division": "North region",
+    "year": 2012,
+    "season": "Aman Rice",
+    "area_acres": 449903.0,
+    "production_tons": 448188.0,
+    "yield_mtha": 2.5
+  },
+  {
+    "district": "Khulna",
+    "division": "Khulna",
+    "year": 2013,
+    "season": "Aman Rice",
+    "area_acres": 134596.0,
+    "production_tons": 125844.0,
+    "yield_mtha": 2.35
+  },
+  {
+    "district": "Jessor",
+    "division": "Khulna",
+    "year": 2013,
+    "season": "Aman Rice",
+    "area_acres": 500714.0,
+    "production_tons": 350174.0,
+    "yield_mtha": 1.76
+  },
+  {
+    "district": "Satkhira",
+    "division": "Khulna",
+    "year": 2013,
+    "season": "Aman Rice",
+    "area_acres": 239487.0,
+    "production_tons": 250786.0,
+    "yield_mtha": 2.63
+  },
+  {
+    "district": "Chuadanga",
+    "division": "Khulna",
+    "year": 2013,
+    "season": "Aman Rice",
+    "area_acres": 227391.0,
+    "production_tons": 273828.0,
+    "yield_mtha": 3.02
+  },
+  {
+    "district": "Chittagong",
+    "division": "Chittagong",
+    "year": 2013,
+    "season": "Aman Rice",
+    "area_acres": 440237.0,
+    "production_tons": 477130.0,
+    "yield_mtha": 2.72
+  },
+  {
+    "district": "Cox's Bazar",
+    "division": "Chittagong",
+    "year": 2013,
+    "season": "Aman Rice",
+    "area_acres": 178357.0,
+    "production_tons": 179658.0,
+    "yield_mtha": 2.53
+  },
+  {
+    "district": "Chandpur",
+    "division": "Chittagong",
+    "year": 2013,
+    "season": "Aman Rice",
+    "area_acres": 91446.0,
+    "production_tons": 70130.0,
+    "yield_mtha": 1.93
+  },
+  {
+    "district": "Feni",
+    "division": "Chittagong",
+    "year": 2013,
+    "season": "Aman Rice",
+    "area_acres": 165594.0,
+    "production_tons": 196532.0,
+    "yield_mtha": 2.98
+  },
+  {
+    "district": "Comilla",
+    "division": "Chittagong",
+    "year": 2013,
+    "season": "Aman Rice",
+    "area_acres": 347072.0,
+    "production_tons": 326956.0,
+    "yield_mtha": 2.37
+  },
+  {
+    "district": "Rangamati",
+    "division": "Chittagong",
+    "year": 2013,
+    "season": "Aman Rice",
+    "area_acres": 24542.0,
+    "production_tons": 27076.0,
+    "yield_mtha": 2.77
+  },
+  {
+    "district": "Noakhali",
+    "division": "Chittagong",
+    "year": 2013,
+    "season": "Aman Rice",
+    "area_acres": 306912.0,
+    "production_tons": 235917.0,
+    "yield_mtha": 1.93
+  },
+  {
+    "district": "Khagrachhari",
+    "division": "Chittagong",
+    "year": 2013,
+    "season": "Aman Rice",
+    "area_acres": 67204.0,
+    "production_tons": 78135.0,
+    "yield_mtha": 2.92
+  },
+  {
+    "district": "Dinajpur",
+    "division": "North region",
+    "year": 2013,
+    "season": "Aman Rice",
+    "area_acres": 195229.0,
+    "production_tons": 166802.0,
+    "yield_mtha": 2.15
+  },
+  {
+    "district": "Rangpur",
+    "division": "North region",
+    "year": 2013,
+    "season": "Aman Rice",
+    "area_acres": 384166.0,
+    "production_tons": 426809.0,
+    "yield_mtha": 2.79
+  },
+  {
+    "district": "Rajshahi",
+    "division": "North region",
+    "year": 2013,
+    "season": "Aman Rice",
+    "area_acres": 117370.0,
+    "production_tons": 118453.0,
+    "yield_mtha": 2.53
+  },
+  {
+    "district": "Bogura",
+    "division": "North region",
+    "year": 2013,
+    "season": "Aman Rice",
+    "area_acres": 455471.0,
+    "production_tons": 468936.0,
+    "yield_mtha": 2.58
+  },
+  {
+    "district": "Khulna",
+    "division": "Khulna",
+    "year": 2014,
+    "season": "Aman Rice",
+    "area_acres": 247129.0,
+    "production_tons": 255133.0,
+    "yield_mtha": 2.59
+  },
+  {
+    "district": "Jessor",
+    "division": "Khulna",
+    "year": 2014,
+    "season": "Aman Rice",
+    "area_acres": 322696.0,
+    "production_tons": 338975.0,
+    "yield_mtha": 2.64
+  },
+  {
+    "district": "Satkhira",
+    "division": "Khulna",
+    "year": 2014,
+    "season": "Aman Rice",
+    "area_acres": 230416.0,
+    "production_tons": 279166.0,
+    "yield_mtha": 3.04
+  },
+  {
+    "district": "Chuadanga",
+    "division": "Khulna",
+    "year": 2014,
+    "season": "Aman Rice",
+    "area_acres": 90259.0,
+    "production_tons": 99997.0,
+    "yield_mtha": 2.78
+  },
+  {
+    "district": "Chittagong",
+    "division": "Chittagong",
+    "year": 2014,
+    "season": "Aman Rice",
+    "area_acres": 437253.0,
+    "production_tons": 495198.0,
+    "yield_mtha": 2.84
+  },
+  {
+    "district": "Cox's Bazar",
+    "division": "Chittagong",
+    "year": 2014,
+    "season": "Aman Rice",
+    "area_acres": 179172.0,
+    "production_tons": 175192.0,
+    "yield_mtha": 2.45
+  },
+  {
+    "district": "Chandpur",
+    "division": "Chittagong",
+    "year": 2014,
+    "season": "Aman Rice",
+    "area_acres": 105836.0,
+    "production_tons": 71142.0,
+    "yield_mtha": 1.69
+  },
+  {
+    "district": "Feni",
+    "division": "Chittagong",
+    "year": 2014,
+    "season": "Aman Rice",
+    "area_acres": 163459.0,
+    "production_tons": 187203.0,
+    "yield_mtha": 2.88
+  },
+  {
+    "district": "Comilla",
+    "division": "Chittagong",
+    "year": 2014,
+    "season": "Aman Rice",
+    "area_acres": 343998.0,
+    "production_tons": 292803.0,
+    "yield_mtha": 2.14
+  },
+  {
+    "district": "Rangamati",
+    "division": "Chittagong",
+    "year": 2014,
+    "season": "Aman Rice",
+    "area_acres": 24900.0,
+    "production_tons": 27810.0,
+    "yield_mtha": 2.8
+  },
+  {
+    "district": "Noakhali",
+    "division": "Chittagong",
+    "year": 2014,
+    "season": "Aman Rice",
+    "area_acres": 313536.0,
+    "production_tons": 248264.0,
+    "yield_mtha": 1.99
+  },
+  {
+    "district": "Khagrachhari",
+    "division": "Chittagong",
+    "year": 2014,
+    "season": "Aman Rice",
+    "area_acres": 68359.0,
+    "production_tons": 78366.0,
+    "yield_mtha": 2.88
+  },
+  {
+    "district": "Dinajpur",
+    "division": "North region",
+    "year": 2014,
+    "season": "Aman Rice",
+    "area_acres": 300796.0,
+    "production_tons": 339766.0,
+    "yield_mtha": 2.84
+  },
+  {
+    "district": "Rangpur",
+    "division": "North region",
+    "year": 2014,
+    "season": "Aman Rice",
+    "area_acres": 388989.0,
+    "production_tons": 435563.0,
+    "yield_mtha": 2.81
+  },
+  {
+    "district": "Rajshahi",
+    "division": "North region",
+    "year": 2014,
+    "season": "Aman Rice",
+    "area_acres": 527641.0,
+    "production_tons": 605457.0,
+    "yield_mtha": 2.88
+  },
+  {
+    "district": "Bogura",
+    "division": "North region",
+    "year": 2014,
+    "season": "Aman Rice",
+    "area_acres": 448004.0,
+    "production_tons": 480483.0,
+    "yield_mtha": 2.69
+  },
+  {
+    "district": "Khulna",
+    "division": "Khulna",
+    "year": 2006,
+    "season": "Boro Rice",
+    "area_acres": 85440.0,
+    "production_tons": 113713.0,
+    "yield_mtha": 3.34
+  },
+  {
+    "district": "Jessor",
+    "division": "Khulna",
+    "year": 2006,
+    "season": "Boro Rice",
+    "area_acres": 339140.0,
+    "production_tons": 591955.0,
+    "yield_mtha": 4.38
+  },
+  {
+    "district": "Satkhira",
+    "division": "Khulna",
+    "year": 2006,
+    "season": "Boro Rice",
+    "area_acres": 140060.0,
+    "production_tons": 216233.0,
+    "yield_mtha": 3.88
+  },
+  {
+    "district": "Chuadanga",
+    "division": "Khulna",
+    "year": 2006,
+    "season": "Boro Rice",
+    "area_acres": 77735.0,
+    "production_tons": 116240.0,
+    "yield_mtha": 3.75
+  },
+  {
+    "district": "Chittagong",
+    "division": "Chittagong",
+    "year": 2006,
+    "season": "Boro Rice",
+    "area_acres": 173745.0,
+    "production_tons": 188662.0,
+    "yield_mtha": 2.73
+  },
+  {
+    "district": "Cox's Bazar",
+    "division": "Chittagong",
+    "year": 2006,
+    "season": "Boro Rice",
+    "area_acres": 98315.0,
+    "production_tons": 120848.0,
+    "yield_mtha": 3.09
+  },
+  {
+    "district": "Chandpur",
+    "division": "Chittagong",
+    "year": 2006,
+    "season": "Boro Rice",
+    "area_acres": 160920.0,
+    "production_tons": 205306.0,
+    "yield_mtha": 3.2
+  },
+  {
+    "district": "Feni",
+    "division": "Chittagong",
+    "year": 2006,
+    "season": "Boro Rice",
+    "area_acres": 70650.0,
+    "production_tons": 94490.0,
+    "yield_mtha": 3.36
+  },
+  {
+    "district": "Comilla",
+    "division": "Chittagong",
+    "year": 2006,
+    "season": "Boro Rice",
+    "area_acres": 393100.0,
+    "production_tons": 557585.0,
+    "yield_mtha": 3.56
+  },
+  {
+    "district": "Rangamati",
+    "division": "Chittagong",
+    "year": 2006,
+    "season": "Boro Rice",
+    "area_acres": 17755.0,
+    "production_tons": 20631.0,
+    "yield_mtha": 2.92
+  },
+  {
+    "district": "Noakhali",
+    "division": "Chittagong",
+    "year": 2006,
+    "season": "Boro Rice",
+    "area_acres": 109930.0,
+    "production_tons": 156504.0,
+    "yield_mtha": 3.57
+  },
+  {
+    "district": "Khagrachhari",
+    "division": "Chittagong",
+    "year": 2006,
+    "season": "Boro Rice",
+    "area_acres": 20915.0,
+    "production_tons": 27770.0,
+    "yield_mtha": 3.33
+  },
+  {
+    "district": "Dinajpur",
+    "division": "North region",
+    "year": 2006,
+    "season": "Boro Rice",
+    "area_acres": 397155.0,
+    "production_tons": 603367.0,
+    "yield_mtha": 3.81
+  },
+  {
+    "district": "Rangpur",
+    "division": "North region",
+    "year": 2006,
+    "season": "Boro Rice",
+    "area_acres": 285785.0,
+    "production_tons": 429051.0,
+    "yield_mtha": 3.77
+  },
+  {
+    "district": "Rajshahi",
+    "division": "North region",
+    "year": 2006,
+    "season": "Boro Rice",
+    "area_acres": 178155.0,
+    "production_tons": 288762.0,
+    "yield_mtha": 4.07
+  },
+  {
+    "district": "Bogura",
+    "division": "North region",
+    "year": 2006,
+    "season": "Boro Rice",
+    "area_acres": 464335.0,
+    "production_tons": 677991.0,
+    "yield_mtha": 3.67
+  },
+  {
+    "district": "Khulna",
+    "division": "Khulna",
+    "year": 2007,
+    "season": "Boro Rice",
+    "area_acres": 92835.0,
+    "production_tons": 149530.0,
+    "yield_mtha": 4.04
+  },
+  {
+    "district": "Jessor",
+    "division": "Khulna",
+    "year": 2007,
+    "season": "Boro Rice",
+    "area_acres": 374070.0,
+    "production_tons": 584947.0,
+    "yield_mtha": 3.93
+  },
+  {
+    "district": "Satkhira",
+    "division": "Khulna",
+    "year": 2007,
+    "season": "Boro Rice",
+    "area_acres": 158255.0,
+    "production_tons": 234407.0,
+    "yield_mtha": 3.72
+  },
+  {
+    "district": "Chuadanga",
+    "division": "Khulna",
+    "year": 2007,
+    "season": "Boro Rice",
+    "area_acres": 88510.0,
+    "production_tons": 141753.0,
+    "yield_mtha": 4.02
+  },
+  {
+    "district": "Chittagong",
+    "division": "Chittagong",
+    "year": 2007,
+    "season": "Boro Rice",
+    "area_acres": 189150.0,
+    "production_tons": 260882.0,
+    "yield_mtha": 3.46
+  },
+  {
+    "district": "Cox's Bazar",
+    "division": "Chittagong",
+    "year": 2007,
+    "season": "Boro Rice",
+    "area_acres": 128250.0,
+    "production_tons": 176572.0,
+    "yield_mtha": 3.46
+  },
+  {
+    "district": "Chandpur",
+    "division": "Chittagong",
+    "year": 2007,
+    "season": "Boro Rice",
+    "area_acres": 168430.0,
+    "production_tons": 252391.0,
+    "yield_mtha": 3.76
+  },
+  {
+    "district": "Feni",
+    "division": "Chittagong",
+    "year": 2007,
+    "season": "Boro Rice",
+    "area_acres": 85410.0,
+    "production_tons": 129323.0,
+    "yield_mtha": 3.8
+  },
+  {
+    "district": "Comilla",
+    "division": "Chittagong",
+    "year": 2007,
+    "season": "Boro Rice",
+    "area_acres": 396225.0,
+    "production_tons": 610166.0,
+    "yield_mtha": 3.87
+  },
+  {
+    "district": "Rangamati",
+    "division": "Chittagong",
+    "year": 2007,
+    "season": "Boro Rice",
+    "area_acres": 16395.0,
+    "production_tons": 23936.0,
+    "yield_mtha": 3.67
+  },
+  {
+    "district": "Noakhali",
+    "division": "Chittagong",
+    "year": 2007,
+    "season": "Boro Rice",
+    "area_acres": 134640.0,
+    "production_tons": 222981.0,
+    "yield_mtha": 4.16
+  },
+  {
+    "district": "Khagrachhari",
+    "division": "Chittagong",
+    "year": 2007,
+    "season": "Boro Rice",
+    "area_acres": 23155.0,
+    "production_tons": 32335.0,
+    "yield_mtha": 3.51
+  },
+  {
+    "district": "Dinajpur",
+    "division": "North region",
+    "year": 2007,
+    "season": "Boro Rice",
+    "area_acres": 417325.0,
+    "production_tons": 670664.0,
+    "yield_mtha": 4.03
+  },
+  {
+    "district": "Rangpur",
+    "division": "North region",
+    "year": 2007,
+    "season": "Boro Rice",
+    "area_acres": 299335.0,
+    "production_tons": 472357.0,
+    "yield_mtha": 3.96
+  },
+  {
+    "district": "Rajshahi",
+    "division": "North region",
+    "year": 2007,
+    "season": "Boro Rice",
+    "area_acres": 193860.0,
+    "production_tons": 341679.0,
+    "yield_mtha": 4.43
+  },
+  {
+    "district": "Bogura",
+    "division": "North region",
+    "year": 2007,
+    "season": "Boro Rice",
+    "area_acres": 469185.0,
+    "production_tons": 759711.0,
+    "yield_mtha": 4.07
+  },
+  {
+    "district": "Khulna",
+    "division": "Khulna",
+    "year": 2008,
+    "season": "Boro Rice",
+    "area_acres": 98333.0,
+    "production_tons": 139626.0,
+    "yield_mtha": 3.57
+  },
+  {
+    "district": "Jessor",
+    "division": "Khulna",
+    "year": 2008,
+    "season": "Boro Rice",
+    "area_acres": 375624.0,
+    "production_tons": 600007.0,
+    "yield_mtha": 4.01
+  },
+  {
+    "district": "Satkhira",
+    "division": "Khulna",
+    "year": 2008,
+    "season": "Boro Rice",
+    "area_acres": 166257.0,
+    "production_tons": 238982.0,
+    "yield_mtha": 3.61
+  },
+  {
+    "district": "Chuadanga",
+    "division": "Khulna",
+    "year": 2008,
+    "season": "Boro Rice",
+    "area_acres": 104716.0,
+    "production_tons": 167878.0,
+    "yield_mtha": 4.03
+  },
+  {
+    "district": "Chittagong",
+    "division": "Chittagong",
+    "year": 2008,
+    "season": "Boro Rice",
+    "area_acres": 158431.0,
+    "production_tons": 209701.0,
+    "yield_mtha": 3.32
+  },
+  {
+    "district": "Cox's Bazar",
+    "division": "Chittagong",
+    "year": 2008,
+    "season": "Boro Rice",
+    "area_acres": 124899.0,
+    "production_tons": 157830.0,
+    "yield_mtha": 3.17
+  },
+  {
+    "district": "Chandpur",
+    "division": "Chittagong",
+    "year": 2008,
+    "season": "Boro Rice",
+    "area_acres": 164888.0,
+    "production_tons": 229990.0,
+    "yield_mtha": 3.5
+  },
+  {
+    "district": "Feni",
+    "division": "Chittagong",
+    "year": 2008,
+    "season": "Boro Rice",
+    "area_acres": 78201.0,
+    "production_tons": 117168.0,
+    "yield_mtha": 3.76
+  },
+  {
+    "district": "Comilla",
+    "division": "Chittagong",
+    "year": 2008,
+    "season": "Boro Rice",
+    "area_acres": 397944.0,
+    "production_tons": 598873.0,
+    "yield_mtha": 3.78
+  },
+  {
+    "district": "Rangamati",
+    "division": "Chittagong",
+    "year": 2008,
+    "season": "Boro Rice",
+    "area_acres": 17017.0,
+    "production_tons": 25032.0,
+    "yield_mtha": 3.69
+  },
+  {
+    "district": "Noakhali",
+    "division": "Chittagong",
+    "year": 2008,
+    "season": "Boro Rice",
+    "area_acres": 1331128.0,
+    "production_tons": 214076.0,
+    "yield_mtha": 0.4
+  },
+  {
+    "district": "Khagrachhari",
+    "division": "Chittagong",
+    "year": 2008,
+    "season": "Boro Rice",
+    "area_acres": 24090.0,
+    "production_tons": 28557.0,
+    "yield_mtha": 2.98
+  },
+  {
+    "district": "Dinajpur",
+    "division": "North region",
+    "year": 2008,
+    "season": "Boro Rice",
+    "area_acres": 435497.0,
+    "production_tons": 671440.0,
+    "yield_mtha": 3.87
+  },
+  {
+    "district": "Rangpur",
+    "division": "North region",
+    "year": 2008,
+    "season": "Boro Rice",
+    "area_acres": 304290.0,
+    "production_tons": 483725.0,
+    "yield_mtha": 3.99
+  },
+  {
+    "district": "Rajshahi",
+    "division": "North region",
+    "year": 2008,
+    "season": "Boro Rice",
+    "area_acres": 195615.0,
+    "production_tons": 326367.0,
+    "yield_mtha": 4.19
+  },
+  {
+    "district": "Bogura",
+    "division": "North region",
+    "year": 2008,
+    "season": "Boro Rice",
+    "area_acres": 466761.0,
+    "production_tons": 782885.0,
+    "yield_mtha": 4.21
+  },
+  {
+    "district": "Khulna",
+    "division": "Khulna",
+    "year": 2009,
+    "season": "Boro Rice",
+    "area_acres": 106157.0,
+    "production_tons": 158228.0,
+    "yield_mtha": 3.74
+  },
+  {
+    "district": "Jessor",
+    "division": "Khulna",
+    "year": 2009,
+    "season": "Boro Rice",
+    "area_acres": 386873.0,
+    "production_tons": 627644.0,
+    "yield_mtha": 4.07
+  },
+  {
+    "district": "Satkhira",
+    "division": "Khulna",
+    "year": 2009,
+    "season": "Boro Rice",
+    "area_acres": 179856.0,
+    "production_tons": 263082.0,
+    "yield_mtha": 3.67
+  },
+  {
+    "district": "Chuadanga",
+    "division": "Khulna",
+    "year": 2009,
+    "season": "Boro Rice",
+    "area_acres": 105278.0,
+    "production_tons": 174804.0,
+    "yield_mtha": 4.17
+  },
+  {
+    "district": "Chittagong",
+    "division": "Chittagong",
+    "year": 2009,
+    "season": "Boro Rice",
+    "area_acres": 169489.0,
+    "production_tons": 233924.0,
+    "yield_mtha": 3.47
+  },
+  {
+    "district": "Cox's Bazar",
+    "division": "Chittagong",
+    "year": 2009,
+    "season": "Boro Rice",
+    "area_acres": 125575.0,
+    "production_tons": 160382.0,
+    "yield_mtha": 3.21
+  },
+  {
+    "district": "Chandpur",
+    "division": "Chittagong",
+    "year": 2009,
+    "season": "Boro Rice",
+    "area_acres": 162475.0,
+    "production_tons": 270438.0,
+    "yield_mtha": 4.18
+  },
+  {
+    "district": "Feni",
+    "division": "Chittagong",
+    "year": 2009,
+    "season": "Boro Rice",
+    "area_acres": 78097.0,
+    "production_tons": 102311.0,
+    "yield_mtha": 3.29
+  },
+  {
+    "district": "Comilla",
+    "division": "Chittagong",
+    "year": 2009,
+    "season": "Boro Rice",
+    "area_acres": 407809.0,
+    "production_tons": 640814.0,
+    "yield_mtha": 3.95
+  },
+  {
+    "district": "Rangamati",
+    "division": "Chittagong",
+    "year": 2009,
+    "season": "Boro Rice",
+    "area_acres": 18186.0,
+    "production_tons": 27491.0,
+    "yield_mtha": 3.8
+  },
+  {
+    "district": "Noakhali",
+    "division": "Chittagong",
+    "year": 2009,
+    "season": "Boro Rice",
+    "area_acres": 142813.0,
+    "production_tons": 219398.0,
+    "yield_mtha": 3.86
+  },
+  {
+    "district": "Khagrachhari",
+    "division": "Chittagong",
+    "year": 2009,
+    "season": "Boro Rice",
+    "area_acres": 27888.0,
+    "production_tons": 33551.0,
+    "yield_mtha": 3.02
+  },
+  {
+    "district": "Dinajpur",
+    "division": "North region",
+    "year": 2009,
+    "season": "Boro Rice",
+    "area_acres": 435378.0,
+    "production_tons": 665415.0,
+    "yield_mtha": 3.84
+  },
+  {
+    "district": "Rangpur",
+    "division": "North region",
+    "year": 2009,
+    "season": "Boro Rice",
+    "area_acres": 314804.0,
+    "production_tons": 515483.0,
+    "yield_mtha": 4.11
+  },
+  {
+    "district": "Rajshahi",
+    "division": "North region",
+    "year": 2009,
+    "season": "Boro Rice",
+    "area_acres": 176055.0,
+    "production_tons": 272891.0,
+    "yield_mtha": 3.89
+  },
+  {
+    "district": "Bogura",
+    "division": "North region",
+    "year": 2009,
+    "season": "Boro Rice",
+    "area_acres": 463370.0,
+    "production_tons": 747627.0,
+    "yield_mtha": 4.05
+  },
+  {
+    "district": "Khulna",
+    "division": "Khulna",
+    "year": 2010,
+    "season": "Boro Rice",
+    "area_acres": 107614.0,
+    "production_tons": 162899.0,
+    "yield_mtha": 3.8
+  },
+  {
+    "district": "Jessor",
+    "division": "Khulna",
+    "year": 2010,
+    "season": "Boro Rice",
+    "area_acres": 384554.0,
+    "production_tons": 647016.0,
+    "yield_mtha": 4.22
+  },
+  {
+    "district": "Satkhira",
+    "division": "Khulna",
+    "year": 2010,
+    "season": "Boro Rice",
+    "area_acres": 180942.0,
+    "production_tons": 260274.0,
+    "yield_mtha": 3.61
+  },
+  {
+    "district": "Chuadanga",
+    "division": "Khulna",
+    "year": 2010,
+    "season": "Boro Rice",
+    "area_acres": 102732.0,
+    "production_tons": 157103.0,
+    "yield_mtha": 3.84
+  },
+  {
+    "district": "Chittagong",
+    "division": "Chittagong",
+    "year": 2010,
+    "season": "Boro Rice",
+    "area_acres": 171963.0,
+    "production_tons": 233916.0,
+    "yield_mtha": 3.42
+  },
+  {
+    "district": "Cox's Bazar",
+    "division": "Chittagong",
+    "year": 2010,
+    "season": "Boro Rice",
+    "area_acres": 125430.0,
+    "production_tons": 165411.0,
+    "yield_mtha": 3.31
+  },
+  {
+    "district": "Chandpur",
+    "division": "Chittagong",
+    "year": 2010,
+    "season": "Boro Rice",
+    "area_acres": 164887.0,
+    "production_tons": 258904.0,
+    "yield_mtha": 3.94
+  },
+  {
+    "district": "Feni",
+    "division": "Chittagong",
+    "year": 2010,
+    "season": "Boro Rice",
+    "area_acres": 77123.0,
+    "production_tons": 109236.0,
+    "yield_mtha": 3.56
+  },
+  {
+    "district": "Comilla",
+    "division": "Chittagong",
+    "year": 2010,
+    "season": "Boro Rice",
+    "area_acres": 401849.0,
+    "production_tons": 632742.0,
+    "yield_mtha": 3.95
+  },
+  {
+    "district": "Rangamati",
+    "division": "Chittagong",
+    "year": 2010,
+    "season": "Boro Rice",
+    "area_acres": 20376.0,
+    "production_tons": 30774.0,
+    "yield_mtha": 3.79
+  },
+  {
+    "district": "Noakhali",
+    "division": "Chittagong",
+    "year": 2010,
+    "season": "Boro Rice",
+    "area_acres": 144502.0,
+    "production_tons": 228637.0,
+    "yield_mtha": 3.97
+  },
+  {
+    "district": "Khagrachhari",
+    "division": "Chittagong",
+    "year": 2010,
+    "season": "Boro Rice",
+    "area_acres": 25722.0,
+    "production_tons": 36266.0,
+    "yield_mtha": 3.54
+  },
+  {
+    "district": "Dinajpur",
+    "division": "North region",
+    "year": 2010,
+    "season": "Boro Rice",
+    "area_acres": 435223.0,
+    "production_tons": 667421.0,
+    "yield_mtha": 3.85
+  },
+  {
+    "district": "Rangpur",
+    "division": "North region",
+    "year": 2010,
+    "season": "Boro Rice",
+    "area_acres": 316099.0,
+    "production_tons": 480287.0,
+    "yield_mtha": 3.81
+  },
+  {
+    "district": "Rajshahi",
+    "division": "North region",
+    "year": 2010,
+    "season": "Boro Rice",
+    "area_acres": 180307.0,
+    "production_tons": 292510.0,
+    "yield_mtha": 4.07
+  },
+  {
+    "district": "Bogura",
+    "division": "North region",
+    "year": 2010,
+    "season": "Boro Rice",
+    "area_acres": 461051.0,
+    "production_tons": 696400.0,
+    "yield_mtha": 3.79
+  },
+  {
+    "district": "Khulna",
+    "division": "Khulna",
+    "year": 2011,
+    "season": "Boro Rice",
+    "area_acres": 118943.0,
+    "production_tons": 171587.0,
+    "yield_mtha": 3.62
+  },
+  {
+    "district": "Jessor",
+    "division": "Khulna",
+    "year": 2011,
+    "season": "Boro Rice",
+    "area_acres": 385042.0,
+    "production_tons": 649269.0,
+    "yield_mtha": 4.23
+  },
+  {
+    "district": "Satkhira",
+    "division": "Khulna",
+    "year": 2011,
+    "season": "Boro Rice",
+    "area_acres": 182071.0,
+    "production_tons": 265357.0,
+    "yield_mtha": 3.66
+  },
+  {
+    "district": "Chuadanga",
+    "division": "Khulna",
+    "year": 2011,
+    "season": "Boro Rice",
+    "area_acres": 99496.0,
+    "production_tons": 154396.0,
+    "yield_mtha": 3.9
+  },
+  {
+    "district": "Chittagong",
+    "division": "Chittagong",
+    "year": 2011,
+    "season": "Boro Rice",
+    "area_acres": 166150.0,
+    "production_tons": 227322.0,
+    "yield_mtha": 3.44
+  },
+  {
+    "district": "Cox's Bazar",
+    "division": "Chittagong",
+    "year": 2011,
+    "season": "Boro Rice",
+    "area_acres": 123621.0,
+    "production_tons": 168045.0,
+    "yield_mtha": 3.41
+  },
+  {
+    "district": "Chandpur",
+    "division": "Chittagong",
+    "year": 2011,
+    "season": "Boro Rice",
+    "area_acres": 162771.0,
+    "production_tons": 254239.0,
+    "yield_mtha": 3.92
+  },
+  {
+    "district": "Feni",
+    "division": "Chittagong",
+    "year": 2011,
+    "season": "Boro Rice",
+    "area_acres": 85113.0,
+    "production_tons": 119962.0,
+    "yield_mtha": 3.54
+  },
+  {
+    "district": "Comilla",
+    "division": "Chittagong",
+    "year": 2011,
+    "season": "Boro Rice",
+    "area_acres": 401980.0,
+    "production_tons": 623052.0,
+    "yield_mtha": 3.89
+  },
+  {
+    "district": "Rangamati",
+    "division": "Chittagong",
+    "year": 2011,
+    "season": "Boro Rice",
+    "area_acres": 20016.0,
+    "production_tons": 27126.0,
+    "yield_mtha": 3.4
+  },
+  {
+    "district": "Noakhali",
+    "division": "Chittagong",
+    "year": 2011,
+    "season": "Boro Rice",
+    "area_acres": 146257.0,
+    "production_tons": 229450.0,
+    "yield_mtha": 3.94
+  },
+  {
+    "district": "Khagrachhari",
+    "division": "Chittagong",
+    "year": 2011,
+    "season": "Boro Rice",
+    "area_acres": 26134.0,
+    "production_tons": 35650.0,
+    "yield_mtha": 3.42
+  },
+  {
+    "district": "Dinajpur",
+    "division": "North region",
+    "year": 2011,
+    "season": "Boro Rice",
+    "area_acres": 430005.0,
+    "production_tons": 660743.0,
+    "yield_mtha": 3.86
+  },
+  {
+    "district": "Rangpur",
+    "division": "North region",
+    "year": 2011,
+    "season": "Boro Rice",
+    "area_acres": 326938.0,
+    "production_tons": 497748.0,
+    "yield_mtha": 3.82
+  },
+  {
+    "district": "Rajshahi",
+    "division": "North region",
+    "year": 2011,
+    "season": "Boro Rice",
+    "area_acres": 189045.0,
+    "production_tons": 311571.0,
+    "yield_mtha": 4.14
+  },
+  {
+    "district": "Bogura",
+    "division": "North region",
+    "year": 2011,
+    "season": "Boro Rice",
+    "area_acres": 458969.0,
+    "production_tons": 692543.0,
+    "yield_mtha": 3.79
+  },
+  {
+    "district": "Khulna",
+    "division": "Khulna",
+    "year": 2012,
+    "season": "Boro Rice",
+    "area_acres": 1115081.0,
+    "production_tons": 172068.0,
+    "yield_mtha": 0.39
+  },
+  {
+    "district": "Jessor",
+    "division": "Khulna",
+    "year": 2012,
+    "season": "Boro Rice",
+    "area_acres": 381693.0,
+    "production_tons": 644883.0,
+    "yield_mtha": 4.24
+  },
+  {
+    "district": "Satkhira",
+    "division": "Khulna",
+    "year": 2012,
+    "season": "Boro Rice",
+    "area_acres": 178811.0,
+    "production_tons": 270255.0,
+    "yield_mtha": 3.79
+  },
+  {
+    "district": "Chuadanga",
+    "division": "Khulna",
+    "year": 2012,
+    "season": "Boro Rice",
+    "area_acres": 96867.0,
+    "production_tons": 149012.0,
+    "yield_mtha": 3.86
+  },
+  {
+    "district": "Chittagong",
+    "division": "Chittagong",
+    "year": 2012,
+    "season": "Boro Rice",
+    "area_acres": 165897.0,
+    "production_tons": 251413.0,
+    "yield_mtha": 3.8
+  },
+  {
+    "district": "Cox's Bazar",
+    "division": "Chittagong",
+    "year": 2012,
+    "season": "Boro Rice",
+    "area_acres": 122233.0,
+    "production_tons": 169475.0,
+    "yield_mtha": 3.48
+  },
+  {
+    "district": "Chandpur",
+    "division": "Chittagong",
+    "year": 2012,
+    "season": "Boro Rice",
+    "area_acres": 161352.0,
+    "production_tons": 233621.0,
+    "yield_mtha": 3.64
+  },
+  {
+    "district": "Feni",
+    "division": "Chittagong",
+    "year": 2012,
+    "season": "Boro Rice",
+    "area_acres": 82007.0,
+    "production_tons": 121705.0,
+    "yield_mtha": 3.73
+  },
+  {
+    "district": "Comilla",
+    "division": "Chittagong",
+    "year": 2012,
+    "season": "Boro Rice",
+    "area_acres": 395077.0,
+    "production_tons": 635359.0,
+    "yield_mtha": 4.04
+  },
+  {
+    "district": "Rangamati",
+    "division": "Chittagong",
+    "year": 2012,
+    "season": "Boro Rice",
+    "area_acres": 11832.0,
+    "production_tons": 16623.0,
+    "yield_mtha": 3.53
+  },
+  {
+    "district": "Noakhali",
+    "division": "Chittagong",
+    "year": 2012,
+    "season": "Boro Rice",
+    "area_acres": 144759.0,
+    "production_tons": 232474.0,
+    "yield_mtha": 4.03
+  },
+  {
+    "district": "Khagrachhari",
+    "division": "Chittagong",
+    "year": 2012,
+    "season": "Boro Rice",
+    "area_acres": 25383.0,
+    "production_tons": 33326.0,
+    "yield_mtha": 3.3
+  },
+  {
+    "district": "Dinajpur",
+    "division": "North region",
+    "year": 2012,
+    "season": "Boro Rice",
+    "area_acres": 425555.0,
+    "production_tons": 696518.0,
+    "yield_mtha": 4.11
+  },
+  {
+    "district": "Rangpur",
+    "division": "North region",
+    "year": 2012,
+    "season": "Boro Rice",
+    "area_acres": 326753.0,
+    "production_tons": 537696.0,
+    "yield_mtha": 4.13
+  },
+  {
+    "district": "Rajshahi",
+    "division": "North region",
+    "year": 2012,
+    "season": "Boro Rice",
+    "area_acres": 184627.0,
+    "production_tons": 302833.0,
+    "yield_mtha": 4.12
+  },
+  {
+    "district": "Bogura",
+    "division": "North region",
+    "year": 2012,
+    "season": "Boro Rice",
+    "area_acres": 454736.0,
+    "production_tons": 730444.0,
+    "yield_mtha": 4.03
+  },
+  {
+    "district": "Khulna",
+    "division": "Khulna",
+    "year": 2013,
+    "season": "Boro Rice",
+    "area_acres": 121589.0,
+    "production_tons": 198721.0,
+    "yield_mtha": 4.1
+  },
+  {
+    "district": "Jessor",
+    "division": "Khulna",
+    "year": 2013,
+    "season": "Boro Rice",
+    "area_acres": 392454.0,
+    "production_tons": 654035.0,
+    "yield_mtha": 4.18
+  },
+  {
+    "district": "Satkhira",
+    "division": "Khulna",
+    "year": 2013,
+    "season": "Boro Rice",
+    "area_acres": 186159.0,
+    "production_tons": 287339.0,
+    "yield_mtha": 3.88
+  },
+  {
+    "district": "Chuadanga",
+    "division": "Khulna",
+    "year": 2013,
+    "season": "Boro Rice",
+    "area_acres": 101707.0,
+    "production_tons": 150362.0,
+    "yield_mtha": 3.71
+  },
+  {
+    "district": "Chittagong",
+    "division": "Chittagong",
+    "year": 2013,
+    "season": "Boro Rice",
+    "area_acres": 156762.0,
+    "production_tons": 213771.0,
+    "yield_mtha": 3.42
+  },
+  {
+    "district": "Cox's Bazar",
+    "division": "Chittagong",
+    "year": 2013,
+    "season": "Boro Rice",
+    "area_acres": 123297.0,
+    "production_tons": 177172.0,
+    "yield_mtha": 3.61
+  },
+  {
+    "district": "Chandpur",
+    "division": "Chittagong",
+    "year": 2013,
+    "season": "Boro Rice",
+    "area_acres": 158722.0,
+    "production_tons": 210305.0,
+    "yield_mtha": 3.33
+  },
+  {
+    "district": "Feni",
+    "division": "Chittagong",
+    "year": 2013,
+    "season": "Boro Rice",
+    "area_acres": 81950.0,
+    "production_tons": 121469.0,
+    "yield_mtha": 3.72
+  },
+  {
+    "district": "Comilla",
+    "division": "Chittagong",
+    "year": 2013,
+    "season": "Boro Rice",
+    "area_acres": 397271.0,
+    "production_tons": 615555.0,
+    "yield_mtha": 3.89
+  },
+  {
+    "district": "Rangamati",
+    "division": "Chittagong",
+    "year": 2013,
+    "season": "Boro Rice",
+    "area_acres": 18759.0,
+    "production_tons": 30629.0,
+    "yield_mtha": 4.1
+  },
+  {
+    "district": "Noakhali",
+    "division": "Chittagong",
+    "year": 2013,
+    "season": "Boro Rice",
+    "area_acres": 152793.0,
+    "production_tons": 259655.0,
+    "yield_mtha": 4.27
+  },
+  {
+    "district": "Khagrachhari",
+    "division": "Chittagong",
+    "year": 2013,
+    "season": "Boro Rice",
+    "area_acres": 25280.0,
+    "production_tons": 34202.0,
+    "yield_mtha": 3.4
+  },
+  {
+    "district": "Dinajpur",
+    "division": "North region",
+    "year": 2013,
+    "season": "Boro Rice",
+    "area_acres": 431169.0,
+    "production_tons": 717878.0,
+    "yield_mtha": 4.18
+  },
+  {
+    "district": "Rangpur",
+    "division": "North region",
+    "year": 2013,
+    "season": "Boro Rice",
+    "area_acres": 331530.0,
+    "production_tons": 572403.0,
+    "yield_mtha": 4.33
+  },
+  {
+    "district": "Rajshahi",
+    "division": "North region",
+    "year": 2013,
+    "season": "Boro Rice",
+    "area_acres": 180726.0,
+    "production_tons": 286351.0,
+    "yield_mtha": 3.98
+  },
+  {
+    "district": "Bogura",
+    "division": "North region",
+    "year": 2013,
+    "season": "Boro Rice",
+    "area_acres": 461593.0,
+    "production_tons": 756043.0,
+    "yield_mtha": 4.11
+  },
+  {
+    "district": "Khulna",
+    "division": "Khulna",
+    "year": 2014,
+    "season": "Boro Rice",
+    "area_acres": 121130.0,
+    "production_tons": 190876.0,
+    "yield_mtha": 3.96
+  },
+  {
+    "district": "Jessor",
+    "division": "Khulna",
+    "year": 2014,
+    "season": "Boro Rice",
+    "area_acres": 214866.0,
+    "production_tons": 368316.0,
+    "yield_mtha": 4.3
+  },
+  {
+    "district": "Satkhira",
+    "division": "Khulna",
+    "year": 2014,
+    "season": "Boro Rice",
+    "area_acres": 90214.0,
+    "production_tons": 141938.0,
+    "yield_mtha": 3.95
+  },
+  {
+    "district": "Chuadanga",
+    "division": "Khulna",
+    "year": 2014,
+    "season": "Boro Rice",
+    "area_acres": 96880.0,
+    "production_tons": 147069.0,
+    "yield_mtha": 3.81
+  },
+  {
+    "district": "Chittagong",
+    "division": "Chittagong",
+    "year": 2014,
+    "season": "Boro Rice",
+    "area_acres": 163493.0,
+    "production_tons": 230000.0,
+    "yield_mtha": 3.53
+  },
+  {
+    "district": "Cox's Bazar",
+    "division": "Chittagong",
+    "year": 2014,
+    "season": "Boro Rice",
+    "area_acres": 122336.0,
+    "production_tons": 168002.0,
+    "yield_mtha": 3.45
+  },
+  {
+    "district": "Chandpur",
+    "division": "Chittagong",
+    "year": 2014,
+    "season": "Boro Rice",
+    "area_acres": 159197.0,
+    "production_tons": 221831.0,
+    "yield_mtha": 3.5
+  },
+  {
+    "district": "Feni",
+    "division": "Chittagong",
+    "year": 2014,
+    "season": "Boro Rice",
+    "area_acres": 77898.0,
+    "production_tons": 111634.0,
+    "yield_mtha": 3.6
+  },
+  {
+    "district": "Comilla",
+    "division": "Chittagong",
+    "year": 2014,
+    "season": "Boro Rice",
+    "area_acres": 391810.0,
+    "production_tons": 576496.0,
+    "yield_mtha": 3.69
+  },
+  {
+    "district": "Rangamati",
+    "division": "Chittagong",
+    "year": 2014,
+    "season": "Boro Rice",
+    "area_acres": 18786.0,
+    "production_tons": 29896.0,
+    "yield_mtha": 4.0
+  },
+  {
+    "district": "Noakhali",
+    "division": "Chittagong",
+    "year": 2014,
+    "season": "Boro Rice",
+    "area_acres": 147811.0,
+    "production_tons": 262472.0,
+    "yield_mtha": 4.46
+  },
+  {
+    "district": "Khagrachhari",
+    "division": "Chittagong",
+    "year": 2014,
+    "season": "Boro Rice",
+    "area_acres": 25537.0,
+    "production_tons": 35101.0,
+    "yield_mtha": 3.45
+  },
+  {
+    "district": "Dinajpur",
+    "division": "North region",
+    "year": 2014,
+    "season": "Boro Rice",
+    "area_acres": 442342.0,
+    "production_tons": 735364.0,
+    "yield_mtha": 4.17
+  },
+  {
+    "district": "Rangpur",
+    "division": "North region",
+    "year": 2014,
+    "season": "Boro Rice",
+    "area_acres": 333970.0,
+    "production_tons": 605244.0,
+    "yield_mtha": 4.55
+  },
+  {
+    "district": "Rajshahi",
+    "division": "North region",
+    "year": 2014,
+    "season": "Boro Rice",
+    "area_acres": 179050.0,
+    "production_tons": 298819.0,
+    "yield_mtha": 4.19
+  },
+  {
+    "district": "Bogura",
+    "division": "North region",
+    "year": 2014,
+    "season": "Boro Rice",
+    "area_acres": 469850.0,
+    "production_tons": 688437.0,
+    "yield_mtha": 3.68
+  },
+  {
+    "district": "Khulna",
+    "division": "Khulna",
+    "year": 2005,
+    "season": "Aus Rice",
+    "area_acres": 32223.0,
+    "production_tons": 24482.0,
+    "yield_mtha": 1.91
+  },
+  {
+    "district": "Jessor",
+    "division": "Khulna",
+    "year": 2005,
+    "season": "Aus Rice",
+    "area_acres": 142599.0,
+    "production_tons": 116121.0,
+    "yield_mtha": 2.04
+  },
+  {
+    "district": "Kushtia",
+    "division": "Khulna",
+    "year": 2005,
+    "season": "Aus Rice",
+    "area_acres": 98548.0,
+    "production_tons": 75932.0,
+    "yield_mtha": 1.93
+  },
+  {
+    "district": "Chittagong",
+    "division": "Chittagong",
+    "year": 2005,
+    "season": "Aus Rice",
+    "area_acres": 86645.0,
+    "production_tons": 82878.0,
+    "yield_mtha": 2.4
+  },
+  {
+    "district": "Comilla",
+    "division": "Chittagong",
+    "year": 2005,
+    "season": "Aus Rice",
+    "area_acres": 209025.0,
+    "production_tons": 154405.0,
+    "yield_mtha": 1.85
+  },
+  {
+    "district": "Rangamati",
+    "division": "Chittagong",
+    "year": 2005,
+    "season": "Aus Rice",
+    "area_acres": 13668.0,
+    "production_tons": 9894.0,
+    "yield_mtha": 1.82
+  },
+  {
+    "district": "Noakhali",
+    "division": "Chittagong",
+    "year": 2005,
+    "season": "Aus Rice",
+    "area_acres": 210436.0,
+    "production_tons": 128835.0,
+    "yield_mtha": 1.54
+  },
+  {
+    "district": "Dinajpur",
+    "division": "North region",
+    "year": 2005,
+    "season": "Aus Rice",
+    "area_acres": 20866.0,
+    "production_tons": 17752.0,
+    "yield_mtha": 2.14
+  },
+  {
+    "district": "Rangpur",
+    "division": "North region",
+    "year": 2005,
+    "season": "Aus Rice",
+    "area_acres": 6975.0,
+    "production_tons": 3612.0,
+    "yield_mtha": 1.3
+  },
+  {
+    "district": "Rajshahi",
+    "division": "North region",
+    "year": 2005,
+    "season": "Aus Rice",
+    "area_acres": 214255.0,
+    "production_tons": 175489.0,
+    "yield_mtha": 2.06
+  },
+  {
+    "district": "Bogra",
+    "division": "North region",
+    "year": 2005,
+    "season": "Aus Rice",
+    "area_acres": 19867.0,
+    "production_tons": 14846.0,
+    "yield_mtha": 1.88
+  },
+  {
+    "district": "Khulna",
+    "division": "Khulna",
+    "year": 2005,
+    "season": "Aman Rice",
+    "area_acres": 800537.0,
+    "production_tons": 666957.0,
+    "yield_mtha": 2.09
+  },
+  {
+    "district": "Jessor",
+    "division": "Khulna",
+    "year": 2005,
+    "season": "Aman Rice",
+    "area_acres": 762871.0,
+    "production_tons": 757824.0,
+    "yield_mtha": 2.49
+  },
+  {
+    "district": "Kushtia",
+    "division": "Khulna",
+    "year": 2005,
+    "season": "Aman Rice",
+    "area_acres": 294426.0,
+    "production_tons": 243711.0,
+    "yield_mtha": 2.08
+  },
+  {
+    "district": "Chittagong",
+    "division": "Chittagong",
+    "year": 2005,
+    "season": "Aman Rice",
+    "area_acres": 632647.0,
+    "production_tons": 643804.0,
+    "yield_mtha": 2.55
+  },
+  {
+    "district": "Comilla",
+    "division": "Chittagong",
+    "year": 2005,
+    "season": "Aman Rice",
+    "area_acres": 548692.0,
+    "production_tons": 410652.0,
+    "yield_mtha": 1.88
+  },
+  {
+    "district": "Rangamati",
+    "division": "Chittagong",
+    "year": 2005,
+    "season": "Aman Rice",
+    "area_acres": 25377.0,
+    "production_tons": 24791.0,
+    "yield_mtha": 2.45
+  },
+  {
+    "district": "Noakhali",
+    "division": "Chittagong",
+    "year": 2005,
+    "season": "Aman Rice",
+    "area_acres": 650719.0,
+    "production_tons": 493400.0,
+    "yield_mtha": 1.9
+  },
+  {
+    "district": "Dinajpur",
+    "division": "North region",
+    "year": 2005,
+    "season": "Aman Rice",
+    "area_acres": 1008173.0,
+    "production_tons": 823558.0,
+    "yield_mtha": 2.05
+  },
+  {
+    "district": "Rangpur",
+    "division": "North region",
+    "year": 2005,
+    "season": "Aman Rice",
+    "area_acres": 1344335.0,
+    "production_tons": 1115308.0,
+    "yield_mtha": 2.08
+  },
+  {
+    "district": "Rajshahi",
+    "division": "North region",
+    "year": 2005,
+    "season": "Aman Rice",
+    "area_acres": 959866.0,
+    "production_tons": 892830.0,
+    "yield_mtha": 2.34
+  },
+  {
+    "district": "Bogra",
+    "division": "North region",
+    "year": 2005,
+    "season": "Aman Rice",
+    "area_acres": 540972.0,
+    "production_tons": 458407.0,
+    "yield_mtha": 2.13
+  },
+  {
+    "district": "Khulna",
+    "division": "Khulna",
+    "year": 2005,
+    "season": "Boro Rice",
+    "area_acres": 270302.0,
+    "production_tons": 334953.0,
+    "yield_mtha": 3.11
+  },
+  {
+    "district": "Jessor",
+    "division": "Khulna",
+    "year": 2005,
+    "season": "Boro Rice",
+    "area_acres": 667629.0,
+    "production_tons": 1008922.0,
+    "yield_mtha": 3.79
+  },
+  {
+    "district": "Kushtia",
+    "division": "Khulna",
+    "year": 2005,
+    "season": "Boro Rice",
+    "area_acres": 202920.0,
+    "production_tons": 301038.0,
+    "yield_mtha": 3.72
+  },
+  {
+    "district": "Chittagong",
+    "division": "Chittagong",
+    "year": 2005,
+    "season": "Boro Rice",
+    "area_acres": 273854.0,
+    "production_tons": 313277.0,
+    "yield_mtha": 2.87
+  },
+  {
+    "district": "Comilla",
+    "division": "Chittagong",
+    "year": 2005,
+    "season": "Boro Rice",
+    "area_acres": 832248.0,
+    "production_tons": 1157012.0,
+    "yield_mtha": 3.49
+  },
+  {
+    "district": "Rangamati",
+    "division": "Chittagong",
+    "year": 2005,
+    "season": "Boro Rice",
+    "area_acres": 17120.0,
+    "production_tons": 21817.0,
+    "yield_mtha": 3.2
+  },
+  {
+    "district": "Noakhali",
+    "division": "Chittagong",
+    "year": 2005,
+    "season": "Boro Rice",
+    "area_acres": 249138.0,
+    "production_tons": 342958.0,
+    "yield_mtha": 3.46
+  },
+  {
+    "district": "Dinajpur",
+    "division": "North region",
+    "year": 2005,
+    "season": "Boro Rice",
+    "area_acres": 557836.0,
+    "production_tons": 764233.0,
+    "yield_mtha": 3.44
+  },
+  {
+    "district": "Rangpur",
+    "division": "North region",
+    "year": 2005,
+    "season": "Boro Rice",
+    "area_acres": 910930.0,
+    "production_tons": 1228937.0,
+    "yield_mtha": 3.39
+  },
+  {
+    "district": "Rajshahi",
+    "division": "North region",
+    "year": 2005,
+    "season": "Boro Rice",
+    "area_acres": 886941.0,
+    "production_tons": 1274843.0,
+    "yield_mtha": 3.61
+  },
+  {
+    "district": "Bogra",
+    "division": "North region",
+    "year": 2005,
+    "season": "Boro Rice",
+    "area_acres": 661263.0,
+    "production_tons": 901785.0,
+    "yield_mtha": 3.42
+  }
+]

@@ -32,9 +32,9 @@ To prevent tree-split biases and reduce prediction variances, the model is train
 *   **Gradient Boosting Regressor**: Regularizes predictions using shallow additive estimators.
 
 Including `district` directly as a categorical feature allows the model to capture local soil profiles, baseline irrigation grids, and regional variety changes.
-*   **Mean Chronological Cross-Validation $R^2$**: **$97.98\%$**
-*   **Final Test set $R^2$ (Years 2022–2023)**: **$97.88\%$**
-*   **Test RMSE**: **$0.1370$ MT/ha** (predictions deviate by less than $\pm 137$ kg per hectare on average).
+*   **Mean Chronological Cross-Validation $R^2$**: **$97.75\%$**
+*   **Final Test set $R^2$ (Years 2022–2023)**: **$98.23\%$**
+*   **Test RMSE**: **$0.1253$ MT/ha** (predictions deviate by less than $\pm 125$ kg per hectare on average).
 
 ### 2. Custom Agronomic Features
 The model incorporates physical, satellite-derived indicators rather than simple monthly averages:
@@ -169,6 +169,8 @@ The live site is hosted on GitHub Pages. To support near-instantaneous live page
 
 ## 📚 Data Source Citations
 
-1.  **BBS**: Subnational agricultural crop yields digitized from the *Bangladesh Bureau of Statistics (Ministry of Planning)* yearbooks.
-2.  **NASA POWER**: Climatological wind, temperature, humidity, solar, and GLDAS soil wetness parameters courtesy of NASA's *Prediction of Worldwide Energy Resources* project.
-3.  **FAOSTAT**: National validation statistics compiled by the *Food and Agriculture Organization (FAO) of the United Nations*.
+1.  **BBS**: Subnational agricultural crop yields digitized from the *Bangladesh Bureau of Statistics (Ministry of Planning)* yearbooks (2015–2023).
+2.  **BBS Historical Excel Registries**: Raw subnational crop records parsed from official Excel sheets (1995–2014) to compute long-term crop productivity baselines.
+3.  **NASA POWER**: Climatological temperature, wind, humidity, solar radiation, and GLDAS soil hydration telemetry courtesy of NASA's *Prediction of Worldwide Energy Resources* project.
+4.  **Division-Level Agroclimatic Dataset**: Compiled annual average crop yields and climatic indicators (2000–2024) used to pre-train division-level GBR prior models.
+5.  **FAOSTAT**: National validation statistics compiled by the *Food and Agriculture Organization (FAO) of the United Nations*.
