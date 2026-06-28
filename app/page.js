@@ -738,14 +738,26 @@ export default function DigitalTwinDashboard() {
                 <tr>
                   <td className="py-3.5 px-4 font-semibold text-white">BBS (Bangladesh Bureau of Statistics)</td>
                   <td className="py-3.5 px-4">Cultivated Area (ha), Rice Production (MT), Yield Rate (MT/ha)</td>
-                  <td className="py-3.5 px-4">64 Districts / Yearly (Aus, Aman, Boro)</td>
+                  <td className="py-3.5 px-4">64 Districts / Yearly (2015-2023)</td>
                   <td className="py-3.5 px-4 text-emerald-400">Primary Target Variables (labels)</td>
                 </tr>
                 <tr>
+                  <td className="py-3.5 px-4 font-semibold text-white">BBS Historical Excel Registries (1995–2014)</td>
+                  <td className="py-3.5 px-4">Cultivated Area (acres), Crop Production (tons), Calculated Yield (MT/ha)</td>
+                  <td className="py-3.5 px-4">District Level / Annual Historical</td>
+                  <td className="py-3.5 px-4 text-emerald-400">Long-term Productivity Baseline Profile Offset</td>
+                </tr>
+                <tr>
                   <td className="py-3.5 px-4 font-semibold text-white">NASA POWER API</td>
-                  <td className="py-3.5 px-4">T2M (Temp), PRECTOTCORR (Rain), RH2M (Humidity), ALLSKY_SNDN (Solar)</td>
+                  <td className="py-3.5 px-4">T2M (Temp), PRECTOTCORR (Rain), RH2M (Humidity), ALLSKY_SNDN (Solar), WS2M (Wind), TS (Skin Temp)</td>
                   <td className="py-3.5 px-4">District Centroid Points / Monthly</td>
                   <td className="py-3.5 px-4 text-cyan-400">Engineered Seasonal Climatology Features</td>
+                </tr>
+                <tr>
+                  <td className="py-3.5 px-4 font-semibold text-white">Division-Level Agroclimatic Dataset (2000–2024)</td>
+                  <td className="py-3.5 px-4">Yield, Max/Min Temp, Max/Min Wind, Rain, PAR, Soil Wetness, Humidity, Skin Temp</td>
+                  <td className="py-3.5 px-4">Division Centroids / 25-Year Annual</td>
+                  <td className="py-3.5 px-4 text-cyan-400">Stacked Macro Division prior predictions</td>
                 </tr>
                 <tr>
                   <td className="py-3.5 px-4 font-semibold text-white">FAOSTAT (UN FAO)</td>
