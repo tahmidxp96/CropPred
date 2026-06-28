@@ -76,10 +76,10 @@ def export_performance_metrics():
         "district_mae": district_mae,
         "cv_folds": cv_folds,
         "global_metrics": {
-            "r2": 98.23,
-            "rmse": 0.1253,
-            "mae": 0.0865,
-            "mape": 3.12
+            "r2": 95.22,
+            "rmse": 0.2057,
+            "mae": 0.1408,
+            "mape": 5.08
         }
     }
     

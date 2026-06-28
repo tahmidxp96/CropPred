@@ -524,7 +524,7 @@ export default function MethodologyPage() {
                 <div className="bg-[#0b0e14] p-4 rounded border border-slate-900 flex justify-between items-center">
                   <div>
                     <span className="text-[10px] text-slate-500 block uppercase font-mono">Test R² Score</span>
-                    <span className="text-xl font-bold text-emerald-400 font-mono mt-0.5 block">98.23%</span>
+                    <span className="text-xl font-bold text-emerald-400 font-mono mt-0.5 block">95.22%</span>
                   </div>
                   <CheckCircle className="text-emerald-500 w-8 h-8 opacity-85" />
                 </div>
