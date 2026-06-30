@@ -22,7 +22,7 @@ def export_performance_metrics():
     
     for r in test_records:
         actual = r["yield_mtha"]
-        predicted = r["pred_yield_mtha"]
+        predicted = r.get("raw_pred_yield_mtha", r["pred_yield_mtha"])
         error = actual - predicted
         
         scatter_points.append({
@@ -47,7 +47,9 @@ def export_performance_metrics():
     district_errors = {}
     for r in test_records:
         dist = r["district"]
-        err = abs(r["yield_mtha"] - r["pred_yield_mtha"])
+        actual = r["yield_mtha"]
+        predicted = r.get("raw_pred_yield_mtha", r["pred_yield_mtha"])
+        err = abs(actual - predicted)
         if dist not in district_errors:
             district_errors[dist] = []
         district_errors[dist].append(err)
@@ -71,7 +73,7 @@ def export_performance_metrics():
     
     # Calculate global metrics dynamically from test records
     actuals = np.array([r["yield_mtha"] for r in test_records])
-    preds = np.array([r["pred_yield_mtha"] for r in test_records])
+    preds = np.array([r.get("raw_pred_yield_mtha", r["pred_yield_mtha"]) for r in test_records])
     errors = actuals - preds
     
     ss_res = np.sum(errors ** 2)

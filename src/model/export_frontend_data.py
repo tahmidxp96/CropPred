@@ -339,6 +339,9 @@ def main():
     # Sort for consistent error correction grouping
     combined_df = combined_df.sort_values(by=["district", "season", "year"]).reset_index(drop=True)
     
+    # Preserve raw predictions before they are modified by Kalman error correction
+    combined_df["raw_pred_yield_mtha"] = combined_df["pred_yield_mtha"]
+    
     # 4b. Apply Recursive Kalman-style Feedback Loop (Error Correction)
     corrected_yields = []
     
@@ -514,6 +517,7 @@ def main():
             "area_ha": float(np.round(row["area_ha"], 1)),
             "yield_mtha": float(np.round(row["yield_mtha"], 2)),
             "pred_yield_mtha": float(np.round(row["pred_yield_mtha"], 2)),
+            "raw_pred_yield_mtha": float(np.round(row["raw_pred_yield_mtha"], 2)) if "raw_pred_yield_mtha" in row else float(np.round(row["pred_yield_mtha"], 2)),
             "temp_c": float(np.round(row["season_temp_c"], 1)),
             "rain_mm": float(np.round(row["season_rain_mm"], 1)),
             "rh_pct": float(np.round(row["season_rh_pct"], 1)),
