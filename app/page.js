@@ -192,7 +192,8 @@ export default function DigitalTwinDashboard() {
   const allowedEnvFeatures = [
     "season_temp_c", "season_rain_mm", "season_rh_pct", "season_solar_mj_m2",
     "season_gdd", "season_dtr", "season_soil_wetness",
-    "flood_index", "drought_index", "area_ha"
+    "flood_index", "drought_index", "area_ha",
+    "season_dew_point", "season_specific_humidity", "season_solar_irradiance", "season_wind_speed_50m"
   ];
   const rawImportances = summary ? Object.entries(summary.feature_importances) : [];
   const envImportances = rawImportances.filter(([key]) => allowedEnvFeatures.includes(key));
@@ -210,7 +211,11 @@ export default function DigitalTwinDashboard() {
                 .replace("area_ha", "Land Area")
                 .replace("season_gdd", "GDD Heat")
                 .replace("season_dtr", "DTR Diurnal")
-                .replace("season_soil_wetness", "Soil Wetness"),
+                .replace("season_soil_wetness", "Soil Wetness")
+                .replace("season_dew_point", "Dew Point")
+                .replace("season_specific_humidity", "Specific Humid")
+                .replace("season_solar_irradiance", "Solar Irrad")
+                .replace("season_wind_speed_50m", "Wind (50m)"),
       val: Math.round(normalizedVal * 10) / 10
     };
   })

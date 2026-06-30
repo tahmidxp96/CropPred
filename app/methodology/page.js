@@ -38,21 +38,23 @@ export default function MethodologyPage() {
     { iteration: 60, train_rmse: 0.12, test_rmse: 0.21 },
     { iteration: 80, train_rmse: 0.08, test_rmse: 0.17 },
     { iteration: 100, train_rmse: 0.0735, test_rmse: 0.1420 },
-    { iteration: 120, train_rmse: 0.0653, test_rmse: 0.1266 },
+    { iteration: 120, train_rmse: 0.0564, test_rmse: 0.1343 },
   ];
 
   // Normalized meteorological & agronomic feature importances
   const envFeatureImportance = [
-    { name: "Boro Season Marker", val: 38.0 },
-    { name: "Hist baseline (1995-2014)", val: 29.9 },
-    { name: "Relative Humidity (RH)", val: 13.7 },
-    { name: "Water Deficit (SWDI)", val: 7.3 },
-    { name: "Land Area", val: 5.9 },
-    { name: "Total Rainfall", val: 3.0 },
-    { name: "Soil Wetness (Surf)", val: 0.9 },
-    { name: "Earth Skin Temp", val: 0.2 },
+    { name: "Boro Season Marker", val: 37.5 },
+    { name: "Hist baseline (1995-2014)", val: 37.0 },
+    { name: "Specific Humidity", val: 14.5 },
+    { name: "Land Area", val: 5.3 },
+    { name: "Aman Season Marker", val: 1.7 },
+    { name: "Aus Season Marker", val: 1.6 },
+    { name: "Wind Speed (2m)", val: 0.7 },
+    { name: "Dew Point Temp", val: 0.2 },
+    { name: "Solar Irradiance", val: 0.1 },
+    { name: "Wind Speed (50m)", val: 0.1 },
     { name: "Stacked Division Prior", val: 0.1 },
-    { name: "Other indicators", val: 1.0 }
+    { name: "Other Indicators", val: 1.2 }
   ];
 
   if (!isMounted) return null;
@@ -166,7 +168,7 @@ export default function MethodologyPage() {
                     Step A: Raw Telemetry Extraction
                   </h4>
                   <p className="text-xs text-slate-400 mt-1 leading-relaxed max-w-4xl">
-                    Python downloader script pulls ground-truth crop outputs from digitized BBS yearbook publications, queries the NASA POWER API for monthly meteorological variables (including Surface Evaporation `EVLAND`), and retrieves the Oceanic Niño Index (ONI) anomaly time series from the NOAA Climate Prediction Center.
+                    Python downloader script pulls ground-truth crop outputs from digitized BBS yearbook publications, queries the NASA POWER API for 15 meteorological variables (including Dew Point `T2MDEW`, Specific Humidity `QV2M`, Shortwave Solar Flux `ALLSKY_SFC_SW_DWN`, 50m Wind Speed `WS50M`, and Surface Evaporation `EVLAND`) using a double-request merge strategy to stay under parameter query limits, and retrieves the Oceanic Niño Index (ONI) anomaly time series from the NOAA Climate Prediction Center.
                   </p>
                   
                   <div className="mt-3 max-w-4xl">
@@ -190,7 +192,9 @@ export default function MethodologyPage() {
   "rain_mm_day": 12.4,
   "gwetroot": 0.54,
   "solar_mj_m2_day": 18.2,
-  "evland": 4.15
+  "specific_humidity": 19.34,
+  "dew_point_temp": 24.1,
+  "solar_irradiance": 21.35
 }`}
                     </pre>
                   </div>
@@ -366,6 +370,20 @@ export default function MethodologyPage() {
               <p className="text-xs text-slate-400 leading-relaxed">
                 Instead of merging the sparse tables directly, we compile these files into a static **district-season yield baseline profile lookup**, which serves as an anchor feature representing long-term local productivity.
               </p>
+            </div>
+
+            <div className="glass-panel p-6 flex flex-col gap-4">
+              <h3 className="text-lg font-bold text-white border-b border-slate-900 pb-2">
+                7. Atmospheric Vapor Pressure & Solar Flux
+              </h3>
+              <p className="text-sm text-slate-300 leading-relaxed">
+                Crop yields are highly sensitive to transpiration rates and photosynthetic energy. We ingest actual satellite-derived humidity and solar flux parameters:
+              </p>
+              <ul className="text-xs text-slate-400 space-y-2 list-disc pl-4 mt-2">
+                <li><strong>Specific Humidity (QV2M)</strong>: Models the actual water vapor mass in the air, regulating stomatal opening and transpiration rates. In our final model, this emerged as a key feature with 14.5% importance.</li>
+                <li><strong>Dew Point Temp (T2MDEW)</strong>: Corresponds to absolute moisture levels, capturing mugginess and heat stress.</li>
+                <li><strong>Shortwave Solar Irradiance (ALLSKY_SFC_SW_DWN)</strong>: Dictates the total solar energy incident on the plant canopy driving photosynthesis.</li>
+              </ul>
             </div>
           </div>
         )}

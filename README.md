@@ -32,9 +32,9 @@ To prevent tree-split biases and reduce prediction variances, the model is train
 *   **Gradient Boosting Regressor**: Regularizes predictions using shallow additive estimators.
 
 Including `district` directly as a categorical feature allows the model to capture local soil profiles, baseline irrigation grids, and regional variety changes.
-*   **Mean Chronological Cross-Validation $R^2$**: **$97.74\%$**
-*   **Final Test set $R^2$ (Years 2022–2023)**: **$98.19\%$**
-*   **Test RMSE**: **$0.1266$ MT/ha** (predictions deviate by less than $\pm 127$ kg per hectare on average).
+*   **Mean Chronological Cross-Validation $R^2$**: **$97.07\%$**
+*   **Final Test set $R^2$ (Years 2022–2023)**: **$97.96\%$**
+*   **Test RMSE**: **$0.1343$ MT/ha** (predictions deviate by less than $\pm 134$ kg per hectare on average).
 
 ### 2. Custom Agronomic Features
 The model incorporates physical, satellite-derived indicators rather than simple monthly averages:
@@ -53,6 +53,11 @@ The model incorporates physical, satellite-derived indicators rather than simple
 *   **Potential Evapotranspiration (PET)**: Estimated via the Hargreaves–Samani equation using temperature extremes and downward solar irradiance:
     $$\text{PET} = 0.0023 \times (T_{\text{mean}} + 17.8) \times \sqrt{T_{\max} - T_{\min}} \times R_a$$
 *   **Oceanic Niño Index (ONI)**: Seasonal mean ENSO anomaly (°C) from NOAA CPC's Niño 3.4 SST time series, capturing teleconnection impacts on Bangladesh's monsoon variability.
+*   **Atmospheric Vapor Pressure Indicators**:
+    *   **Specific Humidity (`QV2M`)**: Ingested directly from NASA POWER satellite observations, measuring absolute water vapor mass in air (g/kg). This represents the primary physical driver of plant transpiration, showing a high feature importance ranking of **14.5%**.
+    *   **Dew Point Temperature (`T2MDEW`)**: Absolute moisture thresholds, capturing atmospheric mugginess.
+    *   **Shortwave Solar Irradiance (`ALLSKY_SFC_SW_DWN`)**: The total solar energy reaching the plant canopy driving photosynthesis.
+    *   **Wind Speed at 50m (`WS50M`)**: Wind turbulence and lodging risk at higher elevations.
 
 ### 3. Kalman-Style Recursive Feedback Loop
 To correct for systematic drift (such as localized soil degradation or salinity updates), predictions are recursively calibrated using historical prediction errors:
@@ -100,7 +105,8 @@ CropPred/
 │   │   └── fetch_oni.py              # Download NOAA CPC Oceanic Niño Index time series
 │   ├── model/
 │   │   ├── train_model.py            # Train Ensemble Regressor with rolling CV
-│   │   └── export_frontend_data.py   # Compile predictions into static JSON
+│   │   ├── export_frontend_data.py   # Compile predictions into static JSON
+│   │   └── compare_accuracy.py       # Comparative study of modeling configurations
 │   ├── process/
 │   │   ├── merge_process.py          # Spelling standardization & wide format pivot
 │   │   └── feature_engineer.py       # Compute GDD, DTR, GWETROOT, SWDI, ET, PET, ONI, Flood/Drought
@@ -182,7 +188,8 @@ The live site is hosted on GitHub Pages. To support near-instantaneous live page
 1.  **BBS**: Subnational agricultural crop yields digitized from the *Bangladesh Bureau of Statistics (Ministry of Planning)* yearbooks (2015–2023).
 2.  **BBS Historical Excel Registries**: Raw subnational crop records parsed from official Excel sheets (1995–2014) to compute long-term crop productivity baselines.
 3.  **NASA POWER**: Climatological temperature, wind, humidity, solar radiation, and GLDAS soil hydration telemetry courtesy of NASA's *Prediction of Worldwide Energy Resources* project.
-    - Variables: `T2M`, `T2M_MAX`, `T2M_MIN`, `PRECTOTCORR`, `RH2M`, `ALLSKY_SFC_SW_DWN`, `GWETTOP`, `GWETROOT`, `TS`, **`EVLAND`** (MERRA-2 surface evaporation).
+    - Variables: `T2M`, `T2M_MAX`, `T2M_MIN`, `PRECTOTCORR`, `RH2M`, `ALLSKY_SFC_PAR_TOT` (Photosynthetically Active Radiation), `GWETTOP`, `GWETROOT`, `TS`, `EVLAND`, `T2MDEW` (Dew Point), `QV2M` (Specific Humidity), `ALLSKY_SFC_SW_DWN` (Shortwave Solar Flux), `WS2M` (Wind 2m), `WS50M` (Wind 50m).
+    - Ingestion Method: Fetched using a double-request merge strategy to query all 15 parameters without exceeding the API's 10-variable limit.
     - Endpoint: `https://power.larc.nasa.gov/api/temporal/monthly/point`
 4.  **NOAA CPC Oceanic Niño Index (ONI)**: Sea Surface Temperature (SST) anomalies from the Niño 3.4 region, published by the *NOAA Climate Prediction Center*. Used to capture El Niño/La Niña teleconnection impacts on Bangladesh's monsoon rainfall.
     - Source: [NOAA CPC ONI Data](https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt)
