@@ -57,7 +57,7 @@ def main():
     weather_pivot = nasa_df.pivot(
         index=["district", "year"],
         columns="month",
-        values=["temp_c", "temp_max_c", "temp_min_c", "rain_mm_day", "rh_pct", "solar_mj_m2_day", "gwettop", "gwetroot", "wind_speed", "earth_skin_temp", "evland"]
+        values=["temp_c", "temp_max_c", "temp_min_c", "rain_mm_day", "rh_pct", "solar_mj_m2_day", "gwettop", "gwetroot", "wind_speed", "earth_skin_temp", "evland", "dew_point_temp", "specific_humidity", "solar_irradiance", "wind_speed_50m"]
     )
     
     # Flatten multi-level columns: e.g. ('temp_c', 1) -> 'temp_1'

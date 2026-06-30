@@ -42,8 +42,11 @@ def fetch_district_weather(district, info, use_api=True):
     
     if use_api:
         url = "https://power.larc.nasa.gov/api/temporal/monthly/point"
-        params = {
-            "parameters": "T2M,T2M_MAX,T2M_MIN,PRECTOTCORR,RH2M,ALLSKY_SNDN,GWETTOP,GWETROOT,WS2M,TS,EVLAND",
+        vars_1 = "T2M,T2M_MAX,T2M_MIN,PRECTOTCORR,RH2M,ALLSKY_SFC_PAR_TOT,GWETTOP,GWETROOT"
+        vars_2 = "WS2M,TS,EVLAND,T2MDEW,QV2M,ALLSKY_SFC_SW_DWN,WS50M"
+        
+        params_1 = {
+            "parameters": vars_1,
             "community": "AG",
             "longitude": lon,
             "latitude": lat,
@@ -51,55 +54,64 @@ def fetch_district_weather(district, info, use_api=True):
             "end": "2024",
             "format": "JSON"
         }
-        try:
-            print(f"Requesting NASA POWER API for {district} ({lat}, {lon})...")
-            response = requests.get(url, params=params, timeout=15)
-            if response.status_code == 200:
-                data = response.json()
-                records = []
-                parameters = data["properties"]["parameter"]
+        params_2 = {
+            "parameters": vars_2,
+            "community": "AG",
+            "longitude": lon,
+            "latitude": lat,
+            "start": "2015",
+            "end": "2024",
+            "format": "JSON"
+        }
+        for attempt in range(3):
+            try:
+                print(f"Requesting NASA POWER API for {district} ({lat}, {lon}) (attempt {attempt+1})...")
+                response1 = requests.get(url, params=params_1, timeout=15)
+                response2 = requests.get(url, params=params_2, timeout=15)
                 
-                # Check for correct keys
-                t2m = parameters.get("T2M", {})
-                t2m_max = parameters.get("T2M_MAX", {})
-                t2m_min = parameters.get("T2M_MIN", {})
-                rain = parameters.get("PRECTOTCORR", {})
-                rh = parameters.get("RH2M", {})
-                solar = parameters.get("ALLSKY_SNDN", {})
-                gwettop = parameters.get("GWETTOP", {})
-                gwetroot = parameters.get("GWETROOT", {})
-                wind = parameters.get("WS2M", {})
-                skin_temp = parameters.get("TS", {})
-                evland = parameters.get("EVLAND", {})
-                
-                # Parse monthly keys like "201501", "201502", etc.
-                for key in t2m.keys():
-                    if len(key) == 6 and not key.endswith("13"):  # Exclude annual averages ("YYYY13")
-                        year = int(key[:4])
-                        month = int(key[4:])
-                        
-                        records.append({
-                            "district": district,
-                            "year": year,
-                            "month": month,
-                            "temp_c": t2m.get(key, 0.0),
-                            "temp_max_c": t2m_max.get(key, 0.0),
-                            "temp_min_c": t2m_min.get(key, 0.0),
-                            "rain_mm_day": rain.get(key, 0.0),
-                            "rh_pct": rh.get(key, 0.0),
-                            "solar_mj_m2_day": solar.get(key, 0.0),
-                            "gwettop": gwettop.get(key, 0.5),
-                            "gwetroot": gwetroot.get(key, 0.5),
-                            "wind_speed": wind.get(key, 1.2),
-                            "earth_skin_temp": skin_temp.get(key, t2m.get(key, 0.0)),
-                            "evland": evland.get(key, 0.0)
-                        })
-                if records:
-                    return pd.DataFrame(records)
-            else:
-                print(f"API returned status code {response.status_code} for {district}.")
-        except Exception as e:
-            print(f"Failed to fetch from API for {district} due to: {e}")
+                if response1.status_code == 200 and response2.status_code == 200:
+                    p1 = response1.json()["properties"]["parameter"]
+                    p2 = response2.json()["properties"]["parameter"]
+                    records = []
+                    
+                    t2m = p1.get("T2M", {})
+                    for key in t2m.keys():
+                        if len(key) == 6 and not key.endswith("13"):  # Exclude annual averages
+                            year = int(key[:4])
+                            month = int(key[4:])
+                            
+                            temp_val = t2m.get(key, 0.0)
+                            wind_val = p2.get("WS2M", {}).get(key, 1.2)
+                            
+                            records.append({
+                                "district": district,
+                                "year": year,
+                                "month": month,
+                                "temp_c": temp_val,
+                                "temp_max_c": p1.get("T2M_MAX", {}).get(key, 0.0),
+                                "temp_min_c": p1.get("T2M_MIN", {}).get(key, 0.0),
+                                "rain_mm_day": p1.get("PRECTOTCORR", {}).get(key, 0.0),
+                                "rh_pct": p1.get("RH2M", {}).get(key, 0.0),
+                                "solar_mj_m2_day": p1.get("ALLSKY_SFC_PAR_TOT", {}).get(key, 0.0),
+                                "gwettop": p1.get("GWETTOP", {}).get(key, 0.5),
+                                "gwetroot": p1.get("GWETROOT", {}).get(key, 0.5),
+                                "wind_speed": wind_val,
+                                "earth_skin_temp": p2.get("TS", {}).get(key, temp_val),
+                                "evland": p2.get("EVLAND", {}).get(key, 0.0),
+                                "dew_point_temp": p2.get("T2MDEW", {}).get(key, temp_val),
+                                "specific_humidity": p2.get("QV2M", {}).get(key, 0.0),
+                                "solar_irradiance": p2.get("ALLSKY_SFC_SW_DWN", {}).get(key, 0.0),
+                                "wind_speed_50m": p2.get("WS50M", {}).get(key, wind_val)
+                            })
+                    if records:
+                        df = pd.DataFrame(records)
+                        df.attrs["api"] = True
+                        return df
+                else:
+                    print(f"API returned bad status code (1: {response1.status_code}, 2: {response2.status_code}) for {district}.")
+            except Exception as e:
+                print(f"Failed to fetch from API for {district} on attempt {attempt+1} due to: {e}")
+            time.sleep(2.0)
             
     # Fallback to Climatological Profile
     print(f"Generating climatology data for {district} (Local Database)...")
@@ -110,7 +122,6 @@ def fetch_district_weather(district, info, use_api=True):
     prev_soil_wet_root = 0.45
     
     for year in range(2015, 2025):
-        # 2017 had high monsoon rainfall, 2020 had cyclone, 2022 had Sylhet rainfall spike
         year_rain_mult = 1.0
         if year == 2017:
             year_rain_mult = 1.25
@@ -120,43 +131,43 @@ def fetch_district_weather(district, info, use_api=True):
         for month in range(1, 13):
             base = CLIMATOLOGY[month]
             
-            # Apply regional and year modifiers + random variation
             t = base["temp"] * reg["temp"] + np.random.normal(0, 0.4)
             r = base["rain"] * reg["rain"] * year_rain_mult * np.random.lognormal(0, 0.15)
             h = base["rh"] * reg["rh"] + np.random.normal(0, 1.5)
             s = base["solar"] * reg["solar"] + np.random.normal(0, 0.5)
             
-            # Clamp limits
             r = max(0.0, r)
             h = min(100.0, max(10.0, h))
             
-            # Simulate max/min temperatures (Diurnal range is wider in winter, narrower in monsoon)
             dtr_range = 10.0 - 5.0 * (h / 100.0) + np.random.normal(0, 0.4)
             dtr_range = max(3.5, dtr_range)
             t_max = t + (dtr_range / 2.0)
             t_min = t - (dtr_range / 2.0)
             
-            # Simulate gwettop (soil wetness ratio, 0-1) based on humidity and rain
             soil_wet = 0.15 + 0.6 * (h / 100.0) + 0.15 * min(1.0, r / 5.0) + np.random.normal(0, 0.03)
             soil_wet = min(1.0, max(0.05, soil_wet))
             
-            # Simulate gwetroot (root zone wetness) as a percolation-lagged dampening of surface moisture
             soil_wet_root = 0.65 * prev_soil_wet_root + 0.35 * soil_wet + np.random.normal(0, 0.01)
             soil_wet_root = min(1.0, max(0.05, soil_wet_root))
             prev_soil_wet_root = soil_wet_root
             
-            # Simulate wind speed (m/s)
             base_wind = 1.3 if division in ["Barishal", "Chattogram"] else 0.95
             w_speed = base_wind + np.random.normal(0, 0.15)
             w_speed = max(0.1, w_speed)
             
-            # Simulate earth skin temperature (C)
             skin_diff = 2.0 * (1.0 - soil_wet) + np.random.normal(0, 0.3)
             e_skin_temp = t + skin_diff
             
-            # Simulate evland (evaporation land, mm/day)
             ev = 0.4 * s * (t + 10.0) / 100.0 + np.random.normal(0, 0.2)
             ev = min(7.5, max(0.1, ev))
+            
+            dew_point = t - (100.0 - h) / 5.0 + np.random.normal(0, 0.3)
+            spec_hum = 0.0038 * h * np.exp(0.06 * t) + np.random.normal(0, 0.01)
+            spec_hum = max(0.01, spec_hum)
+            shortwave = s * 1.55 + np.random.normal(0, 0.4)
+            shortwave = max(0.1, shortwave)
+            w_speed_50m = w_speed * 1.45 + np.random.normal(0, 0.2)
+            w_speed_50m = max(0.1, w_speed_50m)
             
             records.append({
                 "district": district,
@@ -172,7 +183,11 @@ def fetch_district_weather(district, info, use_api=True):
                 "gwetroot": float(np.round(soil_wet_root, 3)),
                 "wind_speed": float(np.round(w_speed, 2)),
                 "earth_skin_temp": float(np.round(e_skin_temp, 2)),
-                "evland": float(np.round(ev, 2))
+                "evland": float(np.round(ev, 2)),
+                "dew_point_temp": float(np.round(dew_point, 2)),
+                "specific_humidity": float(np.round(spec_hum, 2)),
+                "solar_irradiance": float(np.round(shortwave, 2)),
+                "wind_speed_50m": float(np.round(w_speed_50m, 2))
             })
             
     return pd.DataFrame(records)

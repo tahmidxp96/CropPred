@@ -31,6 +31,10 @@ def engineer_seasonal_features(df):
     seasonal_et = []
     seasonal_pet = []
     seasonal_oni = []
+    seasonal_dew_point = []
+    seasonal_specific_humidity = []
+    seasonal_solar_irradiance = []
+    seasonal_wind_speed_50m = []
     
     # Iterate through each row in the dataset
     for idx, row in df.iterrows():
@@ -60,6 +64,10 @@ def engineer_seasonal_features(df):
         winds = [row[f"wind_speed_{m}"] for m in months]
         skins = [row[f"earth_skin_temp_{m}"] for m in months]
         evs = [row[f"evland_{m}"] for m in months]
+        dews = [row[f"dew_point_temp_{m}"] for m in months]
+        hums = [row[f"specific_humidity_{m}"] for m in months]
+        sols = [row[f"solar_irradiance_{m}"] for m in months]
+        w50s = [row[f"wind_speed_50m_{m}"] for m in months]
         
         # Calculate summaries (means and sums)
         s_temp = np.mean(temps)
@@ -113,6 +121,11 @@ def engineer_seasonal_features(df):
         seasonal_wind.append(np.mean(winds))
         seasonal_skin_temp.append(np.mean(skins))
         
+        seasonal_dew_point.append(np.mean(dews))
+        seasonal_specific_humidity.append(np.mean(hums))
+        seasonal_solar_irradiance.append(np.mean(sols))
+        seasonal_wind_speed_50m.append(np.mean(w50s))
+        
     df["season_temp_c"] = seasonal_temp
     df["season_rain_mm"] = seasonal_rain
     df["season_rh_pct"] = seasonal_rh
@@ -127,6 +140,10 @@ def engineer_seasonal_features(df):
     df["season_et"] = seasonal_et
     df["season_pet"] = seasonal_pet
     df["season_oni"] = seasonal_oni
+    df["season_dew_point"] = seasonal_dew_point
+    df["season_specific_humidity"] = seasonal_specific_humidity
+    df["season_solar_irradiance"] = seasonal_solar_irradiance
+    df["season_wind_speed_50m"] = seasonal_wind_speed_50m
     
     # Add anomaly indices
     # 1. Flood index: Surface soil moisture exceeding saturation threshold (> 0.82) during Aman/Aus season
@@ -152,7 +169,8 @@ def engineer_seasonal_features(df):
         "season_temp_c", "season_rain_mm", "season_rh_pct", "season_solar_mj_m2",
         "season_gdd", "season_dtr", "season_soil_wetness", "season_soil_wetness_root", "season_swdi",
         "flood_index", "drought_index", "season_wind_speed", "season_earth_skin_temp",
-        "season_et", "season_pet", "season_oni"
+        "season_et", "season_pet", "season_oni",
+        "season_dew_point", "season_specific_humidity", "season_solar_irradiance", "season_wind_speed_50m"
     ]
     
     # Drop raw monthly columns

@@ -29,7 +29,7 @@ def project_future_records(features_df, model_pipeline, div_model, historical_lo
     df_2024 = pd.DataFrame()
     if len(weather_2024) > 0:
         # Pivot 2024 weather
-        cols_to_calc = ["temp_c", "temp_max_c", "temp_min_c", "rain_mm_day", "rh_pct", "solar_mj_m2_day", "gwettop", "gwetroot", "wind_speed", "earth_skin_temp", "evland"]
+        cols_to_calc = ["temp_c", "temp_max_c", "temp_min_c", "rain_mm_day", "rh_pct", "solar_mj_m2_day", "gwettop", "gwetroot", "wind_speed", "earth_skin_temp", "evland", "dew_point_temp", "specific_humidity", "solar_irradiance", "wind_speed_50m"]
         weather_pivot = weather_2024.pivot(
             index=["district"],
             columns="month",
@@ -68,6 +68,10 @@ def project_future_records(features_df, model_pipeline, div_model, historical_lo
                 winds = [w_row[f"wind_speed_{m}"] for m in months]
                 skins = [w_row[f"earth_skin_temp_{m}"] for m in months]
                 evs = [w_row[f"evland_{m}"] for m in months]
+                dews = [w_row[f"dew_point_temp_{m}"] for m in months]
+                hums = [w_row[f"specific_humidity_{m}"] for m in months]
+                sols = [w_row[f"solar_irradiance_{m}"] for m in months]
+                w50s = [w_row[f"wind_speed_50m_{m}"] for m in months]
                 
                 s_temp = np.mean(temps)
                 s_rain = np.sum(rains) * 30.0
@@ -85,6 +89,11 @@ def project_future_records(features_df, model_pipeline, div_model, historical_lo
                 s_swdi = s_rain - (1.15 * s_temp * s_solar)
                 s_wind = np.mean(winds)
                 s_skin = np.mean(skins)
+                
+                s_dew = np.mean(dews)
+                s_hum = np.mean(hums)
+                s_sol = np.mean(sols)
+                s_w50 = np.mean(w50s)
                 
                 flood = max(0.0, (s_soil - 0.82) * 50.0) if season in ["Aus", "Aman"] else 0.0
                 drought = max(0.0, (0.50 - s_soil_root) * 50.0) if season == "Boro" else 0.0
@@ -127,7 +136,11 @@ def project_future_records(features_df, model_pipeline, div_model, historical_lo
                     "season_earth_skin_temp": float(s_skin),
                     "season_et": float(s_et),
                     "season_pet": float(pet_sum),
-                    "season_oni": float(s_oni)
+                    "season_oni": float(s_oni),
+                    "season_dew_point": float(s_dew),
+                    "season_specific_humidity": float(s_hum),
+                    "season_solar_irradiance": float(s_sol),
+                    "season_wind_speed_50m": float(s_w50)
                 })
         df_2024 = pd.DataFrame(records_2024)
         # Inject minor operational land shift noise (±2%)
@@ -141,7 +154,8 @@ def project_future_records(features_df, model_pipeline, div_model, historical_lo
         "season_temp_c", "season_rain_mm", "season_rh_pct", "season_solar_mj_m2",
         "season_gdd", "season_dtr", "season_soil_wetness", "season_soil_wetness_root", "season_swdi",
         "flood_index", "drought_index", "season_wind_speed", "season_earth_skin_temp",
-        "season_et", "season_pet", "season_oni"
+        "season_et", "season_pet", "season_oni",
+        "season_dew_point", "season_specific_humidity", "season_solar_irradiance", "season_wind_speed_50m"
     ]
     
     # Calculate historical seasonal medians and standard deviations per district-season (2015-2023)
@@ -243,6 +257,7 @@ def project_future_records(features_df, model_pipeline, div_model, historical_lo
         "season_gdd", "season_dtr", "season_soil_wetness", "season_soil_wetness_root", "season_swdi",
         "flood_index", "drought_index",
         "season_wind_speed", "season_earth_skin_temp",
+        "season_dew_point", "season_specific_humidity", "season_solar_irradiance", "season_wind_speed_50m",
         "division_yield_prior", "historical_baseline_yield"
     ]
     df_future["pred_yield_mtha"] = model_pipeline.predict(df_future[features])
@@ -322,6 +337,7 @@ def main():
         "season_gdd", "season_dtr", "season_soil_wetness", "season_soil_wetness_root", "season_swdi",
         "flood_index", "drought_index",
         "season_wind_speed", "season_earth_skin_temp",
+        "season_dew_point", "season_specific_humidity", "season_solar_irradiance", "season_wind_speed_50m",
         "division_yield_prior", "historical_baseline_yield"
     ]
     features_df["pred_yield_mtha"] = model.predict(features_df[features_list])

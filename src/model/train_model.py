@@ -30,6 +30,10 @@ def build_model_pipeline():
         "drought_index",
         "season_wind_speed",
         "season_earth_skin_temp",
+        "season_dew_point",
+        "season_specific_humidity",
+        "season_solar_irradiance",
+        "season_wind_speed_50m",
         "division_yield_prior",
         "historical_baseline_yield"
     ]
@@ -172,6 +176,7 @@ def main():
         "season_gdd", "season_dtr", "season_soil_wetness", "season_soil_wetness_root", "season_swdi",
         "flood_index", "drought_index",
         "season_wind_speed", "season_earth_skin_temp",
+        "season_dew_point", "season_specific_humidity", "season_solar_irradiance", "season_wind_speed_50m",
         "division_yield_prior", "historical_baseline_yield"
     ]
     target = "yield_mtha"

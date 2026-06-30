@@ -22,10 +22,10 @@ export default function MethodologyPage() {
 
   // Chronological CV Folds (Evaluated during pipeline execution)
   const cvFoldsData = [
-    { year: "Fold 1 (2018)", r2: 97.32, rmse: 0.1493, mae: 0.1040 },
-    { year: "Fold 2 (2019)", r2: 98.05, rmse: 0.1297, mae: 0.0882 },
-    { year: "Fold 3 (2020)", r2: 98.16, rmse: 0.1202, mae: 0.0821 },
-    { year: "Fold 4 (2021)", r2: 97.43, rmse: 0.1502, mae: 0.1028 },
+    { year: "Fold 1 (2018)", r2: 95.20, rmse: 0.1998, mae: 0.1664 },
+    { year: "Fold 2 (2019)", r2: 96.47, rmse: 0.1744, mae: 0.1494 },
+    { year: "Fold 3 (2020)", r2: 98.77, rmse: 0.0983, mae: 0.0751 },
+    { year: "Fold 4 (2021)", r2: 97.83, rmse: 0.1378, mae: 0.1170 },
   ];
 
   // XGBoost Training Loss Convergence Curve (RMSE)
@@ -107,8 +107,8 @@ export default function MethodologyPage() {
             </div>
             <div>
               <span className="text-[10px] text-slate-500 block uppercase tracking-wider font-mono">Target Performance</span>
-              <span className="text-lg font-bold text-white font-mono block">98.19% Test R²</span>
-              <span className="text-xs text-slate-400">RMSE 0.127 MT/ha</span>
+              <span className="text-lg font-bold text-white font-mono block">97.96% Test R²</span>
+              <span className="text-xs text-slate-400">RMSE 0.134 MT/ha</span>
             </div>
           </div>
         </section>
@@ -524,7 +524,7 @@ export default function MethodologyPage() {
                 <div className="bg-[#0b0e14] p-4 rounded border border-slate-900 flex justify-between items-center">
                   <div>
                     <span className="text-[10px] text-slate-500 block uppercase font-mono">Test R² Score</span>
-                    <span className="text-xl font-bold text-emerald-400 font-mono mt-0.5 block">98.19%</span>
+                    <span className="text-xl font-bold text-emerald-400 font-mono mt-0.5 block">97.96%</span>
                   </div>
                   <CheckCircle className="text-emerald-500 w-8 h-8 opacity-85" />
                 </div>
@@ -534,12 +534,12 @@ export default function MethodologyPage() {
                   <div className="grid grid-cols-2 gap-4 mt-2 text-center">
                     <div className="border-r border-slate-900 pr-2">
                       <span className="text-xs text-slate-400 block">RMSE</span>
-                      <span className="text-white font-bold font-mono text-sm block mt-0.5">0.1266</span>
+                      <span className="text-white font-bold font-mono text-sm block mt-0.5">0.1343</span>
                       <span className="text-[9px] text-slate-500 block">MT/ha</span>
                     </div>
                     <div>
                       <span className="text-xs text-slate-400 block">MAE</span>
-                      <span className="text-white font-bold font-mono text-sm block mt-0.5">0.0866</span>
+                      <span className="text-white font-bold font-mono text-sm block mt-0.5">0.0847</span>
                       <span className="text-[9px] text-slate-500 block">MT/ha</span>
                     </div>
                   </div>
@@ -547,7 +547,7 @@ export default function MethodologyPage() {
 
                 <div className="text-xs text-slate-400 leading-relaxed">
                   <span className="font-semibold text-slate-300 block mb-1">Interpretation:</span>
-                  An RMSE of 0.127 MT/ha on test years (2022-2023) demonstrates that predictions deviate by less than 127 kg per hectare from actual yields, demonstrating robust precision across all regions.
+                  An RMSE of 0.134 MT/ha on test years (2022-2023) demonstrates that predictions deviate by less than 134 kg per hectare from actual yields, demonstrating robust precision across all regions.
                 </div>
               </div>
             </div>

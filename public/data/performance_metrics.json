@@ -2,91 +2,91 @@
   "scatter_points": [
     {
       "actual": 2.54,
-      "predicted": 2.64,
+      "predicted": 2.59,
       "district": "Bagerhat",
       "season": "Aman"
     },
     {
       "actual": 2.72,
-      "predicted": 2.64,
+      "predicted": 2.55,
       "district": "Bagerhat",
       "season": "Aman"
     },
     {
       "actual": 2.12,
-      "predicted": 2.13,
+      "predicted": 2.09,
       "district": "Bagerhat",
       "season": "Aus"
     },
     {
       "actual": 2.17,
-      "predicted": 2.12,
+      "predicted": 2.09,
       "district": "Bagerhat",
       "season": "Aus"
     },
     {
       "actual": 4.29,
-      "predicted": 4.24,
+      "predicted": 4.11,
       "district": "Bagerhat",
       "season": "Boro"
     },
     {
       "actual": 4.46,
-      "predicted": 4.26,
+      "predicted": 4.28,
       "district": "Bagerhat",
       "season": "Boro"
     },
     {
       "actual": 1.97,
-      "predicted": 2.07,
-      "district": "Bandarban",
-      "season": "Aman"
-    },
-    {
-      "actual": 1.99,
       "predicted": 1.96,
       "district": "Bandarban",
       "season": "Aman"
     },
     {
+      "actual": 1.99,
+      "predicted": 1.94,
+      "district": "Bandarban",
+      "season": "Aman"
+    },
+    {
       "actual": 1.58,
-      "predicted": 1.59,
+      "predicted": 1.61,
       "district": "Bandarban",
       "season": "Aus"
     },
     {
       "actual": 1.6,
-      "predicted": 1.59,
+      "predicted": 1.61,
       "district": "Bandarban",
       "season": "Aus"
     },
     {
       "actual": 3.06,
-      "predicted": 3.12,
+      "predicted": 3.15,
       "district": "Bandarban",
       "season": "Boro"
     },
     {
       "actual": 3.28,
-      "predicted": 3.22,
+      "predicted": 3.25,
       "district": "Bandarban",
       "season": "Boro"
     },
     {
       "actual": 2.6,
-      "predicted": 2.63,
+      "predicted": 2.59,
       "district": "Barguna",
       "season": "Aman"
     },
     {
       "actual": 2.66,
-      "predicted": 2.58,
+      "predicted": 2.53,
       "district": "Barguna",
       "season": "Aman"
     },
     {
       "actual": 2.06,
-      "predicted": 2.09,
+      "predicted": 2.08,
       "district": "Barguna",
       "season": "Aus"
     },
@@ -98,25 +98,25 @@
     },
     {
       "actual": 4.07,
-      "predicted": 4.14,
+      "predicted": 4.0,
       "district": "Barguna",
       "season": "Boro"
     },
     {
       "actual": 4.35,
-      "predicted": 4.16,
+      "predicted": 4.15,
       "district": "Barguna",
       "season": "Boro"
     },
     {
       "actual": 2.57,
-      "predicted": 2.61,
+      "predicted": 2.59,
       "district": "Barishal",
       "season": "Aman"
     },
     {
       "actual": 2.66,
-      "predicted": 2.62,
+      "predicted": 2.55,
       "district": "Barishal",
       "season": "Aman"
     },
@@ -128,37 +128,37 @@
     },
     {
       "actual": 2.17,
-      "predicted": 2.11,
+      "predicted": 2.09,
       "district": "Barishal",
       "season": "Aus"
     },
     {
       "actual": 4.23,
-      "predicted": 4.19,
-      "district": "Barishal",
-      "season": "Boro"
-    },
-    {
-      "actual": 4.42,
       "predicted": 4.14,
       "district": "Barishal",
       "season": "Boro"
     },
     {
+      "actual": 4.42,
+      "predicted": 4.28,
+      "district": "Barishal",
+      "season": "Boro"
+    },
+    {
       "actual": 2.5,
-      "predicted": 2.57,
+      "predicted": 2.59,
       "district": "Bhola",
       "season": "Aman"
     },
     {
       "actual": 2.61,
-      "predicted": 2.6,
+      "predicted": 2.56,
       "district": "Bhola",
       "season": "Aman"
     },
     {
       "actual": 2.09,
-      "predicted": 2.1,
+      "predicted": 2.09,
       "district": "Bhola",
       "season": "Aus"
     },
@@ -170,103 +170,103 @@
     },
     {
       "actual": 4.34,
-      "predicted": 4.12,
+      "predicted": 4.16,
       "district": "Bhola",
       "season": "Boro"
     },
     {
       "actual": 4.39,
-      "predicted": 4.22,
+      "predicted": 4.29,
       "district": "Bhola",
       "season": "Boro"
     },
     {
       "actual": 2.9,
-      "predicted": 2.98,
+      "predicted": 2.97,
       "district": "Bogura",
       "season": "Aman"
     },
     {
       "actual": 3.12,
-      "predicted": 2.92,
+      "predicted": 2.91,
       "district": "Bogura",
       "season": "Aman"
     },
     {
       "actual": 2.38,
-      "predicted": 2.36,
+      "predicted": 2.35,
       "district": "Bogura",
       "season": "Aus"
     },
     {
       "actual": 2.41,
-      "predicted": 2.34,
+      "predicted": 2.4,
       "district": "Bogura",
       "season": "Aus"
     },
     {
       "actual": 4.85,
-      "predicted": 4.77,
+      "predicted": 4.61,
       "district": "Bogura",
       "season": "Boro"
     },
     {
       "actual": 5.07,
-      "predicted": 4.78,
+      "predicted": 4.75,
       "district": "Bogura",
       "season": "Boro"
     },
     {
       "actual": 2.6,
-      "predicted": 2.63,
+      "predicted": 2.59,
       "district": "Brahmanbaria",
       "season": "Aman"
     },
     {
       "actual": 2.73,
-      "predicted": 2.62,
+      "predicted": 2.64,
       "district": "Brahmanbaria",
       "season": "Aman"
     },
     {
       "actual": 2.1,
-      "predicted": 2.06,
+      "predicted": 2.1,
       "district": "Brahmanbaria",
       "season": "Aus"
     },
     {
       "actual": 2.09,
-      "predicted": 2.11,
+      "predicted": 2.12,
       "district": "Brahmanbaria",
       "season": "Aus"
     },
     {
       "actual": 4.28,
-      "predicted": 4.13,
+      "predicted": 4.23,
       "district": "Brahmanbaria",
       "season": "Boro"
     },
     {
       "actual": 4.29,
-      "predicted": 4.14,
+      "predicted": 4.25,
       "district": "Brahmanbaria",
       "season": "Boro"
     },
     {
       "actual": 2.6,
-      "predicted": 2.63,
+      "predicted": 2.59,
       "district": "Chandpur",
       "season": "Aman"
     },
     {
       "actual": 2.76,
-      "predicted": 2.62,
+      "predicted": 2.63,
       "district": "Chandpur",
       "season": "Aman"
     },
     {
       "actual": 2.07,
-      "predicted": 2.11,
+      "predicted": 2.09,
       "district": "Chandpur",
       "season": "Aus"
     },
@@ -278,31 +278,31 @@
     },
     {
       "actual": 4.14,
-      "predicted": 3.98,
+      "predicted": 4.1,
       "district": "Chandpur",
       "season": "Boro"
     },
     {
       "actual": 4.29,
-      "predicted": 4.14,
+      "predicted": 4.27,
       "district": "Chandpur",
       "season": "Boro"
     },
     {
       "actual": 2.52,
-      "predicted": 2.67,
+      "predicted": 2.7,
       "district": "Chapainawabganj",
       "season": "Aman"
     },
     {
       "actual": 2.66,
-      "predicted": 2.66,
+      "predicted": 2.64,
       "district": "Chapainawabganj",
       "season": "Aman"
     },
     {
       "actual": 2.09,
-      "predicted": 2.15,
+      "predicted": 2.13,
       "district": "Chapainawabganj",
       "season": "Aus"
     },
@@ -314,13 +314,13 @@
     },
     {
       "actual": 4.22,
-      "predicted": 4.25,
+      "predicted": 4.15,
       "district": "Chapainawabganj",
       "season": "Boro"
     },
     {
       "actual": 4.28,
-      "predicted": 4.28,
+      "predicted": 4.25,
       "district": "Chapainawabganj",
       "season": "Boro"
     },
@@ -332,97 +332,97 @@
     },
     {
       "actual": 2.6,
-      "predicted": 2.61,
+      "predicted": 2.57,
       "district": "Chattogram",
       "season": "Aman"
     },
     {
       "actual": 2.15,
-      "predicted": 2.11,
+      "predicted": 2.09,
       "district": "Chattogram",
       "season": "Aus"
     },
     {
       "actual": 2.23,
-      "predicted": 2.1,
+      "predicted": 2.11,
       "district": "Chattogram",
       "season": "Aus"
     },
     {
       "actual": 4.3,
-      "predicted": 4.18,
+      "predicted": 4.22,
       "district": "Chattogram",
       "season": "Boro"
     },
     {
       "actual": 4.25,
-      "predicted": 4.12,
+      "predicted": 4.27,
       "district": "Chattogram",
       "season": "Boro"
     },
     {
       "actual": 2.64,
-      "predicted": 2.64,
+      "predicted": 2.68,
       "district": "Chuadanga",
       "season": "Aman"
     },
     {
       "actual": 2.77,
-      "predicted": 2.65,
+      "predicted": 2.64,
       "district": "Chuadanga",
       "season": "Aman"
     },
     {
       "actual": 2.09,
-      "predicted": 2.14,
+      "predicted": 2.13,
       "district": "Chuadanga",
       "season": "Aus"
     },
     {
       "actual": 2.22,
-      "predicted": 2.14,
+      "predicted": 2.12,
       "district": "Chuadanga",
       "season": "Aus"
     },
     {
       "actual": 4.32,
-      "predicted": 4.19,
+      "predicted": 4.2,
       "district": "Chuadanga",
       "season": "Boro"
     },
     {
       "actual": 4.35,
-      "predicted": 4.19,
+      "predicted": 4.29,
       "district": "Chuadanga",
       "season": "Boro"
     },
     {
       "actual": 2.58,
-      "predicted": 2.59,
+      "predicted": 2.55,
       "district": "Cox'S Bazar",
       "season": "Aman"
     },
     {
       "actual": 2.79,
-      "predicted": 2.62,
+      "predicted": 2.6,
       "district": "Cox'S Bazar",
       "season": "Aman"
     },
     {
       "actual": 2.1,
-      "predicted": 2.11,
+      "predicted": 2.07,
       "district": "Cox'S Bazar",
       "season": "Aus"
     },
     {
       "actual": 2.13,
-      "predicted": 2.11,
+      "predicted": 2.07,
       "district": "Cox'S Bazar",
       "season": "Aus"
     },
     {
       "actual": 4.22,
-      "predicted": 4.22,
+      "predicted": 4.07,
       "district": "Cox'S Bazar",
       "season": "Boro"
     },
@@ -434,145 +434,145 @@
     },
     {
       "actual": 2.95,
-      "predicted": 2.78,
+      "predicted": 2.85,
       "district": "Cumilla",
       "season": "Aman"
     },
     {
       "actual": 2.99,
-      "predicted": 2.79,
+      "predicted": 2.78,
       "district": "Cumilla",
       "season": "Aman"
     },
     {
       "actual": 2.2,
-      "predicted": 2.27,
+      "predicted": 2.26,
       "district": "Cumilla",
       "season": "Aus"
     },
     {
       "actual": 2.3,
-      "predicted": 2.27,
+      "predicted": 2.3,
       "district": "Cumilla",
       "season": "Aus"
     },
     {
       "actual": 4.66,
-      "predicted": 4.48,
+      "predicted": 4.45,
       "district": "Cumilla",
       "season": "Boro"
     },
     {
       "actual": 4.63,
-      "predicted": 4.56,
+      "predicted": 4.6,
       "district": "Cumilla",
       "season": "Boro"
     },
     {
       "actual": 2.44,
-      "predicted": 2.41,
+      "predicted": 2.37,
       "district": "Dhaka",
       "season": "Aman"
     },
     {
       "actual": 2.52,
-      "predicted": 2.41,
+      "predicted": 2.48,
       "district": "Dhaka",
       "season": "Aman"
     },
     {
       "actual": 1.97,
-      "predicted": 2.1,
+      "predicted": 2.06,
       "district": "Dhaka",
       "season": "Aus"
     },
     {
       "actual": 1.97,
-      "predicted": 2.1,
+      "predicted": 2.08,
       "district": "Dhaka",
       "season": "Aus"
     },
     {
       "actual": 4.06,
-      "predicted": 4.1,
+      "predicted": 4.05,
       "district": "Dhaka",
       "season": "Boro"
     },
     {
       "actual": 4.14,
-      "predicted": 4.09,
+      "predicted": 4.1,
       "district": "Dhaka",
       "season": "Boro"
     },
     {
       "actual": 3.08,
-      "predicted": 3.04,
+      "predicted": 3.07,
       "district": "Dinajpur",
       "season": "Aman"
     },
     {
       "actual": 3.23,
-      "predicted": 3.02,
+      "predicted": 2.93,
       "district": "Dinajpur",
       "season": "Aman"
     },
     {
       "actual": 2.45,
-      "predicted": 2.49,
+      "predicted": 2.39,
       "district": "Dinajpur",
       "season": "Aus"
     },
     {
       "actual": 2.49,
-      "predicted": 2.43,
+      "predicted": 2.46,
       "district": "Dinajpur",
       "season": "Aus"
     },
     {
       "actual": 4.97,
-      "predicted": 4.89,
+      "predicted": 4.65,
       "district": "Dinajpur",
       "season": "Boro"
     },
     {
       "actual": 5.11,
-      "predicted": 4.85,
+      "predicted": 4.84,
       "district": "Dinajpur",
       "season": "Boro"
     },
     {
       "actual": 2.56,
-      "predicted": 2.63,
+      "predicted": 2.65,
       "district": "Faridpur",
       "season": "Aman"
     },
     {
       "actual": 2.64,
-      "predicted": 2.63,
+      "predicted": 2.65,
       "district": "Faridpur",
       "season": "Aman"
     },
     {
       "actual": 2.09,
-      "predicted": 2.11,
+      "predicted": 2.09,
       "district": "Faridpur",
       "season": "Aus"
     },
     {
       "actual": 2.19,
-      "predicted": 2.14,
+      "predicted": 2.11,
       "district": "Faridpur",
       "season": "Aus"
     },
     {
       "actual": 4.22,
-      "predicted": 4.23,
+      "predicted": 4.21,
       "district": "Faridpur",
       "season": "Boro"
     },
     {
       "actual": 4.32,
-      "predicted": 4.26,
+      "predicted": 4.29,
       "district": "Faridpur",
       "season": "Boro"
     },
@@ -584,31 +584,31 @@
     },
     {
       "actual": 2.72,
-      "predicted": 2.55,
+      "predicted": 2.61,
       "district": "Feni",
       "season": "Aman"
     },
     {
       "actual": 2.04,
-      "predicted": 2.1,
+      "predicted": 2.08,
       "district": "Feni",
       "season": "Aus"
     },
     {
       "actual": 2.26,
-      "predicted": 2.09,
+      "predicted": 2.1,
       "district": "Feni",
       "season": "Aus"
     },
     {
       "actual": 4.0,
-      "predicted": 4.13,
+      "predicted": 4.05,
       "district": "Feni",
       "season": "Boro"
     },
     {
       "actual": 4.3,
-      "predicted": 4.19,
+      "predicted": 4.23,
       "district": "Feni",
       "season": "Boro"
     },
@@ -620,49 +620,49 @@
     },
     {
       "actual": 2.67,
-      "predicted": 2.67,
+      "predicted": 2.65,
       "district": "Gaibandha",
       "season": "Aman"
     },
     {
       "actual": 2.04,
-      "predicted": 2.14,
+      "predicted": 2.07,
       "district": "Gaibandha",
       "season": "Aus"
     },
     {
       "actual": 2.17,
-      "predicted": 2.14,
+      "predicted": 2.1,
       "district": "Gaibandha",
       "season": "Aus"
     },
     {
       "actual": 4.18,
-      "predicted": 4.28,
+      "predicted": 4.22,
       "district": "Gaibandha",
       "season": "Boro"
     },
     {
       "actual": 4.28,
-      "predicted": 4.33,
+      "predicted": 4.3,
       "district": "Gaibandha",
       "season": "Boro"
     },
     {
       "actual": 2.59,
-      "predicted": 2.64,
+      "predicted": 2.67,
       "district": "Gazipur",
       "season": "Aman"
     },
     {
       "actual": 2.7,
-      "predicted": 2.65,
+      "predicted": 2.59,
       "district": "Gazipur",
       "season": "Aman"
     },
     {
       "actual": 2.1,
-      "predicted": 2.12,
+      "predicted": 2.08,
       "district": "Gazipur",
       "season": "Aus"
     },
@@ -674,13 +674,13 @@
     },
     {
       "actual": 4.15,
-      "predicted": 4.26,
+      "predicted": 4.16,
       "district": "Gazipur",
       "season": "Boro"
     },
     {
       "actual": 4.32,
-      "predicted": 4.21,
+      "predicted": 4.24,
       "district": "Gazipur",
       "season": "Boro"
     },
@@ -692,85 +692,85 @@
     },
     {
       "actual": 2.58,
-      "predicted": 2.65,
+      "predicted": 2.63,
       "district": "Gopalganj",
       "season": "Aman"
     },
     {
       "actual": 2.16,
-      "predicted": 2.14,
+      "predicted": 2.1,
       "district": "Gopalganj",
       "season": "Aus"
     },
     {
       "actual": 2.18,
-      "predicted": 2.13,
+      "predicted": 2.1,
       "district": "Gopalganj",
       "season": "Aus"
     },
     {
       "actual": 4.3,
-      "predicted": 4.25,
+      "predicted": 4.19,
       "district": "Gopalganj",
       "season": "Boro"
     },
     {
       "actual": 4.13,
-      "predicted": 4.24,
+      "predicted": 4.27,
       "district": "Gopalganj",
       "season": "Boro"
     },
     {
       "actual": 2.13,
-      "predicted": 2.58,
+      "predicted": 2.6,
       "district": "Habiganj",
       "season": "Aman"
     },
     {
       "actual": 2.66,
-      "predicted": 2.65,
+      "predicted": 2.67,
       "district": "Habiganj",
       "season": "Aman"
     },
     {
       "actual": 1.69,
-      "predicted": 2.02,
+      "predicted": 2.05,
       "district": "Habiganj",
       "season": "Aus"
     },
     {
       "actual": 2.18,
-      "predicted": 2.12,
+      "predicted": 2.1,
       "district": "Habiganj",
       "season": "Aus"
     },
     {
       "actual": 3.39,
-      "predicted": 3.95,
+      "predicted": 4.22,
       "district": "Habiganj",
       "season": "Boro"
     },
     {
       "actual": 4.23,
-      "predicted": 4.26,
+      "predicted": 4.31,
       "district": "Habiganj",
       "season": "Boro"
     },
     {
       "actual": 2.57,
-      "predicted": 2.63,
+      "predicted": 2.68,
       "district": "Jamalpur",
       "season": "Aman"
     },
     {
       "actual": 2.65,
-      "predicted": 2.65,
+      "predicted": 2.66,
       "district": "Jamalpur",
       "season": "Aman"
     },
     {
       "actual": 2.09,
-      "predicted": 2.12,
+      "predicted": 2.08,
       "district": "Jamalpur",
       "season": "Aus"
     },
@@ -782,25 +782,25 @@
     },
     {
       "actual": 4.14,
-      "predicted": 4.21,
+      "predicted": 4.23,
       "district": "Jamalpur",
       "season": "Boro"
     },
     {
       "actual": 4.23,
-      "predicted": 4.19,
+      "predicted": 4.29,
       "district": "Jamalpur",
       "season": "Boro"
     },
     {
       "actual": 2.91,
-      "predicted": 2.83,
+      "predicted": 2.9,
       "district": "Jashore",
       "season": "Aman"
     },
     {
       "actual": 2.91,
-      "predicted": 2.82,
+      "predicted": 2.81,
       "district": "Jashore",
       "season": "Aman"
     },
@@ -812,13 +812,13 @@
     },
     {
       "actual": 2.36,
-      "predicted": 2.3,
+      "predicted": 2.29,
       "district": "Jashore",
       "season": "Aus"
     },
     {
       "actual": 4.64,
-      "predicted": 4.59,
+      "predicted": 4.52,
       "district": "Jashore",
       "season": "Boro"
     },
@@ -830,37 +830,37 @@
     },
     {
       "actual": 2.68,
-      "predicted": 2.6,
+      "predicted": 2.59,
       "district": "Jhalokati",
       "season": "Aman"
     },
     {
       "actual": 2.54,
-      "predicted": 2.62,
+      "predicted": 2.56,
       "district": "Jhalokati",
       "season": "Aman"
     },
     {
       "actual": 2.13,
-      "predicted": 2.06,
+      "predicted": 2.1,
       "district": "Jhalokati",
       "season": "Aus"
     },
     {
       "actual": 2.14,
-      "predicted": 2.06,
+      "predicted": 2.1,
       "district": "Jhalokati",
       "season": "Aus"
     },
     {
       "actual": 4.16,
-      "predicted": 4.15,
+      "predicted": 4.14,
       "district": "Jhalokati",
       "season": "Boro"
     },
     {
       "actual": 4.33,
-      "predicted": 4.06,
+      "predicted": 4.28,
       "district": "Jhalokati",
       "season": "Boro"
     },
@@ -878,25 +878,25 @@
     },
     {
       "actual": 2.12,
-      "predicted": 2.14,
+      "predicted": 2.1,
       "district": "Jhenaidah",
       "season": "Aus"
     },
     {
       "actual": 2.21,
-      "predicted": 2.13,
+      "predicted": 2.11,
       "district": "Jhenaidah",
       "season": "Aus"
     },
     {
       "actual": 4.17,
-      "predicted": 4.18,
+      "predicted": 4.13,
       "district": "Jhenaidah",
       "season": "Boro"
     },
     {
       "actual": 4.42,
-      "predicted": 4.24,
+      "predicted": 4.27,
       "district": "Jhenaidah",
       "season": "Boro"
     },
@@ -914,247 +914,247 @@
     },
     {
       "actual": 2.02,
-      "predicted": 2.14,
+      "predicted": 2.09,
       "district": "Joypurhat",
       "season": "Aus"
     },
     {
       "actual": 2.13,
-      "predicted": 2.12,
+      "predicted": 2.14,
       "district": "Joypurhat",
       "season": "Aus"
     },
     {
       "actual": 4.2,
-      "predicted": 4.28,
+      "predicted": 4.18,
       "district": "Joypurhat",
       "season": "Boro"
     },
     {
       "actual": 4.35,
-      "predicted": 4.29,
+      "predicted": 4.25,
       "district": "Joypurhat",
       "season": "Boro"
     },
     {
       "actual": 2.03,
-      "predicted": 2.11,
+      "predicted": 2.09,
       "district": "Khagrachhari",
       "season": "Aman"
     },
     {
       "actual": 2.18,
-      "predicted": 2.16,
+      "predicted": 2.08,
       "district": "Khagrachhari",
       "season": "Aman"
     },
     {
       "actual": 1.67,
-      "predicted": 1.7,
+      "predicted": 1.71,
       "district": "Khagrachhari",
       "season": "Aus"
     },
     {
       "actual": 1.67,
-      "predicted": 1.72,
+      "predicted": 1.73,
       "district": "Khagrachhari",
       "season": "Aus"
     },
     {
       "actual": 3.44,
-      "predicted": 3.31,
+      "predicted": 3.32,
       "district": "Khagrachhari",
       "season": "Boro"
     },
     {
       "actual": 3.43,
-      "predicted": 3.3,
+      "predicted": 3.34,
       "district": "Khagrachhari",
       "season": "Boro"
     },
     {
       "actual": 2.61,
-      "predicted": 2.62,
+      "predicted": 2.58,
       "district": "Khulna",
       "season": "Aman"
     },
     {
       "actual": 2.69,
-      "predicted": 2.63,
+      "predicted": 2.58,
       "district": "Khulna",
       "season": "Aman"
     },
     {
       "actual": 2.13,
-      "predicted": 2.13,
+      "predicted": 2.09,
       "district": "Khulna",
       "season": "Aus"
     },
     {
       "actual": 2.14,
-      "predicted": 2.12,
+      "predicted": 2.1,
       "district": "Khulna",
       "season": "Aus"
     },
     {
       "actual": 4.14,
-      "predicted": 4.28,
+      "predicted": 4.23,
       "district": "Khulna",
       "season": "Boro"
     },
     {
       "actual": 4.35,
-      "predicted": 4.21,
+      "predicted": 4.27,
       "district": "Khulna",
       "season": "Boro"
     },
     {
       "actual": 2.53,
-      "predicted": 2.65,
+      "predicted": 2.67,
       "district": "Kishoreganj",
       "season": "Aman"
     },
     {
       "actual": 2.66,
-      "predicted": 2.65,
+      "predicted": 2.62,
       "district": "Kishoreganj",
       "season": "Aman"
     },
     {
       "actual": 2.09,
-      "predicted": 2.14,
+      "predicted": 2.06,
       "district": "Kishoreganj",
       "season": "Aus"
     },
     {
       "actual": 2.09,
-      "predicted": 2.13,
+      "predicted": 2.11,
       "district": "Kishoreganj",
       "season": "Aus"
     },
     {
       "actual": 4.32,
-      "predicted": 4.27,
+      "predicted": 4.24,
       "district": "Kishoreganj",
       "season": "Boro"
     },
     {
       "actual": 4.3,
-      "predicted": 4.21,
+      "predicted": 4.24,
       "district": "Kishoreganj",
       "season": "Boro"
     },
     {
       "actual": 2.64,
-      "predicted": 2.66,
+      "predicted": 2.67,
       "district": "Kurigram",
       "season": "Aman"
     },
     {
       "actual": 2.77,
-      "predicted": 2.66,
+      "predicted": 2.65,
       "district": "Kurigram",
       "season": "Aman"
     },
     {
       "actual": 2.03,
-      "predicted": 2.13,
+      "predicted": 2.04,
       "district": "Kurigram",
       "season": "Aus"
     },
     {
       "actual": 2.18,
-      "predicted": 2.12,
+      "predicted": 2.1,
       "district": "Kurigram",
       "season": "Aus"
     },
     {
       "actual": 4.3,
-      "predicted": 4.29,
+      "predicted": 4.17,
       "district": "Kurigram",
       "season": "Boro"
     },
     {
       "actual": 4.24,
-      "predicted": 4.36,
+      "predicted": 4.25,
       "district": "Kurigram",
       "season": "Boro"
     },
     {
       "actual": 2.66,
-      "predicted": 2.63,
+      "predicted": 2.66,
       "district": "Kushtia",
       "season": "Aman"
     },
     {
       "actual": 2.65,
-      "predicted": 2.65,
+      "predicted": 2.66,
       "district": "Kushtia",
       "season": "Aman"
     },
     {
       "actual": 2.03,
-      "predicted": 2.13,
+      "predicted": 2.1,
       "district": "Kushtia",
       "season": "Aus"
     },
     {
       "actual": 2.18,
-      "predicted": 2.13,
+      "predicted": 2.11,
       "district": "Kushtia",
       "season": "Aus"
     },
     {
       "actual": 3.95,
-      "predicted": 4.14,
+      "predicted": 4.23,
       "district": "Kushtia",
       "season": "Boro"
     },
     {
       "actual": 4.4,
-      "predicted": 4.29,
+      "predicted": 4.28,
       "district": "Kushtia",
       "season": "Boro"
     },
     {
       "actual": 2.6,
-      "predicted": 2.63,
+      "predicted": 2.59,
       "district": "Lakshmipur",
       "season": "Aman"
     },
     {
       "actual": 2.58,
-      "predicted": 2.62,
+      "predicted": 2.57,
       "district": "Lakshmipur",
       "season": "Aman"
     },
     {
       "actual": 2.12,
-      "predicted": 2.1,
+      "predicted": 2.09,
       "district": "Lakshmipur",
       "season": "Aus"
     },
     {
       "actual": 2.26,
-      "predicted": 2.1,
+      "predicted": 2.09,
       "district": "Lakshmipur",
       "season": "Aus"
     },
     {
       "actual": 4.32,
-      "predicted": 4.14,
+      "predicted": 4.08,
       "district": "Lakshmipur",
       "season": "Boro"
     },
     {
       "actual": 4.34,
-      "predicted": 4.18,
+      "predicted": 4.27,
       "district": "Lakshmipur",
       "season": "Boro"
     },
     {
       "actual": 2.54,
-      "predicted": 2.66,
+      "predicted": 2.68,
       "district": "Lalmonirhat",
       "season": "Aman"
     },
@@ -1166,265 +1166,265 @@
     },
     {
       "actual": 2.12,
-      "predicted": 2.14,
+      "predicted": 2.04,
       "district": "Lalmonirhat",
       "season": "Aus"
     },
     {
       "actual": 2.11,
-      "predicted": 2.17,
+      "predicted": 2.11,
       "district": "Lalmonirhat",
       "season": "Aus"
     },
     {
       "actual": 4.1,
-      "predicted": 4.3,
+      "predicted": 4.27,
       "district": "Lalmonirhat",
       "season": "Boro"
     },
     {
       "actual": 4.38,
-      "predicted": 4.33,
+      "predicted": 4.28,
       "district": "Lalmonirhat",
       "season": "Boro"
     },
     {
       "actual": 2.62,
-      "predicted": 2.65,
+      "predicted": 2.6,
       "district": "Madaripur",
       "season": "Aman"
     },
     {
       "actual": 2.69,
-      "predicted": 2.64,
+      "predicted": 2.6,
       "district": "Madaripur",
       "season": "Aman"
     },
     {
       "actual": 2.08,
-      "predicted": 2.14,
+      "predicted": 2.09,
       "district": "Madaripur",
       "season": "Aus"
     },
     {
       "actual": 2.11,
-      "predicted": 2.14,
+      "predicted": 2.1,
       "district": "Madaripur",
       "season": "Aus"
     },
     {
       "actual": 4.28,
-      "predicted": 4.22,
+      "predicted": 4.14,
       "district": "Madaripur",
       "season": "Boro"
     },
     {
       "actual": 4.18,
-      "predicted": 4.24,
+      "predicted": 4.27,
       "district": "Madaripur",
       "season": "Boro"
     },
     {
       "actual": 2.59,
-      "predicted": 2.61,
+      "predicted": 2.66,
       "district": "Magura",
       "season": "Aman"
     },
     {
       "actual": 2.76,
-      "predicted": 2.67,
+      "predicted": 2.66,
       "district": "Magura",
       "season": "Aman"
     },
     {
       "actual": 2.11,
-      "predicted": 2.09,
+      "predicted": 2.1,
       "district": "Magura",
       "season": "Aus"
     },
     {
       "actual": 2.14,
-      "predicted": 2.14,
+      "predicted": 2.11,
       "district": "Magura",
       "season": "Aus"
     },
     {
       "actual": 4.09,
-      "predicted": 4.24,
+      "predicted": 4.15,
       "district": "Magura",
       "season": "Boro"
     },
     {
       "actual": 4.29,
-      "predicted": 4.31,
+      "predicted": 4.28,
       "district": "Magura",
       "season": "Boro"
     },
     {
       "actual": 2.61,
-      "predicted": 2.62,
+      "predicted": 2.59,
       "district": "Manikganj",
       "season": "Aman"
     },
     {
       "actual": 2.71,
-      "predicted": 2.65,
+      "predicted": 2.64,
       "district": "Manikganj",
       "season": "Aman"
     },
     {
       "actual": 2.11,
-      "predicted": 2.14,
+      "predicted": 2.09,
       "district": "Manikganj",
       "season": "Aus"
     },
     {
       "actual": 2.17,
-      "predicted": 2.14,
+      "predicted": 2.11,
       "district": "Manikganj",
       "season": "Aus"
     },
     {
       "actual": 4.12,
-      "predicted": 4.29,
+      "predicted": 4.23,
       "district": "Manikganj",
       "season": "Boro"
     },
     {
       "actual": 4.37,
-      "predicted": 4.27,
+      "predicted": 4.28,
       "district": "Manikganj",
       "season": "Boro"
     },
     {
       "actual": 2.58,
-      "predicted": 2.66,
+      "predicted": 2.69,
       "district": "Meherpur",
       "season": "Aman"
     },
     {
       "actual": 2.66,
-      "predicted": 2.66,
+      "predicted": 2.64,
       "district": "Meherpur",
       "season": "Aman"
     },
     {
       "actual": 2.07,
-      "predicted": 2.13,
+      "predicted": 2.12,
       "district": "Meherpur",
       "season": "Aus"
     },
     {
       "actual": 2.21,
-      "predicted": 2.12,
+      "predicted": 2.15,
       "district": "Meherpur",
       "season": "Aus"
     },
     {
       "actual": 4.24,
-      "predicted": 4.26,
+      "predicted": 4.22,
       "district": "Meherpur",
       "season": "Boro"
     },
     {
       "actual": 4.3,
-      "predicted": 4.23,
+      "predicted": 4.3,
       "district": "Meherpur",
       "season": "Boro"
     },
     {
       "actual": 2.11,
-      "predicted": 2.56,
+      "predicted": 2.59,
       "district": "Moulvibazar",
       "season": "Aman"
     },
     {
       "actual": 2.74,
-      "predicted": 2.67,
+      "predicted": 2.66,
       "district": "Moulvibazar",
       "season": "Aman"
     },
     {
       "actual": 1.72,
-      "predicted": 2.06,
+      "predicted": 2.05,
       "district": "Moulvibazar",
       "season": "Aus"
     },
     {
       "actual": 2.18,
-      "predicted": 2.14,
+      "predicted": 2.09,
       "district": "Moulvibazar",
       "season": "Aus"
     },
     {
       "actual": 3.41,
-      "predicted": 4.0,
+      "predicted": 4.21,
       "district": "Moulvibazar",
       "season": "Boro"
     },
     {
       "actual": 4.37,
-      "predicted": 4.14,
+      "predicted": 4.22,
       "district": "Moulvibazar",
       "season": "Boro"
     },
     {
       "actual": 2.63,
-      "predicted": 2.63,
+      "predicted": 2.59,
       "district": "Munshiganj",
       "season": "Aman"
     },
     {
       "actual": 2.71,
-      "predicted": 2.65,
+      "predicted": 2.63,
       "district": "Munshiganj",
       "season": "Aman"
     },
     {
       "actual": 2.05,
-      "predicted": 2.12,
+      "predicted": 2.08,
       "district": "Munshiganj",
       "season": "Aus"
     },
     {
       "actual": 2.2,
-      "predicted": 2.13,
+      "predicted": 2.11,
       "district": "Munshiganj",
       "season": "Aus"
     },
     {
       "actual": 4.5,
-      "predicted": 4.29,
+      "predicted": 4.22,
       "district": "Munshiganj",
       "season": "Boro"
     },
     {
       "actual": 4.37,
-      "predicted": 4.25,
+      "predicted": 4.29,
       "district": "Munshiganj",
       "season": "Boro"
     },
     {
       "actual": 2.87,
-      "predicted": 2.89,
+      "predicted": 2.95,
       "district": "Mymensingh",
       "season": "Aman"
     },
     {
       "actual": 3.06,
-      "predicted": 2.9,
+      "predicted": 2.86,
       "district": "Mymensingh",
       "season": "Aman"
     },
     {
       "actual": 2.31,
-      "predicted": 2.34,
+      "predicted": 2.29,
       "district": "Mymensingh",
       "season": "Aus"
     },
     {
       "actual": 2.35,
-      "predicted": 2.33,
+      "predicted": 2.34,
       "district": "Mymensingh",
       "season": "Aus"
     },
@@ -1436,7 +1436,7 @@
     },
     {
       "actual": 5.08,
-      "predicted": 4.64,
+      "predicted": 4.71,
       "district": "Mymensingh",
       "season": "Boro"
     },
@@ -1448,7 +1448,7 @@
     },
     {
       "actual": 3.1,
-      "predicted": 2.96,
+      "predicted": 2.89,
       "district": "Naogaon",
       "season": "Aman"
     },
@@ -1460,25 +1460,25 @@
     },
     {
       "actual": 2.49,
-      "predicted": 2.48,
+      "predicted": 2.58,
       "district": "Naogaon",
       "season": "Aus"
     },
     {
       "actual": 4.81,
-      "predicted": 4.79,
+      "predicted": 4.63,
       "district": "Naogaon",
       "season": "Boro"
     },
     {
       "actual": 4.99,
-      "predicted": 4.78,
+      "predicted": 4.82,
       "district": "Naogaon",
       "season": "Boro"
     },
     {
       "actual": 2.62,
-      "predicted": 2.65,
+      "predicted": 2.64,
       "district": "Narail",
       "season": "Aman"
     },
@@ -1490,19 +1490,19 @@
     },
     {
       "actual": 2.02,
-      "predicted": 2.13,
+      "predicted": 2.1,
       "district": "Narail",
       "season": "Aus"
     },
     {
       "actual": 2.11,
-      "predicted": 2.13,
+      "predicted": 2.1,
       "district": "Narail",
       "season": "Aus"
     },
     {
       "actual": 4.41,
-      "predicted": 4.17,
+      "predicted": 4.22,
       "district": "Narail",
       "season": "Boro"
     },
@@ -1514,103 +1514,103 @@
     },
     {
       "actual": 2.55,
-      "predicted": 2.43,
+      "predicted": 2.41,
       "district": "Narayanganj",
       "season": "Aman"
     },
     {
       "actual": 2.55,
-      "predicted": 2.42,
+      "predicted": 2.48,
       "district": "Narayanganj",
       "season": "Aman"
     },
     {
       "actual": 2.08,
-      "predicted": 2.12,
+      "predicted": 2.07,
       "district": "Narayanganj",
       "season": "Aus"
     },
     {
       "actual": 2.06,
-      "predicted": 2.11,
+      "predicted": 2.1,
       "district": "Narayanganj",
       "season": "Aus"
     },
     {
       "actual": 4.01,
-      "predicted": 4.16,
+      "predicted": 4.1,
       "district": "Narayanganj",
       "season": "Boro"
     },
     {
       "actual": 4.23,
-      "predicted": 4.08,
+      "predicted": 4.16,
       "district": "Narayanganj",
       "season": "Boro"
     },
     {
       "actual": 2.6,
-      "predicted": 2.67,
+      "predicted": 2.58,
       "district": "Narsingdi",
       "season": "Aman"
     },
     {
       "actual": 2.71,
-      "predicted": 2.65,
+      "predicted": 2.64,
       "district": "Narsingdi",
       "season": "Aman"
     },
     {
       "actual": 2.13,
-      "predicted": 2.14,
+      "predicted": 2.09,
       "district": "Narsingdi",
       "season": "Aus"
     },
     {
       "actual": 2.15,
-      "predicted": 2.13,
+      "predicted": 2.11,
       "district": "Narsingdi",
       "season": "Aus"
     },
     {
       "actual": 4.16,
-      "predicted": 4.25,
+      "predicted": 4.21,
       "district": "Narsingdi",
       "season": "Boro"
     },
     {
       "actual": 4.49,
-      "predicted": 4.16,
+      "predicted": 4.28,
       "district": "Narsingdi",
       "season": "Boro"
     },
     {
       "actual": 2.69,
-      "predicted": 2.68,
+      "predicted": 2.69,
       "district": "Natore",
       "season": "Aman"
     },
     {
       "actual": 2.7,
-      "predicted": 2.67,
+      "predicted": 2.65,
       "district": "Natore",
       "season": "Aman"
     },
     {
       "actual": 2.06,
-      "predicted": 2.12,
+      "predicted": 2.1,
       "district": "Natore",
       "season": "Aus"
     },
     {
       "actual": 2.16,
-      "predicted": 2.14,
+      "predicted": 2.15,
       "district": "Natore",
       "season": "Aus"
     },
     {
       "actual": 4.13,
-      "predicted": 4.28,
+      "predicted": 4.2,
       "district": "Natore",
       "season": "Boro"
     },
@@ -1622,25 +1622,25 @@
     },
     {
       "actual": 2.57,
-      "predicted": 2.66,
+      "predicted": 2.68,
       "district": "Netrokona",
       "season": "Aman"
     },
     {
       "actual": 2.6,
-      "predicted": 2.66,
+      "predicted": 2.63,
       "district": "Netrokona",
       "season": "Aman"
     },
     {
       "actual": 2.14,
-      "predicted": 2.13,
+      "predicted": 2.05,
       "district": "Netrokona",
       "season": "Aus"
     },
     {
       "actual": 2.18,
-      "predicted": 2.13,
+      "predicted": 2.09,
       "district": "Netrokona",
       "season": "Aus"
     },
@@ -1652,61 +1652,61 @@
     },
     {
       "actual": 4.46,
-      "predicted": 4.27,
+      "predicted": 4.26,
       "district": "Netrokona",
       "season": "Boro"
     },
     {
       "actual": 2.66,
-      "predicted": 2.67,
-      "district": "Nilphamari",
-      "season": "Aman"
-    },
-    {
-      "actual": 2.67,
       "predicted": 2.65,
       "district": "Nilphamari",
       "season": "Aman"
     },
     {
+      "actual": 2.67,
+      "predicted": 2.63,
+      "district": "Nilphamari",
+      "season": "Aman"
+    },
+    {
       "actual": 2.11,
-      "predicted": 2.14,
+      "predicted": 2.07,
       "district": "Nilphamari",
       "season": "Aus"
     },
     {
       "actual": 2.14,
-      "predicted": 2.12,
+      "predicted": 2.13,
       "district": "Nilphamari",
       "season": "Aus"
     },
     {
       "actual": 4.13,
-      "predicted": 4.36,
+      "predicted": 4.26,
       "district": "Nilphamari",
       "season": "Boro"
     },
     {
       "actual": 4.27,
-      "predicted": 4.35,
+      "predicted": 4.31,
       "district": "Nilphamari",
       "season": "Boro"
     },
     {
       "actual": 2.61,
-      "predicted": 2.63,
+      "predicted": 2.6,
       "district": "Noakhali",
       "season": "Aman"
     },
     {
       "actual": 2.71,
-      "predicted": 2.62,
+      "predicted": 2.55,
       "district": "Noakhali",
       "season": "Aman"
     },
     {
       "actual": 2.1,
-      "predicted": 2.12,
+      "predicted": 2.09,
       "district": "Noakhali",
       "season": "Aus"
     },
@@ -1718,103 +1718,103 @@
     },
     {
       "actual": 4.1,
-      "predicted": 3.98,
+      "predicted": 4.03,
       "district": "Noakhali",
       "season": "Boro"
     },
     {
       "actual": 4.37,
-      "predicted": 4.22,
+      "predicted": 4.25,
       "district": "Noakhali",
       "season": "Boro"
     },
     {
       "actual": 2.62,
-      "predicted": 2.67,
+      "predicted": 2.68,
       "district": "Pabna",
       "season": "Aman"
     },
     {
       "actual": 2.73,
-      "predicted": 2.61,
+      "predicted": 2.65,
       "district": "Pabna",
       "season": "Aman"
     },
     {
       "actual": 2.11,
-      "predicted": 2.13,
+      "predicted": 2.09,
       "district": "Pabna",
       "season": "Aus"
     },
     {
       "actual": 2.18,
-      "predicted": 2.12,
+      "predicted": 2.11,
       "district": "Pabna",
       "season": "Aus"
     },
     {
       "actual": 4.25,
-      "predicted": 4.28,
+      "predicted": 4.22,
       "district": "Pabna",
       "season": "Boro"
     },
     {
       "actual": 4.23,
-      "predicted": 4.27,
+      "predicted": 4.26,
       "district": "Pabna",
       "season": "Boro"
     },
     {
       "actual": 2.63,
-      "predicted": 2.67,
+      "predicted": 2.63,
       "district": "Panchagarh",
       "season": "Aman"
     },
     {
       "actual": 2.62,
-      "predicted": 2.66,
+      "predicted": 2.6,
       "district": "Panchagarh",
       "season": "Aman"
     },
     {
       "actual": 2.17,
-      "predicted": 2.13,
+      "predicted": 2.07,
       "district": "Panchagarh",
       "season": "Aus"
     },
     {
       "actual": 2.13,
-      "predicted": 2.14,
+      "predicted": 2.12,
       "district": "Panchagarh",
       "season": "Aus"
     },
     {
       "actual": 4.22,
-      "predicted": 4.3,
+      "predicted": 4.23,
       "district": "Panchagarh",
       "season": "Boro"
     },
     {
       "actual": 4.37,
-      "predicted": 4.28,
+      "predicted": 4.3,
       "district": "Panchagarh",
       "season": "Boro"
     },
     {
       "actual": 2.56,
-      "predicted": 2.63,
+      "predicted": 2.59,
       "district": "Patuakhali",
       "season": "Aman"
     },
     {
       "actual": 2.65,
-      "predicted": 2.62,
+      "predicted": 2.55,
       "district": "Patuakhali",
       "season": "Aman"
     },
     {
       "actual": 2.04,
-      "predicted": 2.1,
+      "predicted": 2.09,
       "district": "Patuakhali",
       "season": "Aus"
     },
@@ -1826,25 +1826,25 @@
     },
     {
       "actual": 4.15,
-      "predicted": 4.11,
+      "predicted": 4.15,
       "district": "Patuakhali",
       "season": "Boro"
     },
     {
       "actual": 4.48,
-      "predicted": 4.03,
+      "predicted": 4.27,
       "district": "Patuakhali",
       "season": "Boro"
     },
     {
       "actual": 2.69,
-      "predicted": 2.63,
+      "predicted": 2.59,
       "district": "Pirojpur",
       "season": "Aman"
     },
     {
       "actual": 2.76,
-      "predicted": 2.63,
+      "predicted": 2.55,
       "district": "Pirojpur",
       "season": "Aman"
     },
@@ -1862,97 +1862,97 @@
     },
     {
       "actual": 4.16,
-      "predicted": 4.12,
+      "predicted": 4.13,
       "district": "Pirojpur",
       "season": "Boro"
     },
     {
       "actual": 4.44,
-      "predicted": 4.15,
+      "predicted": 4.27,
       "district": "Pirojpur",
       "season": "Boro"
     },
     {
       "actual": 2.51,
-      "predicted": 2.64,
+      "predicted": 2.66,
       "district": "Rajbari",
       "season": "Aman"
     },
     {
       "actual": 2.66,
-      "predicted": 2.65,
+      "predicted": 2.64,
       "district": "Rajbari",
       "season": "Aman"
     },
     {
       "actual": 2.05,
-      "predicted": 2.12,
+      "predicted": 2.1,
       "district": "Rajbari",
       "season": "Aus"
     },
     {
       "actual": 2.15,
-      "predicted": 2.12,
+      "predicted": 2.11,
       "district": "Rajbari",
       "season": "Aus"
     },
     {
       "actual": 4.08,
-      "predicted": 4.2,
+      "predicted": 4.23,
       "district": "Rajbari",
       "season": "Boro"
     },
     {
       "actual": 4.26,
-      "predicted": 4.26,
+      "predicted": 4.29,
       "district": "Rajbari",
       "season": "Boro"
     },
     {
       "actual": 2.61,
-      "predicted": 2.65,
+      "predicted": 2.69,
       "district": "Rajshahi",
       "season": "Aman"
     },
     {
       "actual": 2.64,
-      "predicted": 2.67,
+      "predicted": 2.63,
       "district": "Rajshahi",
       "season": "Aman"
     },
     {
       "actual": 2.16,
-      "predicted": 2.14,
+      "predicted": 2.11,
       "district": "Rajshahi",
       "season": "Aus"
     },
     {
       "actual": 2.15,
-      "predicted": 2.12,
+      "predicted": 2.15,
       "district": "Rajshahi",
       "season": "Aus"
     },
     {
       "actual": 4.07,
-      "predicted": 4.27,
+      "predicted": 4.21,
       "district": "Rajshahi",
       "season": "Boro"
     },
     {
       "actual": 4.3,
-      "predicted": 4.3,
+      "predicted": 4.29,
       "district": "Rajshahi",
       "season": "Boro"
     },
     {
       "actual": 1.98,
-      "predicted": 2.04,
+      "predicted": 2.11,
       "district": "Rangamati",
       "season": "Aman"
     },
     {
       "actual": 2.11,
-      "predicted": 2.08,
+      "predicted": 2.09,
       "district": "Rangamati",
       "season": "Aman"
     },
@@ -1964,19 +1964,19 @@
     },
     {
       "actual": 1.69,
-      "predicted": 1.7,
+      "predicted": 1.68,
       "district": "Rangamati",
       "season": "Aus"
     },
     {
       "actual": 3.21,
-      "predicted": 3.25,
+      "predicted": 3.34,
       "district": "Rangamati",
       "season": "Boro"
     },
     {
       "actual": 3.39,
-      "predicted": 3.25,
+      "predicted": 3.38,
       "district": "Rangamati",
       "season": "Boro"
     },
@@ -1994,67 +1994,67 @@
     },
     {
       "actual": 2.04,
-      "predicted": 2.13,
+      "predicted": 2.04,
       "district": "Rangpur",
       "season": "Aus"
     },
     {
       "actual": 2.15,
-      "predicted": 2.12,
+      "predicted": 2.11,
       "district": "Rangpur",
       "season": "Aus"
     },
     {
       "actual": 4.21,
-      "predicted": 4.32,
+      "predicted": 4.24,
       "district": "Rangpur",
       "season": "Boro"
     },
     {
       "actual": 4.27,
-      "predicted": 4.33,
+      "predicted": 4.28,
       "district": "Rangpur",
       "season": "Boro"
     },
     {
       "actual": 2.57,
-      "predicted": 2.66,
+      "predicted": 2.59,
       "district": "Satkhira",
       "season": "Aman"
     },
     {
       "actual": 2.65,
-      "predicted": 2.62,
+      "predicted": 2.59,
       "district": "Satkhira",
       "season": "Aman"
     },
     {
       "actual": 2.04,
-      "predicted": 2.14,
-      "district": "Satkhira",
-      "season": "Aus"
-    },
-    {
-      "actual": 2.14,
       "predicted": 2.1,
       "district": "Satkhira",
       "season": "Aus"
     },
     {
+      "actual": 2.14,
+      "predicted": 2.08,
+      "district": "Satkhira",
+      "season": "Aus"
+    },
+    {
       "actual": 4.09,
-      "predicted": 4.25,
+      "predicted": 4.08,
       "district": "Satkhira",
       "season": "Boro"
     },
     {
       "actual": 4.33,
-      "predicted": 4.23,
+      "predicted": 4.26,
       "district": "Satkhira",
       "season": "Boro"
     },
     {
       "actual": 2.61,
-      "predicted": 2.66,
+      "predicted": 2.59,
       "district": "Shariatpur",
       "season": "Aman"
     },
@@ -2066,163 +2066,163 @@
     },
     {
       "actual": 2.19,
-      "predicted": 2.14,
+      "predicted": 2.09,
       "district": "Shariatpur",
-      "season": "Aus"
-    },
-    {
-      "actual": 2.12,
-      "predicted": 2.12,
-      "district": "Shariatpur",
-      "season": "Aus"
-    },
-    {
-      "actual": 4.11,
-      "predicted": 4.22,
-      "district": "Shariatpur",
-      "season": "Boro"
-    },
-    {
-      "actual": 4.33,
-      "predicted": 4.22,
-      "district": "Shariatpur",
-      "season": "Boro"
-    },
-    {
-      "actual": 2.71,
-      "predicted": 2.65,
-      "district": "Sherpur",
-      "season": "Aman"
-    },
-    {
-      "actual": 2.69,
-      "predicted": 2.62,
-      "district": "Sherpur",
-      "season": "Aman"
-    },
-    {
-      "actual": 2.12,
-      "predicted": 2.12,
-      "district": "Sherpur",
-      "season": "Aus"
-    },
-    {
-      "actual": 2.22,
-      "predicted": 2.13,
-      "district": "Sherpur",
-      "season": "Aus"
-    },
-    {
-      "actual": 4.2,
-      "predicted": 4.29,
-      "district": "Sherpur",
-      "season": "Boro"
-    },
-    {
-      "actual": 4.32,
-      "predicted": 4.22,
-      "district": "Sherpur",
-      "season": "Boro"
-    },
-    {
-      "actual": 2.66,
-      "predicted": 2.7,
-      "district": "Sirajganj",
-      "season": "Aman"
-    },
-    {
-      "actual": 2.74,
-      "predicted": 2.67,
-      "district": "Sirajganj",
-      "season": "Aman"
-    },
-    {
-      "actual": 2.12,
-      "predicted": 2.14,
-      "district": "Sirajganj",
-      "season": "Aus"
-    },
-    {
-      "actual": 2.2,
-      "predicted": 2.12,
-      "district": "Sirajganj",
-      "season": "Aus"
-    },
-    {
-      "actual": 4.36,
-      "predicted": 4.28,
-      "district": "Sirajganj",
-      "season": "Boro"
-    },
-    {
-      "actual": 4.31,
-      "predicted": 4.25,
-      "district": "Sirajganj",
-      "season": "Boro"
-    },
-    {
-      "actual": 2.07,
-      "predicted": 2.53,
-      "district": "Sunamganj",
-      "season": "Aman"
-    },
-    {
-      "actual": 2.64,
-      "predicted": 2.69,
-      "district": "Sunamganj",
-      "season": "Aman"
-    },
-    {
-      "actual": 1.71,
-      "predicted": 2.06,
-      "district": "Sunamganj",
-      "season": "Aus"
-    },
-    {
-      "actual": 2.29,
-      "predicted": 2.14,
-      "district": "Sunamganj",
-      "season": "Aus"
-    },
-    {
-      "actual": 3.42,
-      "predicted": 3.91,
-      "district": "Sunamganj",
-      "season": "Boro"
-    },
-    {
-      "actual": 4.4,
-      "predicted": 4.27,
-      "district": "Sunamganj",
-      "season": "Boro"
-    },
-    {
-      "actual": 2.1,
-      "predicted": 2.58,
-      "district": "Sylhet",
-      "season": "Aman"
-    },
-    {
-      "actual": 2.72,
-      "predicted": 2.61,
-      "district": "Sylhet",
-      "season": "Aman"
-    },
-    {
-      "actual": 1.73,
-      "predicted": 2.05,
-      "district": "Sylhet",
       "season": "Aus"
     },
     {
       "actual": 2.12,
       "predicted": 2.1,
+      "district": "Shariatpur",
+      "season": "Aus"
+    },
+    {
+      "actual": 4.11,
+      "predicted": 4.1,
+      "district": "Shariatpur",
+      "season": "Boro"
+    },
+    {
+      "actual": 4.33,
+      "predicted": 4.28,
+      "district": "Shariatpur",
+      "season": "Boro"
+    },
+    {
+      "actual": 2.71,
+      "predicted": 2.68,
+      "district": "Sherpur",
+      "season": "Aman"
+    },
+    {
+      "actual": 2.69,
+      "predicted": 2.63,
+      "district": "Sherpur",
+      "season": "Aman"
+    },
+    {
+      "actual": 2.12,
+      "predicted": 2.09,
+      "district": "Sherpur",
+      "season": "Aus"
+    },
+    {
+      "actual": 2.22,
+      "predicted": 2.11,
+      "district": "Sherpur",
+      "season": "Aus"
+    },
+    {
+      "actual": 4.2,
+      "predicted": 4.22,
+      "district": "Sherpur",
+      "season": "Boro"
+    },
+    {
+      "actual": 4.32,
+      "predicted": 4.29,
+      "district": "Sherpur",
+      "season": "Boro"
+    },
+    {
+      "actual": 2.66,
+      "predicted": 2.69,
+      "district": "Sirajganj",
+      "season": "Aman"
+    },
+    {
+      "actual": 2.74,
+      "predicted": 2.68,
+      "district": "Sirajganj",
+      "season": "Aman"
+    },
+    {
+      "actual": 2.12,
+      "predicted": 2.09,
+      "district": "Sirajganj",
+      "season": "Aus"
+    },
+    {
+      "actual": 2.2,
+      "predicted": 2.13,
+      "district": "Sirajganj",
+      "season": "Aus"
+    },
+    {
+      "actual": 4.36,
+      "predicted": 4.19,
+      "district": "Sirajganj",
+      "season": "Boro"
+    },
+    {
+      "actual": 4.31,
+      "predicted": 4.31,
+      "district": "Sirajganj",
+      "season": "Boro"
+    },
+    {
+      "actual": 2.07,
+      "predicted": 2.68,
+      "district": "Sunamganj",
+      "season": "Aman"
+    },
+    {
+      "actual": 2.64,
+      "predicted": 2.62,
+      "district": "Sunamganj",
+      "season": "Aman"
+    },
+    {
+      "actual": 1.71,
+      "predicted": 2.12,
+      "district": "Sunamganj",
+      "season": "Aus"
+    },
+    {
+      "actual": 2.29,
+      "predicted": 2.06,
+      "district": "Sunamganj",
+      "season": "Aus"
+    },
+    {
+      "actual": 3.42,
+      "predicted": 4.04,
+      "district": "Sunamganj",
+      "season": "Boro"
+    },
+    {
+      "actual": 4.4,
+      "predicted": 4.28,
+      "district": "Sunamganj",
+      "season": "Boro"
+    },
+    {
+      "actual": 2.1,
+      "predicted": 2.61,
+      "district": "Sylhet",
+      "season": "Aman"
+    },
+    {
+      "actual": 2.72,
+      "predicted": 2.67,
+      "district": "Sylhet",
+      "season": "Aman"
+    },
+    {
+      "actual": 1.73,
+      "predicted": 1.98,
+      "district": "Sylhet",
+      "season": "Aus"
+    },
+    {
+      "actual": 2.12,
+      "predicted": 2.09,
       "district": "Sylhet",
       "season": "Aus"
     },
     {
       "actual": 3.41,
-      "predicted": 3.9,
+      "predicted": 4.02,
       "district": "Sylhet",
       "season": "Boro"
     },
@@ -2234,19 +2234,19 @@
     },
     {
       "actual": 2.76,
-      "predicted": 2.71,
+      "predicted": 2.76,
       "district": "Tangail",
       "season": "Aman"
     },
     {
       "actual": 2.8,
-      "predicted": 2.71,
+      "predicted": 2.73,
       "district": "Tangail",
       "season": "Aman"
     },
     {
       "actual": 2.25,
-      "predicted": 2.18,
+      "predicted": 2.14,
       "district": "Tangail",
       "season": "Aus"
     },
@@ -2258,49 +2258,49 @@
     },
     {
       "actual": 4.36,
-      "predicted": 4.36,
+      "predicted": 4.45,
       "district": "Tangail",
       "season": "Boro"
     },
     {
       "actual": 4.62,
-      "predicted": 4.4,
+      "predicted": 4.48,
       "district": "Tangail",
       "season": "Boro"
     },
     {
       "actual": 2.51,
-      "predicted": 2.66,
+      "predicted": 2.63,
       "district": "Thakurgaon",
       "season": "Aman"
     },
     {
       "actual": 2.7,
-      "predicted": 2.6,
+      "predicted": 2.62,
       "district": "Thakurgaon",
       "season": "Aman"
     },
     {
       "actual": 2.16,
-      "predicted": 2.13,
+      "predicted": 2.08,
       "district": "Thakurgaon",
       "season": "Aus"
     },
     {
       "actual": 2.13,
-      "predicted": 2.12,
+      "predicted": 2.13,
       "district": "Thakurgaon",
       "season": "Aus"
     },
     {
       "actual": 4.29,
-      "predicted": 4.29,
+      "predicted": 4.23,
       "district": "Thakurgaon",
       "season": "Boro"
     },
     {
       "actual": 4.43,
-      "predicted": 4.36,
+      "predicted": 4.3,
       "district": "Thakurgaon",
       "season": "Boro"
     }
@@ -2308,15 +2308,15 @@
   "residual_distribution": [
     {
       "bin": -0.42,
-      "count": 0
+      "count": 1
     },
     {
       "bin": -0.36,
-      "count": 3
+      "count": 1
     },
     {
       "bin": -0.3,
-      "count": 1
+      "count": 2
     },
     {
       "bin": -0.24,
@@ -2324,31 +2324,31 @@
     },
     {
       "bin": -0.18,
-      "count": 9
+      "count": 4
     },
     {
       "bin": -0.12,
-      "count": 26
+      "count": 17
     },
     {
       "bin": -0.06,
-      "count": 69
+      "count": 52
     },
     {
       "bin": 0.0,
-      "count": 109
+      "count": 115
     },
     {
       "bin": 0.06,
-      "count": 81
+      "count": 98
     },
     {
       "bin": 0.12,
-      "count": 38
+      "count": 50
     },
     {
       "bin": 0.18,
-      "count": 27
+      "count": 24
     },
     {
       "bin": 0.24,
@@ -2356,7 +2356,7 @@
     },
     {
       "bin": 0.3,
-      "count": 4
+      "count": 5
     },
     {
       "bin": 0.36,
@@ -2364,297 +2364,297 @@
     },
     {
       "bin": 0.42,
-      "count": 1
+      "count": 0
     }
   ],
   "district_mae": [
+    {
+      "district": "Rangpur",
+      "mae": 0.03
+    },
+    {
+      "district": "Gaibandha",
+      "mae": 0.0317
+    },
+    {
+      "district": "Natore",
+      "mae": 0.035
+    },
+    {
+      "district": "Panchagarh",
+      "mae": 0.035
+    },
+    {
+      "district": "Bandarban",
+      "mae": 0.0367
+    },
+    {
+      "district": "Brahmanbaria",
+      "mae": 0.0367
+    },
     {
       "district": "Faridpur",
       "mae": 0.0367
     },
     {
-      "district": "Jamalpur",
-      "mae": 0.0383
-    },
-    {
-      "district": "Chapainawabganj",
-      "mae": 0.0433
-    },
-    {
-      "district": "Bandarban",
-      "mae": 0.045
-    },
-    {
-      "district": "Gaibandha",
-      "mae": 0.0483
-    },
-    {
       "district": "Joypurhat",
-      "mae": 0.0483
-    },
-    {
-      "district": "Madaripur",
-      "mae": 0.0483
-    },
-    {
-      "district": "Magura",
-      "mae": 0.05
-    },
-    {
-      "district": "Panchagarh",
-      "mae": 0.05
-    },
-    {
-      "district": "Gopalganj",
-      "mae": 0.0517
-    },
-    {
-      "district": "Natore",
-      "mae": 0.0517
-    },
-    {
-      "district": "Meherpur",
-      "mae": 0.0533
-    },
-    {
-      "district": "Pabna",
-      "mae": 0.0533
-    },
-    {
-      "district": "Rajshahi",
-      "mae": 0.0533
-    },
-    {
-      "district": "Gazipur",
-      "mae": 0.0567
-    },
-    {
-      "district": "Rangamati",
-      "mae": 0.0583
+      "mae": 0.0367
     },
     {
       "district": "Shariatpur",
-      "mae": 0.0583
-    },
-    {
-      "district": "Sirajganj",
-      "mae": 0.0583
-    },
-    {
-      "district": "Kishoreganj",
-      "mae": 0.06
-    },
-    {
-      "district": "Rajbari",
-      "mae": 0.06
-    },
-    {
-      "district": "Thakurgaon",
-      "mae": 0.06
-    },
-    {
-      "district": "Cox'S Bazar",
-      "mae": 0.0617
-    },
-    {
-      "district": "Khulna",
-      "mae": 0.0617
-    },
-    {
-      "district": "Nilphamari",
-      "mae": 0.065
-    },
-    {
-      "district": "Rangpur",
-      "mae": 0.065
-    },
-    {
-      "district": "Jhenaidah",
-      "mae": 0.0667
-    },
-    {
-      "district": "Manikganj",
-      "mae": 0.0667
-    },
-    {
-      "district": "Netrokona",
-      "mae": 0.0683
-    },
-    {
-      "district": "Sherpur",
-      "mae": 0.0683
-    },
-    {
-      "district": "Kurigram",
-      "mae": 0.07
-    },
-    {
-      "district": "Noakhali",
-      "mae": 0.07
-    },
-    {
-      "district": "Khagrachhari",
-      "mae": 0.0733
-    },
-    {
-      "district": "Tangail",
-      "mae": 0.075
-    },
-    {
-      "district": "Lalmonirhat",
-      "mae": 0.0767
-    },
-    {
-      "district": "Chattogram",
-      "mae": 0.08
-    },
-    {
-      "district": "Jashore",
-      "mae": 0.08
-    },
-    {
-      "district": "Kushtia",
-      "mae": 0.08
-    },
-    {
-      "district": "Bagerhat",
-      "mae": 0.0817
-    },
-    {
-      "district": "Barishal",
-      "mae": 0.0817
-    },
-    {
-      "district": "Dhaka",
-      "mae": 0.0817
-    },
-    {
-      "district": "Brahmanbaria",
-      "mae": 0.0833
-    },
-    {
-      "district": "Narail",
-      "mae": 0.085
-    },
-    {
-      "district": "Satkhira",
-      "mae": 0.0867
-    },
-    {
-      "district": "Munshiganj",
-      "mae": 0.0883
-    },
-    {
-      "district": "Barguna",
-      "mae": 0.09
-    },
-    {
-      "district": "Chuadanga",
-      "mae": 0.09
-    },
-    {
-      "district": "Bhola",
-      "mae": 0.0917
-    },
-    {
-      "district": "Naogaon",
-      "mae": 0.0967
-    },
-    {
-      "district": "Narsingdi",
-      "mae": 0.0967
+      "mae": 0.0383
     },
     {
       "district": "Jhalokati",
-      "mae": 0.0983
+      "mae": 0.0417
     },
     {
-      "district": "Lakshmipur",
-      "mae": 0.0983
+      "district": "Meherpur",
+      "mae": 0.0433
+    },
+    {
+      "district": "Nilphamari",
+      "mae": 0.045
+    },
+    {
+      "district": "Magura",
+      "mae": 0.0467
+    },
+    {
+      "district": "Satkhira",
+      "mae": 0.0467
+    },
+    {
+      "district": "Sherpur",
+      "mae": 0.0467
+    },
+    {
+      "district": "Pabna",
+      "mae": 0.0483
+    },
+    {
+      "district": "Rajshahi",
+      "mae": 0.0483
     },
     {
       "district": "Chandpur",
-      "mae": 0.1
+      "mae": 0.05
     },
     {
-      "district": "Narayanganj",
-      "mae": 0.1067
+      "district": "Gazipur",
+      "mae": 0.05
     },
     {
-      "district": "Pirojpur",
-      "mae": 0.1083
+      "district": "Jamalpur",
+      "mae": 0.0517
+    },
+    {
+      "district": "Chapainawabganj",
+      "mae": 0.06
+    },
+    {
+      "district": "Chattogram",
+      "mae": 0.06
+    },
+    {
+      "district": "Dhaka",
+      "mae": 0.06
+    },
+    {
+      "district": "Madaripur",
+      "mae": 0.06
+    },
+    {
+      "district": "Sirajganj",
+      "mae": 0.06
+    },
+    {
+      "district": "Kishoreganj",
+      "mae": 0.0617
+    },
+    {
+      "district": "Manikganj",
+      "mae": 0.0617
+    },
+    {
+      "district": "Rangamati",
+      "mae": 0.0617
+    },
+    {
+      "district": "Kurigram",
+      "mae": 0.0633
+    },
+    {
+      "district": "Khulna",
+      "mae": 0.065
+    },
+    {
+      "district": "Noakhali",
+      "mae": 0.065
     },
     {
       "district": "Patuakhali",
-      "mae": 0.11
+      "mae": 0.0667
+    },
+    {
+      "district": "Narail",
+      "mae": 0.0683
+    },
+    {
+      "district": "Jhenaidah",
+      "mae": 0.07
+    },
+    {
+      "district": "Narayanganj",
+      "mae": 0.07
+    },
+    {
+      "district": "Narsingdi",
+      "mae": 0.0717
+    },
+    {
+      "district": "Tangail",
+      "mae": 0.0717
+    },
+    {
+      "district": "Rajbari",
+      "mae": 0.0733
+    },
+    {
+      "district": "Gopalganj",
+      "mae": 0.075
     },
     {
       "district": "Feni",
-      "mae": 0.1117
+      "mae": 0.0767
     },
     {
-      "district": "Dinajpur",
-      "mae": 0.115
+      "district": "Barishal",
+      "mae": 0.0783
+    },
+    {
+      "district": "Khagrachhari",
+      "mae": 0.0783
+    },
+    {
+      "district": "Thakurgaon",
+      "mae": 0.0783
+    },
+    {
+      "district": "Bhola",
+      "mae": 0.0817
+    },
+    {
+      "district": "Chuadanga",
+      "mae": 0.0817
+    },
+    {
+      "district": "Jashore",
+      "mae": 0.0833
+    },
+    {
+      "district": "Lalmonirhat",
+      "mae": 0.0833
+    },
+    {
+      "district": "Lakshmipur",
+      "mae": 0.0883
+    },
+    {
+      "district": "Netrokona",
+      "mae": 0.0883
+    },
+    {
+      "district": "Kushtia",
+      "mae": 0.0917
+    },
+    {
+      "district": "Barguna",
+      "mae": 0.095
+    },
+    {
+      "district": "Munshiganj",
+      "mae": 0.1
     },
     {
       "district": "Cumilla",
-      "mae": 0.12
+      "mae": 0.1017
     },
     {
-      "district": "Bogura",
-      "mae": 0.1233
+      "district": "Cox'S Bazar",
+      "mae": 0.1033
+    },
+    {
+      "district": "Pirojpur",
+      "mae": 0.1067
+    },
+    {
+      "district": "Bagerhat",
+      "mae": 0.115
     },
     {
       "district": "Mymensingh",
-      "mae": 0.13
+      "mae": 0.1317
     },
     {
-      "district": "Habiganj",
-      "mae": 0.24
+      "district": "Naogaon",
+      "mae": 0.1417
+    },
+    {
+      "district": "Bogura",
+      "mae": 0.1467
+    },
+    {
+      "district": "Dinajpur",
+      "mae": 0.165
     },
     {
       "district": "Sylhet",
-      "mae": 0.2567
+      "mae": 0.2617
     },
     {
-      "district": "Sunamganj",
-      "mae": 0.2717
+      "district": "Habiganj",
+      "mae": 0.305
     },
     {
       "district": "Moulvibazar",
-      "mae": 0.2867
+      "mae": 0.3217
+    },
+    {
+      "district": "Sunamganj",
+      "mae": 0.335
     }
   ],
   "cv_folds": [
     {
       "fold": "Fold 1 (2018)",
-      "r2": 97.32,
-      "rmse": 0.1493,
-      "mae": 0.104
+      "r2": 95.2,
+      "rmse": 0.1998,
+      "mae": 0.1664
     },
     {
       "fold": "Fold 2 (2019)",
-      "r2": 98.05,
-      "rmse": 0.1297,
-      "mae": 0.0882
+      "r2": 96.47,
+      "rmse": 0.1744,
+      "mae": 0.1494
     },
     {
       "fold": "Fold 3 (2020)",
-      "r2": 98.16,
-      "rmse": 0.1202,
-      "mae": 0.0821
+      "r2": 98.77,
+      "rmse": 0.0983,
+      "mae": 0.0751
     },
     {
       "fold": "Fold 4 (2021)",
-      "r2": 97.43,
-      "rmse": 0.1502,
-      "mae": 0.1028
+      "r2": 97.83,
+      "rmse": 0.1378,
+      "mae": 0.117
     }
   ],
   "global_metrics": {
-    "r2": 98.19,
-    "rmse": 0.1267,
-    "mae": 0.0866,
-    "mape": 2.94
+    "r2": 97.96,
+    "rmse": 0.1345,
+    "mae": 0.0847,
+    "mape": 2.93
   }
 }
