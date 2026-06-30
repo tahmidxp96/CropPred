@@ -536,15 +536,11 @@ def main():
     regressor = model.named_steps["regressor"]
     preprocessor = model.named_steps["preprocessor"]
     
+    num_cols = list(preprocessor.transformers[0][2])
+    cat_cols = list(preprocessor.transformers[1][2])
     cat_encoder = preprocessor.named_transformers_["cat"]
-    encoded_cat_features = list(cat_encoder.get_feature_names_out(["division", "district", "season"]))
-    all_features = [
-        "area_ha", "season_temp_c", "season_rain_mm", "season_rh_pct", "season_solar_mj_m2",
-        "season_gdd", "season_dtr", "season_soil_wetness", "season_soil_wetness_root", "season_swdi",
-        "flood_index", "drought_index", "season_wind_speed", "season_earth_skin_temp",
-        "season_et", "season_pet", "season_oni",
-        "division_yield_prior", "historical_baseline_yield"
-    ] + encoded_cat_features
+    encoded_cat_features = list(cat_encoder.get_feature_names_out(cat_cols))
+    all_features = num_cols + encoded_cat_features
     # Average the feature importances of the fitted sub-estimators
     importances_list = []
     for est in regressor.estimators_:

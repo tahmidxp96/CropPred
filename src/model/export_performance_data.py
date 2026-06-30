@@ -63,11 +63,24 @@ def export_performance_metrics():
     
     # 4. Fold History CV
     cv_folds = [
-        { "fold": "Fold 1 (2018)", "r2": 96.96, "rmse": 0.1591, "mae": 0.1142 },
-        { "fold": "Fold 2 (2019)", "r2": 98.25, "rmse": 0.1227, "mae": 0.0834 },
-        { "fold": "Fold 3 (2020)", "r2": 98.10, "rmse": 0.1221, "mae": 0.0827 },
-        { "fold": "Fold 4 (2021)", "r2": 97.67, "rmse": 0.1428, "mae": 0.0991 }
+        { "fold": "Fold 1 (2018)", "r2": 97.32, "rmse": 0.1493, "mae": 0.1040 },
+        { "fold": "Fold 2 (2019)", "r2": 98.05, "rmse": 0.1297, "mae": 0.0882 },
+        { "fold": "Fold 3 (2020)", "r2": 98.16, "rmse": 0.1202, "mae": 0.0821 },
+        { "fold": "Fold 4 (2021)", "r2": 97.43, "rmse": 0.1502, "mae": 0.1028 }
     ]
+    
+    # Calculate global metrics dynamically from test records
+    actuals = np.array([r["yield_mtha"] for r in test_records])
+    preds = np.array([r["pred_yield_mtha"] for r in test_records])
+    errors = actuals - preds
+    
+    ss_res = np.sum(errors ** 2)
+    ss_tot = np.sum((actuals - np.mean(actuals)) ** 2)
+    r2_val = float(np.round((1.0 - ss_res / ss_tot) * 100.0, 2))
+    
+    rmse_val = float(np.round(np.sqrt(np.mean(errors ** 2)), 4))
+    mae_val = float(np.round(np.mean(np.abs(errors)), 4))
+    mape_val = float(np.round(np.mean(np.abs(errors / actuals)) * 100.0, 2))
     
     # Compiled metrics payload
     performance_payload = {
@@ -76,10 +89,10 @@ def export_performance_metrics():
         "district_mae": district_mae,
         "cv_folds": cv_folds,
         "global_metrics": {
-            "r2": 98.19,
-            "rmse": 0.1266,
-            "mae": 0.0866,
-            "mape": 3.12
+            "r2": r2_val,
+            "rmse": rmse_val,
+            "mae": mae_val,
+            "mape": mape_val
         }
     }
     
