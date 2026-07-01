@@ -1,7 +1,7 @@
 # Spatial Digital Twin for Crop Yield Forecasting in Bangladesh 🌾🇧🇩
 
 [![Deploy static content to Pages](https://github.com/tahmidxp96/CropPred/actions/workflows/deploy.yml/badge.svg)](https://github.com/tahmidxp96/CropPred/actions/workflows/deploy.yml)
-[![Live Site](https://img.shields.io/badge/Live_Deployment-Github-pages)](https://tahmidxp96.github.io/CropPred/)
+[![Live Site](https://img.shields.io/badge/Visit_Live_Page-Github-pages)](https://tahmidxp96.github.io/CropPred/)
 
 An academic-grade, research-oriented Spatial Digital Twin built to model, predict, and visualize district-level rice yields (*Aus*, *Aman*, and *Boro* seasons) across Bangladesh. The platform integrates real-world subnational agricultural census records, multi-sensor NASA satellite climatology, NOAA oceanic teleconnection indices, and an Ensemble Machine Learning pipeline to project yields up to **2029** with recursive error-calibration loops.
 
