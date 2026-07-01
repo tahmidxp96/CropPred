@@ -1,4 +1,4 @@
-# Spatial Digital Twin for Crop Yield Forecasting in Bangladesh 🌾🇧🇩
+# CropPred: Spatial Digital Twin for Crop Yield Forecasting in Bangladesh 🌾🇧🇩
 
 [![Deploy static content to Pages](https://github.com/tahmidxp96/CropPred/actions/workflows/deploy.yml/badge.svg)](https://github.com/tahmidxp96/CropPred/actions/workflows/deploy.yml)
 [![Live Site](https://img.shields.io/badge/Visit_Live_Page-Github-pages)](https://tahmidxp96.github.io/CropPred/)
@@ -196,3 +196,7 @@ The live site is hosted on GitHub Pages. To support near-instantaneous live page
     - Reference: Huang, B., et al. (2017). *Extended Reconstructed Sea Surface Temperature, Version 5 (ERSSTv5)*. Journal of Climate, 30(20), 8179–8205.
 5.  **Division-Level Agroclimatic Dataset**: Compiled annual average crop yields and climatic indicators (2000–2024) used to pre-train division-level GBR prior models.
 6.  **FAOSTAT**: National validation statistics compiled by the *Food and Agriculture Organization (FAO) of the United Nations*.
+
+---
+
+Developed by **[tahmidxp96](https://github.com/tahmidxp96)** | Made with **Antigravity** 🚀

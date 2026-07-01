@@ -314,7 +314,7 @@ export default function PerformanceHub() {
 
       {/* Footer */}
       <footer className="border-t border-slate-900 bg-[#070a0f] py-6 text-center text-[10px] text-slate-500">
-        © {new Date().getFullYear()} Bangladesh Crop Yield Digital Twin Evaluation Hub. All rights reserved.
+        © {new Date().getFullYear()} CropPred. Developed by tahmidxp96 | Made with Antigravity.
       </footer>
     </div>
   );

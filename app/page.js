@@ -231,7 +231,7 @@ export default function DigitalTwinDashboard() {
             <div className="flex items-center gap-2">
               <Cpu className="text-emerald-500 w-6 h-6 animate-pulse" />
               <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-white glow-text">
-                bangladesh-crop-yield-digital-twin
+                CropPred
               </h1>
               <span className="bg-emerald-500/10 text-emerald-400 text-xs px-2 py-0.5 rounded border border-emerald-500/20 font-mono">
                 v1.0-research
@@ -838,7 +838,7 @@ export default function DigitalTwinDashboard() {
 
       {/* Footer */}
       <footer className="border-t border-slate-900 bg-[#06080c] py-6 mt-12 text-center text-xs text-slate-500">
-        <p>© 2026 Bangladesh Crop Yield Digital Twin Research. Built for Graduate Research Portfolio in AI/Agriculture.</p>
+        <p>© 2026 CropPred. Developed by tahmidxp96 | Made with Antigravity.</p>
         <p className="mt-1">Pipeline: Python | Front-end: Next.js | Hosting: GitHub Pages</p>
       </footer>
     </div>

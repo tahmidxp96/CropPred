@@ -70,7 +70,7 @@ export default function MethodologyPage() {
             </Link>
             <Cpu className="text-emerald-500 w-6 h-6" />
             <h1 className="text-lg sm:text-xl font-bold tracking-tight text-white glow-text">
-              Twin Methodology Hub
+              CropPred Methodology Hub
             </h1>
           </div>
           <div className="flex gap-3">
@@ -642,7 +642,7 @@ export default function MethodologyPage() {
 
       {/* Footer */}
       <footer className="border-t border-slate-900 bg-[#06080c] py-6 mt-12 text-center text-xs text-slate-500">
-        <p>© 2026 Bangladesh Crop Yield Digital Twin Research. Built for Graduate Research Portfolio in AI/Agriculture.</p>
+        <p>© 2026 CropPred. Developed by tahmidxp96 | Made with Antigravity.</p>
         <p className="mt-1">Pipeline: Python | Front-end: Next.js | Hosting: GitHub Pages</p>
       </footer>
     </div>

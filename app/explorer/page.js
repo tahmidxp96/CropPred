@@ -507,7 +507,7 @@ export default function DataExplorer() {
 
       {/* Footer */}
       <footer className="border-t border-slate-900 bg-[#06080c] py-6 mt-12 text-center text-xs text-slate-500">
-        <p>© 2026 Bangladesh Crop Yield Digital Twin Research. Built for Graduate Research Portfolio in AI/Agriculture.</p>
+        <p>© 2026 CropPred. Developed by tahmidxp96 | Made with Antigravity.</p>
       </footer>
     </div>
   );

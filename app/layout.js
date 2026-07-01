@@ -1,7 +1,7 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Bangladesh Crop Yield Digital Twin | ML-Powered Research Platform",
+  title: "CropPred | Bangladesh Crop Yield Digital Twin",
   description: "A machine learning-powered digital twin forecasting district-level rice yield in Bangladesh using NASA satellite climate data and official BBS publications.",
 };
 
