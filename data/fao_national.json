@@ -1,0 +1,164 @@
+[
+  {
+    "year": 2015,
+    "element": "Area harvested",
+    "value": 11380000.0,
+    "unit": "ha"
+  },
+  {
+    "year": 2015,
+    "element": "Yield",
+    "value": 43500.0,
+    "unit": "hg/ha"
+  },
+  {
+    "year": 2015,
+    "element": "Production",
+    "value": 49480000.0,
+    "unit": "t"
+  },
+  {
+    "year": 2016,
+    "element": "Area harvested",
+    "value": 11000000.0,
+    "unit": "ha"
+  },
+  {
+    "year": 2016,
+    "element": "Yield",
+    "value": 43800.0,
+    "unit": "hg/ha"
+  },
+  {
+    "year": 2016,
+    "element": "Production",
+    "value": 48180000.0,
+    "unit": "t"
+  },
+  {
+    "year": 2017,
+    "element": "Area harvested",
+    "value": 11600000.0,
+    "unit": "ha"
+  },
+  {
+    "year": 2017,
+    "element": "Yield",
+    "value": 42100.0,
+    "unit": "hg/ha"
+  },
+  {
+    "year": 2017,
+    "element": "Production",
+    "value": 48830000.0,
+    "unit": "t"
+  },
+  {
+    "year": 2018,
+    "element": "Area harvested",
+    "value": 11620000.0,
+    "unit": "ha"
+  },
+  {
+    "year": 2018,
+    "element": "Yield",
+    "value": 44800.0,
+    "unit": "hg/ha"
+  },
+  {
+    "year": 2018,
+    "element": "Production",
+    "value": 52050000.0,
+    "unit": "t"
+  },
+  {
+    "year": 2019,
+    "element": "Area harvested",
+    "value": 11520000.0,
+    "unit": "ha"
+  },
+  {
+    "year": 2019,
+    "element": "Yield",
+    "value": 47200.0,
+    "unit": "hg/ha"
+  },
+  {
+    "year": 2019,
+    "element": "Production",
+    "value": 54370000.0,
+    "unit": "t"
+  },
+  {
+    "year": 2020,
+    "element": "Area harvested",
+    "value": 11570000.0,
+    "unit": "ha"
+  },
+  {
+    "year": 2020,
+    "element": "Yield",
+    "value": 47400.0,
+    "unit": "hg/ha"
+  },
+  {
+    "year": 2020,
+    "element": "Production",
+    "value": 54900000.0,
+    "unit": "t"
+  },
+  {
+    "year": 2021,
+    "element": "Area harvested",
+    "value": 11700000.0,
+    "unit": "ha"
+  },
+  {
+    "year": 2021,
+    "element": "Yield",
+    "value": 48200.0,
+    "unit": "hg/ha"
+  },
+  {
+    "year": 2021,
+    "element": "Production",
+    "value": 56390000.0,
+    "unit": "t"
+  },
+  {
+    "year": 2022,
+    "element": "Area harvested",
+    "value": 11900000.0,
+    "unit": "ha"
+  },
+  {
+    "year": 2022,
+    "element": "Yield",
+    "value": 48100.0,
+    "unit": "hg/ha"
+  },
+  {
+    "year": 2022,
+    "element": "Production",
+    "value": 57239000.0,
+    "unit": "t"
+  },
+  {
+    "year": 2023,
+    "element": "Area harvested",
+    "value": 12100000.0,
+    "unit": "ha"
+  },
+  {
+    "year": 2023,
+    "element": "Yield",
+    "value": 48500.0,
+    "unit": "hg/ha"
+  },
+  {
+    "year": 2023,
+    "element": "Production",
+    "value": 58685000.0,
+    "unit": "t"
+  }
+]

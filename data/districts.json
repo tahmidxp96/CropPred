@@ -1,0 +1,386 @@
+[
+  {
+    "name": "Dhaka",
+    "lat": 23.8103,
+    "lon": 90.4125,
+    "division": "Dhaka"
+  },
+  {
+    "name": "Gazipur",
+    "lat": 24.0023,
+    "lon": 90.4264,
+    "division": "Dhaka"
+  },
+  {
+    "name": "Manikganj",
+    "lat": 23.8644,
+    "lon": 90.0047,
+    "division": "Dhaka"
+  },
+  {
+    "name": "Munshiganj",
+    "lat": 23.5435,
+    "lon": 90.5354,
+    "division": "Dhaka"
+  },
+  {
+    "name": "Narayanganj",
+    "lat": 23.6238,
+    "lon": 90.5,
+    "division": "Dhaka"
+  },
+  {
+    "name": "Narsingdi",
+    "lat": 23.9229,
+    "lon": 90.7177,
+    "division": "Dhaka"
+  },
+  {
+    "name": "Faridpur",
+    "lat": 23.6071,
+    "lon": 89.8429,
+    "division": "Dhaka"
+  },
+  {
+    "name": "Gopalganj",
+    "lat": 23.0071,
+    "lon": 89.8273,
+    "division": "Dhaka"
+  },
+  {
+    "name": "Madaripur",
+    "lat": 23.1648,
+    "lon": 90.1896,
+    "division": "Dhaka"
+  },
+  {
+    "name": "Rajbari",
+    "lat": 23.7574,
+    "lon": 89.6444,
+    "division": "Dhaka"
+  },
+  {
+    "name": "Shariatpur",
+    "lat": 23.2423,
+    "lon": 90.3536,
+    "division": "Dhaka"
+  },
+  {
+    "name": "Kishoreganj",
+    "lat": 24.4349,
+    "lon": 90.7812,
+    "division": "Dhaka"
+  },
+  {
+    "name": "Tangail",
+    "lat": 24.2513,
+    "lon": 89.9167,
+    "division": "Dhaka"
+  },
+  {
+    "name": "Mymensingh",
+    "lat": 24.7471,
+    "lon": 90.4203,
+    "division": "Mymensingh"
+  },
+  {
+    "name": "Jamalpur",
+    "lat": 24.9375,
+    "lon": 89.9377,
+    "division": "Mymensingh"
+  },
+  {
+    "name": "Netrokona",
+    "lat": 24.87,
+    "lon": 90.72,
+    "division": "Mymensingh"
+  },
+  {
+    "name": "Sherpur",
+    "lat": 25.0189,
+    "lon": 90.0175,
+    "division": "Mymensingh"
+  },
+  {
+    "name": "Chattogram",
+    "lat": 22.3569,
+    "lon": 91.7832,
+    "division": "Chattogram"
+  },
+  {
+    "name": "Cox's Bazar",
+    "lat": 21.4272,
+    "lon": 92.0058,
+    "division": "Chattogram"
+  },
+  {
+    "name": "Bandarban",
+    "lat": 22.1953,
+    "lon": 92.2184,
+    "division": "Chattogram"
+  },
+  {
+    "name": "Rangamati",
+    "lat": 22.7324,
+    "lon": 92.2438,
+    "division": "Chattogram"
+  },
+  {
+    "name": "Khagrachhari",
+    "lat": 23.1192,
+    "lon": 91.9846,
+    "division": "Chattogram"
+  },
+  {
+    "name": "Cumilla",
+    "lat": 23.4682,
+    "lon": 91.1785,
+    "division": "Chattogram"
+  },
+  {
+    "name": "Feni",
+    "lat": 23.0116,
+    "lon": 91.3963,
+    "division": "Chattogram"
+  },
+  {
+    "name": "Brahmanbaria",
+    "lat": 23.9574,
+    "lon": 91.1119,
+    "division": "Chattogram"
+  },
+  {
+    "name": "Noakhali",
+    "lat": 22.8698,
+    "lon": 91.0968,
+    "division": "Chattogram"
+  },
+  {
+    "name": "Lakshmipur",
+    "lat": 22.9426,
+    "lon": 90.8417,
+    "division": "Chattogram"
+  },
+  {
+    "name": "Chandpur",
+    "lat": 23.2321,
+    "lon": 90.6631,
+    "division": "Chattogram"
+  },
+  {
+    "name": "Sylhet",
+    "lat": 24.8949,
+    "lon": 91.8687,
+    "division": "Sylhet"
+  },
+  {
+    "name": "Sunamganj",
+    "lat": 25.0658,
+    "lon": 91.395,
+    "division": "Sylhet"
+  },
+  {
+    "name": "Habiganj",
+    "lat": 24.3749,
+    "lon": 91.4124,
+    "division": "Sylhet"
+  },
+  {
+    "name": "Moulvibazar",
+    "lat": 24.4829,
+    "lon": 91.7685,
+    "division": "Sylhet"
+  },
+  {
+    "name": "Rajshahi",
+    "lat": 24.3745,
+    "lon": 88.6042,
+    "division": "Rajshahi"
+  },
+  {
+    "name": "Naogaon",
+    "lat": 24.7936,
+    "lon": 88.9318,
+    "division": "Rajshahi"
+  },
+  {
+    "name": "Natore",
+    "lat": 24.42,
+    "lon": 89.02,
+    "division": "Rajshahi"
+  },
+  {
+    "name": "Chapainawabganj",
+    "lat": 24.5965,
+    "lon": 88.2775,
+    "division": "Rajshahi"
+  },
+  {
+    "name": "Pabna",
+    "lat": 24.004,
+    "lon": 89.2444,
+    "division": "Rajshahi"
+  },
+  {
+    "name": "Sirajganj",
+    "lat": 24.4577,
+    "lon": 89.708,
+    "division": "Rajshahi"
+  },
+  {
+    "name": "Bogura",
+    "lat": 24.8481,
+    "lon": 89.373,
+    "division": "Rajshahi"
+  },
+  {
+    "name": "Joypurhat",
+    "lat": 25.0947,
+    "lon": 89.0224,
+    "division": "Rajshahi"
+  },
+  {
+    "name": "Rangpur",
+    "lat": 25.7558,
+    "lon": 89.2444,
+    "division": "Rangpur"
+  },
+  {
+    "name": "Dinajpur",
+    "lat": 25.6217,
+    "lon": 88.647,
+    "division": "Rangpur"
+  },
+  {
+    "name": "Panchagarh",
+    "lat": 26.334,
+    "lon": 88.5583,
+    "division": "Rangpur"
+  },
+  {
+    "name": "Thakurgaon",
+    "lat": 26.0333,
+    "lon": 88.4667,
+    "division": "Rangpur"
+  },
+  {
+    "name": "Gaibandha",
+    "lat": 25.3287,
+    "lon": 89.5422,
+    "division": "Rangpur"
+  },
+  {
+    "name": "Kurigram",
+    "lat": 25.8054,
+    "lon": 89.7547,
+    "division": "Rangpur"
+  },
+  {
+    "name": "Lalmonirhat",
+    "lat": 25.9142,
+    "lon": 89.4428,
+    "division": "Rangpur"
+  },
+  {
+    "name": "Nilphamari",
+    "lat": 25.9317,
+    "lon": 88.856,
+    "division": "Rangpur"
+  },
+  {
+    "name": "Jashore",
+    "lat": 23.1664,
+    "lon": 89.2081,
+    "division": "Khulna"
+  },
+  {
+    "name": "Jhenaidah",
+    "lat": 23.545,
+    "lon": 89.1536,
+    "division": "Khulna"
+  },
+  {
+    "name": "Magura",
+    "lat": 23.4873,
+    "lon": 89.4199,
+    "division": "Khulna"
+  },
+  {
+    "name": "Narail",
+    "lat": 23.1725,
+    "lon": 89.5126,
+    "division": "Khulna"
+  },
+  {
+    "name": "Khulna",
+    "lat": 22.8456,
+    "lon": 89.5403,
+    "division": "Khulna"
+  },
+  {
+    "name": "Bagerhat",
+    "lat": 22.6516,
+    "lon": 89.7859,
+    "division": "Khulna"
+  },
+  {
+    "name": "Satkhira",
+    "lat": 22.7185,
+    "lon": 89.0706,
+    "division": "Khulna"
+  },
+  {
+    "name": "Kushtia",
+    "lat": 23.9013,
+    "lon": 89.1204,
+    "division": "Khulna"
+  },
+  {
+    "name": "Chuadanga",
+    "lat": 23.6401,
+    "lon": 88.8418,
+    "division": "Khulna"
+  },
+  {
+    "name": "Meherpur",
+    "lat": 23.7622,
+    "lon": 88.6318,
+    "division": "Khulna"
+  },
+  {
+    "name": "Barishal",
+    "lat": 22.701,
+    "lon": 90.3535,
+    "division": "Barishal"
+  },
+  {
+    "name": "Bhola",
+    "lat": 22.6875,
+    "lon": 90.6441,
+    "division": "Barishal"
+  },
+  {
+    "name": "Jhalokati",
+    "lat": 22.6406,
+    "lon": 90.1989,
+    "division": "Barishal"
+  },
+  {
+    "name": "Pirojpur",
+    "lat": 22.5791,
+    "lon": 89.9753,
+    "division": "Barishal"
+  },
+  {
+    "name": "Barguna",
+    "lat": 22.1591,
+    "lon": 90.1255,
+    "division": "Barishal"
+  },
+  {
+    "name": "Patuakhali",
+    "lat": 22.3536,
+    "lon": 90.3349,
+    "division": "Barishal"
+  }
+]
